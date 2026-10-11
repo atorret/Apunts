@@ -59,3 +59,24 @@ Reproduce with `python tools/check.py legacy/original.tex legacy/original.log`.
 - All 15 in-body `\renewcommand`s are `\arraystretch`; no macro had to move.
 
 The section count may change only if sections are merged; the plan keeps all 29.
+
+## Final build (after Phase 4)
+
+| Item | Baseline | Final |
+|---|---|---|
+| Pages | 96 | 114 (glossary: pp. 99-113) |
+| LaTeX/package warnings | 83 | 83 |
+| Overfull / underfull boxes | 4 / 27 | 4 / 27 |
+| Undefined references, `??` in PDF | 0 | 0 |
+| `\label` | 243 | 291 |
+| `\ref` + `\eqref` | 352 | 581 |
+| `\cite` | 0 | 39 |
+| `\bibitem` | 27 | 27 |
+| `\Step` | 32 | 133 |
+| `\numcheck` (body) | 11 | 12 |
+| proof | 34 | 76 |
+| identity (new) | 0 | 40 |
+
+All other environment counts (part, section, subsection, example, formal, intuition, synthesis, definition, theorem,
+proposition, lemma, corollary, exercises, keypoints, keyidea, pitfall, remark, specialcase, figure, table, tikzpicture)
+equal the baseline. Checked with `python tools/check.py main.tex build/main.log` after `latexmk -C`.

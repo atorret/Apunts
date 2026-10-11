@@ -43,3 +43,17 @@ The markers have been removed from the .tex files; this table preserves them.
 | 32 | GR | 999-1028 | 3671-3702 | `parts/05-physics/02-bridge-to-gr/01-gr-dictionary-einstein.tex` |
 | 33 | GR | 1032-1054 | 4034-4058 | `parts/07-perspective/02-master-summary/03-toolkit-metric-geometry.tex` |
 | 34 | GA | 936-953 | 4062-4081 | `parts/07-perspective/02-master-summary/04-dictionary-algebras.tex` |
+
+## Blocks moved during Phase 3
+
+These moves change the file a block lives in (all with `git mv` where a whole file moved, so `git log --follow` works).
+A `% REORDERED` marker is left at both the old and the new location.
+
+| Move | Original lines | From | To |
+|---|---|---|---|
+| F6 | `sec:classical` | `parts/03-integration/03-stokes/05-classical-corollaries.tex` | `parts/03-integration/04-gauss/04-classical-corollaries.tex` |
+| F7 | L3013-3019, L3041-3047 (sphere examples, GR block 28) | `parts/04-connections-curvature/01-connections/03-parallel-transport.tex`, `04-geodesics.tex` | `parts/04-connections-curvature/02-levi-civita/01-torsion-levi-civita.tex` (`ex:spheretransport`, `ex:spheregeod`); pointers left behind |
+| F8 | L3404-3421 (`sec:noethersynth`) | `parts/04-connections-curvature/05-synthesis-3/04-noether-synthesis.tex` | `parts/05-physics/01-intrinsic-vs-metric/03-noether-synthesis.tex` |
+
+Phase 4 added `backmatter/glossary/` (no original lines). Provenance remarks in the text are kept only in the
+reading guide ("Provenance: how the three source texts were merged"); "(source A/B/C)" was removed from headings and boxes.

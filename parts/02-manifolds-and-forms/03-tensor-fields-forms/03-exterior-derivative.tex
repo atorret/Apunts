@@ -28,8 +28,8 @@ In coordinates:
 
 % REWRITTEN (F4): the Lie bracket used in (3) is defined inline (it is studied in Section sec:lie); (4) is marked as a
 % preview of Theorem thm:stokes; pull-back written \phi\pb instead of \phi^{*}.
-% AUTHOR-NOTE: (2), (3) and (5) are stated without proof. Glossary Part C proves (2) and (3) for 1-forms; (5) (Poincare
-% lemma) is left to the references (docs/AUTHOR_NOTES.md #7).
+% AUTHOR-NOTE: (2), (3) and (5) are stated without proof here. Glossary Part C proves (2) (id:pbd) and (3) for 1-forms
+% (id:dinvariant); (3) for k>1 and (5) (Poincare lemma) are left to the references (docs/AUTHOR_NOTES.md #7).
 \begin{theorem}[Fundamental properties]\label{thm:dprops}
 \begin{enumerate}
   \item $\dd^2=0$.
@@ -49,6 +49,8 @@ By \eqref{eq:dcoord} applied twice,
 $\dd^2\omega=\sum_I\sum_{j,k}\partial_k\partial_j\omega_I\,\dd x^k\wedge\dd x^j\wedge\dd x^I.$
 The coefficient $\partial_k\partial_j\omega_I$ is symmetric in $(j,k)$ (equality of mixed partials), whereas $\dd x^k\wedge\dd x^j$ is antisymmetric; so the sum vanishes.
 \end{proof}
+% REWRITTEN: glossary pointer
+Proofs of (2), and of (3) for $1$-forms, are Identities~\ref{id:pbd} and~\ref{id:dinvariant} in the Glossary; for (3) in general and for (5) see \cite{Lee,BottTu}.
 
 \begin{example}[$\R^3$: gradient, curl, divergence]
 \begin{itemize}

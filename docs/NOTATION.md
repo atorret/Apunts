@@ -10,7 +10,7 @@ Conventions used throughout, and the overloaded symbols that remain (each is dis
 | Field of scalars | `\R` (sometimes `\K`) | `\R`, `\K` | `\K` where the statement holds over any field. |
 | Dual space, covector | `V^*`, `\alpha`, `\beta` | — | |
 | Dual basis | `e^i` (algebra), `\dd x^i` (manifolds) | — | Previewed at the start of `sec:contraction`. |
-| Reciprocal frame (GA) | `e^i` in `sec:ga-calculus` | — | Same symbol as the dual basis; `rem:reciprocal` identifies `e^i = (e^i)_\sharp`. |
+| Reciprocal frame (GA) | `e^i_\sharp` | — | Written with `\sharp` where it must be distinguished from the dual basis; `rem:reciprocal` explains the identification. |
 | Tensors of type (l,k) | `\TT{l}{k}(V)` | `\TT` | Synthesis I table writes `T^\ell_k`. |
 | Tensor fields | `\TF{l}{k}(M)` | `\TF` | `\Pi` also denotes parallel transport `\Pi^\gamma`. |
 | Metric | `g`, `\eta` (Minkowski) | — | Signature conventions: the pitfall in `sec:quadform` is the authority. |
@@ -33,7 +33,10 @@ Conventions used throughout, and the overloaded symbols that remain (each is dis
 ## Angles
 
 - `\phi` (and `\Phi`, `\psi`) is reserved for maps, flows and charts.
-- Plane polar coordinates are `(r,\varphi)` in Parts I–IV; the sphere uses `(\theta,\varphi)` (polar, azimuth).
+- Plane polar coordinates are `(r,\varphi)` in Parts I–IV (converted with `tools/replace_phi.py`; files marked `% REWRITTEN`).
+- Part V keeps `(r,\theta)` for plane polar coordinates (mechanics conventions); not converted.
+- The sphere uses `(\theta,\varphi)` (polar, azimuth) everywhere, including the Schwarzschild metric in the GR bridge.
+- In the glossary, `\theta` is also the angle between two mirrors (`id:tworefl`) and `\varphi` a rotation angle (`id:rotor`).
 - The closed-not-exact angle form keeps the traditional name `\dd\theta` in Parts III, V and VI.
 
 ## Overloaded letters (kept; disambiguated by context)

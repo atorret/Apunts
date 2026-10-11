@@ -1,5 +1,9 @@
 # Glossary draft (Parts A and B)
 
+**Status: done.** This was the Phase 1 draft. The final glossary is in `backmatter/glossary/`
+(`part-a-symbols.tex`, `part-b-terms.tex`, `part-c-identities/`); Part B entries use `\glossentry` and
+synonyms are entries with an empty label argument ("See *...*").
+
 Each Part B entry: one-sentence definition + `\ref` to the place where the term is defined in the text.
 Synonyms appear as "see" cross-references.
 

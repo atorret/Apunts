@@ -1,0 +1,127 @@
+% Section: Glossary C.4: forms, interior product, d, Lie derivative | Part: backmatter | Depends on: sec:ext, sec:dform, sec:lie | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../../../main.tex
+\subsubsection*{Forms, the interior product, $\dd$ and $\Lie_X$}
+
+% PROOF ADDED BY REWRITER: Proposition prop:wedgeprops(a) is justified in the text by "a count of permutations".
+\begin{identity}[associativity of the wedge; Proposition~\ref{prop:wedgeprops}(a)]\label{id:assoc}
+For $\alpha\in\bigwedge^k$, $\beta\in\bigwedge^l$, $\gamma\in\bigwedge^m$, both $(\alpha\wedge\beta)\wedge\gamma$ and $\alpha\wedge(\beta\wedge\gamma)$ equal
+\[
+\frac1{k!\,l!\,m!}\sum_{\rho\in S_{k+l+m}}\sgn(\rho)\,\alpha(v_{\rho(1)},\dots)\,\beta(v_{\rho(k+1)},\dots)\,\gamma(v_{\rho(k+l+1)},\dots).
+\]
+Moreover $f\wedge\alpha=f\alpha$ for a $0$-form $f$.
+\end{identity}
+\begin{proof}
+\Step{1}{expand twice} By \eqref{eq:wedge},
+\[
+((\alpha\wedge\beta)\wedge\gamma)(v_1,\dots)=\frac1{(k+l)!\,m!}\sum_{\sigma}\sgn(\sigma)\,(\alpha\wedge\beta)(v_{\sigma(1)},\dots,v_{\sigma(k+l)})\,\gamma(v_{\sigma(k+l+1)},\dots),
+\]
+and each $(\alpha\wedge\beta)(\dots)$ is
+\[
+\frac1{k!\,l!}\sum_{\tau\in S_{k+l}}\sgn(\tau)\,\alpha(v_{\sigma\hat\tau(1)},\dots)\,\beta(v_{\sigma\hat\tau(k+1)},\dots),
+\]
+where $\hat\tau\in S_{k+l+m}$ acts as $\tau$ on the first $k+l$ places and fixes the rest.
+\Step{2}{re-index} Put $\rho=\sigma\hat\tau$, so $\sgn\rho=\sgn\sigma\,\sgn\tau$ and $\gamma$ sees $v_{\rho(k+l+1)},\dots$ (as $\hat\tau$ fixes those places).
+For fixed $\rho$ there are exactly $(k+l)!$ pairs $(\sigma,\tau)$, one for each $\tau$. The factor $(k+l)!$ cancels and the stated formula remains.
+\Step{3}{the other bracket} The same argument, with $\hat\tau$ acting on the last $l+m$ places, gives the same formula for $\alpha\wedge(\beta\wedge\gamma)$.
+\Step{4}{degree $0$} For $k=0$, \eqref{eq:wedge} reads $\frac1{l!}\sum_\sigma\sgn(\sigma)f\alpha(v_{\sigma(1)},\dots)=\frac1{l!}\sum_\sigma\sgn(\sigma)^2f\alpha(v_1,\dots)=f\alpha(v_1,\dots)$.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Proposition prop:detformula is justified in the text by "apply eq:wedge repeatedly".
+\begin{identity}[determinant formula; \eqref{eq:detformula}]\label{id:det}
+For $1$-forms $\alpha^1,\dots,\alpha^k$: $\quad(\alpha^1\wedge\cdots\wedge\alpha^k)(v_1,\dots,v_k)=\det[\alpha^i(v_j)]$.
+\end{identity}
+\begin{proof}
+Iterating Identity~\ref{id:assoc} (with all degrees equal to $1$, so all factorials are $1$) gives
+$\sum_{\rho\in S_k}\sgn(\rho)\,\alpha^1(v_{\rho(1)})\cdots\alpha^k(v_{\rho(k)})$, which is the Leibniz expansion of $\det[\alpha^i(v_j)]$.
+\end{proof}
+
+\begin{identity}[the interior product is an antiderivation; \eqref{eq:antider}]\label{id:antider}
+For $\alpha\in\bigwedge^k$: $\quad\iota_v(\alpha\wedge\beta)=\iota_v\alpha\wedge\beta+(-1)^k\alpha\wedge\iota_v\beta$, and $\iota_v\iota_v=0$.
+\end{identity}
+\begin{proof}
+This is proved in three steps after \eqref{eq:antider} in Section~\ref{sec:interior}: for a wedge of $1$-forms, expand the
+determinant of Identity~\ref{id:det} along the column containing $v$; then split the resulting sum at the $k$-th factor, which
+produces the sign $(-1)^k$. The second statement is $\alpha(v,v,\dots)=0$.
+\end{proof}
+
+\begin{identity}[left contraction is the interior product; Proposition~\ref{prop:lcisiota}]\label{id:lcisiota}
+With $\flat$ extended to multivectors, $(a\lc A)^\flat=\iota_a(A^\flat)$.
+\end{identity}
+\begin{proof}
+\Step{1}{vectors} $(a\lc b)^\flat=a\cdot b=b^\flat(a)=\iota_ab^\flat$.
+\Step{2}{induction} Both $A\mapsto(a\lc A)^\flat$ and $A\mapsto\iota_a(A^\flat)$ are antiderivations of degree $-1$
+(Proposition~\ref{prop:contr}(2) and Identity~\ref{id:antider}, with $\flat$ a homomorphism of $\wedge$), so if they agree on $A$
+and on a vector $b$ they agree on $b\wedge A$. Every multivector is a sum of wedges of vectors.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: used in the text as iota_F vol = hodge F^flat (Section sec:classical) without proof.
+\begin{identity}[interior product through the Hodge star]\label{id:iotahodge}
+In an oriented Euclidean space, for $\alpha\in\bigwedge^kV^*$: $\quad\iota_v\alpha=(-1)^{(n-k)(k-1)}\hodge\bigl(v^\flat\wedge\hodge\alpha\bigr)$.
+For $k=n$ and $\alpha=\vol$ this is $\iota_v\vol=\hodge v^\flat$.
+\end{identity}
+\begin{proof}
+\Step{1}{$\iota_v$ is adjoint to $v^\flat\wedge$} Claim: $\langle\iota_v\alpha,\beta\rangle=\langle\alpha,v^\flat\wedge\beta\rangle$ for $\beta\in\bigwedge^{k-1}$.
+By linearity take $v=e_i$, $\alpha=e^J$, $\beta=e^K$ for an orthonormal coframe. If $i\notin J$ both sides vanish. If $i$ is the
+$p$-th index of $J$, Identity~\ref{id:antider} gives $\iota_{e_i}e^J=(-1)^{p-1}e^{J\setminus i}$, and also $e^i\wedge e^{J\setminus i}=(-1)^{p-1}e^J$.
+So both sides are $(-1)^{p-1}$ if $K=J\setminus i$ and $0$ otherwise.
+\Step{2}{rewrite with $\hodge$} By the definition of $\hodge$, $\langle\alpha,v^\flat\wedge\beta\rangle\vol=(v^\flat\wedge\beta)\wedge\hodge\alpha=(-1)^{k-1}\beta\wedge(v^\flat\wedge\hodge\alpha)$.
+\Step{3}{the candidate} Let $\gamma=\hodge(v^\flat\wedge\hodge\alpha)$, a $(k-1)$-form. By Identity~\ref{id:hodgehodge} (degree $n-k+1$),
+$\hodge\gamma=(-1)^{(n-k+1)(k-1)}v^\flat\wedge\hodge\alpha$, so $\langle\beta,\gamma\rangle\vol=\beta\wedge\hodge\gamma=(-1)^{(n-k+1)(k-1)}\beta\wedge v^\flat\wedge\hodge\alpha$.
+\Step{4}{compare} From Steps~1--3, $\langle\beta,\iota_v\alpha\rangle=(-1)^{(n-k+1)(k-1)-(k-1)}\langle\beta,\gamma\rangle=(-1)^{(n-k)(k-1)}\langle\beta,\gamma\rangle$
+for every $\beta$, which is the claim. For $k=n$, $\hodge\vol=1$ and the sign is $+1$.
+\end{proof}
+
+\begin{identity}[$\dd\dd=0$; Theorem~\ref{thm:dprops}(1)]\label{id:ddzero}
+$\dd(\dd\omega)=0$ for every form.
+\end{identity}
+\begin{proof}
+By \eqref{eq:dcoord} twice, $\dd\dd\omega=\sum_I\sum_{j,k}\partial_k\partial_j\omega_I\,\dd x^k\wedge\dd x^j\wedge\dd x^I$. Exchanging the names
+$j\leftrightarrow k$ leaves the coefficient unchanged (mixed partials commute) and changes the sign of $\dd x^k\wedge\dd x^j$, so the sum
+equals its own negative.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Theorem thm:dprops(3) is stated without proof; proved here for 1-forms.
+\begin{identity}[invariant formula for $\dd$ of a $1$-form; Theorem~\ref{thm:dprops}(3), $k=1$]\label{id:dinvariant}
+$\dd\alpha(X,Y)=X\bigl(\alpha(Y)\bigr)-Y\bigl(\alpha(X)\bigr)-\alpha([X,Y])$.
+\end{identity}
+\begin{proof}
+\Step{1}{left side} With $\alpha=\alpha_i\dd x^i$, $\dd\alpha=\partial_j\alpha_i\,\dd x^j\wedge\dd x^i$, and by \eqref{eq:wedge11}
+$\dd\alpha(X,Y)=\partial_j\alpha_i\,(X^jY^i-X^iY^j)$.
+\Step{2}{the bracket} $[X,Y]f=X^j\partial_j(Y^i\partial_if)-Y^j\partial_j(X^i\partial_if)$; the second derivatives of $f$ cancel, so
+$[X,Y]^i=X^j\partial_jY^i-Y^j\partial_jX^i$.
+\Step{3}{right side} $X(\alpha_iY^i)=X^jY^i\partial_j\alpha_i+\alpha_iX^j\partial_jY^i$ and $Y(\alpha_iX^i)=Y^jX^i\partial_j\alpha_i+\alpha_iY^j\partial_jX^i$.
+Subtracting $\alpha_i[X,Y]^i$ removes the terms with derivatives of $X$ and $Y$, leaving $\partial_j\alpha_i(X^jY^i-X^iY^j)$.
+\end{proof}
+
+\begin{identity}[Cartan's formula; Theorem~\ref{thm:cartan}]\label{id:cartan}
+$\Lie_X\omega=\dd\,\iota_X\omega+\iota_X\,\dd\omega$.
+\end{identity}
+\begin{proof}
+As in the text.
+\Step{1}{derivations} Both sides are degree-$0$ derivations of $\wedge$ (the right side is the graded commutator of the
+antiderivations $\dd$ and $\iota_X$).
+\Step{2}{commuting with $\dd$} Both commute with $\dd$, by $\dd\dd=0$ and because $\Lie_X$ commutes with pull-backs by the flow.
+\Step{3}{functions} Both give $X(f)$ on functions.
+\Step{4}{conclude} Locally every form is a sum of terms $f\,\dd g_1\wedge\cdots\wedge\dd g_k$, on which Steps~1--3 determine both sides.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: the coordinate formulas of Section sec:lie are stated without derivation.
+\begin{identity}[Lie derivative in coordinates; \eqref{eq:liemetric}]\label{id:liedx}
+$\Lie_X\dd x^i=\partial_jX^i\,\dd x^j$, and $(\Lie_Xg)_{ab}=X^k\partial_kg_{ab}+g_{kb}\,\partial_aX^k+g_{ak}\,\partial_bX^k$.
+\end{identity}
+\begin{proof}
+\Step{1}{coordinate covectors} By Identity~\ref{id:cartan}, $\Lie_X\dd x^i=\dd(\iota_X\dd x^i)+\iota_X\dd\dd x^i=\dd X^i=\partial_jX^i\,\dd x^j$.
+\Step{2}{the metric} $\Lie_X$ is a derivation of $\otimes$ and $\Lie_Xf=X(f)$, so for $g=g_{ab}\,\dd x^a\otimes\dd x^b$,
+$\Lie_Xg=X^k\partial_kg_{ab}\,\dd x^a\otimes\dd x^b+g_{ab}\,\partial_cX^a\,\dd x^c\otimes\dd x^b+g_{ab}\,\partial_cX^b\,\dd x^a\otimes\dd x^c$.
+Renaming indices to read off the $(a,b)$ component gives the formula.
+\end{proof}
+
+\begin{identity}[$\dd$ is $\vd\wedge$; Theorem~\ref{thm:dGA}(1), (3)]\label{id:dGA}
+Under $\dd x^i\leftrightarrow e^i$: $\dd\omega\leftrightarrow\vd\wedge F$, and $\vd\wedge(\vd\wedge F)=0$, $\vd\lc(\vd\lc F)=0$.
+\end{identity}
+\begin{proof}
+\Step{1}{item (1)} The frame is constant, so $\vd\wedge F=\sum_{I,j}\partial_j\omega_I\,e^j\wedge e^I$, the image of \eqref{eq:dcoord}.
+\Step{2}{item (3)} $\vd\wedge\vd\wedge F=\sum e^i\wedge e^j\wedge\partial_i\partial_jF=0$ as in Identity~\ref{id:ddzero}; and by Identity~\ref{id:contr3},
+$\vd\lc(\vd\lc F)=\sum(e^i\wedge e^j)\lc\partial_i\partial_jF=0$ for the same reason.
+(Items (2), (4) and (5) of Theorem~\ref{thm:dGA} are proved in the text; (2) and (4) depend on the sign convention for $\codiff$.)
+\end{proof}
