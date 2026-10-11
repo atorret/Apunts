@@ -54,3 +54,15 @@
 
 \newcommand{\numcheck}{\textit{Numerical check.}\ }
 \newcommand{\Step}[2]{\textbf{Step #1 (#2).}\ }
+
+% ---------------------------------------------------------------------
+%  ADDED BY REWRITER (glossary): identity boxes C.1, C.2, ... with their
+%  own counter (labels id:...), and the Part B glossary entry helper.
+% ---------------------------------------------------------------------
+\newcounter{identity}
+\renewcommand{\theidentity}{C.\arabic{identity}}
+\newtcolorbox[use counter*=identity]{identity}[1][]{calloutbase,
+   colback=formalbg,colframe=navy,
+   title={Identity~\theidentity\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+% \glossentry{term}{definition}{label}: one Part B entry, with a pointer to where it is defined
+\newcommand{\glossentry}[3]{\par\noindent\hangindent=1.5em\textbf{#1}\quad #2\if\relax\detokenize{#3}\relax\else\ \textit{(see~\ref{#3}, p.~\pageref{#3})}\fi\par}

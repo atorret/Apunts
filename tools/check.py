@@ -40,6 +40,7 @@ def strip_comments(t: str) -> str:
 def main():
     tex = Path(sys.argv[1])
     t = strip_comments(expand(tex, tex.parent))
+    t = t[max(t.find("\\begin{document}"), 0):]
     counts = {
         "label": len(re.findall(r"\\label\{", t)),
         "ref+eqref": len(re.findall(r"\\(?:ref|eqref)\{", t)),
@@ -55,7 +56,7 @@ def main():
         counts[e] = len(re.findall(r"\\begin\{%s\}" % e, t))
     labels = re.findall(r"\\label\{([^}]+)\}", t)
     dup = sorted({l for l in labels if labels.count(l) > 1})
-    refs = set(re.findall(r"\\(?:ref|eqref|hyperref\[)\{?([^}\]]+)", t))
+    refs = {r for r in re.findall(r"\\(?:ref|eqref|pageref|hyperref\[)\{?([^}\]]+)", t) if "#" not in r}
     undefined = sorted(r for r in refs if r not in set(labels))
     for k, v in counts.items():
         print(f"{k:12s} {v}")
