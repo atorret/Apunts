@@ -28,7 +28,7 @@ Reproduce with `python tools/check.py legacy/original.tex legacy/original.log`.
 | `\section` (numbered) | 29 (+2 starred: Reading guide, References) |
 | `\subsection` (numbered) | 92 (+2 starred) |
 | `\Step` | 32 |
-| `\numcheck` | 12 |
+| `\numcheck` | 12 (11 in the body + the `\newcommand` in the preamble; since Phase 3 `tools/check.py` counts the body only, so the body baseline is **11**) |
 | example | 59 |
 | formal | 32 |
 | intuition | 44 |

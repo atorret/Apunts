@@ -1,15 +1,17 @@
-% Section 3: 01-metric-and-musical-isomorphisms | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 787-833
+% Section 3.1: 01-metric-and-musical-isomorphisms | Part: 1 | Depends on: sec:vectors, sec:tensors | Status: done | Original lines: 787-833
 %!TEX root = ../../../main.tex
+% REWRITTEN: notation E -> V, m -> n; the sign conventions for the signature are stated once, in the pitfall of
+% Section sec:quadform (the original sentence here pointed to sec:clifford, the pitfall to sec:ga-calculus).
 \begin{formal}[{metric}]
-A \emph{metric} on $E$ is a tensor $g\in\TT{0}{2}(E)$ (a bilinear map $g:E\times E\to\R$) such that
+A \emph{metric} on $V$ is a tensor $g\in\TT{0}{2}(V)$ (a bilinear map $g:V\times V\to\R$) such that
 \begin{enumerate}[label=(\roman*),nosep]
 \item $g(v,w)=g(w,v)$ (symmetric);
-\item $g(v,w)=0\ \ \forall w\in E\ \Rightarrow\ v=0$ (non-degenerate).
+\item $g(v,w)=0\ \ \forall w\in V\ \Rightarrow\ v=0$ (non-degenerate).
 \end{enumerate}
 In a basis, $g=g_{ij}\,e^{i}\otimes e^{j}$ with $(g_{ij})$ a symmetric \emph{invertible} matrix. Being symmetric, it can be diagonalized over $\R$; if it has $p$ positive and $q$ negative eigenvalues, the \emph{signature} is $\sig(g)=(p,q)$ (it does not depend on the basis, by Sylvester's law of inertia). 
 \begin{itemize}[nosep]
-\item $\sig=(m,0)$ (positive definite): \textbf{Riemannian}: $g$ is an inner product.
-\item $\sig=(m-1,1)$: \textbf{Lorentzian} (one negative direction, ``mostly plus''), used in GR with $m=4$, $\sig(g)=(3,1)$, \eg Minkowski $\eta=\mathrm{diag}(-1,1,1,1)$. The opposite sign convention (``mostly minus'', $\eta=\mathrm{diag}(1,-1,-1,-1)$, signature $(1,3)$) is used in the spacetime algebra of Section~\ref{sec:clifford}.
+\item $\sig=(n,0)$ (positive definite): \textbf{Riemannian}: $g$ is an inner product.
+\item $\sig=(n-1,1)$: \textbf{Lorentzian} (one negative direction, ``mostly plus''), used in GR with $n=4$, $\sig(g)=(3,1)$, \eg Minkowski $\eta=\mathrm{diag}(-1,1,1,1)$. The opposite (``mostly minus'') convention, $\eta=\mathrm{diag}(1,-1,-1,-1)$, and where each one is used, are listed in the pitfall of Section~\ref{sec:quadform}.
 \end{itemize}
 The \emph{norm squared} is $\|v\|^2=g(v,v)$, which can be positive, zero or negative in the Lorentzian case.
 \end{formal}
@@ -19,11 +21,11 @@ $g(v,w)$ tells you the length of $v$, the angle between $v$ and $w$, and the pro
 \end{intuition}
 
 \begin{formal}[{musical isomorphisms (raising and lowering indices)}]
-A metric gives an isomorphism between $E$ and $E^*$:
+A metric gives an isomorphism between $V$ and $V^*$:
 \[
-g^\flat:E\to E^*,\quad v\mapsto g(v,\cdot),\qquad\qquad g^\sharp:=(g^\flat)^{-1}:E^*\to E.
+g^\flat:V\to V^*,\quad v\mapsto g(v,\cdot),\qquad\qquad g^\sharp:=(g^\flat)^{-1}:V^*\to V.
 \]
-In components: $(g^\flat v)_k=v^jg_{jk}=:v_k$ (``lowering the index''), and, with $(g^{kl})$ the inverse matrix of $(g_{ij})$ (so $g^{ij}g_{jk}=\delta^i{}_k$), $(g^\sharp f)^l=f_kg^{kl}=:f^l$ (``raising the index''). The \emph{inverse metric} $g^{-1}=g^{ij}e_i\otimes e_j\in\TT{2}{0}$ is the induced metric on $E^*$. More generally the metric lets us raise or lower any index of any tensor, \eg $T^i{}_j\mapsto T_{ij}=g_{ik}T^k{}_j$; contraction with $g^{ij}$ is the way to take traces of $(0,2)$ tensors.
+In components: $(g^\flat v)_k=v^jg_{jk}=:v_k$ (``lowering the index''), and, with $(g^{kl})$ the inverse matrix of $(g_{ij})$ (so $g^{ij}g_{jk}=\delta^i{}_k$), $(g^\sharp f)^l=f_kg^{kl}=:f^l$ (``raising the index''). The \emph{inverse metric} $g^{-1}=g^{ij}e_i\otimes e_j\in\TT{2}{0}$ is the induced metric on $V^*$. More generally the metric lets us raise or lower any index of any tensor, \eg $T^i{}_j\mapsto T_{ij}=g_{ik}T^k{}_j$; contraction with $g^{ij}$ is the way to take traces of $(0,2)$ tensors.
 \end{formal}
 
 \begin{intuition}[{the metric identifies arrows with rulers}]
@@ -38,10 +40,4 @@ $\eta=\mathrm{diag}(-1,1,1,1)$, $\eta^{-1}=\mathrm{diag}(-1,1,1,1)$ too. For $v=
 The vector $(1,1,0,0)$ is null (a light ray with $c=1$), $(2,1,0,0)$ is timelike, $(1,2,0,0)$ is spacelike. For a worldline $x^\mu(\tau)$, \emph{proper time} is $\dd\tau^2=-\eta(\dot x,\dot x)\,\dd\lambda^2$. A Lorentz transformation is precisely a basis change $A$ with $A^t\eta A=\eta$ (compare with $M'=A^tMA$ in Section~\ref{sec:tensors}).
 \end{example}
 
-\begin{example}[{raising an index in polar coordinates: the gradient}]
-In $\R^2$ with polar coordinates $(r,\varphi)$ (see Example~\ref{ex:polarmetric} below for the derivation) the metric components are $g=\mathrm{diag}(1,r^2)$, $g^{-1}=\mathrm{diag}(1,r^{-2})$. The covector $\dd f=\partial_rf\,\dd r+\partial_\varphi f\,\dd\varphi$ becomes, after raising the index, the vector
-\[
-\nabla f=g^\sharp(\dd f)=\partial_rf\;\partial_r+\frac{1}{r^2}\partial_\varphi f\;\partial_\varphi .
-\]
-The familiar $\frac1r\partial_\varphi f\,\hat e_\varphi$ is the same thing written in the \emph{unit} basis $\hat e_\varphi=\frac1r\partial_\varphi$.
-\end{example}
+% REORDERED (F2): the example "raising an index in polar coordinates" (original L826-831) moved to Section sec:pushpull.

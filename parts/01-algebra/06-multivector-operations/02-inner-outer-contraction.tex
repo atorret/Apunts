@@ -1,4 +1,4 @@
-% Section 6: Inner, outer and contraction products} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1411-1462
+% Section 6.2: Inner, outer and contraction products | Part: 1 | Depends on: sec:clifford | Status: done | Original lines: 1411-1462
 %!TEX root = ../../../main.tex
 \subsection{Inner, outer and contraction products}
 
@@ -32,6 +32,8 @@ For $a\in V$ and multivectors $A,B,C$:
 \begin{proof}[Proof idea]
 (1) and (2) follow by induction from \eqref{eq:aA} (for $k=2$: $a\lc(b\wedge c)=(a\cdot b)c-(a\cdot c)b$). (3) is checked first for $A=a$ a vector, using (2), and then holds by induction on the grade of $A$. (4) is the statement that the wedge defined here agrees with the exterior product of \S\ref{sec:ext} (Corollary~\ref{cor:grades}).
 \end{proof}
+% AUTHOR-NOTE: (3) is only sketched, yet Theorem thm:dual depends on it. The glossary (Part C) proves (1) for k=2
+% and (3) when A, B are vectors; the general case is still open (docs/AUTHOR_NOTES.md #6).
 
 \begin{example}
 $a\lc(b\wedge c)=(a\cdot b)\,c-(a\cdot c)\,b$ is a vector lying in the plane $b\wedge c$ and perpendicular to $a$: indeed $a\cdot\bigl((a\cdot b)c-(a\cdot c)b\bigr)=0$.

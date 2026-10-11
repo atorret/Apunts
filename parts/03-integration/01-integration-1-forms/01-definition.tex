@@ -1,4 +1,4 @@
-% Section 16: Definition: integration is contraction with the velocity} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2463-2494
+% Section 16.1: Definition: integration is contraction with the velocity | Part: 3 | Depends on: sec:fields, sec:tangent | Status: todo | Original lines: 2463-2494
 %!TEX root = ../../../main.tex
 \subsection{Definition: integration is contraction with the velocity}\label{sec:int1def}
 
@@ -13,10 +13,8 @@ Equivalently, $\int_\gamma\omega=\int_{[a,b]}\gamma\pb\omega$, where the pull-ba
 \end{definition}
 
 So the integrand is nothing but the contraction of the covector with the velocity vector, followed by an ordinary Riemann integral over the parameter.
-The pull-back $\phi\pb\omega$ of a form by a smooth map $\phi$ is always defined by contraction with pushed-forward vectors:
-\begin{equation}\label{eq:pullback}
-(\phi\pb\omega)_p(v)=\omega_{\phi(p)}\bigl(\dd\phi_p\,v\bigr).
-\end{equation}
+% REORDERED: the general definition eq:pullback moved to Section sec:pushpull (merged with the GR definition there).
+Recall from Section~\ref{sec:pushpull} that the pull-back $\phi\pb\omega$ of a form by a smooth map $\phi$ is defined by contraction with pushed-forward vectors, \eqref{eq:pullback}.
 \emph{Why $\gamma\pb\omega=\omega(\dot\gamma)\,\dd t$ (steps).} Use the coordinates $\gamma^i(t)=x^i(\gamma(t))$. (1) The pull-back of the coordinate function $x^i$ is $x^i\circ\gamma=\gamma^i$, so $\gamma\pb\dd x^i=\dd(\gamma^i)=\dot\gamma^i\dd t$ (pull-back commutes with $\dd$).
 (2) Pull-back is linear and multiplies the coefficient functions by composition: $\gamma\pb(\omega_i\dd x^i)=\omega_i(\gamma(t))\dot\gamma^i(t)\,\dd t$. (3) This is $\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle\dd t$, as claimed.
 

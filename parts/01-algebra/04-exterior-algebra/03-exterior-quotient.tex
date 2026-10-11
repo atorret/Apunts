@@ -1,4 +1,4 @@
-% Section 4: The exterior algebra as a quotient of $T(V)$} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1042-1112
+% Section 4.3: The exterior algebra as a quotient of $T(V)$ | Part: 1 | Depends on: sec:tensors, sec:metric | Status: done | Original lines: 1042-1112
 %!TEX root = ../../../main.tex
 \subsection{The exterior algebra as a quotient of $T(V)$}\label{sec:extquotient}
 
@@ -24,6 +24,12 @@ to check blades $v_1\wedge\cdots\wedge v_r$ and $w_1\wedge\cdots\wedge w_s$: mov
 and there are $s$ of them.
 \end{proof}
 
+% REORDERED (F9): the universal property now precedes the basis theorem, whose proof uses it.
+\begin{theorem}[Universal property]\label{thm:extuniv}
+Alternating $k$-linear maps $V^k\to U$ correspond bijectively to linear maps $\bigwedge^kV\to U$,
+via $\beta=\tilde\beta\circ\wedge$. In symbols: $\Alt^k(V;U)\cong\Hom(\bigwedge^kV,U)$.
+\end{theorem}
+
 \begin{theorem}[Basis, dimension]\label{thm:extbasis}
 If $(e_i)$ is a basis of $V$, then $\{e_{i_1}\wedge\cdots\wedge e_{i_k}: i_1<\cdots<i_k\}$ is a basis of $\bigwedge^kV$. Hence
 \[
@@ -34,13 +40,8 @@ Moreover $v_1\wedge\cdots\wedge v_k=0$ if and only if $v_1,\dots,v_k$ are linear
 \begin{proof}[Proof sketch]
 Spanning follows from Theorem~\ref{thm:tensorbasis}, Proposition~\ref{prop:anti} (reorder indices) and $e_i\wedge e_i=0$ (kill repeats).
 Independence: for each increasing multi-index $I$ the alternating multilinear map $(v_1,\dots,v_k)\mapsto\det\bigl(e^{i_a}(v_b)\bigr)$ induces (by
-the universal property below) a functional that is $1$ on $e_I$ and $0$ on other basis elements.
+the universal property, Theorem~\ref{thm:extuniv}) a functional that is $1$ on $e_I$ and $0$ on other basis elements.
 \end{proof}
-
-\begin{theorem}[Universal property]\label{thm:extuniv}
-Alternating $k$-linear maps $V^k\to U$ correspond bijectively to linear maps $\bigwedge^kV\to U$,
-via $\beta=\tilde\beta\circ\wedge$. In symbols: $\Alt^k(V;U)\cong\Hom(\bigwedge^kV,U)$.
-\end{theorem}
 
 \begin{corollary}[Determinant]\label{cor:det}
 If $\dim V=n$ and $a_j=a_j^{\,i}e_i$ then
@@ -62,8 +63,11 @@ Also, $\bigwedge^k(V^*)\cong\Alt^k(V;\K)$: \emph{the exterior power of the dual 
 \end{remark}
 
 
+% REWRITTEN: this remark is now the single place that identifies the quotient construction applied to V^* with the
+% algebra of forms; the "second description" in Section sec:wedgetensor refers here instead of repeating it.
 \begin{remark}[Same algebra, two normalisations of the embedding]\label{rem:normalisation}
-Applied to $V^*$, the quotient $T(V^*)/\langle\alpha\otimes\alpha\rangle$ is the algebra $\bigwedge V^*$ of this section: the
+Applied to $V^*$, the quotient $T(V^*)/\langle\alpha\otimes\alpha\rangle$ is the algebra $\bigwedge V^*$ of
+Sections~\ref{sec:altforms}--\ref{sec:wedgeprops}: the
 class of $\alpha\otimes\beta$ \emph{is} $\alpha\wedge\beta$, and anticommutativity follows from the single rule $\alpha\wedge\alpha=0$ by
 polarisation, exactly as shown above. How the quotient is \emph{realised inside} $T^kV^*$ is a matter of convention
 (Section~\ref{sec:wedgetensor} and the dictionary of conventions in Section~\ref{sec:conventions}).

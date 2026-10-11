@@ -1,16 +1,38 @@
-% Section 11: Pushforward and pullback} | Part: 2 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1969-2011
+% Section 11.4: Pushforward and pullback | Part: 2 | Depends on: sec:manifolds, sec:vectors, sec:ext | Status: todo | Original lines: 1969-2011
 %!TEX root = ../../../main.tex
 \subsection{Pushforward and pullback}\label{sec:pushpull}
+% REWRITTEN: \Phi^* normalised to \Phi\pb (same rendering; docs/NOTATION.md)
 \begin{formal}[{differential of a map and pullback}]
 For a smooth $\Phi:M\to N$ the \emph{differential} (pushforward) is the linear map $T_p\Phi:T_pM\to T_{\Phi(p)}N$, $T_p\Phi(D)(\tilde f)=D(\tilde f\circ\Phi)$; in coordinates it is the Jacobian matrix. If $\Phi$ is a diffeomorphism and $\tilde\tau\in\TT{0}{k}(T_{\Phi(p)}N)$ is a covariant tensor, its \emph{pullback} is
 \[
-(\Phi^*\tilde\tau)(v_1,\dots,v_k)=\tilde\tau\big(T_p\Phi(v_1),\dots,T_p\Phi(v_k)\big).
+(\Phi\pb\tilde\tau)(v_1,\dots,v_k)=\tilde\tau\big(T_p\Phi(v_1),\dots,T_p\Phi(v_k)\big).
 \]
-For a general $(\ell,k)$ tensor, covectors are fed in via $\alpha_j\circ T\Phi^{-1}$. Properties: $(\Phi\circ\Psi)^*=\Psi^*\circ\Phi^*$.
+For a general $(\ell,k)$ tensor, covectors are fed in via $\alpha_j\circ T\Phi^{-1}$. Properties: $(\Phi\circ\Psi)\pb=\Psi\pb\circ\Phi\pb$.
 \end{formal}
 \begin{intuition}[{pullback = ``transport the measuring device backwards''}]
 To evaluate a ruler that lives on $N$ on vectors that live on $M$, first push the vectors forward to $N$. Pulling back a metric (the dot product on $N$) gives the \emph{induced metric}: the way one measures lengths of vectors on a surface inside a bigger space. Pulling back with a coordinate chart gives the \emph{components in coordinates}.
 \end{intuition}
+
+% REORDERED: the general definition of the pull-back of a form (eq:pullback) was given in Section sec:int1def
+% (original L2475-2478); it is merged here with the definition above. The naturality of the wedge (former item (e)
+% of prop:wedgeprops, original L987 and its proof L1036) is stated and proved here.
+\emph{Forms can be pulled back by any smooth map.} For covariant tensors, and in particular for forms, the formula above
+needs no inverse, so $\Phi$ need not be a diffeomorphism. For a smooth map $\phi$ (between manifolds of any dimensions;
+$\dd\phi_p=T_p\phi$ is its differential), the pull-back of a form $\omega$ is always defined by contraction with pushed-forward vectors:
+\begin{equation}\label{eq:pullback}
+(\phi\pb\omega)_p(v)=\omega_{\phi(p)}\bigl(\dd\phi_p\,v\bigr),
+\end{equation}
+and in the same way, slot by slot, for $k$-forms. On functions ($0$-forms) $\phi\pb f=f\circ\phi$. The pull-back is
+\emph{natural} with respect to the wedge product:
+\[
+\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta .
+\]
+\begin{proof}
+$(\phi\pb\alpha)(v_1,\dots)=\alpha(\dd\phi\,v_1,\dots)$, and \eqref{eq:wedge} only uses evaluation of $\alpha,\beta$ on
+vectors: evaluating both sides on $(v_1,\dots,v_{k+l})$ gives the same sum over permutations, with every $v_i$ replaced by $\dd\phi\,v_i$.
+\end{proof}
+Together with $\phi\pb\dd=\dd\,\phi\pb$ (Theorem~\ref{thm:dprops}(2) in Section~\ref{sec:dform}) this lets one pull back any form written in coordinates by
+substitution, as in the next example.
 
 \begin{example}[{Polar metric}]\label{ex:polarmetric}
 The Euclidean metric on $\R^2$ is $g=\dd x\otimes\dd x+\dd y\otimes\dd y$. Substituting $\dd x,\dd y$ from Example~\ref{ex:polarbasis}:
@@ -21,15 +43,26 @@ g=(\cos\varphi\,\dd r-r\sin\varphi\,\dd\varphi)^{\otimes2}+(\sin\varphi\,\dd r+r
 because the mixed terms $\pm r\sin\varphi\cos\varphi\,(\dd r\otimes\dd\varphi+\dd\varphi\otimes\dd r)$ cancel. So $g_{rr}=1$, $g_{\varphi\varphi}=r^2$, $g_{r\varphi}=0$. Consistently, $g(\partial_\varphi,\partial_\varphi)=r^2$.
 \end{example}
 
-\begin{example}[{induced metric on the sphere (from the lecture notes I4)}]
-The map $\varphi^{-1}(\theta,\phi)=(r\sin\theta\cos\phi,\,r\sin\theta\sin\phi,\,r\cos\theta)$ parametrizes $S^2_r$. Its partial derivatives, \ie the pushforwards of $\partial_\theta,\partial_\phi$, are
+% REORDERED (F2): moved from Section sec:metric (original L826-831), where the polar metric and the coordinate
+% fields were not yet available.
+\begin{example}[{raising an index in polar coordinates: the gradient}]
+In $\R^2$ with polar coordinates $(r,\varphi)$ the metric components are (Example~\ref{ex:polarmetric}) $g=\mathrm{diag}(1,r^2)$, $g^{-1}=\mathrm{diag}(1,r^{-2})$. The covector $\dd f=\partial_rf\,\dd r+\partial_\varphi f\,\dd\varphi$ becomes, after raising the index (Section~\ref{sec:metric}), the vector
 \[
-v_\theta=(r\cos\theta\cos\phi,\ r\cos\theta\sin\phi,\ -r\sin\theta),\qquad
-v_\phi=(-r\sin\theta\sin\phi,\ r\sin\theta\cos\phi,\ 0).
+\nabla f=g^\sharp(\dd f)=\partial_rf\;\partial_r+\frac{1}{r^2}\partial_\varphi f\;\partial_\varphi .
 \]
-Using the Euclidean dot product of $\R^3$: $|v_\theta|^2=r^2$, $|v_\phi|^2=r^2\sin^2\theta$, $v_\theta\cdot v_\phi=0$. Hence the induced metric is
+The familiar $\frac1r\partial_\varphi f\,\hat e_\varphi$ is the same thing written in the \emph{unit} basis $\hat e_\varphi=\frac1r\partial_\varphi$.
+\end{example}
+
+% REWRITTEN: sphere azimuth phi -> varphi, chart written \phi (docs/NOTATION.md)
+\begin{example}[{induced metric on the sphere (from the lecture notes I4)}]
+The map $\phi^{-1}(\theta,\varphi)=(r\sin\theta\cos\varphi,\,r\sin\theta\sin\varphi,\,r\cos\theta)$ parametrizes $S^2_r$. Its partial derivatives, \ie the pushforwards of $\partial_\theta,\partial_\varphi$, are
 \[
-g_{S^2_r}=r^2\big(\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi\big).
+v_\theta=(r\cos\theta\cos\varphi,\ r\cos\theta\sin\varphi,\ -r\sin\theta),\qquad
+v_\varphi=(-r\sin\theta\sin\varphi,\ r\sin\theta\cos\varphi,\ 0).
+\]
+Using the Euclidean dot product of $\R^3$: $|v_\theta|^2=r^2$, $|v_\varphi|^2=r^2\sin^2\theta$, $v_\theta\cdot v_\varphi=0$. Hence the induced metric is
+\[
+g_{S^2_r}=r^2\big(\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\varphi\otimes\dd\varphi\big).
 \]
 This is \emph{the} metric of the sphere, used below to compute Christoffel symbols, curvature and geodesics. For the unit sphere ($r=1$): $g=\mathrm{diag}(1,\sin^2\theta)$, $g^{-1}=\mathrm{diag}(1,1/\sin^2\theta)$.
 \end{example}

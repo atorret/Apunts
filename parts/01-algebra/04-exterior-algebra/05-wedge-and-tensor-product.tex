@@ -1,4 +1,4 @@
-% Section 4: The wedge and the tensor product} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1176-1238
+% Section 4.5: The wedge and the tensor product | Part: 1 | Depends on: sec:tensors, sec:metric | Status: done | Original lines: 1176-1238
 %!TEX root = ../../../main.tex
 \subsection{The wedge and the tensor product}\label{sec:wedgetensor}
 
@@ -20,8 +20,9 @@ with \eqref{eq:wedge} gives
 $\dd x\wedge\dd y=\dd x\otimes\dd y-\dd y\otimes\dd x$.
 
 \begin{pitfall}[a warning on conventions]
+% AUTHOR-NOTE: Kobayashi--Nomizu is named but has no bibliography entry (docs/AUTHOR_NOTES.md #9).
 Some authors (\eg Kobayashi--Nomizu) drop the factor $(k+l)!/(k!\,l!)$, which gives $\dd x\wedge\dd y=\tfrac12(\dd x\otimes\dd y-\dd y\otimes\dd x)$ and
-halves every formula above. The convention of this document for forms (that of Spivak and Lee) is the one for which
+halves every formula above. The convention of this document for forms (that of Spivak and Lee~\cite{Spivak,Lee}) is the one for which
 $(\dd x^1\wedge\cdots\wedge\dd x^n)(\partial_1,\dots,\partial_n)=1$, so that the volume form really gives volume $1$ to the unit cube.
 The embedding of the multivector algebra $\bigwedge V\subset T(V)$ used in Section~\ref{sec:extquotient} uses the other normalisation
 ($v\wedge w\mapsto\frac12(v\otimes w-w\otimes v)$); the two differ by a factor $k!$ in degree $k$ and are isomorphic as algebras
@@ -33,7 +34,8 @@ Let $T(V^*)=\bigoplus_kT^kV^*$ and let $\mathcal I$ be the two-sided ideal gener
 \begin{equation}\label{eq:extquotient}
 \textstyle\bigwedge(V^*)=\bigoplus_k\bigwedge^kV^*\ \cong\ T(V^*)/\mathcal I,\qquad \alpha\wedge\beta=[\alpha\otimes\beta].
 \end{equation}
-This is the construction of Section~\ref{sec:extquotient} applied to $V^*$. The determinant is the prime example: $\bigwedge^nV^*$ is
+% REWRITTEN: identification stated once, in Remark rem:normalisation
+This is the construction of Section~\ref{sec:extquotient} applied to $V^*$ (Remark~\ref{rem:normalisation}). The determinant is the prime example: $\bigwedge^nV^*$ is
 one-dimensional, which is why, up to normalisation, there is only one alternating $n$-linear form on $\R^n$.
 
 \subhead{Symmetric versus antisymmetric tensors}

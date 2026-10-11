@@ -1,16 +1,18 @@
-% Section 2: The tensor product} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 546-653
+% Section 2.2: The tensor product | Part: 1 | Depends on: sec:vectors | Status: done | Original lines: 546-653
 %!TEX root = ../../../main.tex
 \subsection{The tensor product}\label{sec:tensorproduct}
 \begin{formal}[{tensor product of multilinear maps}]
-Given multilinear $f:E_1\times\dots\times E_k\to\R$ and $g:F_1\times\dots\times F_\ell\to\R$, their \emph{tensor product} is the multilinear map $f\otimes g:E_1\times\dots\times E_k\times F_1\times\dots\times F_\ell\to\R$,
+% REWRITTEN: notation E_i -> V_i, F_j -> W_j (docs/NOTATION.md)
+Given multilinear $f:V_1\times\dots\times V_k\to\R$ and $g:W_1\times\dots\times W_\ell\to\R$, their \emph{tensor product} is the multilinear map $f\otimes g:V_1\times\dots\times V_k\times W_1\times\dots\times W_\ell\to\R$,
 \[
 (f\otimes g)(v_1,\dots,v_k,u_1,\dots,u_\ell)=f(v_1,\dots,v_k)\cdot g(u_1,\dots,u_\ell).
 \]
-Properties: bilinear and associative, but \textbf{not commutative} in general ($f\otimes g\ne g\otimes f$). If $\{e^{i}\}$ is the dual basis of $E_1$ and $\{f^{j}\}$ that of $E_2$, then $\{e^{i}\otimes f^{j}\}$ is a basis of the space of bilinear maps $E_1\times E_2\to\R$, which is written $E_1^*\otimes E_2^*$; its dimension is $\dim E_1\cdot\dim E_2$.
+Properties: bilinear and associative, but \textbf{not commutative} in general ($f\otimes g\ne g\otimes f$). If $\{e^{i}\}$ is the dual basis of $V_1$ and $\{f^{j}\}$ that of $V_2$, then $\{e^{i}\otimes f^{j}\}$ is a basis of the space of bilinear maps $V_1\times V_2\to\R$, which is written $V_1^*\otimes V_2^*$; its dimension is $\dim V_1\cdot\dim V_2$.
 \end{formal}
 
 \begin{intuition}[{``run both machines side by side and multiply the outputs''}]
-$f\otimes g$ is a machine with the hoppers of $f$ followed by the hoppers of $g$. It feeds the first group to $f$, the second group to $g$, and multiplies the two numbers. It is the most ``free'' way to combine two machines: all other bilinear machines are built by \emph{adding} such products. Not every bilinear machine is a single product: $e^{1}\otimes e^{2}+e^{2}\otimes e^{1}$ cannot be written as $f\otimes g$ (it is the symmetric ``product'' used for metrics).
+$f\otimes g$ is a machine with the hoppers of $f$ followed by the hoppers of $g$. It feeds the first group to $f$, the second group to $g$, and multiplies the two numbers. It is the most ``free'' way to combine two machines: all other bilinear machines are built by \emph{adding} such products. Not every bilinear machine is a single product (the \emph{pure} tensors are discussed after Theorem~\ref{thm:tensorbasis}).
+% REWRITTEN: the non-pure example e^1(x)e^2+e^2(x)e^1 is now stated once, after thm:tensorbasis
 \end{intuition}
 
 \begin{example}[{tensor product of two covectors on $\R^2$}]
@@ -49,7 +51,8 @@ $\psi:T_2\to T_1$. Then $\psi\circ\phi$ is a linear map $T_1\to T_1$ compatible 
 by the uniqueness clause they coincide. Likewise $\phi\circ\psi=\id_{T_2}$.
 \end{proof}
 
-
+% REWRITTEN: lead-in sentence added
+\emph{Existence.} A tensor product always exists; here is the standard construction.
 Let $F(V\times W)$ be the \emph{free vector space} on the \emph{set} $V\times W$: formal finite linear combinations
 $\sum_a c_a\,[(v_a,w_a)]$ of the symbols $[(v,w)]$, which are declared linearly independent.
 Let $N\subset F(V\times W)$ be the subspace spanned by all elements of the form
@@ -74,7 +77,8 @@ applying $\tilde\beta_{kl}$ gives $c^{kl}=0$.
 
 A general element is therefore $T=T^{ij}\,e_i\otimes f_j$. Elements of the form $v\otimes w$ are called
 \emph{pure} (or decomposable); they are the exception rather than the rule: $e_1\otimes e_2+e_2\otimes e_1$ is not pure
-(its coefficient matrix has rank $2$; pure tensors are exactly the rank-$1$ matrices).
+(its coefficient matrix has rank $2$; pure tensors are exactly the rank-$1$ matrices). The same holds for
+$e^{1}\otimes e^{2}+e^{2}\otimes e^{1}$, the kind of symmetric ``product'' used for metrics.
 
 \begin{proposition}[Standard identifications (finite dimension)]
 \begin{enumerate}

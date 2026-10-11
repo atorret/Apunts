@@ -1,4 +1,4 @@
-% Section 8: Relation to the Hodge star and to the dual space} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1619-1656
+% Section 8.4: Relation to the Hodge star and to the dual space | Part: 1 | Depends on: sec:ext, sec:ops | Status: done | Original lines: 1619-1656
 %!TEX root = ../../../main.tex
 \subsection{Relation to the Hodge star and to the dual space}
 
@@ -34,3 +34,11 @@ The word \emph{dual} has two meanings that are connected here. The \emph{dual sp
   \item \textbf{The pseudoscalar is the orientation of space.} Multiplying by $\pss^{-1}$ is a ``quarter-turn of the whole space'': in 2D it is multiplication by $\pm i$; in 3D it turns planes into axes. Reversing the orientation flips the sign of the dual; this is why the cross product is a \emph{pseudo}vector and the magnetic field $B$ is better treated as a \emph{bivector}.
 \end{itemize}
 \end{intuition}
+
+% REWRITTEN: bridge sentence added; the Hodge star on forms is used in Sections sec:synth2, sec:gauss and Part V.
+\emph{The Hodge star on forms.} The definition above makes sense for any oriented space with an inner product, so it applies
+verbatim to $V^*$ with the inner product induced by the metric ($g^{ij}$, Section~\ref{sec:metric}): for $k$-forms,
+$\alpha\wedge\hodge\beta=\langle\alpha,\beta\rangle\,\vol$, where $\vol=e^1\wedge\cdots\wedge e^n$ for a positively oriented orthonormal
+basis. Under the identification $e^i\leftrightarrow e_i$ of an orthonormal basis, $\hodge$ on forms is the $\hodge$ on multivectors
+of Theorem~\ref{thm:hodgeGA}; on a manifold it acts pointwise on $\bigwedge^kT_p^*M$. In $\R^3$, for example, $\hodge\dd x=\dd y\wedge\dd z$,
+$\hodge\dd y=\dd z\wedge\dd x$, $\hodge\dd z=\dd x\wedge\dd y$ and $\hodge1=\dd x\wedge\dd y\wedge\dd z$.

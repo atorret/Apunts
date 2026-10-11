@@ -1,14 +1,15 @@
-% Section 1: Vector spaces, bases and change of basis} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 353-397
+% Section 1.1: Vector spaces, bases and change of basis | Part: 1 | Depends on: none | Status: done | Original lines: 353-397
 %!TEX root = ../../../main.tex
 \subsection{Vector spaces, bases and change of basis}\label{sec:vs}
 
 
 \begin{formal}[{Vector space, basis, components}]
-A \emph{real vector space} $E$ is a set with addition and multiplication by real numbers satisfying the usual axioms. A \emph{basis} $\beta=\{e_1,\dots,e_m\}$ is a set of vectors such that every $v\in E$ can be written \emph{uniquely} as
+% REWRITTEN: notation E -> V, m -> n (docs/NOTATION.md)
+A \emph{real vector space} $V$ is a set with addition and multiplication by real numbers satisfying the usual axioms. A \emph{basis} $\beta=\{e_1,\dots,e_n\}$ is a set of vectors such that every $v\in V$ can be written \emph{uniquely} as
 \[
-v=v^1e_1+\dots+v^me_m = v^ie_i .
+v=v^1e_1+\dots+v^ne_n = v^ie_i .
 \]
-The numbers $(v^1,\dots,v^m)\in\R^m$ are the \emph{components} (or coordinates) of $v$ with respect to $\beta$. Choosing a basis gives an isomorphism $E\to\R^m$, $v\mapsto (v^i)$.
+The numbers $(v^1,\dots,v^n)\in\R^n$ are the \emph{components} (or coordinates) of $v$ with respect to $\beta$. Choosing a basis gives an isomorphism $V\to\R^n$, $v\mapsto (v^i)$.
 \end{formal}
 
 \begin{intuition}[{a vector is an arrow, components are a description of it}]
@@ -18,7 +19,7 @@ A vector is a geometric object (``an arrow'', a velocity, a displacement). It ex
 \subsection*{Change of basis}
 Let $\beta=\{e_i\}$ be the ``old'' basis and $\beta'=\{e'_i\}$ the ``new'' one. Write the new basis vectors in terms of the old ones:
 \begin{equation}\label{eq:basischange}
-e'_i=\sum_j A^j{}_i\, e_j ,\qquad A=(A^j{}_i)\in GL_m(\R)
+e'_i=\sum_j A^j{}_i\, e_j ,\qquad A=(A^j{}_i)\in GL_n(\R)
 \end{equation}
 (the coefficients of $e'_i$ form the $i$-th \emph{column} of $A$). If $v=v^je_j=v'^ie'_i$, substituting \eqref{eq:basischange} gives
 \begin{equation}\label{eq:compchange}

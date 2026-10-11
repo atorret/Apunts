@@ -1,4 +1,4 @@
-% Section 17: Partial contraction and flux} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2636-2662
+% Section 17.2: Partial contraction and flux | Part: 3 | Depends on: sec:int1, sec:ext | Status: todo | Original lines: 2636-2662
 %!TEX root = ../../../main.tex
 \subsection{Partial contraction and flux}\label{sec:flux}
 
@@ -12,15 +12,9 @@ is the signed volume of the parallelepiped spanned by $X,w_2,\dots,w_n$: the vol
 \end{equation}
 \emph{No normal vector and no metric have been used;} with a Riemannian metric this will turn out to equal $\int_\Sigma\langle X,N\rangle\,\dd A$ (Lemma~\ref{lem:fluxbdry}).
 
-\emph{Computing $\iota_X\mu$ in $\R^3$ (steps).} Let $\mu=\dd x\wedge\dd y\wedge\dd z$ and $X=X^1\partial_x+X^2\partial_y+X^3\partial_z$. Using the antiderivation rule on $\dd x\wedge(\dd y\wedge\dd z)$:
-\begin{enumerate}
-\item $\iota_X(\dd y\wedge\dd z)=X^2\dd z-X^3\dd y$ (same computation as in Example~\ref{ex:interiorplane}).
-\item $\iota_X\mu=(\iota_X\dd x)\,\dd y\wedge\dd z-\dd x\wedge\iota_X(\dd y\wedge\dd z)=X^1\dd y\wedge\dd z-\dd x\wedge(X^2\dd z-X^3\dd y)$.
-\item Expanding and using $-\dd x\wedge\dd z=\dd z\wedge\dd x$:
-\begin{equation}\label{eq:iotavol}
-\iota_X\mu=X^1\,\dd y\wedge\dd z+X^2\,\dd z\wedge\dd x+X^3\,\dd x\wedge\dd y .
-\end{equation}
-\end{enumerate}
+% REORDERED (F5): the step-by-step computation of iota_X mu in R^3 now lives in Section sec:interior.
+\emph{In $\R^3$.} For $\mu=\dd x\wedge\dd y\wedge\dd z$ and $X=X^1\partial_x+X^2\partial_y+X^3\partial_z$ the flux form was computed in
+Section~\ref{sec:interior}, \eqref{eq:iotavol}: $\iota_X\mu=X^1\,\dd y\wedge\dd z+X^2\,\dd z\wedge\dd x+X^3\,\dd x\wedge\dd y$.
 \emph{Check:} on a horizontal plane $z=\mathrm{const}$ oriented by $(\partial_x,\partial_y)$, $\dd z=0$ so only $X^3\dd x\wedge\dd y$ survives: the flux is $\iint X^3\,\dd x\,\dd y$, the component of $X$ along the normal $\partial_z$, as expected.
 
 \begin{synthesis}[the same formula in geometric algebra]

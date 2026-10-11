@@ -1,7 +1,10 @@
-% Section 4: Properties of the wedge product} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 984-1041
+% Section 4.2: Properties of the wedge product | Part: 1 | Depends on: sec:tensors, sec:metric | Status: done | Original lines: 984-1041
 %!TEX root = ../../../main.tex
 \subsection{Properties of the wedge product}\label{sec:wedgeprops}
 
+% REWRITTEN (F1): items (a)-(d) unchanged. The former item (e) (pull-back of a wedge) is now stated and proved
+% in Section sec:pushpull, where the pull-back is defined; the antiderivation rule for iota_v (eq:antider) is
+% stated and proved in Section sec:interior. The Leibniz rule for d (eq:dleibniz) stays here as a preview.
 \begin{proposition}\label{prop:wedgeprops}
 Let $\alpha\in\bigwedge^k$, $\beta\in\bigwedge^l$, $\gamma\in\bigwedge^m$ and $f$ a function (a $0$-form).
 \begin{enumerate}[label=(\alph*)]
@@ -9,14 +12,18 @@ Let $\alpha\in\bigwedge^k$, $\beta\in\bigwedge^l$, $\gamma\in\bigwedge^m$ and $f
 \item \emph{Graded commutative:} $\alpha\wedge\beta=(-1)^{kl}\beta\wedge\alpha$. In particular $\alpha\wedge\alpha=0$ if $k$ is odd (\eg $\dd x\wedge\dd x=0$), and even-degree forms commute with everything.
 \item \emph{Non-vanishing criterion:} for $1$-forms, $\alpha^1\wedge\cdots\wedge\alpha^k\neq0$ if and only if $\alpha^1,\dots,\alpha^k$ are linearly independent.
 \item \emph{Change of basis $=$ determinant:} if $\beta^i=A^i{}_j\alpha^j$ ($i,j=1,\dots,n$), then $\beta^1\wedge\cdots\wedge\beta^n=\det(A)\,\alpha^1\wedge\cdots\wedge\alpha^n$.
-\item \emph{Naturality:} for a linear (or smooth) map $\phi$, $\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta$.
-\item \emph{Compatibility with $\iota_v$ and $\dd$:} both are antiderivations,
-\begin{align}
-\iota_v(\alpha\wedge\beta)&=\iota_v\alpha\wedge\beta+(-1)^k\alpha\wedge\iota_v\beta,\label{eq:antider}\\
-\dd(\alpha\wedge\beta)&=\dd\alpha\wedge\beta+(-1)^k\alpha\wedge\dd\beta,\qquad \dd\dd=0.\label{eq:dleibniz}
-\end{align}
 \end{enumerate}
 \end{proposition}
+
+\emph{Two further rules (previews).} The wedge product is also compatible with the operations on forms introduced later:
+it is natural under pull-back, $\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta$ (Section~\ref{sec:pushpull}); the interior
+product $\iota_v$ is an antiderivation, \eqref{eq:antider} (Section~\ref{sec:interior}); and so is the exterior derivative of
+Definition~\ref{def:d},
+\begin{equation}\label{eq:dleibniz}
+\dd(\alpha\wedge\beta)=\dd\alpha\wedge\beta+(-1)^k\alpha\wedge\dd\beta,\qquad \dd\dd=0,
+\end{equation}
+which is the Leibniz rule for $\dd$ (\eg $\dd(f\alpha)=\dd f\wedge\alpha+f\,\dd\alpha$), together with $\dd\dd=0$ proved in
+Section~\ref{sec:dform}.
 
 \begin{proof}[Proofs, step by step]
 \emph{(b) Graded commutativity.} \Step{1}{$k=l=1$} immediate from \eqref{eq:wedge11}:
@@ -33,24 +40,12 @@ for every choice of $v_j$, and the determinant is $0$.
 
 \emph{(d) Determinant.} By \eqref{eq:detformula}, $(\beta^1\wedge\cdots\wedge\beta^n)(v_1,\dots,v_n)=\det[\beta^i(v_j)]=\det\bigl(A[\alpha^i(v_j)]\bigr)=\det A\cdot\det[\alpha^i(v_j)]$.
 
-\emph{(e)} is clear because $(\phi\pb\alpha)(v_1,\dots)=\alpha(\dd\phi\,v_1,\dots)$ and \eqref{eq:wedge} only uses evaluation of $\alpha,\beta$ on
-vectors. \emph{(a)} follows from \eqref{eq:wedge} by a count of permutations (see also the tensor description in
-Section~\ref{sec:wedgetensor}). Identity \eqref{eq:antider} is the antiderivation property of Section~\ref{sec:interior};
-\eqref{eq:dleibniz} is the Leibniz rule for $\dd$ (\eg $\dd(f\alpha)=\dd f\wedge\alpha+f\,\dd\alpha$), together with $\dd\dd=0$ proved in
-Section~\ref{sec:dform}.
+\emph{(a)} follows from \eqref{eq:wedge} by a count of permutations (see also the tensor description in
+Section~\ref{sec:wedgetensor}).
 \end{proof}
 
-\begin{example}[Polar coordinates: the factor $r$ is a determinant]\label{ex:polarwedge}
-From $x=r\cos\theta$, $y=r\sin\theta$: $\dd x=\cos\theta\,\dd r-r\sin\theta\,\dd\theta$ and
-$\dd y=\sin\theta\,\dd r+r\cos\theta\,\dd\theta$. Using $\dd r\wedge\dd r=\dd\theta\wedge\dd\theta=0$ and
-$\dd\theta\wedge\dd r=-\dd r\wedge\dd\theta$:
-\begin{align*}
-\dd x\wedge\dd y&=\cos\theta\,(r\cos\theta)\,\dd r\wedge\dd\theta+(-r\sin\theta)(\sin\theta)\,\dd\theta\wedge\dd r\\
-&=r\cos^2\theta\,\dd r\wedge\dd\theta+r\sin^2\theta\,\dd r\wedge\dd\theta=r\,\dd r\wedge\dd\theta .
-\end{align*}
-This is property (d) with $A=\begin{pmatrix}\cos\theta&-r\sin\theta\\ \sin\theta&r\cos\theta\end{pmatrix}$, $\det A=r$, and it is the
-origin of the factor $r$ in Example~\ref{ex:paraboloid}.
-\end{example}
+% REORDERED (F3): Example ex:polarwedge (polar coordinates, original L1024-1034) moved to Section sec:changecoords,
+% where dx, dy in polar coordinates are derived. Example ex:wedge2 remains the Part I illustration of (d).
 
 \begin{example}[Wedge of two $1$-forms]\label{ex:wedge2}
 Let $\alpha=2\,\dd x+\dd y$ and $\beta=\dd x-3\,\dd y$. Then $\alpha\wedge\beta=2\cdot(-3)\,\dd x\wedge\dd y+1\cdot1\,\dd y\wedge\dd x

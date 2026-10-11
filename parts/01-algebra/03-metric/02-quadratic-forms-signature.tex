@@ -1,10 +1,13 @@
-% Section 3: Quadratic forms, polarization and signature} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 844-881
+% Section 3.2: Quadratic forms, polarization and signature | Part: 1 | Depends on: sec:vectors, sec:tensors | Status: done | Original lines: 844-881
 %!TEX root = ../../../main.tex
 \subsection{Quadratic forms, polarization and signature}\label{sec:quadform}
 The geometric algebra of Sections~\ref{sec:clifford}--\ref{sec:duality} is built directly on the quadratic form $Q(v)=g(v,v)$
 associated with the metric, so we recall the relation between the two and the notation for the signature.
+% REWRITTEN: merged with the formal box "metric" above, which is the definition of a metric. Kept here: the
+% quadratic form, polarization, the signature (p,q,r) and R^{p,q}. As in the geometric-algebra literature, this
+% definition also allows a degenerate g (r>0); the formal box above does not (logged in docs/NOTATION.md).
 \begin{definition}[Metric, quadratic form]
-A \emph{metric} on $V$ is a symmetric bilinear form $g:V\times V\to\K$. It induces the
+Let $g:V\times V\to\K$ be a symmetric bilinear form (a metric as above, but here non-degeneracy is not assumed). It induces the
 \emph{quadratic form} $Q(v)=g(v,v)$, and conversely (when $\mathrm{char}\,\K\neq2$) $g$ is
 recovered by \emph{polarization}:
 \begin{equation}\label{eq:polar}
@@ -16,8 +19,7 @@ $g(e_i,e_i)\in\{+1,-1,0\}$; the numbers $(p,q,r)$ of $+1,-1,0$ form the \emph{si
 We write $\R^{p,q}$ when $r=0$ and $\R^n=\R^{n,0}$ for the Euclidean case.
 \end{definition}
 
-A non-degenerate metric yields the \emph{musical isomorphism} $\flat:V\to V^*$,
-$v\mapsto g(v,\cdot)$, which allows us to identify vectors and covectors.
+% REWRITTEN: the repeated statement of the musical isomorphism (original L861) dropped; see the formal box above.
 We shall write $u\cdot v:=g(u,v)$.
 
 \begin{intuition}
@@ -32,6 +34,7 @@ special relativity). The exterior algebra will need \emph{no} metric; geometric 
 so that $\R^{p,q}$ and $\Cl(p,q)$ have $p$ basis vectors with $e_i^2=+1$ and $q$ with $e_i^2=-1$; Euclidean space is $(n,0)$.
 (ii) General relativity (and Sections~\ref{sec:phys}--\ref{sec:bridge}) uses ``mostly plus'' $\eta=\mathrm{diag}(-1,1,1,1)$, i.e.\ signature
 $(3,1)$; (iii) the spacetime algebra of Section~\ref{sec:ga-calculus} uses ``mostly minus'' $\gamma_0^2=+1$, $\gamma_i^2=-1$, i.e.\ $(1,3)$.
-Physical statements are the same in the two conventions; only the signs of formulas such as $\vd^2=\pm\Box$ or
-$p^2=\mp m^2$ differ. Always check which one a formula assumes.
+Physical statements are the same in the two conventions; only the signs of formulas such as $\vd^2=\pm\Box$ (for the vector
+derivative $\vd$ of Section~\ref{sec:ga-calculus}) or
+$p^2=\mp m^2$ differ. Always check which one a formula assumes. This box is the reference for signature conventions in the whole document.
 \end{pitfall}

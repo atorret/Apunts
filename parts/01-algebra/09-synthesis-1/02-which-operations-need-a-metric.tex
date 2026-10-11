@@ -1,4 +1,4 @@
-% Section 9: Which operations need a metric?} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1723-1752
+% Section 9.2: Which operations need a metric? | Part: 1 | Depends on: sec:vectors to sec:duality | Status: done | Original lines: 1723-1752
 %!TEX root = ../../../main.tex
 \subsection{Which operations need a metric?}\label{sec:whichmetric}
 
@@ -26,6 +26,7 @@ Levi-Civita connection, geodesics, curvature & yes & $g$ (a bare connection need
 \end{center}
 
 \begin{remark}[dual basis versus reciprocal frame]\label{rem:reciprocal}
-The \emph{dual basis} $e^i\in V^*$ is defined without a metric by $e^i(e_j)=\delta^i{}_j$. The \emph{reciprocal frame} of geometric algebra is the vector $e^i_\sharp=g^{ij}e_j\in V$ with $e^i_\sharp\cdot e_j=\delta^i{}_j$; it is the dual basis transported by $\sharp$. For an orthonormal frame with $e_i^2=\varepsilon_i=\pm1$ it is simply $e_i^\sharp=\varepsilon_ie_i$. This is the reciprocal frame
+The \emph{dual basis} $e^i\in V^*$ is defined without a metric by $e^i(e_j)=\delta^i{}_j$. The \emph{reciprocal frame} of geometric algebra is the vector $e^i_\sharp=g^{ij}e_j\in V$ with $e^i_\sharp\cdot e_j=\delta^i{}_j$; it is the dual basis transported by $\sharp$. For an orthonormal frame with $e_i^2=\varepsilon_i=\pm1$ it is simply $e^i_\sharp=\varepsilon_ie_i$.
+% REWRITTEN: e_i^\sharp -> e^i_\sharp (one notation for the reciprocal frame; docs/NOTATION.md) This is the reciprocal frame
 used by the vector derivative $\vd=e^i_\sharp\,\partial_i$ in Section~\ref{sec:ga-calculus}.
 \end{remark}
