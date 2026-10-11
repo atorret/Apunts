@@ -1,0 +1,47 @@
+% Section 3: 01-metric-and-musical-isomorphisms | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 787-833
+%!TEX root = ../../../main.tex
+\begin{formal}[{metric}]
+A \emph{metric} on $E$ is a tensor $g\in\TT{0}{2}(E)$ (a bilinear map $g:E\times E\to\R$) such that
+\begin{enumerate}[label=(\roman*),nosep]
+\item $g(v,w)=g(w,v)$ (symmetric);
+\item $g(v,w)=0\ \ \forall w\in E\ \Rightarrow\ v=0$ (non-degenerate).
+\end{enumerate}
+In a basis, $g=g_{ij}\,e^{i}\otimes e^{j}$ with $(g_{ij})$ a symmetric \emph{invertible} matrix. Being symmetric, it can be diagonalized over $\R$; if it has $p$ positive and $q$ negative eigenvalues, the \emph{signature} is $\sig(g)=(p,q)$ (it does not depend on the basis, by Sylvester's law of inertia). 
+\begin{itemize}[nosep]
+\item $\sig=(m,0)$ (positive definite): \textbf{Riemannian}: $g$ is an inner product.
+\item $\sig=(m-1,1)$: \textbf{Lorentzian} (one negative direction, ``mostly plus''), used in GR with $m=4$, $\sig(g)=(3,1)$, \eg Minkowski $\eta=\mathrm{diag}(-1,1,1,1)$. The opposite sign convention (``mostly minus'', $\eta=\mathrm{diag}(1,-1,-1,-1)$, signature $(1,3)$) is used in the spacetime algebra of Section~\ref{sec:clifford}.
+\end{itemize}
+The \emph{norm squared} is $\|v\|^2=g(v,v)$, which can be positive, zero or negative in the Lorentzian case.
+\end{formal}
+
+\begin{intuition}[{the metric is the ``dot product'': it defines lengths, angles and (in GR) causality}]
+$g(v,w)$ tells you the length of $v$, the angle between $v$ and $w$, and the projection of $v$ on $w$. In ordinary space all vectors have $g(v,v)\geq0$. In relativity the metric is \emph{indefinite}: a vector $v$ with $g(v,v)<0$ is \textbf{timelike} (a possible velocity of a massive particle), $g(v,v)=0$ with $v\ne0$ is \textbf{null} (light), $g(v,v)>0$ is \textbf{spacelike}. The null vectors form the \emph{light cone} and non-degeneracy does not mean ``$g(v,v)\neq0$ for all $v\neq0$'', it only means that $v\neq0$ always has \emph{some} partner $w$ with $g(v,w)\neq0$.
+\end{intuition}
+
+\begin{formal}[{musical isomorphisms (raising and lowering indices)}]
+A metric gives an isomorphism between $E$ and $E^*$:
+\[
+g^\flat:E\to E^*,\quad v\mapsto g(v,\cdot),\qquad\qquad g^\sharp:=(g^\flat)^{-1}:E^*\to E.
+\]
+In components: $(g^\flat v)_k=v^jg_{jk}=:v_k$ (``lowering the index''), and, with $(g^{kl})$ the inverse matrix of $(g_{ij})$ (so $g^{ij}g_{jk}=\delta^i{}_k$), $(g^\sharp f)^l=f_kg^{kl}=:f^l$ (``raising the index''). The \emph{inverse metric} $g^{-1}=g^{ij}e_i\otimes e_j\in\TT{2}{0}$ is the induced metric on $E^*$. More generally the metric lets us raise or lower any index of any tensor, \eg $T^i{}_j\mapsto T_{ij}=g_{ik}T^k{}_j$; contraction with $g^{ij}$ is the way to take traces of $(0,2)$ tensors.
+\end{formal}
+
+\begin{intuition}[{the metric identifies arrows with rulers}]
+Given an arrow $v$, the covector $g(v,\cdot)$ is ``the ruler that measures how much of any vector $w$ lies along $v$ (scaled by $|v|$)''. This is the \emph{only} reason why in Euclidean space we can pretend that arrows and covectors are the same thing: with $g=\delta_{ij}$ lowering and raising indices does not change the numbers. With another metric (polar coordinates, curved space, Minkowski) the numbers do change, and the difference between upper and lower indices matters.
+\end{intuition}
+
+\begin{example}[{Minkowski space}]
+$\eta=\mathrm{diag}(-1,1,1,1)$, $\eta^{-1}=\mathrm{diag}(-1,1,1,1)$ too. For $v=(v^0,v^1,v^2,v^3)$ the lowered components are $v_\mu=(-v^0,v^1,v^2,v^3)$, so
+\[
+\eta(v,v)=-(v^0)^2+(v^1)^2+(v^2)^2+(v^3)^2.
+\]
+The vector $(1,1,0,0)$ is null (a light ray with $c=1$), $(2,1,0,0)$ is timelike, $(1,2,0,0)$ is spacelike. For a worldline $x^\mu(\tau)$, \emph{proper time} is $\dd\tau^2=-\eta(\dot x,\dot x)\,\dd\lambda^2$. A Lorentz transformation is precisely a basis change $A$ with $A^t\eta A=\eta$ (compare with $M'=A^tMA$ in Section~\ref{sec:tensors}).
+\end{example}
+
+\begin{example}[{raising an index in polar coordinates: the gradient}]
+In $\R^2$ with polar coordinates $(r,\varphi)$ (see Example~\ref{ex:polarmetric} below for the derivation) the metric components are $g=\mathrm{diag}(1,r^2)$, $g^{-1}=\mathrm{diag}(1,r^{-2})$. The covector $\dd f=\partial_rf\,\dd r+\partial_\varphi f\,\dd\varphi$ becomes, after raising the index, the vector
+\[
+\nabla f=g^\sharp(\dd f)=\partial_rf\;\partial_r+\frac{1}{r^2}\partial_\varphi f\;\partial_\varphi .
+\]
+The familiar $\frac1r\partial_\varphi f\,\hat e_\varphi$ is the same thing written in the \emph{unit} basis $\hat e_\varphi=\frac1r\partial_\varphi$.
+\end{example}

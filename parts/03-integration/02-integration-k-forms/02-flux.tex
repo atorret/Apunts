@@ -1,0 +1,28 @@
+% Section 17: Partial contraction and flux} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2636-2662
+%!TEX root = ../../../main.tex
+\subsection{Partial contraction and flux}\label{sec:flux}
+
+Partial contractions appear whenever a vector field is to be integrated over a hypersurface. Let $\mu$ be an $n$-form (\eg a volume form) and $X$ a vector field. Then $\iota_X\mu$ is an $(n-1)$-form, and for tangent vectors $w_2,\dots,w_n$ to a hypersurface $\Sigma$,
+\[
+(\iota_X\mu)(w_2,\dots,w_n)=\mu(X,w_2,\dots,w_n)
+\]
+is the signed volume of the parallelepiped spanned by $X,w_2,\dots,w_n$: the volume of material carried by the flow of $X$ through the element of area spanned by $w_2,\dots,w_n$. Hence
+\begin{equation}\label{eq:flux}
+\text{flux of }X\text{ through }\Sigma=\int_\Sigma\iota_X\mu .
+\end{equation}
+\emph{No normal vector and no metric have been used;} with a Riemannian metric this will turn out to equal $\int_\Sigma\langle X,N\rangle\,\dd A$ (Lemma~\ref{lem:fluxbdry}).
+
+\emph{Computing $\iota_X\mu$ in $\R^3$ (steps).} Let $\mu=\dd x\wedge\dd y\wedge\dd z$ and $X=X^1\partial_x+X^2\partial_y+X^3\partial_z$. Using the antiderivation rule on $\dd x\wedge(\dd y\wedge\dd z)$:
+\begin{enumerate}
+\item $\iota_X(\dd y\wedge\dd z)=X^2\dd z-X^3\dd y$ (same computation as in Example~\ref{ex:interiorplane}).
+\item $\iota_X\mu=(\iota_X\dd x)\,\dd y\wedge\dd z-\dd x\wedge\iota_X(\dd y\wedge\dd z)=X^1\dd y\wedge\dd z-\dd x\wedge(X^2\dd z-X^3\dd y)$.
+\item Expanding and using $-\dd x\wedge\dd z=\dd z\wedge\dd x$:
+\begin{equation}\label{eq:iotavol}
+\iota_X\mu=X^1\,\dd y\wedge\dd z+X^2\,\dd z\wedge\dd x+X^3\,\dd x\wedge\dd y .
+\end{equation}
+\end{enumerate}
+\emph{Check:} on a horizontal plane $z=\mathrm{const}$ oriented by $(\partial_x,\partial_y)$, $\dd z=0$ so only $X^3\dd x\wedge\dd y$ survives: the flux is $\iint X^3\,\dd x\,\dd y$, the component of $X$ along the normal $\partial_z$, as expected.
+
+\begin{synthesis}[the same formula in geometric algebra]
+Under $\dd x^i\leftrightarrow e_i$, \eqref{eq:iotavol} is the bivector $X^1e_2e_3+X^2e_3e_1+X^3e_1e_2=X\pss$ (Proposition~\ref{prop:threelang}): the flux $2$-form of $X$ is the \emph{dual} of the vector $X$. This is the geometric content of ``a vector in $\R^3$ is secretly a plane element'' (Section~\ref{sec:duality}).
+\end{synthesis}

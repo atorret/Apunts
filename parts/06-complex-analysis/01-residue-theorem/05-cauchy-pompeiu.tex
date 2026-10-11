@@ -1,0 +1,20 @@
+% Section 27: Beyond holomorphic functions: Cauchy--Pompeiu and the Coulomb law in 2D} | Part: 6 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3855-3873
+%!TEX root = ../../../main.tex
+\subsection{Beyond holomorphic functions: Cauchy--Pompeiu and the Coulomb law in 2D}\label{sec:pompeiu}
+
+If $f$ is merely smooth, Stokes still applies. Let us derive the Cauchy--Pompeiu formula step by step, with $\omega=\dfrac{f\,\dd z}{z-z_0}$ on $\Omega_\varepsilon=\Omega\setminus D(z_0,\varepsilon)$.
+\begin{enumerate}
+\item \emph{Differentiate.} $1/(z-z_0)$ is holomorphic away from $z_0$, so $\partial_{\bar z}\bigl(f/(z-z_0)\bigr)=\partial_{\bar z}f/(z-z_0)$ and, by \eqref{eq:dfdz}, $\dd\omega=\dfrac{\partial_{\bar z}f}{z-z_0}\,2i\,\dd x\wedge\dd y$.
+\item \emph{Stokes on $\Omega_\varepsilon$} (outer boundary ccw, small circle cw): $\displaystyle\oint_{\partial\Omega}\omega-\oint_{|z-z_0|=\varepsilon}\omega=\int_{\Omega_\varepsilon}\dd\omega$.
+\item \emph{The small circle.} With $z=z_0+\varepsilon e^{it}$: $\displaystyle\oint\omega=\int_0^{2\pi}\frac{f(z_0+\varepsilon e^{it})}{\varepsilon e^{it}}\,i\varepsilon e^{it}\,\dd t=i\int_0^{2\pi}f(z_0+\varepsilon e^{it})\,\dd t\xrightarrow[\varepsilon\to0]{}2\pi if(z_0)$ by continuity of $f$.
+\item \emph{Let $\varepsilon\to0$.} The area integral converges because $1/|z-z_0|$ is integrable in the plane (area element $r\,\dd r\,\dd\theta$). We get $\displaystyle\oint_{\partial\Omega}\frac{f\,\dd z}{z-z_0}-2\pi if(z_0)=2i\iint_\Omega\frac{\partial_{\bar z}f}{z-z_0}\,\dd A$.
+\item \emph{Divide by $2\pi i$ and solve for $f(z_0)$:}
+\begin{equation}\label{eq:pompeiu}
+f(z_0)=\frac1{2\pi i}\oint_{\partial\Omega}\frac{f(z)}{z-z_0}\,\dd z-\frac1\pi\iint_\Omega\frac{\partial_{\bar z}f}{z-z_0}\,\dd A .
+\end{equation}
+\end{enumerate}
+For holomorphic $f$ the area term vanishes and we recover Cauchy's integral formula. In the language of distributions the same computation says $\partial_{\bar z}\bigl(\frac1{\pi z}\bigr)=\delta_0$, \ie $1/(\pi z)$ is the fundamental solution of $\partial_{\bar z}$, in perfect analogy with the Gauss law in the plane (Section~\ref{sec:phys-em}): a point charge $Q$ (or a point vortex with circulation $\Gamma$ and source $Q$) is a simple pole of the complex field $w$ whose residue encodes the charge: $\Res_0w=\frac{\Gamma+iQ}{2\pi i}$, \ie $2\pi i\Res_0w=\Gamma+iQ$,
+\[
+w(z)=\frac{\Gamma+iQ}{2\pi i}\,\frac1z\quad\Longrightarrow\quad\oint w\,\dd z=\Gamma+iQ .
+\]
+This is why the residue theorem reads, in electrostatics or fluid mechanics, as ``the total flux (and circulation) through a curve equals the sum of the charges (vortices) inside''.

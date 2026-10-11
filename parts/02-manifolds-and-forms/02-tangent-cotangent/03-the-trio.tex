@@ -1,0 +1,65 @@
+% Section 11: The trio $x$, $\dd x$, $\partial/\partial x$} | Part: 2 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1905-1968
+%!TEX root = ../../../main.tex
+\subsection{The trio $x$, $\dd x$, $\partial/\partial x$}\label{sec:trio}
+
+The symbols $x$, $\dd x$ and $\dd/\dd x$ appear together in every calculus course and are almost always confused. They are three
+different kinds of objects:
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{2.3cm}p{5.0cm}p{3.1cm}p{3.4cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{What it is} & \textbf{Eats} & \textbf{Returns}\\
+\midrule
+$x$ & coordinate function (a $0$-form) & a point $p\in M$ & the number $x(p)$\\
+$\dd x$ & its differential: a $1$-form (covector field) & a vector $v\in T_pM$ & $\dd x(v)=v(x)=v^x$\\
+$\partial/\partial x$ ($=\dd/\dd x$ in dimension $1$) & coordinate vector field (a derivation) & a function $f$ & the function $\partial f/\partial x$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So $\dd x$ is not ``a small increment of $x$''; it is the \emph{linear function} $v\mapsto v^x$ on each tangent space, obtained by applying the
+exterior derivative to the function $x$: $\dd x=\dd(x)$. The increment picture is recovered when one integrates
+(Section~\ref{sec:int1}: each small displacement $\Delta\gamma_j$ is eaten by $\dd x$). The three objects are tied together by
+\begin{equation}\label{eq:trio}
+\dd x^i(\partial_j)=\delta^i{}_j,\qquad \dd f=\frac{\partial f}{\partial x^i}\,\dd x^i,\qquad \frac{\partial f}{\partial x^i}=\iota_{\partial_i}\dd f=\langle\dd f,\partial_i\rangle .
+\end{equation}
+The first says that $\dd x^i$ and $\partial_i$ are dual bases (Section~\ref{sec:dualspace}); the second expands the covector $\dd f$ in the basis $\dd x^i$; the third reads off its components by contraction.
+Read together: $\partial/\partial x$ is the operator $\iota_{\partial_x}\dd$ on functions.
+
+\subhead{The key asymmetry: $\dd x$ depends on the function $x$, $\partial/\partial x$ on the whole chart}
+The covector $\dd x$ is built from the single function $x$; the vector $\partial/\partial x$ means ``move $x$ while keeping all the other coordinates fixed'', so it changes if the other coordinates change.
+
+\begin{example}[Same $x$, different $\partial_x$]\label{ex:sameXdiffdx}
+On $\R^2$ compare the charts $(x,y)$ and $(x,s)$ with $s=x+y$. The function $x$ is the same, so $\dd x$ is the same. For a function $f(x,y)=g(x,s(x,y))$ the chain rule gives
+\[
+\left.\frac{\partial f}{\partial x}\right|_y=\left.\frac{\partial g}{\partial x}\right|_s+\frac{\partial g}{\partial s},\qquad
+\left.\frac{\partial f}{\partial y}\right|_x=\frac{\partial g}{\partial s},
+\]
+so $\partial_x|_y=\partial_x|_s+\partial_s=\partial_x|_s+\partial_y$, that is $\partial_x|_s=\partial_x|_y-\partial_y$.
+\numcheck $\dd x(\partial_x|_s)=1$ and $\dd s(\partial_x|_s)=(\dd x+\dd y)(\partial_x-\partial_y)=1-1=0$: the vector $\partial_x|_s$ moves $x$ and leaves $s$ fixed, as the notation promises.
+This is exactly why thermodynamics writes $(\partial U/\partial T)_V$ and $(\partial U/\partial T)_p$ for different quantities (Section~\ref{sec:phys-thermo}): the subscript names the other coordinates, which the bare symbol $\partial/\partial T$ does not.
+\end{example}
+
+\begin{synthesis}[the same asymmetry in the language of dual bases]
+In $\R^2$ with basis $e_1=(1,0)$, $e_2=(1,1)$ the dual covector is $e^1=x-y$: it depends on the \emph{whole basis}, not only on $e_1$ (change only $e_2$ and $e^1$ changes).
+In the language of coordinates: the new coordinate function is $x^1=x-y$ (with $x^2=y$), $e^1=\dd x^1$ depends only on the \emph{single function} $x^1$, while $e_1=\partial/\partial x^1$ depends on the \emph{whole chart} $(x^1,x^2)$.
+The two statements are the same fact seen from the two sides of the duality $e^i(e_j)=\delta^i{}_j$.
+\end{synthesis}
+
+\subhead{How they change under a change of variable}
+Let $x=x(u)$ in one dimension. Then
+\[
+\dd x=\frac{\dd x}{\dd u}\,\dd u,\qquad \frac\partial{\partial u}=\frac{\dd x}{\dd u}\,\frac\partial{\partial x}\iff\frac\partial{\partial x}=\Bigl(\frac{\dd x}{\dd u}\Bigr)^{-1}\frac\partial{\partial u},
+\]
+so the covector $\dd x$ is multiplied by $x'(u)$ and the vector $\partial_x$ by $1/x'(u)$, and their pairing is invariant.
+\numcheck With $x=u^2$ ($u>0$): $\dd x=2u\,\dd u$, $\partial_x=\frac1{2u}\partial_u$, and $\dd x(\partial_x)=2u\cdot\frac1{2u}\,\dd u(\partial_u)=1$.
+This is the same ``$\lambda$ versus $1/\lambda$'' phenomenon as in the rule of thumb of Section~\ref{sec:phys}, and the reason that $\int_\gamma f\,\dd x$ is coordinate independent (Section~\ref{sec:naturality}).
+
+\begin{specialcase}[dimension one: when the ratio notation is a ratio]
+In dimension one, $T^*_pM$ is one-dimensional, so any two covectors are proportional and $\dd f=f'(x)\,\dd x$ makes $f'=\dd f/\dd x$ a genuine quotient of two $1$-forms.
+In dimension $\ge2$, $\dd f=f_x\dd x+f_y\dd y$ cannot be divided by $\dd x$; the symbol $\partial f/\partial x$ stands for $\dd f(\partial_x)$ and depends on the chart (Example~\ref{ex:sameXdiffdx}).
+Similarly, the ``$\dd x\,\dd y$'' in $\iint f\,\dd x\,\dd y$ is the Lebesgue measure $|\dd x\wedge\dd y|$, which forgets orientation, whereas $\int f\,\dd x\wedge\dd y$ keeps the sign of the Jacobian (Section~\ref{sec:intk}).
+The fundamental theorem of calculus in this language is $\int_a^bf'(x)\,\dd x=\int_{[a,b]}\dd f=f(b)-f(a)$, equation~\eqref{eq:ftc}.
+\end{specialcase}

@@ -1,0 +1,77 @@
+% reading-guide | Status: todo | Original lines: 240-315
+%!TEX root = ../main.tex
+% =====================================================================
+\section*{Reading guide and notation}
+\addcontentsline{toc}{section}{Reading guide and notation}
+% =====================================================================
+
+\begin{keyidea}[Reading guide and notation]
+\small
+\textbf{Summation convention.} A repeated index, once up and once down, is summed:
+$\omega_iv^i=\sum_i\omega_iv^i$.\\[2pt]
+\begin{tabular}{@{}p{4.1cm}p{10.2cm}@{}}
+$v^i,\ \omega_i$ & components of a vector / of a covector in a chosen basis\\
+$e_i,\ e^i$ & basis of $V$ / dual basis of $V^*$, $e^i(e_j)=\delta^i{}_j$\\
+$\partial_i,\ \dd x^i$ & coordinate basis of vectors / dual basis of covectors, $\dd x^i(\partial_j)=\delta^i{}_j$\\
+$\langle\omega,v\rangle=\omega(v)$ & contraction: the covector $\omega$ ``eats'' the vector $v$ and returns a number\\
+$\alpha\wedge\beta$ & wedge (exterior) product, antisymmetric: $\dd x\wedge\dd y=-\dd y\wedge\dd x$, $\dd x\wedge\dd x=0$\\
+$\dd,\ \iota_v,\ \phi\pb,\ \Lie_X$ & exterior derivative, interior product (contraction with $v$), pull-back, Lie derivative\\
+$\flat,\ \sharp,\ \hodge$ & lower an index, raise an index (both need a metric), Hodge star\\
+$\partial M,\ \oint$ & boundary of $M$; integral over a closed curve\\
+$ab=a\cdot b+a\wedge b$ & geometric product of vectors; $a\lc A$ left contraction, $\rev A$ reverse, $\pss$ pseudoscalar, $\dual A=A\pss^{-1}$ dual\\
+$\nabla$ \ \textit{versus}\ $\vd$ & plain $\nabla_X$: covariant derivative (connection). Bold $\vd=e^i\partial_i$: the geometric-algebra vector derivative.\\
+$R$ \ \textit{versus}\ $\rotor$ & $R$: Riemann curvature. $\rotor$: rotor of geometric algebra.
+\end{tabular}\\[3pt]
+\textbf{How derivations are written.} Every non-trivial computation is split into numbered
+\emph{steps}, each with its justification, and is followed by a \emph{numerical check} whenever
+possible. If a step looks too fast, look for the check right below it.
+\end{keyidea}
+
+\subhead{The colour code of the boxes}
+Every concept is presented in layers. The colour of a box tells you which layer you are reading:
+
+\medskip
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}l p{11.2cm}@{}}
+\fcolorbox{navy}{kiback}{\textcolor{navy}{\bfseries\ Key idea\ }} & the one statement to remember; rules of thumb; key points at the end of a section\\
+\fcolorbox{formalfr}{formalbg}{\textcolor{formalfr}{\bfseries\ Formal idea\ }} & precise definition or statement\\
+\fcolorbox{intuitfr}{intuitbg}{\textcolor{intuitfr}{\bfseries\ Intuition\ }} & the picture: what the object ``really is''\\
+\fcolorbox{examplefr}{examplebg}{\textcolor{examplefr}{\bfseries\ Example\ }} & a fully worked, numbered example -- try to redo it by hand\\
+\fcolorbox{specialfr}{specialbg}{\textcolor{specialfr}{\bfseries\ Special case\ }} & a low-dimensional or degenerate case that shows the mechanism or checks the general formula\\
+\fcolorbox{remarkfr}{remarkbg}{\textcolor{remarkfr}{\bfseries\ Remark\ }} & a side comment, convention or generalisation\\
+\fcolorbox{pitfr}{pitbg}{\textcolor{pitfr}{\bfseries\ Careful\ }} & a classic trap\\
+\fcolorbox{synthfr}{synthbg}{\textcolor{synthfr}{\bfseries\ Synthesis\ }} & a bridge between two or more of the languages used in this document\\
+\fcolorbox{exfr}{exbg}{\textcolor{exfr}{\bfseries\ Exercises\ }} & problems to test understanding
+\end{tabular}
+\end{center}
+Theorems, propositions, lemmas and definitions are numbered together with examples, remarks and special
+cases (one counter per section), so ``Example~3.2'' and ``Theorem~3.1'' never share a number.
+
+\subhead{Provenance: how the three source texts were merged}
+This document consolidates three texts: \textbf{(A)} notes on the integration of $1$-forms, contraction, Stokes and Gauss,
+with physics and residues; \textbf{(B)} a companion to a course on the mathematical foundations of general relativity
+(vector spaces to curvature and geodesic deviation); and \textbf{(C)} notes building geometric algebra from the tensor
+product up to the exterior derivative. Their material overlaps strongly (dual space, tensor product, metric, wedge product,
+contraction, Hodge star, Stokes, curvature versus $\dd^2=0$), so each topic now appears \emph{once}, in the order in which
+it is logically needed, and the overlaps are discussed in the synthesis sections.
+
+Phrases such as ``the notes'' or ``lecture notes I4'' inside the material that comes from source~(B) refer to the lecture notes of that course; they have been kept because the examples are cited by them.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{4.3cm}p{6.6cm}p{3.2cm}@{}}
+\toprule
+\textbf{Part} & \textbf{Theme} & \textbf{Sections}\\
+\midrule
+I \ Algebra & vectors, duals, tensors, metric, wedge, Clifford algebra, rotors, duality & \ref{sec:vectors}--\ref{sec:synth1}\\
+II \ Manifolds and forms & charts, tangent spaces, $x,\dd x,\partial_x$, tensor fields, $\dd$, $\Lie_X$, vector derivative & \ref{sec:manifolds}--\ref{sec:synth2}\\
+III \ Integration & $\int$ of $1$-forms and $k$-forms, Stokes, Gauss & \ref{sec:int1}--\ref{sec:gauss}\\
+IV \ Geometry of a metric & connection, Levi-Civita, geodesics, curvature, deviation & \ref{sec:conn}--\ref{sec:synth3}\\
+V \ Physics & intrinsic versus metric-dependent quantities; GR bridge & \ref{sec:phys}--\ref{sec:bridge}\\
+VI \ Complex analysis & residue theorem as Stokes' theorem & \ref{sec:complex}\\
+VII \ Perspective & current state, master summary, references & \ref{sec:current}--\ref{sec:summary}\\
+\bottomrule
+\end{tabular}
+\end{center}

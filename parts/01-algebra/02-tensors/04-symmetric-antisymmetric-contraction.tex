@@ -1,0 +1,36 @@
+% Section 2: Symmetric and antisymmetric tensors; contraction of tensors} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 705-741
+%!TEX root = ../../../main.tex
+\subsection{Symmetric and antisymmetric tensors; contraction of tensors}\label{sec:symcontr}
+A tensor $\tau\in\TT{0}{2}$ is \emph{symmetric} if $\tau(v,w)=\tau(w,v)$ and \emph{antisymmetric} if $\tau(v,w)=-\tau(w,v)$. For covectors $\alpha,\beta$ we define the \emph{wedge product}
+\[
+\alpha\wedge\beta=\alpha\otimes\beta-\beta\otimes\alpha.
+\]
+The notes use this in the area-form of the sphere: $r^2\sin\theta\,\dd\theta\wedge\dd\varphi$. Intuitively, $\alpha\wedge\beta(v,w)=\alpha(v)\beta(w)-\alpha(w)\beta(v)$ is the signed area of the parallelogram spanned by $v,w$ as seen through the ``rulers'' $\alpha,\beta$.
+
+\subhead{Contraction}
+\begin{formal}[{contraction}]
+The evaluation $E\times E^*\to\R$, $(v,f)\mapsto f(v)$ is bilinear, with $e_i,e^{j}\mapsto\delta^j{}_i$. Applying it to one covariant and one contravariant slot of a tensor gives a new tensor of type $(\ell-1,k-1)$. In components: set an upper and a lower index equal and sum,
+\[
+(c\tau)^{i_2\dots}{}_{j_2\dots}=\tau^{s\,i_2\dots}{}_{s\,j_2\dots}.
+\]
+\end{formal}
+\begin{intuition}[{contraction = plug a vector-slot into a covector-slot}]
+Think of connecting an output cable of one slot to the input of another and ``summing over all possible signals''. The result is lower in rank and \emph{still a tensor}. Examples: the trace $A^i{}_i$ of a linear map; the pairing $f_iv^i$; later the Ricci tensor $R^i{}_{ijk}$ and the scalar curvature.
+\end{intuition}
+
+\begin{exercises}
+\begin{enumerate}[nosep]
+\item Show that $\dim\TT{\ell}{k}(E)=m^{k+\ell}$.
+\item For $E=\R^3$, $e'_1=2e_1$, $e'_2=e_2$, $e'_3=e_3+e_1$: compute the dual basis change, and the components of $f=e^{1}+e^{3}$ in the new basis.
+\item Show that the identity map of $E$ is the $(1,1)$ tensor $\delta^i{}_j$ with the same components in every basis.
+\end{enumerate}
+\end{exercises}
+
+
+\begin{remark}[Three kinds of $2$-tensors]
+A tensor in $\TT{0}{2}$ may be symmetric, antisymmetric, or neither; every one splits uniquely into a symmetric and an
+antisymmetric part. A \emph{metric} is symmetric and non-degenerate (Section~\ref{sec:metric}); a \emph{$2$-form} is
+antisymmetric (Section~\ref{sec:ext}); a general bilinear form such as $\dd x\otimes\dd y$ has both parts. The two parts
+do different jobs -- one measures length, the other oriented area -- and the symmetric/antisymmetric bookkeeping
+is made precise in Section~\ref{sec:wedgetensor}.
+\end{remark}

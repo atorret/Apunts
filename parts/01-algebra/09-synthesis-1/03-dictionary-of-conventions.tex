@@ -1,0 +1,30 @@
+% Section 9: A dictionary of conventions} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1753-1781
+%!TEX root = ../../../main.tex
+\subsection{A dictionary of conventions}\label{sec:conventions}
+
+Because the three sources were written independently, the same object appears with different normalisations. They have been unified
+as follows; this is the place to look when a formula elsewhere in the literature seems to disagree by a factor or a sign.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{3.1cm}p{5.4cm}p{5.8cm}@{}}
+\toprule
+\textbf{Item} & \textbf{Convention in this document} & \textbf{Other conventions met in the sources}\\
+\midrule
+Signature $(p,q)$ & $p$ positive, $q$ negative; Euclidean $(n,0)$ & GR notes: (negative, positive); mostly minus $(1,3)$ in the spacetime algebra\\
+Wedge, forms & $\dd x\wedge\dd y=\dd x\otimes\dd y-\dd y\otimes\dd x$; $\det$ pairing & Kobayashi--Nomizu: factor $\frac12$\\
+Wedge, multivectors & $v\wedge w\mapsto\frac12(v\otimes w-w\otimes v)$ in $T(V)$; $a\wedge b=\frac12(ab-ba)$ & see Remark~\ref{rem:kfactorial}\\
+Tensor type $(\ell,k)$ & $\ell$ contravariant (up), $k$ covariant (down) & some texts reverse the order\\
+Dual basis & $e^i$ ($=\dd x^i$ in coordinates) & $e^{*i}$ in the GR notes\\
+Hodge star vs.\ dual & $\hodge A=\rev A\pss=(-1)^{k(k-1)/2+n(n-1)/2}\dual A$ & dual with $\pss$ or $\pss^{-1}$ on either side\\
+Curvature & $R(X,Y)Z=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z$ & Carroll/MTW agree; others differ in index order (Section~\ref{sec:curv})\\
+$\nabla$ & plain: covariant derivative. Bold $\vd$: vector derivative & Hestenes writes $\nabla$ for $\vd$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[the factor $k!$ between the two realisations of $\bigwedge$]\label{rem:kfactorial}
+Let $\alpha^1,\dots,\alpha^k\in V^*$ and $v_1,\dots,v_k\in V$. The form convention of Section~\ref{sec:ext} gives $(\alpha^1\wedge\cdots\wedge\alpha^k)(v_1,\dots,v_k)=\det[\alpha^i(v_j)]$. If instead one embeds multivectors in $T^k(V)$ by
+$v_1\wedge\cdots\wedge v_k\mapsto\frac1{k!}\sum_\sigma\sgn(\sigma)\,v_{\sigma(1)}\otimes\cdots\otimes v_{\sigma(k)}$ and evaluates the resulting tensor on $(\alpha^1,\dots,\alpha^k)$, one obtains $\frac1{k!}\det[\alpha^i(v_j)]$. The two realisations are identified by multiplying degree-$k$ elements by $k!$: this map is an algebra isomorphism, because the factor $\frac{(k+l)!}{k!\,l!}$ in \eqref{eq:altwedge} satisfies $(k+l)!=k!\,l!\cdot\frac{(k+l)!}{k!\,l!}$. Nothing in the abstract algebra changes; only the numbers one gets by evaluating on tensors do.
+\end{remark}

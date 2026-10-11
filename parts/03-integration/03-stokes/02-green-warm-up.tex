@@ -1,0 +1,25 @@
+% Section 18: Warm-up: Stokes' theorem on a rectangle (Green's theorem)} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2681-2704
+%!TEX root = ../../../main.tex
+\subsection{Warm-up: Stokes' theorem on a rectangle (Green's theorem)}\label{sec:green}
+
+Before the general proof, let us see the mechanism in the simplest case. Let $\omega=P\,\dd x+Q\,\dd y$ on the rectangle $R=[a,b]\times[c,d]$ with counter-clockwise boundary.
+
+\Step{1}{left-hand side} By the plane formula of Section~\ref{sec:expl-closed}, $\dd\omega=(Q_x-P_y)\,\dd x\wedge\dd y$, hence $\int_R\dd\omega=\iint_R(Q_x-P_y)\,\dd x\,\dd y$.
+
+\Step{2}{fundamental theorem of calculus in each variable}
+\[
+\iint_RQ_x\,\dd x\,\dd y=\int_c^d\bigl[Q(b,y)-Q(a,y)\bigr]\dd y,\qquad
+\iint_RP_y\,\dd x\,\dd y=\int_a^b\bigl[P(x,d)-P(x,c)\bigr]\dd x .
+\]
+
+\Step{3}{right-hand side: the four edges}
+\begin{itemize}
+\item bottom ($y=c$, $x:a\to b$, $\dd y=0$): $\int_a^bP(x,c)\,\dd x$; right ($x=b$, $y:c\to d$, $\dd x=0$): $\int_c^dQ(b,y)\,\dd y$;
+\item top ($y=d$, $x:b\to a$): $-\int_a^bP(x,d)\,\dd x$; left ($x=a$, $y:d\to c$): $-\int_c^dQ(a,y)\,\dd y$.
+\end{itemize}
+
+\Step{4}{compare} The sum of the four edges is $\int_c^d[Q(b,y)-Q(a,y)]\dd y-\int_a^b[P(x,d)-P(x,c)]\dd x$, which is exactly Step 2. Hence $\oint_{\partial R}\omega=\int_R\dd\omega$.
+
+\numcheck $\omega=-y\,\dd x+x\,\dd y$ on $[0,1]^2$: $Q_x-P_y=1-(-1)=2$, so $\int_R\dd\omega=2$. Boundary: bottom $y=0$: $0$; right $x=1$: $\int_0^11\,\dd y=1$; top $y=1$: $-\int_0^1(-1)\,\dd x=1$; left $x=0$: $0$. Total $2$ \checkmark.
+
+The general proof does the same thing in $n$ variables: the fundamental theorem of calculus in one variable, and sign bookkeeping.

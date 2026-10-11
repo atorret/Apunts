@@ -1,0 +1,15 @@
+% Section 25: Fluids: circulation needs a metric} | Part: 5 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3609-3622
+%!TEX root = ../../../main.tex
+\subsection{Fluids: circulation needs a metric}\label{sec:phys-fluids}
+
+The velocity field $u$ is a vector (it generates the flow). Its circulation $\Gamma=\oint_\gamma u^\flat$ integrates the covector $u^\flat=g(u,\cdot)$, so it needs a metric. The vorticity is the $2$-form $\dd u^\flat$ (the ``curl vector'' $\operatorname{curl}u=(\hodge\dd u^\flat)^\sharp$ again needs $g$ and the orientation). For a barotropic ideal fluid with enthalpy $h$, Euler's equation reads
+\begin{equation}\label{eq:euler}
+\partial_tu^\flat+\iota_u\dd u^\flat=-\dd\bigl(h+\tfrac12|u|^2\bigr).
+\end{equation}
+\emph{Where this equation comes from (steps).} (1) Euler: $\partial_tu+(u\cdot\nabla)u=-\nabla h$. (2) Vector identity: $(u\cdot\nabla)u=\nabla(\frac12|u|^2)-u\times\omega$ with $\omega=\operatorname{curl}u$. (3) Lower the index: $(u\times\omega)^\flat=-\iota_u\dd u^\flat$ (same triple-product computation as for the Lorentz force, with $\dd u^\flat=\iota_\omega\vol$). Substituting gives the stated equation.
+
+\emph{Kelvin's theorem (steps).} By Cartan's formula \eqref{eq:cartan}, $\Lie_uu^\flat=\iota_u\dd u^\flat+\dd(\iota_uu^\flat)=\iota_u\dd u^\flat+\dd(|u|^2)$. Adding $\dd(|u|^2)$ to both sides of Euler's equation:
+\[
+(\partial_t+\Lie_u)u^\flat=\dd\bigl(\tfrac12|u|^2-h\bigr),
+\]
+an exact form. For a loop $\gamma(t)$ carried by the flow, $\frac{\dd}{\dd t}\oint_{\gamma(t)}u^\flat=\oint_{\gamma(t)}(\partial_t+\Lie_u)u^\flat=\oint\dd(\cdots)=0$, because exact forms integrate to zero on closed loops (Section~\ref{sec:expl-closed}). Kelvin's circulation theorem is Stokes plus this observation (Arnold--Khesin).

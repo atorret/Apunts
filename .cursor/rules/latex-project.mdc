@@ -1,0 +1,27 @@
+---
+description: Conventions for the modular LaTeX notes "From Vectors to Stokes to Spacetime"
+globs: "**/*.tex"
+alwaysApply: false
+---
+
+# LaTeX project conventions
+
+- Engine: pdflatex via `latexmk` (config in `latexmkrc`, output in `build/`). Root file: `main.tex`.
+- `\documentclass{article}` with `\part` / `\section` / `\subsection`. Use `\input` only (no `\include`).
+- Every content file starts with
+  `% Section N: title | Part: P | Depends on: ... | Status: todo|done`
+  followed by `%!TEX root = <relative path>/main.tex`.
+- File names: lowercase, hyphenated, numeric prefix in reading order (`03-stokes/02-green.tex`).
+  `00-part.tex` = part heading + intro; `00-section.tex` = section heading + intro + `\input` list.
+  Keep files under ~300 lines.
+- Macros, environments, colours and packages live ONLY in `preamble/`. No `\newcommand` in content files.
+- Labels: keep existing names. Prefixes: `part:`, `sec:`, `def:`, `thm:`, `prop:`, `lem:`, `cor:`, `ex:`,
+  `rem:`, `eq:`, `fig:`, `tab:`, `id:` (glossary Part C identities). Never hard-code numbers; use `\ref`/`\eqref`.
+- Visual language: `formal`, `intuition`, `example`, `pitfall`, `specialcase`, `remark`, `synthesis`,
+  `keyidea`, `keypoints`, `exercises`, `identity` boxes; proofs use `\Step{n}{name}` and `\numcheck`.
+- Markers for changed blocks: `% REORDERED`, `% REWRITTEN`, `% PROOF ADDED BY REWRITER`,
+  and `% AUTHOR-NOTE:` for doubtful mathematics (also logged in `docs/AUTHOR_NOTES.md`).
+- Do not change the mathematics; never delete material you are unsure about.
+- `legacy/original.tex` is read-only.
+- After every change: `latexmk`, then `python tools/check.py main.tex build/main.log`;
+  no `??`, no undefined references, invariants >= `docs/BASELINE.md`.

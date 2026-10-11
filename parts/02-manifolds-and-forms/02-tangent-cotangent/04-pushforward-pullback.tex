@@ -1,0 +1,42 @@
+% Section 11: Pushforward and pullback} | Part: 2 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1969-2011
+%!TEX root = ../../../main.tex
+\subsection{Pushforward and pullback}\label{sec:pushpull}
+\begin{formal}[{differential of a map and pullback}]
+For a smooth $\Phi:M\to N$ the \emph{differential} (pushforward) is the linear map $T_p\Phi:T_pM\to T_{\Phi(p)}N$, $T_p\Phi(D)(\tilde f)=D(\tilde f\circ\Phi)$; in coordinates it is the Jacobian matrix. If $\Phi$ is a diffeomorphism and $\tilde\tau\in\TT{0}{k}(T_{\Phi(p)}N)$ is a covariant tensor, its \emph{pullback} is
+\[
+(\Phi^*\tilde\tau)(v_1,\dots,v_k)=\tilde\tau\big(T_p\Phi(v_1),\dots,T_p\Phi(v_k)\big).
+\]
+For a general $(\ell,k)$ tensor, covectors are fed in via $\alpha_j\circ T\Phi^{-1}$. Properties: $(\Phi\circ\Psi)^*=\Psi^*\circ\Phi^*$.
+\end{formal}
+\begin{intuition}[{pullback = ``transport the measuring device backwards''}]
+To evaluate a ruler that lives on $N$ on vectors that live on $M$, first push the vectors forward to $N$. Pulling back a metric (the dot product on $N$) gives the \emph{induced metric}: the way one measures lengths of vectors on a surface inside a bigger space. Pulling back with a coordinate chart gives the \emph{components in coordinates}.
+\end{intuition}
+
+\begin{example}[{Polar metric}]\label{ex:polarmetric}
+The Euclidean metric on $\R^2$ is $g=\dd x\otimes\dd x+\dd y\otimes\dd y$. Substituting $\dd x,\dd y$ from Example~\ref{ex:polarbasis}:
+\[
+g=(\cos\varphi\,\dd r-r\sin\varphi\,\dd\varphi)^{\otimes2}+(\sin\varphi\,\dd r+r\cos\varphi\,\dd\varphi)^{\otimes2}
+=\dd r\otimes\dd r+r^2\,\dd\varphi\otimes\dd\varphi ,
+\]
+because the mixed terms $\pm r\sin\varphi\cos\varphi\,(\dd r\otimes\dd\varphi+\dd\varphi\otimes\dd r)$ cancel. So $g_{rr}=1$, $g_{\varphi\varphi}=r^2$, $g_{r\varphi}=0$. Consistently, $g(\partial_\varphi,\partial_\varphi)=r^2$.
+\end{example}
+
+\begin{example}[{induced metric on the sphere (from the lecture notes I4)}]
+The map $\varphi^{-1}(\theta,\phi)=(r\sin\theta\cos\phi,\,r\sin\theta\sin\phi,\,r\cos\theta)$ parametrizes $S^2_r$. Its partial derivatives, \ie the pushforwards of $\partial_\theta,\partial_\phi$, are
+\[
+v_\theta=(r\cos\theta\cos\phi,\ r\cos\theta\sin\phi,\ -r\sin\theta),\qquad
+v_\phi=(-r\sin\theta\sin\phi,\ r\sin\theta\cos\phi,\ 0).
+\]
+Using the Euclidean dot product of $\R^3$: $|v_\theta|^2=r^2$, $|v_\phi|^2=r^2\sin^2\theta$, $v_\theta\cdot v_\phi=0$. Hence the induced metric is
+\[
+g_{S^2_r}=r^2\big(\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi\big).
+\]
+This is \emph{the} metric of the sphere, used below to compute Christoffel symbols, curvature and geodesics. For the unit sphere ($r=1$): $g=\mathrm{diag}(1,\sin^2\theta)$, $g^{-1}=\mathrm{diag}(1,1/\sin^2\theta)$.
+\end{example}
+
+
+\begin{synthesis}[pull-back appears three times]
+Pull-back $\phi\pb$ is always ``precompose with the map''. (i) For a curve $\gamma$, $\gamma\pb\omega=\omega(\dot\gamma)\,\dd t$ is how a $1$-form is integrated (Section~\ref{sec:int1}); (ii) for a
+chart or an embedding it produces the components of a tensor or the induced metric, as in the example above where the Euclidean metric pulled back to the sphere gives $r^2(\dd\theta^2+\sin^2\theta\,\dd\varphi^2)$; (iii) for a parametrised surface
+it produces the integrand of a $k$-form (Section~\ref{sec:intk}). It commutes with $\wedge$ and with $\dd$, which is why forms, and only forms, can be integrated without choosing a chart.
+\end{synthesis}

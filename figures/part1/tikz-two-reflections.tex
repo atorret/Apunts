@@ -1,0 +1,18 @@
+% Figure | used in parts/01-algebra/07-rotors/01-reflections-and-rotors.tex
+%!TEX root = ../../main.tex
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,scale=1.1]
+  \draw[thick,blue!60!black] (190:3.2)--(10:3.2) node[right]{mirror $1$ (normal $a$)};
+  \draw[thick,orange!80!black] (220:3.2)--(40:3.2) node[right]{mirror $2$ (normal $b$)};
+  \draw[->,thick] (0,0)--(60:2.4) node[above]{$x$};
+  \draw[->,thick,blue!60!black] (0,0)--(-40:2.4) node[below right]{$x'=-axa^{-1}$};
+  \draw[->,thick,red] (0,0)--(120:2.4) node[above left]{$x''=(ba)\,x\,(ba)^{-1}$};
+  \draw[red,->] (60:0.9) arc[start angle=60,end angle=120,radius=0.9];
+  \node[red] at (90:1.25) {$2\theta$};
+  \draw[orange!80!black,->] (10:1.5) arc[start angle=10,end angle=40,radius=1.5];
+  \node[orange!80!black] at (25:1.8) {$\theta$};
+\end{tikzpicture}
+\caption{Two reflections compose to a rotation by \emph{twice} the angle $\theta$ between the mirrors. The rotor is $R=ba=e^{-B\theta}$.}
+\label{fig:tworefl}
+\end{figure}

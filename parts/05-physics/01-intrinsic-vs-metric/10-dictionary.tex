@@ -1,0 +1,26 @@
+% Section 25: Dictionary: physical quantity $\to$ geometric object} | Part: 5 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3640-3664
+%!TEX root = ../../../main.tex
+\subsection{Dictionary: physical quantity $\to$ geometric object}\label{sec:phys-dict}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{4.6cm}p{4.8cm}p{4.7cm}@{}}
+\toprule
+\textbf{Quantity} & \textbf{Geometric object} & \textbf{Is a metric needed?}\\
+\midrule
+Velocity $v$ & vector & no\\
+Force $F$, momentum $p$ & $1$-forms (covectors) & no (but $p=g(v,\cdot)$ uses $g$)\\
+Work $\int F$, power $F(v)$ & integral of a $1$-form, contraction & no\\
+Kinetic energy $\frac12g(v,v)$ & quadratic form on velocities & yes: the inertia metric\\
+Potential $V$; force $-\dd V$ & function; exact $1$-form & no ($\nabla V$ would need it)\\
+Energy of a particle (relativity) $-p(u)$ & pairing with observer & $g$ only to build $p$\\
+Conserved charges (Noether) $p(\xi)$, $\xi$ a symmetry & contraction & no\\
+Action $\int(p\,\dd q-H\,\dd t)$ & integral of a $1$-form & no\\
+Heat, thermodynamic work & non-closed $1$-forms & no metric exists\\
+$E,H,A$ / $B,D,j$ / $\rho$ & $1$-forms / $2$-forms / $3$-form & no (only in $D=\varepsilon_0\hodge E,\dots$)\\
+Circulation, vorticity $\oint u^\flat$, $\dd u^\flat$ & forms built from $u^\flat$ & yes, to form $u^\flat$\\
+Cross product, $\mathbf B$, $L$, $\tau$ & $\hodge(a^\flat\wedge b^\flat)$, $2$-forms & metric $+$ orientation, $n=3$\\
+\bottomrule
+\end{tabular}
+\end{center}

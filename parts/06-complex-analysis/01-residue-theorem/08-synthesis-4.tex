@@ -1,0 +1,27 @@
+% Section 27: Synthesis IV: complex analysis in the geometric algebra of the plane} | Part: 6 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3924-3950
+%!TEX root = ../../../main.tex
+\subsection{Synthesis IV: complex analysis in the geometric algebra of the plane}\label{sec:synth4}
+
+\begin{synthesis}[where does the imaginary unit come from?]
+The symbol $i$ has appeared in three guises. (1) As a scalar: $\C=\Cl(0,1)$, the geometric algebra of a line with $e^2=-1$ (Section~\ref{sec:clifford}). (2) As a bivector: in the plane algebra $\Cl(2,0)$ the unit area element $\pss=e_1e_2$ satisfies $\pss^2=-1$, and the even subalgebra $\{x+\pss y\}$ is $\C$; multiplying a vector on the left by $e_1$ identifies $\R^2$ with $\C$, $e_1(x+\pss y)=xe_1+ye_2$. (3) As the factor in complex-valued forms such as $\dd z=\dd x+i\,\dd y$, where $i$ is a formal scalar commuting with everything.
+In option (2) $i$ is the \emph{oriented plane itself}, and ``multiplication by $i$'' is a quarter-turn \emph{because} $\pss$ rotates vectors by $90^\circ$ under the geometric product: the dual of a vector in $2$D is the vector turned by a quarter turn (Section~\ref{sec:duality}).
+\end{synthesis}
+
+\begin{proposition}[Cauchy--Riemann as a single multivector equation]\label{prop:CRga}
+Let $\mathbf u=u\,e_1+v\,e_2$ be a vector field in the plane, $\vd=e_1\partial_x+e_2\partial_y$, $\pss=e_1e_2$, and $w=u-iv$ the complex velocity of \eqref{eq:wdz}. Then
+\[
+\vd\,\mathbf u=\operatorname{div}\mathbf u+\pss\,\operatorname{curl}\mathbf u=2\,\partial_z\bar w,
+\]
+so $w$ is holomorphic if and only if $\vd\mathbf u=0$ (a \emph{monogenic} function).
+\end{proposition}
+\begin{proof}
+$\vd\mathbf u=(e_1\partial_x+e_2\partial_y)(ue_1+ve_2)=(u_x+v_y)+e_1e_2(v_x-u_y)$, using $e_1e_2=-e_2e_1$ and $e_i^2=1$; this is $\operatorname{div}\mathbf u+\pss\operatorname{curl}\mathbf u$. On the other hand $2\partial_z\bar w=(\partial_x-i\partial_y)(u+iv)=(u_x+v_y)+i(v_x-u_y)$ with $i\leftrightarrow\pss$. Holomorphy of $w$ means $\partial_{\bar z}w=0$, whose conjugate is $\partial_z\bar w=0$.
+\end{proof}
+
+\begin{example}[a monogenic field]\label{ex:monogenic}
+$w=z^2=(x^2-y^2)+2ixy$. Since $w=u-iv$, we read off $u=x^2-y^2$ and $v=-2xy$. Then $\operatorname{div}\mathbf u=2x-2x=0$ and $\operatorname{curl}\mathbf u=v_x-u_y=-2y+2y=0$, so $\vd\mathbf u=0$ \checkmark.
+\end{example}
+
+\begin{synthesis}[Cauchy's theorem, three ways]
+\emph{Forms:} $\dd(f\,\dd z)=2i\,\partial_{\bar z}f\,\dd x\wedge\dd y$ (equation \eqref{eq:dfdz}) and Stokes. \emph{Vector calculus:} Green's theorem for the real part and the divergence theorem for the imaginary part of \eqref{eq:wdz}. \emph{Geometric algebra:} the single equation $\vd\mathbf u=0$ of Proposition~\ref{prop:CRga}; in higher dimension the same equation $\vd F=0$ defines monogenic functions (Clifford analysis), for which an analogue of Cauchy's integral formula holds (Hestenes--Sobczyk, Section~\ref{sec:refs}).
+\end{synthesis}

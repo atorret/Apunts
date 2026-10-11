@@ -1,0 +1,25 @@
+% Figure | used in parts/06-complex-analysis/01-residue-theorem/03-residue-theorem.tex
+%!TEX root = ../../main.tex
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,scale=1.1]
+  \fill[blue!12] (0,0) circle (2.0);
+  \draw[navy] (0,0) circle (2.0);
+  \foreach \c/\n in {(-0.9,0.55)/1,(0.95,0.75)/2,(0.35,-0.9)/3}{
+     \fill[white] \c circle (0.3);
+     \draw[navy] \c circle (0.3);
+     \fill \c circle (0.03);
+  }
+  \node[navy,left] at (-0.9,0.55) {\small$a_1$};
+  \node[navy,right] at (0.95,0.75) {\small$a_2$};
+  \node[navy,below] at (0.35,-0.9) {\small$a_3$};
+  \node[navy] at (-0.3,-0.1) {$\Omega_\varepsilon$};
+  \node[navy,above right] at (1.5,1.45) {$\partial\Omega$};
+  \draw[->,navy,thick] (225:2.0) arc (225:240:2.0);
+  \draw[->,navy,thick] ($(-0.9,0.55)+(30:0.3)$) arc (30:-20:0.3);
+  \draw[->,navy,thick] ($(0.95,0.75)+(150:0.3)$) arc (150:200:0.3);
+  \draw[->,navy,thick] ($(0.35,-0.9)+(60:0.3)$) arc (60:10:0.3);
+\end{tikzpicture}
+\caption{Proof of the residue theorem. Stokes on $\Omega_\varepsilon=\Omega$ minus small discs: the outer boundary runs counter-clockwise and the small circles clockwise (region on the left). Since $f\,\dd z$ is closed on $\Omega_\varepsilon$, the integral over the outer boundary equals the sum of the integrals over the small circles traversed counter-clockwise. This is the annulus of Figure~\ref{fig:annulus} with several holes.}
+\label{fig:residue}
+\end{figure}

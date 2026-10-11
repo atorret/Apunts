@@ -1,0 +1,20 @@
+% Section 19: The boundary term: from $\iota_X\mu$ to $\langle X,N\rangle\,\dd A$} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2846-2864
+%!TEX root = ../../../main.tex
+\subsection{The boundary term: from $\iota_X\mu$ to $\langle X,N\rangle\,\dd A$}\label{sec:boundaryterm}
+
+\begin{lemma}\label{lem:fluxbdry}
+Let $(M,g)$ be an oriented Riemannian manifold with boundary, $N$ the outward unit normal and $\dd A$ the Riemannian area form of $\partial M$ (with the induced orientation). Then
+\[
+j\pb\bigl(\iota_X\vol_g\bigr)=\langle X,N\rangle\,\dd A .
+\]
+\end{lemma}
+\begin{proof}
+\Step{1}{adapted frame} At a boundary point choose an oriented orthonormal frame $e_1=N,e_2,\dots,e_n$ ($e_2,\dots,e_n$ tangent to $\partial M$) with dual coframe $e^1,\dots,e^n$. Then $\vol_g=e^1\wedge\cdots\wedge e^n$. By the induced-orientation convention $(e_2,\dots,e_n)$ is a positive orthonormal basis of $T\partial M$, so $\dd A=j\pb(e^2\wedge\cdots\wedge e^n)$.
+\Step{2}{contract} Apply $\iota_X$ one factor at a time: $\iota_X(e^i\wedge\beta)=X^i\beta-e^i\wedge\iota_X\beta$. For $n=3$:
+\begin{align*}
+\iota_X(e^1\wedge e^2\wedge e^3)&=X^1e^2\wedge e^3-e^1\wedge\iota_X(e^2\wedge e^3)\\
+&=X^1e^2\wedge e^3-e^1\wedge(X^2e^3-X^3e^2)=X^1e^2\wedge e^3-X^2e^1\wedge e^3+X^3e^1\wedge e^2 .
+\end{align*}
+In general, $\iota_X\vol_g=\sum_{i=1}^n(-1)^{i-1}X^i\,e^1\wedge\cdots\wedge\widehat{e^i}\wedge\cdots\wedge e^n$.
+\Step{3}{restrict to $\partial M$} The covector $e^1=\langle N,\cdot\rangle$ vanishes on all tangent vectors $e_2,\dots,e_n$, so $j\pb e^1=0$ and every term containing $e^1$ (all $i\ne1$) restricts to zero. Only $i=1$ survives: $j\pb(\iota_X\vol_g)=X^1j\pb(e^2\wedge\cdots\wedge e^n)=X^1\dd A$, and $X^1=\langle X,e_1\rangle=\langle X,N\rangle$. In the $n=3$ example above this reads $j\pb(\cdots)=X^1e^2\wedge e^3$.
+\end{proof}

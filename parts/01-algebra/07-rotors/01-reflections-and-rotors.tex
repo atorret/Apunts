@@ -1,0 +1,44 @@
+% Section 7: 01-reflections-and-rotors | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1466-1527
+%!TEX root = ../../../main.tex
+
+\begin{theorem}[Reflections]\label{thm:refl}
+Let $n\in V$ be invertible ($n^2\neq0$). The map $x\mapsto -nxn^{-1}$ is the reflection of $V$ across the hyperplane orthogonal to $n$.
+\end{theorem}
+\begin{proof}
+Decompose $x=x_\parallel+x_\perp$, $x_\parallel=(x\cdot n)n^{-1}$ parallel to $n$, $x_\perp\cdot n=0$. Then $nx_\parallel=x_\parallel n$ (parallel vectors commute) and $nx_\perp=-x_\perp n$ (Proposition~\ref{prop:fund}). Hence
+$-nxn^{-1}=-x_\parallel+x_\perp$.
+\end{proof}
+
+\begin{definition}[Versors, Pin and Spin]
+A \emph{versor} is a product $U=v_1v_2\cdots v_k$ of invertible vectors. It acts on $V$ by
+$x\mapsto(-1)^k\,UxU^{-1}$, which is an orthogonal transformation (a composition of $k$ reflections). The versors with $U\rev U=\pm1$ form the group $\Pin(V,Q)$ and the even ones form $\Spin(V,Q)=\Pin\cap\GA^+$. An even versor $R$ with $R\rev R=1$ is called a \emph{rotor}; it acts by the \emph{sandwich product}
+\[
+ x\longmapsto RxR^{-1}=Rx\rev R .
+\]
+\end{definition}
+
+By the Cartan--Dieudonn\'e theorem every orthogonal transformation of an $n$-dimensional space is a product of at most $n$ reflections. Hence every rotation arises from a rotor, and $R$ and $-R$ give the same rotation (the \emph{double cover} $\Spin\to SO$).
+
+\begin{theorem}[Rotors in a plane]\label{thm:rotor}
+Let $B$ be a unit bivector with $B^2=-1$ (a blade representing an oriented plane in Euclidean space). Then
+\[
+ R=e^{-\varphi B/2}=\cos\tfrac\varphi2-B\sin\tfrac\varphi2
+\]
+acts by $x\mapsto Rx\rev R$ as the rotation by angle $\varphi$ in the plane of $B$, in the orientation of $B$, leaving the orthogonal complement of the plane fixed.
+\end{theorem}
+\begin{proof}
+Split $x=x_\parallel+x_\perp$ into the part in the plane of $B$ and the part orthogonal to it. A vector in the plane anticommutes with $B$ (e.g.\ $e_1e_1e_2=-e_1e_2e_1$), hence $e^{-\varphi B/2}x_\parallel=x_\parallel e^{\varphi B/2}$ and
+$Rx_\parallel\rev R=x_\parallel e^{\varphi B/2}e^{\varphi B/2}=x_\parallel e^{\varphi B}$. For $B=e_1e_2$ and $x_\parallel=e_1$ this gives $e_1(\cos\varphi+e_1e_2\sin\varphi)=\cos\varphi\,e_1+\sin\varphi\,e_2$. A vector orthogonal to the plane commutes with $B$, so $Rx_\perp\rev R=x_\perp R\rev R=x_\perp$.
+\end{proof}
+
+\input{figures/part1/tikz-two-reflections}
+
+\begin{intuition}
+A reflection is the simplest orthogonal map, and a rotation is just \emph{two reflections in a row} (Fig.~\ref{fig:tworefl}); this is a classical fact of plane geometry.
+Algebraically, reflecting first in $a$ and then in $b$ gives $x\mapsto b(-axa^{-1})b^{-1}=(ba)x(ba)^{-1}$, so the \emph{product of the two mirror vectors} $R=ba$ \emph{is} the rotation.
+Since the rotation angle is twice the angle between the mirrors, the rotor contains the \emph{half-angle} $\varphi/2$; that is where the half angles of quaternions and spinors come from. The rotor is also dimension-free: no ``axis of rotation'' is needed (axes exist only in $3$D), only the \emph{plane} of rotation, which is the bivector $B$. Composing rotations is just multiplying rotors: $R_2R_1$.
+\end{intuition}
+
+\begin{example}[Quaternions inside $\Cl(3,0)$]
+In $\GA(\R^3)$ put $i=e_3e_2$, $j=e_1e_3$, $k=e_2e_1$. Then $i^2=j^2=k^2=-1$ and $ij=k$ (direct computation), so the even subalgebra $\GA^+(\R^3)=\{\alpha+\text{bivector}\}$ is the quaternion algebra $\Hq$. Unit quaternions are exactly the rotors of $\R^3$, and $x\mapsto qxq^{-1}$ is the usual quaternion rotation. The pseudoscalar $e_1e_2e_3$ will play the role of the ``axis'' in \S\ref{sec:duality}.
+\end{example}

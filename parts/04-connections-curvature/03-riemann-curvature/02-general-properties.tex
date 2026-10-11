@@ -1,0 +1,31 @@
+% Section 22: General properties} | Part: 4 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3178-3207
+%!TEX root = ../../../main.tex
+\subsection{General properties}
+\begin{itemize}[nosep]
+\item $R(X,Y,Z)=-R(Y,X,Z)$ (antisymmetric in the first two slots).
+\item \textbf{First Bianchi identity.} $R(X,Y,Z)+R(Y,Z,X)+R(Z,X,Y)=\nabla_X(T(Y,Z))+\dots+T(X,[Y,Z])+\dots$ which is $0$ when $\nabla$ is torsion-free. It follows from the Jacobi identity $[X,[Y,Z]]+[Y,[Z,X]]+[Z,[X,Y]]=0$.
+\item \textbf{Flat connection:} $R=0$ ($\nabla$ is \emph{flat}). Example: $\nabla^0$ on $\R^m$.
+\item \textbf{Transport around loops.} If $(t,s)\mapsto\gamma(t,s)$ is a family of curves and $V$ a field along $\gamma$, then $\nabla_{\partial_s\gamma}\nabla_{\partial_t\gamma}V-\nabla_{\partial_t\gamma}\nabla_{\partial_s\gamma}V=R(\partial_s\gamma,\partial_t\gamma,V)$ (Lee, Prop.~7.5): the precise form of the intuition above.
+\end{itemize}
+
+\begin{example}[{the plane in polar coordinates is flat}]
+Use \eqref{eq:riemanncomp} with $\Gamma^r{}_{\varphi\varphi}=-r$, $\Gamma^\varphi{}_{r\varphi}=1/r$ and compute $R^r{}_{r\varphi\varphi}$:
+\[
+R^r{}_{r\varphi\varphi}=\partial_r\Gamma^r{}_{\varphi\varphi}-\partial_\varphi\Gamma^r{}_{r\varphi}+\Gamma^s{}_{\varphi\varphi}\Gamma^r{}_{rs}-\Gamma^s{}_{r\varphi}\Gamma^r{}_{\varphi s}
+=-1-0+0-\Gamma^\varphi{}_{r\varphi}\Gamma^r{}_{\varphi\varphi}=-1+\tfrac1r\cdot r=0 .
+\]
+The Christoffel symbols are nonzero but the curvature vanishes: the nonzero $\Gamma$ are only an artefact of the coordinates. \textbf{$R$ is a tensor; if a tensor vanishes in one chart it vanishes in all charts.}
+\end{example}
+
+\begin{example}[{the unit 2-sphere}]
+With $\Gamma^\theta{}_{\phi\phi}=-\sin\theta\cos\theta$ and $\Gamma^\phi{}_{\theta\phi}=\cot\theta$:
+\[
+\begin{aligned}R^\theta{}_{\theta\phi\phi}&=\partial_\theta\Gamma^\theta{}_{\phi\phi}-\partial_\phi\Gamma^\theta{}_{\theta\phi}+\Gamma^s{}_{\phi\phi}\Gamma^\theta{}_{\theta s}-\Gamma^s{}_{\theta\phi}\Gamma^\theta{}_{\phi s}\\
+&=-(\cos^2\theta-\sin^2\theta)-0+0-\cot\theta(-\sin\theta\cos\theta)=\sin^2\theta .\end{aligned}
+\]
+(The only contributing $s$ in the last term is $s=\phi$.) So $R(\partial_\theta,\partial_\phi)\partial_\phi=\sin^2\theta\,\partial_\theta=g_{\phi\phi}\,\partial_\theta$, which is the special case of the \emph{constant-curvature formula}
+\[
+R(X,Y)Z=K\,\big(g(Y,Z)X-g(X,Z)Y\big),\qquad K=1\ \ (\text{unit sphere}).
+\]
+For the sphere of radius $a$, $K=1/a^2$. The curvature is nonzero in every chart: you cannot flatten a sphere.
+\end{example}

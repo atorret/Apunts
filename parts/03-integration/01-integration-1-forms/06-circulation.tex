@@ -1,0 +1,32 @@
+% Section 16: A local meaning of $\dd\omega$: circulation per unit area} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2577-2608
+%!TEX root = ../../../main.tex
+\subsection{A local meaning of $\dd\omega$: circulation per unit area}\label{sec:circulation}
+
+Let us compute the line integral of $\omega=\omega_1\dd x^1+\omega_2\dd x^2$ around a tiny rectangle with lower-left corner $(x^1,x^2)$ and sides $\varepsilon$ (direction 1) and $\delta$ (direction 2), counter-clockwise.
+
+\Step{1}{the four edges} On each short edge, $\int\omega\approx\omega(\text{midpoint of the edge})\cdot(\text{displacement})$:
+\begin{align*}
+\text{bottom }(x^1,x^2)\to(x^1{+}\varepsilon,x^2)&:\ \omega_1\bigl(x^1{+}\tfrac\varepsilon2,x^2\bigr)\varepsilon,\\
+\text{right }(x^1{+}\varepsilon,x^2)\to(x^1{+}\varepsilon,x^2{+}\delta)&:\ \omega_2\bigl(x^1{+}\varepsilon,x^2{+}\tfrac\delta2\bigr)\delta,\\
+\text{top }(x^1{+}\varepsilon,x^2{+}\delta)\to(x^1,x^2{+}\delta)&:\ -\omega_1\bigl(x^1{+}\tfrac\varepsilon2,x^2{+}\delta\bigr)\varepsilon,\\
+\text{left }(x^1,x^2{+}\delta)\to(x^1,x^2)&:\ -\omega_2\bigl(x^1,x^2{+}\tfrac\delta2\bigr)\delta.
+\end{align*}
+\Step{2}{group the terms}
+\[
+\oint\omega\approx\varepsilon\Bigl[\omega_1\bigl(x^1{+}\tfrac\varepsilon2,x^2\bigr)-\omega_1\bigl(x^1{+}\tfrac\varepsilon2,x^2{+}\delta\bigr)\Bigr]+\delta\Bigl[\omega_2\bigl(x^1{+}\varepsilon,x^2{+}\tfrac\delta2\bigr)-\omega_2\bigl(x^1,x^2{+}\tfrac\delta2\bigr)\Bigr].
+\]
+\Step{3}{Taylor expansion} $\omega_1(x^1{+}\frac\varepsilon2,x^2{+}\delta)-\omega_1(x^1{+}\frac\varepsilon2,x^2)\approx\delta\,\partial_2\omega_1$ and $\omega_2(x^1{+}\varepsilon,x^2{+}\frac\delta2)-\omega_2(x^1,x^2{+}\frac\delta2)\approx\varepsilon\,\partial_1\omega_2$. Therefore, up to terms of higher order than $\varepsilon\delta$,
+\[
+\oint\omega\approx-\varepsilon\delta\,\partial_2\omega_1+\varepsilon\delta\,\partial_1\omega_2=\varepsilon\delta\,\bigl(\partial_1\omega_2-\partial_2\omega_1\bigr).
+\]
+(Evaluating at the starting point of each edge would leave extra terms $-\varepsilon^2\partial_1\omega_1-\delta^2\partial_2\omega_2$, which is why the midpoint is used.)
+\Step{4}{recognise $\dd\omega$} By the plane formula above, $\dd\omega=(\partial_1\omega_2-\partial_2\omega_1)\,\dd x^1\wedge\dd x^2$, and $(\dd x^1\wedge\dd x^2)(\varepsilon\partial_1,\delta\partial_2)=\varepsilon\delta$. Hence
+\begin{equation}\label{eq:circ}
+\oint_{\partial(\text{rectangle})}\omega\approx\dd\omega(\varepsilon\partial_1,\delta\partial_2).
+\end{equation}
+For a parallelogram spanned by $\varepsilon u,\delta v$ with arbitrary vector fields, the same computation gives $\varepsilon\delta\,\dd\omega(u,v)$ with $\dd\omega(u,v)=u(\omega(v))-v(\omega(u))-\omega([u,v])$ (the invariant formula of Theorem~\ref{thm:dprops}); for $u=\partial_1$, $v=\partial_2$ the bracket vanishes and we recover $\partial_1\omega_2-\partial_2\omega_1$.
+\Step{5}{gluing (the idea of Stokes' theorem)} Chop a big region into such small rectangles. Every interior edge is traversed twice, once in each direction by the two neighbouring rectangles, so the contributions cancel in pairs; only the outer boundary survives:
+\[
+\oint_{\partial(\text{region})}\omega=\sum_{\text{rectangles}}\oint\omega\approx\sum\dd\omega(\dots)\ \longrightarrow\ \int_{\text{region}}\dd\omega .
+\]
+Thus $\dd\omega$ is the ``circulation per unit area'': it measures how far the sheets of $\omega$ fail to close up.

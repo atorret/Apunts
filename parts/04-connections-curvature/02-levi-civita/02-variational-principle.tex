@@ -1,0 +1,37 @@
+% Section 21: Geodesics as extremals of length (variational principle)} | Part: 4 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3104-3139
+%!TEX root = ../../../main.tex
+\subsection{Geodesics as extremals of length (variational principle)}
+\begin{formal}[{geodesics extremize the energy functional}]
+For a curve $\gamma:[t_0,t_1]\to M$ consider
+\[
+S_1[\gamma]=\int_{t_0}^{t_1}\sqrt{g(\dot\gamma,\dot\gamma)}\,\dd t\quad(\text{arc length}),\qquad
+S_2[\gamma]=\int_{t_0}^{t_1}g(\dot\gamma,\dot\gamma)\,\dd t\quad(\text{``energy''}).
+\]
+$\gamma$ is a critical point of $S_1$ iff (after a reparametrization) it is a critical point of $S_2$; and \textbf{$\gamma$ is a critical point of $S_2$ with fixed endpoints iff it is a geodesic of $g$}. Proof via the Euler--Lagrange equations for $\mathcal L=\tfrac12g_{ij}(x)\dot x^i\dot x^j$:
+\[
+\frac{\dd}{\dd t}\frac{\partial\mathcal L}{\partial\dot x^l}-\frac{\partial\mathcal L}{\partial x^l}=0\iff g_{lj}\ddot x^j+\partial_kg_{lj}\dot x^k\dot x^j-\tfrac12\partial_lg_{ij}\dot x^i\dot x^j=0,
+\]
+and multiplying by $g^{ml}$ and symmetrizing the middle term in $(k,j)$ gives exactly $\ddot x^m+\Gamma^m{}_{ij}\dot x^i\dot x^j=0$ with $\Gamma$ from \eqref{eq:christmetric}.
+\end{formal}
+\begin{intuition}[{shortest path (Riemannian), longest proper time (Lorentzian)}]
+On a sphere the shortest path between two points is an arc of a great circle (not unique for antipodal points). In Minkowski space, a straight timelike worldline \emph{maximizes} the proper time between two events (twin paradox). The variational point of view is also the starting point of the Lagrangian formulation of GR and the reason why geodesic motion is a ``principle of least action''.
+\end{intuition}
+
+\begin{example}[{Euler--Lagrange in polar coordinates}]
+$\mathcal L=\tfrac12(\dot r^2+r^2\dot\varphi^2)$. $\frac{\dd}{\dd t}\partial_{\dot r}\mathcal L=\ddot r$, $\partial_r\mathcal L=r\dot\varphi^2$, hence $\ddot r=r\dot\varphi^2$; and $\frac{\dd}{\dd t}(r^2\dot\varphi)=0$. These are exactly the geodesic equations above, obtained without computing a single Christoffel symbol. This is often the fastest way to find $\Gamma$: read them off as the coefficients of $-\dot x^i\dot x^j$ in the E--L equations.
+\end{example}
+
+\begin{formal}[{conserved quantities}]
+If $\xi$ is a Killing field of $g$ and $\gamma$ is a geodesic then $g(\xi,\dot\gamma)$ is constant along $\gamma$. (Proof: $\frac{\dd}{\dd t}g(\xi,\dot\gamma)=g(\nabla_{\dot\gamma}\xi,\dot\gamma)+g(\xi,\nabla_{\dot\gamma}\dot\gamma)=\nabla_{(i}\xi_{j)}\dot\gamma^i\dot\gamma^j+0=0$, because $\Lie_\xi g_{ij}=\nabla_i\xi_j+\nabla_j\xi_i=0$.)
+\end{formal}
+\begin{example}[{conservation of angular momentum}]
+$\xi=\partial_\varphi$ is Killing for $g=\dd r^2+r^2\dd\varphi^2$. Then $g(\xi,\dot\gamma)=r^2\dot\varphi$ is conserved, as we found. For Schwarzschild one gets the energy $E=-g(\partial_t,\dot\gamma)$ and $L=g(\partial_\varphi,\dot\gamma)$.
+\end{example}
+
+\begin{example}[{geodesics of an expanding universe: cosmological redshift (1+1 model)}]
+From $\Gamma^t{}_{xx}=a\dot a$, $\Gamma^x{}_{tx}=\dot a/a$ (previous example), with affine parameter $\lambda$:
+\[
+\ddot t+a\dot a\,\dot x^2=0,\qquad\ddot x+\frac{2\dot a}{a}\dot t\dot x=0 .
+\]
+The second equation is $\frac{\dd}{\dd\lambda}(a^2\dot x)=0$ (the translation $\partial_x$ is Killing): $p:=a^2\dot x$ is conserved. The \emph{physical} momentum is the norm of the spatial velocity, $a\dot x=p/a(t)$: as the universe expands ($a$ grows), the physical momentum of a free particle decreases, \ie photons are \textbf{redshifted}. Light rays satisfy $g(\dot\gamma,\dot\gamma)=0\Rightarrow dx/dt=\pm1/a(t)$.
+\end{example}

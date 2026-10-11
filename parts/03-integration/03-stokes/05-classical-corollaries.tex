@@ -1,0 +1,52 @@
+% Section 18: Classical corollaries} | Part: 3 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2769-2819
+%!TEX root = ../../../main.tex
+\subsection{Classical corollaries}\label{sec:classical}
+
+Let $\R^3$ carry its Euclidean metric $g$, orientation and volume form $\vol=\dd x\wedge\dd y\wedge\dd z$. With the musical isomorphisms $\flat,\sharp$ and the Hodge star $\hodge$ one has the dictionary
+\[
+\operatorname{grad}f=(\dd f)^\sharp,\qquad
+\operatorname{curl}F=\bigl(\hodge\,\dd F^\flat\bigr)^\sharp,\qquad
+\operatorname{div}F=\hodge\,\dd\hodge F^\flat,\qquad
+\iota_F\vol=\hodge F^\flat .
+\]
+Applying Theorem~\ref{thm:stokes} to forms of degree $0,1,2$ yields:
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}p{2.5cm}p{4.5cm}p{7.0cm}@{}}
+\toprule
+\textbf{Form of Stokes} & \textbf{Differential forms} & \textbf{Classical statement}\\
+\midrule
+$n=1$ & $\int_a^b\dd f=f(b)-f(a)$ & fundamental theorem of calculus / gradient theorem\\
+$n=2$ (planar $D$) & $\int_D\dd\omega=\oint_{\partial D}\omega$ & Green: $\oint P\,\dd x+Q\,\dd y=\iint(Q_x-P_y)\,\dd A$\\
+$n=2$ (surface $S\subset\R^3$) & $\int_S\dd F^\flat=\oint_{\partial S}F^\flat$ & Kelvin--Stokes: $\oint F\cdot\dd r=\iint(\operatorname{curl}F)\cdot n\,\dd A$\\
+$n=3$ & $\int_\Omega\dd(\iota_F\vol)=\int_{\partial\Omega}\iota_F\vol$ & Gauss: $\iiint\operatorname{div}F\,\dd V=\iint_{\partial\Omega}F\cdot n\,\dd A$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subhead{Verification of the dictionary, step by step}
+In $\R^3$ with the Euclidean metric, lowering an index changes nothing numerically: $F^\flat=F_x\dd x+F_y\dd y+F_z\dd z$. Recall \eqref{eq:iotavol}: $\iota_G\vol=G_x\,\dd y\wedge\dd z+G_y\,\dd z\wedge\dd x+G_z\,\dd x\wedge\dd y$.
+
+\emph{(i) Curl.} Compute $\dd F^\flat$ term by term, using $\dd x\wedge\dd x=0$:
+\begin{align*}
+\dd(F_x\dd x)&=\partial_yF_x\,\dd y\wedge\dd x+\partial_zF_x\,\dd z\wedge\dd x=-\partial_yF_x\,\dd x\wedge\dd y+\partial_zF_x\,\dd z\wedge\dd x,\\
+\dd(F_y\dd y)&=\partial_xF_y\,\dd x\wedge\dd y+\partial_zF_y\,\dd z\wedge\dd y=\partial_xF_y\,\dd x\wedge\dd y-\partial_zF_y\,\dd y\wedge\dd z,\\
+\dd(F_z\dd z)&=\partial_xF_z\,\dd x\wedge\dd z+\partial_yF_z\,\dd y\wedge\dd z=-\partial_xF_z\,\dd z\wedge\dd x+\partial_yF_z\,\dd y\wedge\dd z.
+\end{align*}
+Adding and collecting the three basis $2$-forms:
+\[
+\dd F^\flat=(\partial_yF_z-\partial_zF_y)\,\dd y\wedge\dd z+(\partial_zF_x-\partial_xF_z)\,\dd z\wedge\dd x+(\partial_xF_y-\partial_yF_x)\,\dd x\wedge\dd y=\iota_{\operatorname{curl}F}\vol,
+\]
+since the three coefficients are exactly the components of $\operatorname{curl}F$. Because $\hodge\hodge=1$ in $\R^3$ and $\hodge(\dd y\wedge\dd z)=\dd x$, etc., this is the same as $\operatorname{curl}F=(\hodge\,\dd F^\flat)^\sharp$.
+
+\emph{(ii) Divergence.} $\iota_F\vol=F_x\dd y\wedge\dd z+F_y\dd z\wedge\dd x+F_z\dd x\wedge\dd y$. Differentiating, only the derivative with respect to the variable missing from each $2$-form survives:
+$\dd(F_x\dd y\wedge\dd z)=\partial_xF_x\,\dd x\wedge\dd y\wedge\dd z$, $\dd(F_y\dd z\wedge\dd x)=\partial_yF_y\,\dd y\wedge\dd z\wedge\dd x$, $\dd(F_z\dd x\wedge\dd y)=\partial_zF_z\,\dd z\wedge\dd x\wedge\dd y$,
+and the three $3$-forms equal $\dd x\wedge\dd y\wedge\dd z$ (cyclic permutations of three $1$-forms are even). So $\dd(\iota_F\vol)=(\operatorname{div}F)\,\vol$.
+
+\emph{(iii) Kelvin--Stokes.} For an oriented surface $S\subset\R^3$ with unit normal $n$ the restriction satisfies $\iota_G\vol|_S=\langle G,n\rangle\,\dd A$ (same computation as in Lemma~\ref{lem:fluxbdry} below, with $e_1=n$ and $e_2,e_3$ tangent to $S$). Then
+\[
+\oint_{\partial S}F\cdot\dd r=\oint_{\partial S}F^\flat\overset{\text{Stokes}}=\int_S\dd F^\flat=\int_S\iota_{\operatorname{curl}F}\vol=\iint_S\langle\operatorname{curl}F,n\rangle\,\dd A .
+\]
+\emph{(iv) Gauss.} $\displaystyle\int_\Omega(\operatorname{div}F)\,\dd V\overset{\text{(ii)}}=\int_\Omega\dd(\iota_F\vol)\overset{\text{Stokes}}=\int_{\partial\Omega}\iota_F\vol=\iint_{\partial\Omega}\langle F,n\rangle\,\dd A$, again by the restriction formula.

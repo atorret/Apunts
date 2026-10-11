@@ -1,0 +1,9 @@
+% Section 13: Vector fields and their flows} | Part: 2 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2173-2180
+%!TEX root = ../../../main.tex
+\subsection{Vector fields and their flows}
+\begin{formal}[{flow of a vector field}]
+A vector field $X\in\Xfield(M)$ is equivalent to an ODE for curves: $\dot\gamma(t)=X_{\gamma(t)}$, \ie in a chart $\dot x^i=X^i(x)$. By existence and uniqueness of ODE solutions $X$ defines a \emph{flow} $\phi_t$ (defined for small $t$ near each point): $\phi_t(x)$ is the solution at time $t$ with initial condition $x$. Properties: $\phi_0=\id$, $\phi_{t_1}\circ\phi_{t_2}=\phi_{t_1+t_2}$ (where defined), $\phi_t^{-1}=\phi_{-t}$, $\frac{\dd}{\dd t}\phi_t(x)=X_{\phi_t(x)}$, and to first order $\phi_\varepsilon(x)=x+\varepsilon X(x)+O(\varepsilon^2)$.
+\end{formal}
+\begin{intuition}[{wind blowing a leaf}]
+$X$ is a stationary wind map; $\phi_t$ moves every point for time $t$ following the wind. The family $t\mapsto\phi_t$ is a one-parameter group of local diffeomorphisms: $X$ is its \emph{infinitesimal generator}.
+\end{intuition}

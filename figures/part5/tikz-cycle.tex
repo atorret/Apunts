@@ -1,0 +1,13 @@
+% Figure | used in parts/05-physics/01-intrinsic-vs-metric/05-thermodynamics.tex
+%!TEX root = ../../main.tex
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth]
+  \draw[->] (0,0)--(4.6,0) node[right] {$V$};
+  \draw[->] (0,0)--(0,2.8) node[above] {$p$};
+  \draw[blue!70!black,fill=blue!8,rounded corners=10pt] (1.5,0.9) rectangle (3.0,2.0);
+  \draw[->,red!75!black,thick] (2.45,1.75) arc (80:-250:0.28);
+\end{tikzpicture}
+\caption{A thermodynamic cycle in the $(V,p)$ plane. Stokes' theorem identifies $\oint p\,\dd V$ with the enclosed area; the (clockwise) cycle delivers net work to the surroundings. No metric is involved.}
+\label{fig:cycle}
+\end{figure}

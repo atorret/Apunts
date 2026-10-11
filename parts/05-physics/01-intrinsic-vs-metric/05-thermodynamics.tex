@@ -1,0 +1,21 @@
+% Section 25: Thermodynamics: there is no metric at all} | Part: 5 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3529-3558
+%!TEX root = ../../../main.tex
+\subsection{Thermodynamics: there is no metric at all}\label{sec:phys-thermo}
+
+The state space of a gas (coordinates $V$, $S$, \dots) has no natural inner product: it makes no sense to ``dot'' a pressure with a volume. Yet work and heat are line integrals,
+\begin{equation}\label{eq:thermo}
+\delta W=-p\,\dd V,\qquad\delta Q=T\,\dd S,\qquad\dd U=\delta Q-p\,\dd V,
+\end{equation}
+which shows that in thermodynamics the pairing ``covector $\times$ displacement'' is the only possible meaning of work. Here $U$ is a \emph{state function} ($\dd U$ is exact) while $\delta Q$ and $\delta W$ are not closed, which is why heat and work depend on the path.
+
+\input{figures/part5/tikz-cycle}
+
+By Stokes (Green) in the $(V,p)$ plane,
+\begin{align*}
+\oint p\,\dd V&=\iint\dd(p\,\dd V) &&\text{(Stokes)}\\
+&=\iint\dd p\wedge\dd V &&(\dd(p\,\dd V)=\dd p\wedge\dd V\text{ since }\dd\dd V=0)\\
+&=-\iint\dd V\wedge\dd p &&\text{(antisymmetry)}\\
+&=-\text{Area} &&\text{if the loop is counter-clockwise in the $(V,p)$ plane,}
+\end{align*}
+because $\dd V\wedge\dd p$ is the standard (positive) area form there. So a \emph{clockwise} cycle gives $+$Area (as in Figure~\ref{fig:cycle}): this is the net work delivered by the cycle. Since $\oint\dd U=0$, the first law gives $\oint\delta Q=\oint p\,\dd V$: the heat absorbed over a cycle equals the work delivered. Both are nonzero exactly when the loop encloses a nonzero area (if $\delta Q$ were exact, both would vanish).
+Carath\'eodory (1909) formulated the second law as a statement about the Pfaffian form $\delta Q$: $1/T$ is an integrating factor, $\delta Q/T=\dd S$.

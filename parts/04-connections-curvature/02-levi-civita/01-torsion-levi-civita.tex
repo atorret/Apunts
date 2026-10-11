@@ -1,0 +1,41 @@
+% Section 21: 01-torsion-levi-civita | Part: 4 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3064-3103
+%!TEX root = ../../../main.tex
+\begin{formal}[{torsion}]
+The \emph{torsion} of $\nabla$ is $\mathrm{Tor}(X,Y)=\nabla_XY-\nabla_YX-[X,Y]$. It is $C^\infty(M)$-linear in both arguments, hence given by a tensor $T\in\TF{1}{2}(M)$; in a chart $T^i{}_{jk}=\Gamma^i{}_{jk}-\Gamma^i{}_{kj}$. It is antisymmetric: $T(X,Y)=-T(Y,X)$. The connection is called \emph{symmetric} (or \emph{torsion-free}) if $T=0$, which in coordinates means $\Gamma^i{}_{jk}=\Gamma^i{}_{kj}$.
+\end{formal}
+\begin{intuition}[{torsion = twisting of the frames}]
+Torsion measures whether an infinitesimal parallelogram built by parallel-transporting two small vectors along each other closes up. Torsion-free means ``no screw-like twisting''. In GR we always assume $T=0$.
+\end{intuition}
+
+\begin{formal}[{metric compatibility and the Levi-Civita theorem}]
+Let $g$ be a metric. A connection is \emph{metric} if $\nabla_Xg=0$ for all $X$, \ie $X\big(g(Y,Z)\big)=g(\nabla_XY,Z)+g(Y,\nabla_XZ)$.
+
+\textbf{Theorem (Fundamental theorem of (pseudo-)Riemannian geometry).} For every metric $g$ there is a \emph{unique} connection $\nabla=\nabla^{LC}$ that is (i) metric and (ii) torsion-free. It is determined by the \emph{Koszul formula}
+\begin{align*}
+2g(\nabla_XY,Z)&=X\big(g(Y,Z)\big)+Y\big(g(X,Z)\big)-Z\big(g(X,Y)\big)\\
+&\quad+g([Z,X],Y)+g([X,Y],Z)-g(X,[Y,Z]).
+\end{align*}
+\emph{Idea of the proof.} Write the metric property for $(X;Y,Z)$, $(Y;Z,X)$, $(Z;X,Y)$, add the first two and subtract the third, and use $\nabla_XY-\nabla_YX=[X,Y]$ to eliminate all covariant derivatives except $g(\nabla_XY,Z)$. Non-degeneracy of $g$ then determines $\nabla_XY$.
+
+In coordinates, taking $X=\partial_i,Y=\partial_j,Z=\partial_l$ (all brackets vanish):
+\begin{equation}\label{eq:christmetric}
+\boxed{\ \Gamma^k{}_{ij}=\tfrac12\,g^{kl}\big(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\big)\ }
+\end{equation}
+with $(g^{kl})$ the inverse matrix of $(g_{ij})$.
+\end{formal}
+\begin{intuition}[{the ``natural'' connection of a metric}]
+The Levi-Civita connection is the unique way of doing parallel transport such that (i) \textbf{lengths and angles are preserved}, since $g(\Pi v,\Pi w)=g(v,w)$ and (ii) there is \textbf{no torsion}. It is therefore a function of the metric alone, $g\mapsto\nabla^{LC}$: every construction from $\nabla^{LC}$ is a construction from $g$. Geodesics of $\nabla^{LC}$ are called ``geodesics of $g$''. Also, $\nabla$ commutes with raising and lowering of indices.
+\end{intuition}
+
+\begin{example}[{Christoffel symbols from the metric}]
+\textbf{Polar plane:} $g_{rr}=1,\ g_{\varphi\varphi}=r^2$. The only non-zero derivative is $\partial_rg_{\varphi\varphi}=2r$. From \eqref{eq:christmetric}: $\Gamma^r{}_{\varphi\varphi}=\frac12g^{rr}(-\partial_rg_{\varphi\varphi})=-r$, $\Gamma^\varphi{}_{r\varphi}=\frac12g^{\varphi\varphi}\partial_rg_{\varphi\varphi}=\frac1r$. \checkmark\ (The same as before: the Euclidean connection \emph{is} the Levi-Civita connection of the Euclidean metric.)
+
+\textbf{Unit sphere:} $g_{\theta\theta}=1$, $g_{\phi\phi}=\sin^2\theta$, $\partial_\theta g_{\phi\phi}=2\sin\theta\cos\theta$:
+\[
+\Gamma^\theta{}_{\phi\phi}=-\tfrac12\partial_\theta g_{\phi\phi}=-\sin\theta\cos\theta,\qquad
+\Gamma^\phi{}_{\theta\phi}=\Gamma^\phi{}_{\phi\theta}=\tfrac12\frac{1}{\sin^2\theta}\,\partial_\theta g_{\phi\phi}=\cot\theta,
+\]
+all others zero. Radius $a$ gives the same symbols (a constant rescaling of $g$ does not change $\Gamma$).
+
+\textbf{Expanding universe (1+1 dimensions):} $g=-\dd t\otimes\dd t+a(t)^2\,\dd x\otimes\dd x$. Then $\Gamma^t{}_{xx}=\tfrac12g^{tt}(-\partial_tg_{xx})=\tfrac12(-1)(-2a\dot a)=a\dot a$, $\Gamma^x{}_{tx}=\tfrac12g^{xx}\partial_tg_{xx}=\dot a/a$.
+\end{example}

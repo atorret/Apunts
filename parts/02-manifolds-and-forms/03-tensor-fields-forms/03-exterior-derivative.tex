@@ -1,0 +1,88 @@
+% Section 12: The exterior derivative} | Part: 2 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 2056-2145
+%!TEX root = ../../../main.tex
+\subsection{The exterior derivative}\label{sec:dform}
+Let $M$ be a smooth $n$-manifold (for concreteness, an open subset of $\R^n$ with coordinates $x^1,\dots,x^n$). At $p\in M$ the tangent space $T_pM$ has the basis $\partial_i=\partial/\partial x^i$ and the cotangent space $T_p^*M=(T_pM)^*$ has the dual basis $\dd x^i$.
+
+\begin{definition}[Differential form]
+A \emph{differential $k$-form} is a smooth assignment $p\mapsto\omega_p\in\bigwedge^kT_p^*M\cong\Alt^k(T_pM;\R)$, i.e.\ at each point an alternating $k$-linear function on tangent vectors (see the Remark in \S\ref{sec:ext}). In coordinates
+\[
+ \omega=\sum_{i_1<\cdots<i_k}\omega_{i_1\cdots i_k}(x)\,\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_k}=\sum_I\omega_I\,\dd x^I,
+\]
+with smooth coefficients. $\Omega^k(M)$ denotes the space of $k$-forms; $0$-forms are functions. The wedge product is the pointwise exterior product.
+\end{definition}
+
+\begin{definition}[Exterior derivative]\label{def:d}
+The \emph{exterior derivative} is the unique $\R$-linear operator $\dd:\Omega^k(M)\to\Omega^{k+1}(M)$ such that
+\begin{enumerate}
+  \item for functions, $\dd f=\sum_i\partial_if\,\dd x^i$ (i.e.\ $\dd f(X)=Xf$);
+  \item (graded Leibniz rule) $\dd(\alpha\wedge\beta)=\dd\alpha\wedge\beta+(-1)^k\alpha\wedge\dd\beta$ for $\alpha\in\Omega^k$;
+  \item $\dd^2=0$.
+\end{enumerate}
+In coordinates:
+\begin{equation}\label{eq:dcoord}
+ \dd\Bigl(\sum_I\omega_I\,\dd x^I\Bigr)=\sum_I\sum_{j=1}^n\partial_j\omega_I\;\dd x^j\wedge\dd x^I .
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Fundamental properties]\label{thm:dprops}
+\begin{enumerate}
+  \item $\dd^2=0$.
+  \item $\dd$ commutes with pullbacks: $\phi^*(\dd\omega)=\dd(\phi^*\omega)$ for every smooth map $\phi$. In particular formula \eqref{eq:dcoord} is independent of coordinates.
+  \item (\emph{Invariant formula}) For vector fields $X_0,\dots,X_k$:
+  \begin{multline*}
+  \dd\omega(X_0,\dots,X_k)=\sum_i(-1)^iX_i\bigl(\omega(\dots,\widehat{X_i},\dots)\bigr)\\
+  +\sum_{i<j}(-1)^{i+j}\omega([X_i,X_j],\dots,\widehat{X_i},\dots,\widehat{X_j},\dots).
+  \end{multline*}
+  \item (\emph{Stokes' theorem}) If $M$ is an oriented compact $n$-manifold with boundary and $\omega\in\Omega^{n-1}(M)$, then $\displaystyle\int_M\dd\omega=\int_{\partial M}\omega$.
+  \item (\emph{Poincar\'e lemma}) On a contractible (e.g.\ star-shaped) domain, every closed form ($\dd\omega=0$) of degree $\ge1$ is exact ($\omega=\dd\eta$).
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof of (1)]
+By \eqref{eq:dcoord} applied twice,
+$\dd^2\omega=\sum_I\sum_{j,k}\partial_k\partial_j\omega_I\,\dd x^k\wedge\dd x^j\wedge\dd x^I.$
+The coefficient $\partial_k\partial_j\omega_I$ is symmetric in $(j,k)$ (equality of mixed partials), whereas $\dd x^k\wedge\dd x^j$ is antisymmetric; so the sum vanishes.
+\end{proof}
+
+\begin{example}[$\R^3$: gradient, curl, divergence]
+\begin{itemize}
+  \item \emph{gradient} ($0$-forms $\to$ $1$-forms):
+  $\dd f=f_x\,\dd x+f_y\,\dd y+f_z\,\dd z$;
+  \item \emph{curl} ($1$-forms $\to$ $2$-forms):
+  \begin{align*}
+   \dd(P\,\dd x+Q\,\dd y+R\,\dd z)&=(R_y-Q_z)\,\dd y\wedge\dd z+(P_z-R_x)\,\dd z\wedge\dd x\\
+   &\quad+(Q_x-P_y)\,\dd x\wedge\dd y;
+  \end{align*}
+  \item \emph{divergence} ($2$-forms $\to$ $3$-forms):
+  $\dd(A\,\dd y\wedge\dd z+B\,\dd z\wedge\dd x+C\,\dd x\wedge\dd y)=(A_x+B_y+C_z)\,\dd x\wedge\dd y\wedge\dd z$.
+\end{itemize}
+
+Thus $\dd^2=0$ contains the identities $\vd\times\vd f=0$ and $\vd\cdot(\vd\times\mathbf v)=0$, and Stokes' theorem contains the gradient theorem, the Kelvin--Stokes theorem and the divergence theorem.
+\end{example}
+
+\begin{intuition}
+\begin{itemize}
+  \item A $1$-form is a field of ``measuring devices'' for line segments: integrate it along a path to get a number (work, circulation). A $2$-form measures oriented \emph{areas} (flux), a $3$-form measures volumes. This is exactly the dual (``measuring'') side of the arrows/areas picture of \S\ref{sec:ext}.
+  \item $\dd\omega$ is the \emph{infinitesimal circulation}: $\dd\omega(X,Y)\,\epsilon^2$ is the integral of $\omega$ around the little parallelogram spanned by $\epsilon X,\epsilon Y$ (the closing term of the fundamental theorem of calculus). Stokes' theorem is the statement that if you sum these small circulations over a region, interior edges cancel in pairs and only the boundary survives.
+  \item $\dd^2=0$ is the algebraic shadow of ``\emph{the boundary of a boundary is empty}'': the faces of an infinitesimal cube have boundary edges that cancel in pairs.
+  \item Grad, curl and div are \emph{one} operator $\dd$ acting in different degrees; the three vector-calculus theorems are \emph{one} theorem. The cross product and the ``vector'' character of curl are artefacts of $3$D, where $2$-forms can be disguised as vectors by duality.
+\end{itemize}
+\end{intuition}
+
+
+\begin{example}[Everything on one function]\label{ex:onefunction}
+Let $f(x,y)=x^2y$ on $\R^2$. Then
+\begin{align*}
+\dd f&=2xy\,\dd x+x^2\,\dd y &&\text{(second relation of \eqref{eq:trio})}\\
+\partial_xf&=\iota_{\partial_x}\dd f=\dd f(\partial_x)=2xy &&\text{(third relation of \eqref{eq:trio})}\\
+\dd(\dd f)&=\dd(2xy)\wedge\dd x+\dd(x^2)\wedge\dd y &&\text{(Leibniz, $\dd\dd x=\dd\dd y=0$)}\\
+&=(2y\,\dd x+2x\,\dd y)\wedge\dd x+2x\,\dd x\wedge\dd y\\
+&=2x\,\dd y\wedge\dd x+2x\,\dd x\wedge\dd y\\
+&=-2x\,\dd x\wedge\dd y+2x\,\dd x\wedge\dd y=0 &&\text{(antisymmetry).}
+\end{align*}
+The last line is $\dd\dd=0$: it holds because $\partial_x\partial_yf=\partial_y\partial_xf$ is symmetric while $\dd x\wedge\dd y$ is antisymmetric (Section~\ref{sec:expl-closed}).
+\end{example}
+
+\begin{keyidea}[$\dd$ needs no metric and no connection]
+The exterior derivative is built from partial derivatives and the wedge product only. Its coordinate independence (Theorem~\ref{thm:dprops}(2)) comes from the symmetry of mixed partials against the antisymmetry of $\wedge$.
+In Section~\ref{sec:synth3} we shall see why a covariant derivative, whose second derivatives do \emph{not} commute (curvature), cannot be used to build such an operator unless the space is flat.
+\end{keyidea}

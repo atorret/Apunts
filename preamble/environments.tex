@@ -1,0 +1,56 @@
+% Preamble: theorem-like environments, shared counter, tcolorbox callouts, proof helpers | Original lines: 93-146
+%!TEX root = ../main.tex
+% =====================================================================
+%  Theorem-like environments (plain amsthm look, as in the reference)
+%  One counter per section, shared by theorems, examples, remarks, ...
+% =====================================================================
+\newcounter{thm}[section]
+\renewcommand{\thethm}{\thesection.\arabic{thm}}
+\numberwithin{equation}{section}
+\theoremstyle{definition}
+\newtheorem{definition}[thm]{Definition}
+\theoremstyle{plain}
+\newtheorem{theorem}[thm]{Theorem}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+
+% =====================================================================
+%  Colour callout boxes (the visual vocabulary of this document)
+%  Shape follows the reference PDF: dark title bar, pale body, rounded.
+% =====================================================================
+\tcbset{calloutbase/.style={enhanced,breakable,arc=2pt,boxrule=0.6pt,
+   left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,
+   fonttitle=\bfseries\small,toptitle=1.5pt,bottomtitle=1.5pt,
+   before skip=8pt,after skip=8pt,
+   segmentation style={solid},
+   parbox=false}}
+
+% numbered, shared counter: Example 3.4 (optional name)
+\newtcolorbox[use counter*=thm]{example}[1][]{calloutbase,
+   colback=examplebg,colframe=examplefr,
+   title={Example~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+\newtcolorbox[use counter*=thm]{remark}[1][]{calloutbase,
+   colback=remarkbg,colframe=remarkfr,
+   title={Remark~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+\newtcolorbox[use counter*=thm]{specialcase}[1][]{calloutbase,
+   colback=specialbg,colframe=specialfr,
+   title={Special case~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+
+% unnumbered
+\newtcolorbox{keyidea}[1][]{calloutbase,colback=kiback,colframe=navy,
+   title={\if\relax\detokenize{#1}\relax Key idea\else #1\fi}}
+\newtcolorbox{keypoints}[1][]{calloutbase,colback=kiback,colframe=navy,
+   title={Key points\if\relax\detokenize{#1}\relax\else\ of #1\fi}}
+\newtcolorbox{intuition}[1][]{calloutbase,colback=intuitbg,colframe=intuitfr,
+   title={Intuition\if\relax\detokenize{#1}\relax\else: #1\fi}}
+\newtcolorbox{formal}[1][]{calloutbase,colback=formalbg,colframe=formalfr,
+   title={Formal idea\if\relax\detokenize{#1}\relax\else: #1\fi}}
+\newtcolorbox{pitfall}[1][]{calloutbase,colback=pitbg,colframe=pitfr,
+   title={Careful\if\relax\detokenize{#1}\relax\else: #1\fi}}
+\newtcolorbox{synthesis}[1][]{calloutbase,colback=synthbg,colframe=synthfr,
+   title={Synthesis\if\relax\detokenize{#1}\relax\else: #1\fi}}
+\newtcolorbox{exercises}{calloutbase,colback=exbg,colframe=exfr,title={Exercises}}
+
+\newcommand{\numcheck}{\textit{Numerical check.}\ }
+\newcommand{\Step}[2]{\textbf{Step #1 (#2).}\ }

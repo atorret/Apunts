@@ -1,0 +1,32 @@
+% Section 4: Blades} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1113-1175
+%!TEX root = ../../../main.tex
+\subsection{Blades}\label{sec:blades}
+\begin{definition}[Blade]
+A $k$-vector of the form $A=a_1\wedge\cdots\wedge a_k$ is called a \emph{$k$-blade} (or \emph{simple}, \emph{decomposable} $k$-vector).
+A general $k$-vector is a sum of $k$-blades.
+\end{definition}
+
+\begin{proposition}[Blades $\leftrightarrow$ subspaces]\label{prop:blade}
+Let $A=a_1\wedge\cdots\wedge a_k\neq0$. Then $U_A:=\{v\in V: v\wedge A=0\}=\Span(a_1,\dots,a_k)$, a $k$-dimensional subspace.
+Two nonzero blades define the same subspace iff they are proportional.
+\end{proposition}
+\begin{proof}
+By Theorem~\ref{thm:extbasis}, $v\wedge a_1\wedge\cdots\wedge a_k=0$ iff $v,a_1,\dots,a_k$ are linearly dependent, iff $v\in\Span(a_i)$. If $b_1\wedge\cdots\wedge b_k$ spans the same subspace, $b_j=M_j^{\,i}a_i$ with $M$ invertible, and Corollary~\ref{cor:det} gives $b_1\wedge\cdots\wedge b_k=\det M\;a_1\wedge\cdots\wedge a_k$.
+\end{proof}
+
+Not every $k$-vector is a blade. For instance, $e_1\wedge e_2+e_3\wedge e_4\in\bigwedge^2\R^4$ is not (it satisfies $A\wedge A=2\,e_1\wedge e_2\wedge e_3\wedge e_4\neq0$, whereas $a\wedge b\wedge a\wedge b=0$ for any blade). In fact a nonzero $2$-vector is a blade iff $A\wedge A=0$ (Pl\"ucker relation).
+
+\input{figures/part1/tikz-wedge}
+
+\begin{intuition}
+\begin{itemize}
+  \item A \textbf{vector} is a directed length (an oriented line segment). A \textbf{bivector} $a\wedge b$ is a \emph{directed area}: an
+  oriented patch of plane with a magnitude (the area of the parallelogram) and a sense of circulation (go along $a$, then along $b$);
+  see Fig.~\ref{fig:wedge}. A \textbf{trivector} $a\wedge b\wedge c$ is an oriented volume, and so on: grade $0,1,2,3,\dots$ = point (scalar), line, plane, volume.
+  \item $a\wedge b=0$ exactly when $a,b$ are parallel: the parallelogram is degenerate. This is the algebraic statement that ``zero area'' means ``dependent''.
+  \item Only the \emph{plane}, \emph{area} and \emph{orientation} matter, not the particular shape of the parallelogram: $a\wedge(b+\lambda a)=a\wedge b$.
+  \item $a\wedge b=-b\wedge a$: reversing the circulation reverses the orientation, just like swapping two columns flips the sign of a determinant (Corollary~\ref{cor:det}: the determinant \emph{is} the volume of the top-grade wedge).
+  \item Unlike the cross product, which only exists in $3$D and secretly produces a vector perpendicular to a plane, the wedge works in every dimension and keeps the plane \emph{as a plane}. (We recover the cross product through duality in \S\ref{sec:duality}.)
+  \item The exterior algebra knows nothing about lengths or angles: it is metric-free. To also measure, we need the Clifford algebra.
+\end{itemize}
+\end{intuition}

@@ -1,0 +1,28 @@
+% Section 4: The interior product} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 1239-1265
+%!TEX root = ../../../main.tex
+\subsection{The interior product}\label{sec:interior}
+
+For a $k$-form $\alpha$ (an alternating $k$-linear map on tangent vectors) and a vector $v$, the \emph{interior product} (contraction in the first slot) is the $(k-1)$-form
+\begin{equation}\label{eq:interior}
+(\iota_v\alpha)(w_1,\dots,w_{k-1})=\alpha(v,w_1,\dots,w_{k-1}).
+\end{equation}
+For $k=1$ this is exactly \eqref{eq:pairing}: $\iota_v\omega=\omega(v)$. The interior product satisfies
+\begin{align*}
+\iota_v(\alpha\wedge\beta)&=\iota_v\alpha\wedge\beta+(-1)^k\alpha\wedge\iota_v\beta &&\text{(antiderivation, \eqref{eq:antider}),}\\
+\iota_v\iota_v&=0, &&\text{($\alpha$ alternating),}\\
+\Lie_X&=\dd\,\iota_X+\iota_X\,\dd &&\text{(Cartan's ``magic'' formula, Section~\ref{sec:cartan}).}
+\end{align*}
+
+\begin{example}[The interior product in the plane]\label{ex:interiorplane}
+The $2$-form $\dd x\wedge\dd y=\dd x\otimes\dd y-\dd y\otimes\dd x$ acts on two vectors $a,b$ as a determinant:
+$(\dd x\wedge\dd y)(a,b)=a^xb^y-a^yb^x$. Contract the first slot with $v$ and evaluate on a second vector $w$:
+\begin{align*}
+\bigl(\iota_v(\dd x\wedge\dd y)\bigr)(w)&=(\dd x\wedge\dd y)(v,w) &&\text{(definition \eqref{eq:interior})}\\
+&=v^xw^y-v^yw^x &&\text{(determinant formula)}\\
+&=\bigl(v^x\,\dd y-v^y\,\dd x\bigr)(w) &&\text{(since $\dd y(w)=w^y$, $\dd x(w)=w^x$).}
+\end{align*}
+Hence $\iota_v(\dd x\wedge\dd y)=v^x\,\dd y-v^y\,\dd x$. Two checks: (i) the antiderivation rule gives $\iota_v\dd x\wedge\dd y-\dd x\wedge\iota_v\dd y=v^x\dd y-v^y\dd x$ (same result, using $\iota_v\dd x=v^x$, $\iota_v\dd y=v^y$);
+(ii) $\iota_v\iota_v(\dd x\wedge\dd y)=\iota_v(v^x\dd y-v^y\dd x)=v^xv^y-v^yv^x=0$.
+\end{example}
+
+The interior product is the bridge between the integration of $1$-forms (Section~\ref{sec:int1}), flux integrals (Section~\ref{sec:intk}) and the Gauss theorem (Section~\ref{sec:gauss}); its metric twin for multivectors is the left contraction of Section~\ref{sec:ops}.

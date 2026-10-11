@@ -1,0 +1,59 @@
+% Section 4: Properties of the wedge product} | Part: 1 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 984-1041
+%!TEX root = ../../../main.tex
+\subsection{Properties of the wedge product}\label{sec:wedgeprops}
+
+\begin{proposition}\label{prop:wedgeprops}
+Let $\alpha\in\bigwedge^k$, $\beta\in\bigwedge^l$, $\gamma\in\bigwedge^m$ and $f$ a function (a $0$-form).
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Bilinear and associative:} $(\alpha\wedge\beta)\wedge\gamma=\alpha\wedge(\beta\wedge\gamma)$, and $f\wedge\alpha=f\alpha$ (the wedge with a $0$-form is ordinary multiplication).
+\item \emph{Graded commutative:} $\alpha\wedge\beta=(-1)^{kl}\beta\wedge\alpha$. In particular $\alpha\wedge\alpha=0$ if $k$ is odd (\eg $\dd x\wedge\dd x=0$), and even-degree forms commute with everything.
+\item \emph{Non-vanishing criterion:} for $1$-forms, $\alpha^1\wedge\cdots\wedge\alpha^k\neq0$ if and only if $\alpha^1,\dots,\alpha^k$ are linearly independent.
+\item \emph{Change of basis $=$ determinant:} if $\beta^i=A^i{}_j\alpha^j$ ($i,j=1,\dots,n$), then $\beta^1\wedge\cdots\wedge\beta^n=\det(A)\,\alpha^1\wedge\cdots\wedge\alpha^n$.
+\item \emph{Naturality:} for a linear (or smooth) map $\phi$, $\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta$.
+\item \emph{Compatibility with $\iota_v$ and $\dd$:} both are antiderivations,
+\begin{align}
+\iota_v(\alpha\wedge\beta)&=\iota_v\alpha\wedge\beta+(-1)^k\alpha\wedge\iota_v\beta,\label{eq:antider}\\
+\dd(\alpha\wedge\beta)&=\dd\alpha\wedge\beta+(-1)^k\alpha\wedge\dd\beta,\qquad \dd\dd=0.\label{eq:dleibniz}
+\end{align}
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proofs, step by step]
+\emph{(b) Graded commutativity.} \Step{1}{$k=l=1$} immediate from \eqref{eq:wedge11}:
+$(\beta\wedge\alpha)(v,w)=\beta(v)\alpha(w)-\beta(w)\alpha(v)=-(\alpha\wedge\beta)(v,w)$.
+\Step{2}{general case} write $(\beta\wedge\alpha)(v_1,\dots,v_{k+l})$ with \eqref{eq:wedge}; the $\beta$-factor eats the first $l$
+arguments of $\sigma$ and the $\alpha$-factor the last $k$. Re-label the sum by composing $\sigma$ with the permutation $\tau$ that
+moves the last $k$ slots in front of the first $l$ slots; then the factors appear in the order of $\alpha\wedge\beta$, and
+$\sgn(\sigma\tau)=\sgn(\sigma)\sgn(\tau)$. \Step{3}{sign} $\tau$ is a product of $kl$ transpositions (each of the $k$ slots jumps
+over each of the $l$ slots), so $\sgn\tau=(-1)^{kl}$.
+
+\emph{(c) Criterion.} If the $\alpha^i$ are independent, the map $A(v)=(\alpha^i(v))$ is onto $\R^k$, so there exist $v_j$ with
+$\alpha^i(v_j)=\delta^i_j$ and \eqref{eq:detformula} gives $1\neq0$. If they are dependent, the rows of $[\alpha^i(v_j)]$ are dependent
+for every choice of $v_j$, and the determinant is $0$.
+
+\emph{(d) Determinant.} By \eqref{eq:detformula}, $(\beta^1\wedge\cdots\wedge\beta^n)(v_1,\dots,v_n)=\det[\beta^i(v_j)]=\det\bigl(A[\alpha^i(v_j)]\bigr)=\det A\cdot\det[\alpha^i(v_j)]$.
+
+\emph{(e)} is clear because $(\phi\pb\alpha)(v_1,\dots)=\alpha(\dd\phi\,v_1,\dots)$ and \eqref{eq:wedge} only uses evaluation of $\alpha,\beta$ on
+vectors. \emph{(a)} follows from \eqref{eq:wedge} by a count of permutations (see also the tensor description in
+Section~\ref{sec:wedgetensor}). Identity \eqref{eq:antider} is the antiderivation property of Section~\ref{sec:interior};
+\eqref{eq:dleibniz} is the Leibniz rule for $\dd$ (\eg $\dd(f\alpha)=\dd f\wedge\alpha+f\,\dd\alpha$), together with $\dd\dd=0$ proved in
+Section~\ref{sec:dform}.
+\end{proof}
+
+\begin{example}[Polar coordinates: the factor $r$ is a determinant]\label{ex:polarwedge}
+From $x=r\cos\theta$, $y=r\sin\theta$: $\dd x=\cos\theta\,\dd r-r\sin\theta\,\dd\theta$ and
+$\dd y=\sin\theta\,\dd r+r\cos\theta\,\dd\theta$. Using $\dd r\wedge\dd r=\dd\theta\wedge\dd\theta=0$ and
+$\dd\theta\wedge\dd r=-\dd r\wedge\dd\theta$:
+\begin{align*}
+\dd x\wedge\dd y&=\cos\theta\,(r\cos\theta)\,\dd r\wedge\dd\theta+(-r\sin\theta)(\sin\theta)\,\dd\theta\wedge\dd r\\
+&=r\cos^2\theta\,\dd r\wedge\dd\theta+r\sin^2\theta\,\dd r\wedge\dd\theta=r\,\dd r\wedge\dd\theta .
+\end{align*}
+This is property (d) with $A=\begin{pmatrix}\cos\theta&-r\sin\theta\\ \sin\theta&r\cos\theta\end{pmatrix}$, $\det A=r$, and it is the
+origin of the factor $r$ in Example~\ref{ex:paraboloid}.
+\end{example}
+
+\begin{example}[Wedge of two $1$-forms]\label{ex:wedge2}
+Let $\alpha=2\,\dd x+\dd y$ and $\beta=\dd x-3\,\dd y$. Then $\alpha\wedge\beta=2\cdot(-3)\,\dd x\wedge\dd y+1\cdot1\,\dd y\wedge\dd x
+=(-6-1)\,\dd x\wedge\dd y$, which is $\det\begin{pmatrix}2&1\\1&-3\end{pmatrix}=-7$ times $\dd x\wedge\dd y$, as in (d). Check with
+\eqref{eq:wedge11} on $(e_1,e_2)$: $\alpha(e_1)\beta(e_2)-\alpha(e_2)\beta(e_1)=2\cdot(-3)-1\cdot1=-7$.
+\end{example}

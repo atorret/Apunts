@@ -1,0 +1,9 @@
+% Section 25: Action and Hamiltonian mechanics} | Part: 5 | Depends on: see docs/REWRITE_PLAN.md | Status: todo | Original lines: 3521-3528
+%!TEX root = ../../../main.tex
+\subsection{Action and Hamiltonian mechanics}\label{sec:phys-hamilton}
+
+On phase space $T^*Q$ there is a canonical $1$-form $\theta=p_i\,\dd q^i$, defined without any metric by contraction: $\theta_{(q,p)}(X)=\langle p,\dd\pi(X)\rangle$, where $\pi:T^*Q\to Q$ is the projection. The action of a trajectory is the integral of the Poincar\'e--Cartan $1$-form,
+\begin{equation}\label{eq:action}
+S=\int_\gamma\bigl(p_i\,\dd q^i-H\,\dd t\bigr).
+\end{equation}
+The symplectic form is $\dd\theta=\dd p_i\wedge\dd q^i$ (up to convention), and Stokes' theorem yields the Poincar\'e integral invariants: $\oint\theta$ is the same for two loops carried into each other by the Hamiltonian flow. Bohr--Sommerfeld quantisation $\oint p\,\dd q=nh$ and adiabatic invariants are of this type.
