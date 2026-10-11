@@ -19,7 +19,6 @@ Line numbers refer to `legacy/original.tex`.
 | 11 | Euler–Lagrange equations, Laurent series | Parts IV–VI | Used beyond the stated reader profile. | Glossary entries added; consider a one-line recap. |
 | 12 | "lecture notes I4" / "the notes" | `02-tangent-cotangent/04-pushforward-pullback.tex`, `03-tensor-fields-forms/01-tensor-fields.tex`, `02-tensors/03-tensor-types.tex` | External references to lecture notes that are not in the bibliography. Others were generalised in Part IV; these remain, and the reading guide explains them. | Decide whether to add a bibitem or drop them. |
 | 13 | Lorentzian Hodge signs | Part V (Maxwell) | Signs of `\hodge` on `R^{1,3}` depend on conventions not fixed in the text. | Flagged only. |
-| 14 | all `example`, `remark`, `specialcase` boxes (preamble, original L93–146) | `preamble/environments.tex` | Pre-existing in the original: `\ref` to these boxes prints the number of the enclosing (sub)section instead of the box number (e.g. Example 16.4 is referenced as "16.5"), because `use counter*` steps the counter inside the box group. | One-line preamble fix (step the counter outside the box, as done for the new `identity` box). Not applied: it changes many printed numbers and needs approval. |
 
 ## Resolved
 
@@ -27,3 +26,4 @@ Line numbers refer to `legacy/original.tex`.
 |---|---|---|
 | 6 | `prop:contr` (3): only a proof idea, and `thm:dual` depends on it | Full proof on basis blades in glossary identity `id:contr3`; pointer added to the proof idea. |
 | 8 | `eq:antider` never proved (two places pointed at each other) | Proof added by the rewriter in `sec:interior`; summarised in `id:antider`. |
+| 14 | `\ref` to example, remark and special-case boxes printed the subsection number | The counter is stepped with `\refstepcounter` before the box (`preamble/environments.tex`), so the reference matches the number in the title. |

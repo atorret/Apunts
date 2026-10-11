@@ -26,16 +26,22 @@
    segmentation style={solid},
    parbox=false}}
 
-% numbered, shared counter: Example 3.4 (optional name)
-\newtcolorbox[use counter*=thm]{example}[1][]{calloutbase,
+% numbered, shared counter: Example 3.4 (optional name).
+% The counter is stepped outside the box. With use counter*, tcolorbox stepped it
+% only for the title, so \label inside the box captured the enclosing subsection
+% number (docs/AUTHOR_NOTES.md #14).
+\newtcolorbox{examplebox}[1][]{calloutbase,
    colback=examplebg,colframe=examplefr,
-   title={Example~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
-\newtcolorbox[use counter*=thm]{remark}[1][]{calloutbase,
+   title={\hypersetup{linkcolor=white}Example~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+\newenvironment{example}[1][]{\refstepcounter{thm}\begin{examplebox}[#1]}{\end{examplebox}}
+\newtcolorbox{remarkbox}[1][]{calloutbase,
    colback=remarkbg,colframe=remarkfr,
-   title={Remark~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
-\newtcolorbox[use counter*=thm]{specialcase}[1][]{calloutbase,
+   title={\hypersetup{linkcolor=white}Remark~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+\newenvironment{remark}[1][]{\refstepcounter{thm}\begin{remarkbox}[#1]}{\end{remarkbox}}
+\newtcolorbox{specialbox}[1][]{calloutbase,
    colback=specialbg,colframe=specialfr,
-   title={Special case~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+   title={\hypersetup{linkcolor=white}Special case~\thethm\if\relax\detokenize{#1}\relax\else\ \textnormal{---}\ #1\fi}}
+\newenvironment{specialcase}[1][]{\refstepcounter{thm}\begin{specialbox}[#1]}{\end{specialbox}}
 
 % unnumbered
 \newtcolorbox{keyidea}[1][]{calloutbase,colback=kiback,colframe=navy,
