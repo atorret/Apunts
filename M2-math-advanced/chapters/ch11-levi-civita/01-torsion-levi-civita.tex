@@ -1,0 +1,58 @@
+% Section 21.1: 01-torsion-levi-civita | Part: 4 | Depends on: sec:conn, sec:metric | Status: done | Original lines: 3064-3103
+%!TEX root = ../../main.tex
+% REWRITTEN: sphere azimuth written \varphi instead of \phi (docs/NOTATION.md).
+\begin{formal}[{torsion}]
+The \emph{torsion} of $\nabla$ is $\mathrm{Tor}(X,Y)=\nabla_XY-\nabla_YX-[X,Y]$. It is $C^\infty(M)$-linear in both arguments, hence given by a tensor $T\in\TF{1}{2}(M)$; in a chart $T^i{}_{jk}=\Gamma^i{}_{jk}-\Gamma^i{}_{kj}$. It is antisymmetric: $T(X,Y)=-T(Y,X)$. The connection is called \emph{symmetric} (or \emph{torsion-free}) if $T=0$, which in coordinates means $\Gamma^i{}_{jk}=\Gamma^i{}_{kj}$.
+\end{formal}
+\begin{intuition}[{torsion = twisting of the frames}]
+Torsion measures whether an infinitesimal parallelogram built by parallel-transporting two small vectors along each other closes up. Torsion-free means ``no screw-like twisting''. In GR we always assume $T=0$.
+\end{intuition}
+
+\begin{formal}[{metric compatibility and the Levi-Civita theorem}]
+Let $g$ be a metric. A connection is \emph{metric} if $\nabla_Xg=0$ for all $X$, \ie $X\big(g(Y,Z)\big)=g(\nabla_XY,Z)+g(Y,\nabla_XZ)$.
+
+\textbf{Theorem (Fundamental theorem of (pseudo-)Riemannian geometry).} For every metric $g$ there is a \emph{unique} connection $\nabla=\nabla^{LC}$ that is (i) metric and (ii) torsion-free. It is determined by the \emph{Koszul formula}
+\begin{align*}
+2g(\nabla_XY,Z)&=X\big(g(Y,Z)\big)+Y\big(g(X,Z)\big)-Z\big(g(X,Y)\big)\\
+&\quad+g([Z,X],Y)+g([X,Y],Z)-g(X,[Y,Z]).
+\end{align*}
+\emph{Idea of the proof.} Write the metric property for $(X;Y,Z)$, $(Y;Z,X)$, $(Z;X,Y)$, add the first two and subtract the third, and use $\nabla_XY-\nabla_YX=[X,Y]$ to eliminate all covariant derivatives except $g(\nabla_XY,Z)$. Non-degeneracy of $g$ then determines $\nabla_XY$.
+
+In coordinates, taking $X=\partial_i,Y=\partial_j,Z=\partial_l$ (all brackets vanish):
+\begin{equation}\label{eq:christmetric}
+\boxed{\ \Gamma^k{}_{ij}=\tfrac12\,g^{kl}\big(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\big)\ }
+\end{equation}
+with $(g^{kl})$ the inverse matrix of $(g_{ij})$.
+\end{formal}
+\begin{intuition}[{the ``natural'' connection of a metric}]
+The Levi-Civita connection is the unique way of doing parallel transport such that (i) \textbf{lengths and angles are preserved}, since $g(\Pi v,\Pi w)=g(v,w)$ and (ii) there is \textbf{no torsion}. It is therefore a function of the metric alone, $g\mapsto\nabla^{LC}$: every construction from $\nabla^{LC}$ is a construction from $g$. Geodesics of $\nabla^{LC}$ are called ``geodesics of $g$''. Also, $\nabla$ commutes with raising and lowering of indices.
+\end{intuition}
+
+\begin{example}[{Christoffel symbols from the metric}]
+\textbf{Polar plane:} $g_{rr}=1,\ g_{\varphi\varphi}=r^2$. The only non-zero derivative is $\partial_rg_{\varphi\varphi}=2r$. From \eqref{eq:christmetric}: $\Gamma^r{}_{\varphi\varphi}=\frac12g^{rr}(-\partial_rg_{\varphi\varphi})=-r$, $\Gamma^\varphi{}_{r\varphi}=\frac12g^{\varphi\varphi}\partial_rg_{\varphi\varphi}=\frac1r$. \checkmark\ (The same as before: the Euclidean connection \emph{is} the Levi-Civita connection of the Euclidean metric.)
+
+\textbf{Unit sphere:} $g_{\theta\theta}=1$, $g_{\varphi\varphi}=\sin^2\theta$, $\partial_\theta g_{\varphi\varphi}=2\sin\theta\cos\theta$:
+\[
+\Gamma^\theta{}_{\varphi\varphi}=-\tfrac12\partial_\theta g_{\varphi\varphi}=-\sin\theta\cos\theta,\qquad
+\Gamma^\varphi{}_{\theta\varphi}=\Gamma^\varphi{}_{\varphi\theta}=\tfrac12\frac{1}{\sin^2\theta}\,\partial_\theta g_{\varphi\varphi}=\cot\theta,
+\]
+all others zero. Radius $a$ gives the same symbols (a constant rescaling of $g$ does not change $\Gamma$).
+
+\textbf{Expanding universe (1+1 dimensions):} $g=-\dd t\otimes\dd t+a(t)^2\,\dd x\otimes\dd x$. Then $\Gamma^t{}_{xx}=\tfrac12g^{tt}(-\partial_tg_{xx})=\tfrac12(-1)(-2a\dot a)=a\dot a$, $\Gamma^x{}_{tx}=\tfrac12g^{xx}\partial_tg_{xx}=\dot a/a$.
+\end{example}
+
+% REORDERED (F7): the next two examples come from Section sec:conn (parallel transport, geodesics); they need the sphere symbols above.
+\begin{example}[{parallel transport on the sphere: path-dependence}]\label{ex:spheretransport}
+For the unit sphere (metric $\dd\theta^2+\sin^2\theta\,\dd\varphi^2$; Christoffel symbols of the previous example): $\Gamma^\theta{}_{\varphi\varphi}=-\sin\theta\cos\theta$, $\Gamma^\varphi{}_{\theta\varphi}=\cot\theta$. 
+\emph{Along the equator} $\theta=\pi/2$, $\dot\theta=0$, $\dot\varphi=1$: both symbols vanish at $\theta=\pi/2$, so \eqref{eq:ptode} gives $\dot Y^\theta=\dot Y^\varphi=0$: the components $(Y^\theta,Y^\varphi)$ stay constant.
+\emph{Along a meridian} ($\varphi=\mathrm{const}$, $\dot\theta=1$): $\dot Y^\theta=0$ and $\dot Y^\varphi+\cot\theta\,Y^\varphi=0$, so $Y^\theta$ is constant, $Y^\varphi\propto 1/\sin\theta$ (hence its length $\sin\theta\,|Y^\varphi|$ is constant).
+\emph{A triangle.} Go from the north pole down the meridian $\varphi=0$ to the equator, along the equator to $\varphi=\pi/2$, and back up to the pole. Start at the pole with a vector pointing along the first meridian's direction ``away from the pole'' ($\theta$-direction at $\varphi=0$). Transported down the first meridian it remains tangent to it; along the equator it stays pointing towards the south (constant $Y^\theta$), perpendicular to the path; going back up the second meridian it remains the same way, now pointing \emph{along} the second meridian, away from the pole. At the end the vector has rotated by $\pi/2$ with respect to the initial one. The rotation angle equals the enclosed area times the curvature ($K=1$): the octant has area $4\pi/8=\pi/2$. \textbf{Parallel transport depends on the path precisely because the space is curved} (Section~\ref{sec:curv}).
+\end{example}
+
+\begin{example}[{geodesic equations on the unit sphere}]\label{ex:spheregeod}
+Using $\Gamma^\theta{}_{\varphi\varphi}=-\sin\theta\cos\theta$, $\Gamma^\varphi{}_{\theta\varphi}=\cot\theta$ in \eqref{eq:geodesic}:
+\[
+\ddot\theta-\sin\theta\cos\theta\,\dot\varphi^2=0,\qquad\ddot\varphi+2\cot\theta\,\dot\theta\dot\varphi=0 .
+\]
+\textit{Equator} $\theta=\pi/2$, $\dot\theta=0$: both equations hold for $\varphi=\omega t$ $\Rightarrow$ the equator is a geodesic (a great circle). \textit{Circle of latitude} $\theta=\theta_0\neq\pi/2$, $\varphi=\omega t$: the first equation gives $\ddot\theta=\sin\theta_0\cos\theta_0\,\omega^2\neq0$, contradicting $\ddot\theta=0$ $\Rightarrow$ it is \textbf{not} a geodesic: you must push to stay on it. All geodesics of the sphere are great circles.
+\end{example}

@@ -1,0 +1,23 @@
+% Section 19.1: Divergence is defined by a volume form, not by a metric | Part: 3 | Depends on: sec:stokes, sec:interior, sec:metric | Status: done | Original lines: 2824-2845
+%!TEX root = ../../main.tex
+\subsection{Divergence is defined by a volume form, not by a metric}\label{sec:divmu}
+
+Let $\mu$ be a nowhere-vanishing $n$-form on $M$ (a \emph{volume form}; in the Riemannian case $\mu=\vol_g=\sqrt{|g|}\,\dd x^1\wedge\cdots\wedge\dd x^n$). The \emph{divergence} of a vector field $X$ is defined by
+\begin{equation}\label{eq:Lmu}
+\Lie_X\mu=(\operatorname{div}_\mu X)\,\mu,
+\end{equation}
+that is, as the relative rate of change of volume under the flow of $X$. Since $\dd\mu=0$ (it is an $(n+1)$-form), Cartan's formula \eqref{eq:cartan} gives
+\begin{equation}\label{eq:divmu}
+\dd(\iota_X\mu)=\Lie_X\mu=(\operatorname{div}_\mu X)\,\mu .
+\end{equation}
+\emph{Coordinate formula, step by step.} Let $\mu=\sqrt{|g|}\,\dd x^1\wedge\cdots\wedge\dd x^n$ and $X=X^i\partial_i$.
+\begin{enumerate}
+\item Contract (antiderivation rule applied repeatedly, as in Section~\ref{sec:flux}): \[\iota_X\mu=\sqrt{|g|}\sum_i(-1)^{i-1}X^i\,\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n.\]
+\item Differentiate: in $\dd(\sqrt{|g|}X^i)\wedge\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots$ only $\partial_i(\sqrt{|g|}X^i)\,\dd x^i$ survives (the other $\dd x^j$ are repeated), and moving $\dd x^i$ to its place gives another $(-1)^{i-1}$. The two signs cancel: $\dd(\iota_X\mu)=\sum_i\partial_i(\sqrt{|g|}X^i)\,\dd x^1\wedge\cdots\wedge\dd x^n$.
+\item Divide by $\mu$:
+\begin{equation}\label{eq:divcoord}
+\operatorname{div}_\mu X=\frac1{\sqrt{|g|}}\,\partial_i\bigl(\sqrt{|g|}\,X^i\bigr),
+\end{equation}
+which reduces to $\partial_iX^i$ in Cartesian coordinates ($|g|=1$).
+\end{enumerate}
+So the divergence theorem is nothing but Theorem~\ref{thm:stokes} applied to the $(n-1)$-form $\omega=\iota_X\mu$ obtained from $X$ by (partial) contraction.

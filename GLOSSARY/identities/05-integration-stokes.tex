@@ -1,0 +1,85 @@
+% Section: Glossary C.5: integration, Stokes, Gauss, complex forms | Part: backmatter | Depends on: sec:int1, sec:stokes, sec:gauss, sec:complex | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../main.tex
+\subsubsection*{Integration, Stokes and Gauss}
+
+\begin{identity}[reparametrisation; Proposition~\ref{prop:reparam}]\label{id:reparam}
+For a $C^1$ diffeomorphism $\tau:[c,d]\to[a,b]$: $\int_{\gamma\circ\tau}\omega=\pm\int_\gamma\omega$, with the sign of $\tau'$.
+\end{identity}
+\begin{proof}
+\Step{1}{chain rule and linearity} $\langle\omega,(\gamma\circ\tau)'(s)\rangle=\tau'(s)\langle\omega_{\gamma(\tau(s))},\dot\gamma(\tau(s))\rangle$.
+\Step{2}{substitute $t=\tau(s)$} The integral becomes $\int_{\tau(c)}^{\tau(d)}\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle\,\dd t$; the limits are $(a,b)$ if $\tau'>0$ and $(b,a)$ if $\tau'<0$.
+\end{proof}
+
+\begin{identity}[fundamental theorem for line integrals; \eqref{eq:ftc}]\label{id:ftc}
+$\int_\gamma\dd f=f(\gamma(b))-f(\gamma(a))$.
+\end{identity}
+\begin{proof}
+$\langle\dd f,\dot\gamma\rangle=\partial_if(\gamma)\,\dot\gamma^i=\frac{\dd}{\dd t}f(\gamma(t))$ by the chain rule; integrate over $[a,b]$.
+\end{proof}
+
+\begin{identity}[generalised Stokes theorem; Theorem~\ref{thm:stokes}]\label{id:stokes}
+$\int_M\dd\omega=\int_{\partial M}j\pb\omega$ for compactly supported $\omega\in\Omega^{n-1}(M)$.
+\end{identity}
+\begin{proof}
+The full proof is in Section~\ref{sec:stokesproof}; in compact form:
+\Step{1}{localise} With a partition of unity, it suffices to treat $\omega$ supported in one chart with values in $\R^n$ or $\mathbb H^n=\{x^n\ge0\}$.
+\Step{2}{compute $\dd\omega$} For $\omega=\sum_i\omega_i\,\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n$, $\dd\omega=\sum_i(-1)^{i-1}\partial_i\omega_i\,\dd x^1\wedge\cdots\wedge\dd x^n$.
+\Step{3}{integrate} By Fubini and compact support every term vanishes except $i=n$ on $\mathbb H^n$, which gives $(-1)^{n-1}\int(0-\omega_n(x',0))\,\dd x'=(-1)^n\int\omega_n(x',0)\,\dd x'$. On $\R^n$ all terms vanish.
+\Step{4}{the boundary} $j\pb\omega=\omega_n(x',0)\,\dd x^1\wedge\cdots\wedge\dd x^{n-1}$, and the induced orientation (outward normal $-\partial_n$ first) is $\det(-e_n,e_1,\dots,e_{n-1})=(-1)^n$ times the standard one. Both sides equal $(-1)^n\int\omega_n(x',0)\,\dd x'$.
+\end{proof}
+
+\begin{identity}[the flux form on the boundary; Lemma~\ref{lem:fluxbdry}]\label{id:fluxbdry}
+$j\pb(\iota_X\vol_g)=\langle X,N\rangle\,\dd A$.
+\end{identity}
+\begin{proof}
+\Step{1}{adapted frame} At a boundary point take an oriented orthonormal frame $e_1=N,e_2,\dots,e_n$, so $\vol_g=e^1\wedge\cdots\wedge e^n$ and $\dd A=j\pb(e^2\wedge\cdots\wedge e^n)$.
+\Step{2}{contract} By Identity~\ref{id:antider}, $\iota_X\vol_g=\sum_i(-1)^{i-1}X^i\,e^1\wedge\cdots\wedge\widehat{e^i}\wedge\cdots\wedge e^n$.
+\Step{3}{restrict} $j\pb e^1=0$, so only $i=1$ survives: $X^1\dd A$ with $X^1=\langle X,N\rangle$.
+\end{proof}
+
+\begin{identity}[divergence from a volume form; \eqref{eq:divmu}, \eqref{eq:divcoord}]\label{id:divmu}
+$\dd(\iota_X\mu)=(\operatorname{div}_\mu X)\,\mu$, and for $\mu=\sqrt{|g|}\,\dd x^1\wedge\cdots\wedge\dd x^n$, $\operatorname{div}_\mu X=\frac1{\sqrt{|g|}}\partial_i(\sqrt{|g|}X^i)$.
+\end{identity}
+\begin{proof}
+\Step{1}{Cartan} $\dd\mu=0$ (degree $n+1$), so Identity~\ref{id:cartan} gives $\Lie_X\mu=\dd\iota_X\mu$, which is \eqref{eq:Lmu}.
+\Step{2}{contract} As in Identity~\ref{id:fluxbdry}, $\iota_X\mu=\sqrt{|g|}\sum_i(-1)^{i-1}X^i\,\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n$.
+\Step{3}{differentiate} As in Step~2 of Identity~\ref{id:stokes}, the sign $(-1)^{i-1}$ appears twice, so $\dd(\iota_X\mu)=\partial_i(\sqrt{|g|}X^i)\,\dd x^1\wedge\cdots\wedge\dd x^n$. Divide by $\mu$.
+\end{proof}
+
+\begin{identity}[divergence theorem; Theorem~\ref{thm:gauss}]\label{id:gauss}
+$\int_M\operatorname{div}X\,\dd V=\int_{\partial M}\langle X,N\rangle\,\dd A$.
+\end{identity}
+\begin{proof}
+Apply Identity~\ref{id:stokes} to $\omega=\iota_X\vol_g$, then use Identity~\ref{id:divmu} on the left and Identity~\ref{id:fluxbdry} on the right.
+\end{proof}
+
+\subsubsection*{Complex forms}
+
+\begin{identity}[$\dd(f\,\dd z)$; \eqref{eq:dfdz}]\label{id:cauchy}
+$\dd(f\,\dd z)=2i\,\partial_{\bar z}f\,\dd x\wedge\dd y$. Hence $\oint_{\partial\Omega}f\,\dd z=0$ for $f$ holomorphic near $\Omega$ (Theorem~\ref{thm:cauchy}).
+\end{identity}
+\begin{proof}
+\Step{1}{Leibniz} $\dd(f\,\dd z)=\dd f\wedge\dd z$, since $\dd\dd z=0$.
+\Step{2}{split $\dd f$} $\dd f=\partial_zf\,\dd z+\partial_{\bar z}f\,\dd\bar z$ (checked in Section~\ref{sec:complexforms}) and $\dd z\wedge\dd z=0$.
+\Step{3}{expand} $\dd\bar z\wedge\dd z=(\dd x-i\,\dd y)\wedge(\dd x+i\,\dd y)=2i\,\dd x\wedge\dd y$.
+\Step{4}{Cauchy} If $\partial_{\bar z}f=0$, Identity~\ref{id:stokes} (applied to the real and imaginary parts) gives $\oint_{\partial\Omega}f\,\dd z=\int_\Omega0=0$.
+\end{proof}
+
+\begin{identity}[residue theorem; Theorem~\ref{thm:residue}]\label{id:residue}
+$\oint_{\partial\Omega}f\,\dd z=2\pi i\sum_j\Res_{a_j}f$.
+\end{identity}
+\begin{proof}
+\Step{1}{the basic circle integral} With $z=a+\varepsilon e^{it}$, $\oint(z-a)^n\dd z=i\varepsilon^{n+1}\int_0^{2\pi}e^{i(n+1)t}\dd t$, which is $2\pi i$ for $n=-1$ and $0$ otherwise.
+Integrating the Laurent series term by term gives $\oint_{|z-a|=\varepsilon}f\,\dd z=2\pi i\,c_{-1}$, so the two descriptions of $\Res_af$ in \eqref{eq:residue} agree.
+\Step{2}{excise the singularities} On $\Omega_\varepsilon=\Omega\setminus\bigcup_jD(a_j,\varepsilon)$, $f\,\dd z$ is closed (Identity~\ref{id:cauchy}), and the induced orientation traverses the small circles clockwise.
+Identity~\ref{id:stokes} gives $0=\oint_{\partial\Omega}f\,\dd z-\sum_j\oint_{|z-a_j|=\varepsilon}f\,\dd z$. Conclude with Step~1.
+\end{proof}
+
+\begin{identity}[Cauchy--Riemann as $\vd\mathbf u=0$; Proposition~\ref{prop:CRga}]\label{id:CRga}
+For $\mathbf u=u\,e_1+v\,e_2$ and $w=u-iv$: $\vd\mathbf u=\operatorname{div}\mathbf u+\pss\operatorname{curl}\mathbf u$, which corresponds to $2\partial_z\bar w$ under $i\leftrightarrow\pss$.
+\end{identity}
+\begin{proof}
+\Step{1}{geometric product} $(e_1\partial_x+e_2\partial_y)(ue_1+ve_2)=u_x+v_y+e_1e_2(v_x-u_y)$, by $e_i^2=1$ and $e_2e_1=-e_1e_2$.
+\Step{2}{complex side} $2\partial_z\bar w=(\partial_x-i\partial_y)(u+iv)=(u_x+v_y)+i(v_x-u_y)$.
+\Step{3}{holomorphy} $\partial_{\bar z}w=0$ is the complex conjugate of $\partial_z\bar w=0$, that is, of $\vd\mathbf u=0$.
+\end{proof}

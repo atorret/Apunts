@@ -1,0 +1,7 @@
+# latexmk configuration for CM3: pdflatex, output in build/CM3.pdf
+$pdf_mode = 1;
+$out_dir = 'build';
+$jobname = 'CM3';
+$pdflatex = 'pdflatex -interaction=nonstopmode -file-line-error -synctex=1 %O %S';
+$max_repeat = 6;
+@default_files = ('main.tex');

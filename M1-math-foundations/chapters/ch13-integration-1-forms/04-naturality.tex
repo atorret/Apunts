@@ -1,0 +1,16 @@
+% Section 16.4: Naturality | Part: 3 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2523-2537
+%!TEX root = ../../main.tex
+\subsection{Naturality}\label{sec:naturality}
+
+For a smooth map $\phi:M\to N$, a curve $\gamma$ in $M$ and a $1$-form $\omega$ on $N$:
+\begin{equation}\label{eq:natural}
+\int_{\phi\circ\gamma}\omega=\int_\gamma\phi\pb\omega .
+\end{equation}
+\emph{Proof in steps:}
+\begin{align*}
+\int_{\phi\circ\gamma}\omega&=\int_a^b\Bigl\langle\omega_{\phi(\gamma(t))},\frac{\dd}{\dd t}(\phi\circ\gamma)(t)\Bigr\rangle\dd t &&\text{(definition \eqref{eq:lineint})}\\
+&=\int_a^b\bigl\langle\omega_{\phi(\gamma(t))},\dd\phi_{\gamma(t)}\dot\gamma(t)\bigr\rangle\dd t &&\text{(chain rule)}\\
+&=\int_a^b\bigl\langle(\phi\pb\omega)_{\gamma(t)},\dot\gamma(t)\bigr\rangle\dd t &&\text{(definition \eqref{eq:pullback})}\\
+&=\int_\gamma\phi\pb\omega .
+\end{align*}
+In particular, line integrals of $1$-forms are invariant under changes of coordinates (take $\phi$ a diffeomorphism). In contrast, the classical ``work integral'' $\int\mathbf F\cdot\dd\mathbf r$ is invariant only because it is secretly $\int F^\flat$, where $F^\flat=g(F,\cdot)$ is the covector obtained from $F$ with the Euclidean metric: $F\cdot\dot r=g(F,\dot r)=\langle F^\flat,\dot r\rangle$.

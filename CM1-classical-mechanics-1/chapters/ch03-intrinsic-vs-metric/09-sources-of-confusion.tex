@@ -1,0 +1,11 @@
+% Section 25.9: Other classical sources of confusion | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3630-3639
+%!TEX root = ../../main.tex
+\subsection{Other classical sources of confusion}\label{sec:phys-confusion}
+
+\begin{itemize}
+\item \emph{``Is $\dd\mathbf r$ a vector or a covector?''} In $\int F_i\,\dd x^i$ the symbols $\dd x^i$ are covectors (differentials of coordinate functions), and the integral evaluates them on the displacement vector $\dot\gamma\,\dd t$. In $\int\mathbf F\cdot\dd\mathbf r$, $\dd\mathbf r$ denotes that displacement vector. Both notations compute the same contraction.
+\item \emph{``Is the gradient a vector?''} $\dd V$ (components $\partial_iV$) is a covector; $\nabla V=g^{-1}\dd V$ is a vector and depends on the metric (Example~\ref{ex:twometrics}). They coincide numerically only in Cartesian coordinates with the Euclidean metric.
+\item \emph{``Is the density $\rho$ a scalar?''} No: mass or charge density is an $n$-form (or a density) because it is integrated over volumes; under $x\mapsto\lambda x$ in $n$ dimensions it scales as $\lambda^{-n}$. It becomes a scalar function only after choosing a volume form $\mu$: $\rho=f\mu$.
+\item \emph{``What needs what?''} $\dd$: nothing. grad: a metric. div: a volume form (a metric gives one). curl: a metric, an orientation and $n=3$. Laplacian $=\operatorname{div}\operatorname{grad}$: both. (Compare Remark~\ref{rem:whatneeds}.)
+\item \emph{``Does energy depend on the metric?''} The work integral does not; the kinetic energy does, through the inertia metric $g$, which is physical; and the relativistic energy depends on the observer $u$ through the pairing $-p(u)$.
+\end{itemize}

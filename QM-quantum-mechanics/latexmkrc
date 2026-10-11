@@ -1,0 +1,7 @@
+# latexmk configuration for QM: pdflatex, output in build/QM.pdf
+$pdf_mode = 1;
+$out_dir = 'build';
+$jobname = 'QM';
+$pdflatex = 'pdflatex -interaction=nonstopmode -file-line-error -synctex=1 %O %S';
+$max_repeat = 6;
+@default_files = ('main.tex');

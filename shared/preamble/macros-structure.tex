@@ -1,0 +1,101 @@
+% Preamble: structure of the ten-document series (document tags, prerequisites, TODO chapters, bibliography)
+%!TEX root = ../../M1-math-foundations/main.tex
+% Each root file sets \def\thisdoc{CODE} before \documentclass.
+\makeatletter
+\providecommand\thisdoc{}
+
+% =====================================================================
+%  Cross-document references.
+%  \p@<counter> is written to the .aux at every \label, so a label carries
+%  the code of the document that defines it. \docprefix prints the code only
+%  when the reference is read from another document: "M2:3.2".
+% =====================================================================
+\DeclareRobustCommand\docprefix[1]{\def\docprefix@tmp{#1}\ifx\docprefix@tmp\thisdoc\else#1:\fi}
+\edef\p@part{\noexpand\docprefix{\thisdoc}}
+\edef\p@section{\noexpand\docprefix{\thisdoc}}
+\edef\p@subsection{\noexpand\docprefix{\thisdoc}}
+\edef\p@subsubsection{\noexpand\docprefix{\thisdoc}}
+\edef\p@paragraph{\noexpand\docprefix{\thisdoc}}
+\edef\p@equation{\noexpand\docprefix{\thisdoc}}
+\edef\p@thm{\noexpand\docprefix{\thisdoc}}
+\edef\p@figure{\noexpand\docprefix{\thisdoc}}
+\edef\p@table{\noexpand\docprefix{\thisdoc}}
+\edef\p@enumi{\noexpand\docprefix{\thisdoc}}
+\edef\p@enumii{\noexpand\docprefix{\thisdoc}\noexpand\theenumi}
+\edef\p@enumiii{\noexpand\docprefix{\thisdoc}\noexpand\theenumi(\noexpand\theenumii)}
+\edef\p@enumiv{\noexpand\docprefix{\thisdoc}\noexpand\theenumi(\noexpand\theenumii)\noexpand\theenumiii}
+% identities keep their own number space (C.n, GLOSSARY only): no prefix
+
+% =====================================================================
+%  Title of a document of the series
+% =====================================================================
+\newcommand\doctitle[4]{%
+  \begin{center}
+  {\LARGE\bfseries #1\quad #2\par}
+  \vspace{0.5em}
+  {\large Level: from #3 to #4\par}
+  \vspace{0.3em}
+  {\small One of ten documents. Reading order and syllabus: \texttt{CHAPTER\_ORGANIZATION.md};
+   plan and status: \texttt{ROADMAP.md}.\par}
+  \end{center}}
+
+% =====================================================================
+%  Prerequisites box: \chapterprereqs{label,label,...} before a chapter;
+%  the box is printed right after the next \section heading.
+% =====================================================================
+\newtcolorbox{prereqbox}{calloutbase,colback=kiback,colframe=navy,title={Prerequisites}}
+\newif\ifstructure@pending
+\def\structure@prereqlist{}
+\newcommand\chapterprereqs[1]{\gdef\structure@prereqlist{#1}\global\structure@pendingtrue}
+% \nameref does not see \part titles under titlesec: parts print as "Part M1:II"
+\def\structure@ref#1{\structure@@ref#1\@nil}
+\def\structure@@ref#1:#2\@nil{\def\structure@kind{#1}%
+  \ifx\structure@kind\structure@partkind Part~\ref{#1:#2}\else\ref{#1:#2}~(\nameref{#1:#2})\fi}
+\def\structure@partkind{part}
+\newcommand\structure@printprereqs{%
+  \ifstructure@pending
+    \global\structure@pendingfalse
+    \begin{prereqbox}%
+      \ifx\structure@prereqlist\@empty
+        None: this chapter is an entry point of the document.%
+      \else
+        \def\structure@sep{}%
+        \@for\structure@item:=\structure@prereqlist\do{%
+          \structure@sep\expandafter\structure@ref\expandafter{\structure@item}\def\structure@sep{; }}%
+      \fi
+    \end{prereqbox}%
+  \fi}
+% same format as layout.tex, plus the prerequisites hook after the heading
+\titleformat{\section}{\large\bfseries}{\thesection}{0.9em}{}[\structure@printprereqs]
+
+% =====================================================================
+%  Missing material (rule: mark it, never invent it)
+% =====================================================================
+\newtcolorbox{todobox}{calloutbase,colback=pitbg,colframe=pitfr,title={TODO}}
+% \missingchapter{DOC/chNN}{syllabus title}{prerequisites}
+\newcommand\missingchapter[3]{%
+  \section{#2}%
+  \begin{todobox}
+  \textbf{TODO(#1)}: this chapter has no content yet. Its place in the reading order is listed in
+  \texttt{CHAPTER\_ORGANIZATION.md}.\par
+  \textit{Prerequisites:} #3
+  \end{todobox}}
+% \missingglossary{GLOSSARY/DOC}{title}: glossary block with no entries yet
+\newcommand\missingglossary[2]{%
+  \phantomsection\subsection*{#2}\addcontentsline{toc}{subsection}{#2}%
+  \begin{todobox}
+  \textbf{TODO(#1)}: no symbols, terms or identities have been collected for this document yet.
+  \end{todobox}}
+% headings that do not exist yet for existing material
+\newcommand\todoheading[1]{\section{TODO(#1)}}
+\newcommand\todopart[1]{\part{TODO(#1)}}
+
+% =====================================================================
+%  Global bibliography: one file, owned by GLOSSARY. Other documents input
+%  it with \label disabled so that sec:refs is defined only once; their
+%  \externaldocument calls use [nocite] so \bibcite is never imported twice.
+% =====================================================================
+\newcommand\globalbibliography{%
+  \clearpage
+  \begingroup\let\label\@gobble\input{../GLOSSARY/references/references}\endgroup}
+\makeatother

@@ -1,0 +1,26 @@
+% Section 13.3: Cartan's magic formula | Part: 2 | Depends on: sec:fields, sec:interior | Status: done | Original lines: 2230-2254
+%!TEX root = ../../main.tex
+\subsection{Cartan's magic formula}\label{sec:cartan}
+
+\begin{theorem}[Cartan]\label{thm:cartan}
+For every differential form $\omega$ and vector field $X$,
+\begin{equation}\label{eq:cartan}
+\Lie_X\omega=\dd\,\iota_X\omega+\iota_X\,\dd\omega .
+\end{equation}
+\end{theorem}
+\begin{proof}
+\Step{1}{both sides are derivations} $\Lie_X$ is a derivation of $\wedge$ (Leibniz rule for the flow derivative). The right-hand side is the graded commutator $[\dd,\iota_X]$ of two antiderivations (\eqref{eq:antider}, \eqref{eq:dleibniz}), hence a derivation of degree $0$.
+\Step{2}{they commute with $\dd$} $\Lie_X\dd=\dd\Lie_X$ (pull-back commutes with $\dd$), and $\dd[\dd,\iota_X]=\dd\iota_X\dd=[\dd,\iota_X]\dd$ because $\dd\dd=0$.
+\Step{3}{they agree on functions} $\dd\iota_Xf+\iota_X\dd f=0+X(f)=\Lie_Xf$.
+\Step{4}{conclusion} Locally every form is a sum of terms $f\,\dd g_1\wedge\cdots\wedge\dd g_k$; two degree-$0$ derivations commuting with $\dd$ and agreeing on functions agree on $f$ and on $\dd g_i=\dd(g_i)$, hence on all forms.
+\end{proof}
+
+\begin{example}[Cartan's formula for a $1$-form]\label{ex:cartan1}
+Take $\omega=x\,\dd y$ on $\R^2$ and $X=\partial_x$ (flow $\phi_t(x,y)=(x+t,y)$). Then $\iota_X\omega=x\,\dd y(\partial_x)=0$, so $\dd\iota_X\omega=0$; $\dd\omega=\dd x\wedge\dd y$ and $\iota_X\dd\omega=\dd y$. Hence $\dd\iota_X\omega+\iota_X\dd\omega=\dd y$.
+Directly from the flow: $\phi_t\pb\omega=(x+t)\,\dd y$ and $\frac{\dd}{\dd t}\big|_0\phi_t\pb\omega=\dd y$ \checkmark.
+In components, for $\omega=\omega_i\dd x^i$: $\Lie_X\omega=(X^j\partial_j\omega_i+\omega_j\partial_iX^j)\,\dd x^i$, and expanding $\dd(\omega_jX^j)+\iota_X(\partial_j\omega_i\,\dd x^j\wedge\dd x^i)$ gives the same expression.
+\end{example}
+
+\begin{remark}[Cartan's formula is the engine of the integral theorems]
+Since $\dd\mu=0$ for a top-degree form, \eqref{eq:cartan} gives $\Lie_X\mu=\dd(\iota_X\mu)$: the rate of change of volume along a flow is the exterior derivative of the flux form $\iota_X\mu$. This is precisely the divergence theorem in disguise (Section~\ref{sec:gauss}); and for fluids it is the step that turns Euler's equation into the exact form $(\partial_t+\Lie_u)u^\flat=\dd(\cdots)$ behind Kelvin's circulation theorem (Section~\ref{sec:phys-fluids}).
+\end{remark}

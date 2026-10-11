@@ -1,0 +1,36 @@
+% Section 1.3: Contraction: the canonical pairing | Part: 1 | Depends on: none | Status: done | Original lines: 453-501
+%!TEX root = ../../main.tex
+\subsection{Contraction: the canonical pairing}\label{sec:contraction}
+
+The evaluation of a covector on a vector,
+\begin{equation}\label{eq:pairing}
+\langle\omega,v\rangle=\omega(v)=\omega_i\,v^i\qquad(\text{sum over }i),
+\end{equation}
+is called the \emph{contraction} of $\omega\otimes v$: the index $i$ is ``contracted'' between the lower slot of $\omega$ and the
+upper slot of $v$. It needs \emph{no metric, no basis and no inner product}: it is part of the very definition of $V^*$.
+Let us see, step by step, why its formula in components is $\omega_iv^i$:
+\begin{align*}
+\omega(v)&=\omega\bigl(v^je_j\bigr) &&\text{(expand $v$ in the basis $e_j$)}\\
+&=v^j\,\omega(e_j) &&\text{(linearity of $\omega$ in its argument)}\\
+&=v^j\,\omega_i\,e^i(e_j) &&\text{(expand $\omega=\omega_ie^i$)}\\
+&=v^j\,\omega_i\,\delta^i{}_j &&\text{(duality $e^i(e_j)=\delta^i{}_j$)}\\
+&=\omega_i\,v^i &&\text{($\delta^i{}_j$ keeps only the term $j=i$).}
+\end{align*}
+\numcheck In $\R^2$ let $\omega=3\,\dd x-2\,\dd y$ (so $\omega_x=3$, $\omega_y=-2$) and $v=2\partial_x+5\partial_y$
+(so $v^x=2$, $v^y=5$). Then $\omega(v)=3\cdot2+(-2)\cdot5=-4$.
+
+\input{figures/tikz-sheets}
+
+\begin{keyidea}
+\textbf{Contraction is the metric-free pairing $V^*\times V\to\R$.} Everything later that looks like a ``dot product'' in physics
+-- work $\mathbf F\cdot\dd\mathbf r$, power, flux, the pairing of a momentum with a symmetry -- is, when examined, a contraction
+$\langle\omega,v\rangle$ of a covector with a vector. A metric is needed only when one wants to turn an arrow into a ruler or
+vice versa (Section~\ref{sec:metric}).
+\end{keyidea}
+
+Contraction is the first member of a family: it extends to tensors of any type (Section~\ref{sec:tensors}), to
+$k$-forms as the \emph{interior product} $\iota_v\alpha$ (Section~\ref{sec:interior}), and to multivectors as the
+\emph{left contraction} $a\lc A$ of geometric algebra (Section~\ref{sec:ops}); Section~\ref{sec:synth1} compares these four
+guises. On a manifold the same pairing is performed at every point between the cotangent space and the tangent space
+(Section~\ref{sec:tangent}), and integrating along a curve will turn out to be nothing more than contracting a $1$-form with the
+velocity (Section~\ref{sec:int1}).

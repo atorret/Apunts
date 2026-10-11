@@ -1,0 +1,59 @@
+% Section 1.2: The dual space: covectors | Part: 1 | Depends on: none | Status: done | Original lines: 398-452
+%!TEX root = ../../main.tex
+\subsection{The dual space: covectors}\label{sec:dualspace}
+
+% REWRITTEN: notation E -> V, m -> n (docs/NOTATION.md)
+\begin{formal}[{dual space and dual basis}]
+The \emph{dual space} of $V$ is the set of all linear maps from $V$ to $\R$:
+\[
+V^*=\{f:V\to\R\ \text{linear}\}.
+\]
+It is a vector space of dimension $n$; its elements are called \emph{covectors} (or linear forms, or 1-forms). Given a basis $\{e_i\}$ of $V$ there is a unique \emph{dual basis} $\{e^{i}\}$ of $V^*$ determined by
+\begin{equation}\label{eq:dualbasis}
+e^{i}(e_j)=\delta^i{}_j\qquad(\text{1 if }i=j,\ 0\text{ otherwise}).
+\end{equation}
+Consequences:
+\begin{itemize}[nosep]
+\item $e^{i}(v)=v^i$: the dual basis \emph{extracts components}.
+\item Every covector is $f=f_i\,e^{i}$ with $f_i=f(e_i)$, and $f(v)=f_i\,v^i$.
+\item $(V^*)^*\cong V$ canonically (finite dimension): a vector $v$ is a linear machine that eats a covector $f$ and returns $f(v)$.
+\end{itemize}
+\end{formal}
+
+\begin{intuition}[{covectors are ``measuring devices''}]
+A vector is \emph{something that you measure}; a covector is \emph{something that measures}. It eats an arrow and returns a number, linearly. Picture a covector as a \textbf{stack of equally spaced parallel hyperplanes} (level sets of $f$): $f(v)$ is the number of layers that the arrow $v$ pierces. A short-spaced stack is a ``large'' covector.
+
+\emph{Examples.} A ruler's coordinate function $v\mapsto v^i$; a thermometer-gradient $v\mapsto$ (change in temperature along $v$); a ``price per unit'' functional $v\mapsto$ cost of the shopping vector $v$. Covectors are \emph{not} arrows. They only become arrows once a metric is given (Section~\ref{sec:metric}).
+\end{intuition}
+
+\subsection*{Change of basis in the dual}
+If $e'_i=A^j{}_ie_j$, the new dual basis is $e'^{i}=(A^{-1})^i{}_je^{j}$ (check with \eqref{eq:dualbasis}), and the components of a covector change as
+\begin{equation}\label{eq:covchange}
+f'_i=f(e'_i)=A^j{}_i\,f_j .
+\end{equation}
+In matrix language the dual basis changes with the \emph{inverse transpose}: $A^{-t}$, and the components with $A^{t}$.
+
+\begin{intuition}[{covariant = changes like the basis}]
+Covector components transform with the \emph{same} matrix $A$ as the basis vectors, so they are \textbf{covariant}. Doubling the basis vector $e_1$ doubles $f(e_1)=f_1$. Components of vectors $\leftrightarrow$ opposite of the basis; components of covectors $\leftrightarrow$ same as the basis. This is the mechanism that makes $f(v)=f_iv^i$ basis independent:
+$f'_iv'^i=A^j{}_if_j\,(A^{-1})^i{}_kv^k=f_jv^j$.
+\end{intuition}
+
+\begin{example}[{a dual basis is not ``the coordinates''}]
+In $\R^2$ take the basis $e_1=(1,0)$, $e_2=(1,1)$. We look for $e^{1},e^{2}$ with $e^{i}(e_j)=\delta^i_j$. Writing $e^{1}(x,y)=ax+by$ we need $a=1$ and $a+b=0$, so $e^{1}(x,y)=x-y$; similarly $e^{2}(x,y)=y$.
+
+Notice that $e^{1}\neq$ ``the first Cartesian coordinate'': \textbf{the dual vector $e^{1}$ depends on the whole basis}, not only on $e_1$. If you only change $e_2$ then $e^{1}$ changes! Check with $v=(3,1)=2e_1+1e_2$: $e^{1}(v)=3-1=2$, $e^{2}(v)=1$. \checkmark
+\end{example}
+
+% REWRITTEN: notation preview added (dx, \partial_x are used in Part I before Section sec:trio)
+\emph{A word on notation.} In $\R^n$ with Cartesian coordinates we shall often write the standard basis as
+$\partial_x,\partial_y,\dots$ and its dual basis as $\dd x,\dd y,\dots$; for now these are just names
+($\dd x(\partial_x)=1$, $\dd x(\partial_y)=0$, \dots). Why they deserve these names, and how they become fields
+on a manifold, is explained in Section~\ref{sec:trio}.
+
+\begin{example}[{the differential of a function is a covector}]
+Let $f:\R^2\to\R$, $f(x,y)=x^2y$. At $p=(1,2)$, $\dd f_p(v)=\frac{d}{d\varepsilon}f(p+\varepsilon v)|_0=\partial_xf\,v^1+\partial_yf\,v^2=4v^1+1\,v^2$. So $\dd f_p=4\,\dd x+1\,\dd y$ is a covector (the \emph{gradient} before using a metric). Its ``stack of lines'' is the family of tangent lines to the level curves of $f$.
+\end{example}
+
+\begin{pitfall}[{gradient is a covector}]
+In school you drew the gradient as an arrow. That arrow secretly used the Euclidean dot product to turn the covector $\dd f$ into a vector. In curved spacetime we will always have to say which metric does this, see Section~\ref{sec:metric}.
+\end{pitfall}

@@ -1,0 +1,8 @@
+% Section 25.8: Pseudovectors, torque and the cross product | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3623-3629
+%!TEX root = ../../main.tex
+\subsection{Pseudovectors, torque and the cross product}\label{sec:phys-cross}
+
+The cross product is $v\times w=\bigl(\hodge(v^\flat\wedge w^\flat)\bigr)^\sharp$: it needs a metric and an orientation, and it only produces a vector in dimension $3$ (in $\R^n$ the star turns the $2$-form $v^\flat\wedge w^\flat$ into an $(n-2)$-form).
+\numcheck $v^\flat\wedge w^\flat=(v_xw_y-v_yw_x)\dd x\wedge\dd y+\cdots$ and $\hodge(\dd x\wedge\dd y)=\dd z$, so the $z$-component of the result is $v_xw_y-v_yw_x$, the familiar $(v\times w)_z$.
+Angular momentum $L=x\wedge p$, torque $\tau=x\wedge F$ and the magnetic flux density $B$ are naturally $2$-forms (or bivectors); the ``axial vector'' $\mathbf B$ is $\hodge B$, which is why it does not flip sign under a reflection while a polar vector does. In relativity ($n=4$) there is no angular-momentum vector at all: $L^{\mu\nu}=x^\mu p^\nu-x^\nu p^\mu$ is an antisymmetric tensor.
+In geometric algebra the same statement is $a\times b=(a\wedge b)\pss^{-1}$ (Section~\ref{sec:duality}): the bivector $a\wedge b$ is the physical object, and the cross product is its dual in $n=3$.

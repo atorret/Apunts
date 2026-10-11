@@ -1,0 +1,345 @@
+new_path,old_line_no,action,before,after
+GLOSSARY/00-glossary.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = main.tex
+GLOSSARY/00-glossary.tex,14,input-path,\input{backmatter/glossary/part-a-symbols},\input{symbols/part-a-symbols}
+GLOSSARY/00-glossary.tex,15,input-path,\input{backmatter/glossary/part-b-terms},\input{terms/part-b-terms}
+GLOSSARY/00-glossary.tex,16,input-path,\input{backmatter/glossary/part-c-identities/00-intro},\input{identities/00-intro}
+GLOSSARY/00-glossary.tex,17,input-path,\input{backmatter/glossary/part-c-identities/01-geometric-product},\input{identities/01-geometric-product}
+GLOSSARY/00-glossary.tex,18,input-path,\input{backmatter/glossary/part-c-identities/02-rotors},\input{identities/02-rotors}
+GLOSSARY/00-glossary.tex,19,input-path,\input{backmatter/glossary/part-c-identities/03-pullback},\input{identities/03-pullback}
+GLOSSARY/00-glossary.tex,20,input-path,\input{backmatter/glossary/part-c-identities/04-forms-derivatives},\input{identities/04-forms-derivatives}
+GLOSSARY/00-glossary.tex,21,input-path,\input{backmatter/glossary/part-c-identities/05-integration-stokes},\input{identities/05-integration-stokes}
+GLOSSARY/00-glossary.tex,22,input-path,\input{backmatter/glossary/part-c-identities/06-curvature},\input{identities/06-curvature}
+GLOSSARY/symbols/part-a-symbols.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/terms/part-b-terms.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/00-intro.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/01-geometric-product.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/02-rotors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/03-pullback.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/04-forms-derivatives.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/05-integration-stokes.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+GLOSSARY/identities/06-curvature.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/figures/tikz-sheets.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/figures/tikz-two-reflections.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/figures/tikz-universal-property.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/figures/tikz-wedge.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/figures/tikz-annulus.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+unsorted/thermodynamics/figures/tikz-cycle.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../../UNSORTED.tex
+M2-math-advanced/figures/tikz-residue.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/figures/tikz-map.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+unsorted/frontmatter/abstract.tex,3,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../UNSORTED.tex
+unsorted/frontmatter/reading-guide.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../UNSORTED.tex
+unsorted/frontmatter/title.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../UNSORTED.tex
+M1-math-foundations/chapters/00-part-algebra.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/00-part-algebra.tex,29,input-line-moved-to-main.tex,\input{parts/01-algebra/01-vectors-covectors/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,30,input-line-moved-to-main.tex,\input{parts/01-algebra/02-tensors/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,31,input-line-moved-to-main.tex,\input{parts/01-algebra/03-metric/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,32,input-line-moved-to-main.tex,\input{parts/01-algebra/04-exterior-algebra/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,33,input-line-moved-to-main.tex,\input{parts/01-algebra/05-clifford-algebra/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,34,input-line-moved-to-main.tex,\input{parts/01-algebra/06-multivector-operations/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,35,input-line-moved-to-main.tex,\input{parts/01-algebra/07-rotors/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,36,input-line-moved-to-main.tex,\input{parts/01-algebra/08-duality/00-section},
+M1-math-foundations/chapters/00-part-algebra.tex,37,input-line-moved-to-main.tex,\input{parts/01-algebra/09-synthesis-1/00-section},
+M1-math-foundations/chapters/ch06-vectors-covectors/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch06-vectors-covectors/00-section.tex,10,input-path,\input{parts/01-algebra/01-vectors-covectors/01-vector-spaces-change-of-basis},\input{chapters/ch06-vectors-covectors/01-vector-spaces-change-of-basis}
+M1-math-foundations/chapters/ch06-vectors-covectors/00-section.tex,11,input-path,\input{parts/01-algebra/01-vectors-covectors/02-dual-space},\input{chapters/ch06-vectors-covectors/02-dual-space}
+M1-math-foundations/chapters/ch06-vectors-covectors/00-section.tex,12,input-path,\input{parts/01-algebra/01-vectors-covectors/03-contraction},\input{chapters/ch06-vectors-covectors/03-contraction}
+M1-math-foundations/chapters/ch06-vectors-covectors/01-vector-spaces-change-of-basis.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch06-vectors-covectors/02-dual-space.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch06-vectors-covectors/03-contraction.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch06-vectors-covectors/03-contraction.tex,22,input-path,\input{figures/part1/tikz-sheets},\input{figures/tikz-sheets}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,11,input-path,\input{parts/01-algebra/02-tensors/01-multilinear-maps},\input{chapters/ch07-tensors/01-multilinear-maps}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,12,input-path,\input{parts/01-algebra/02-tensors/02-tensor-product},\input{chapters/ch07-tensors/02-tensor-product}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,13,input-path,\input{parts/01-algebra/02-tensors/03-tensor-types},\input{chapters/ch07-tensors/03-tensor-types}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,14,input-path,\input{parts/01-algebra/02-tensors/04-symmetric-antisymmetric-contraction},\input{chapters/ch07-tensors/04-symmetric-antisymmetric-contraction}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,15,input-path,\input{parts/01-algebra/02-tensors/05-tensor-algebra},\input{chapters/ch07-tensors/05-tensor-algebra}
+M1-math-foundations/chapters/ch07-tensors/00-section.tex,16,input-path,\input{parts/01-algebra/02-tensors/exercises},\input{exercises/ch07-tensors}
+M1-math-foundations/chapters/ch07-tensors/01-multilinear-maps.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch07-tensors/02-tensor-product.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch07-tensors/02-tensor-product.tex,38,input-path,\input{figures/part1/tikz-universal-property},\input{figures/tikz-universal-property}
+M1-math-foundations/chapters/ch07-tensors/03-tensor-types.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch07-tensors/04-symmetric-antisymmetric-contraction.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch07-tensors/05-tensor-algebra.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/exercises/ch07-tensors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/ch08-metric/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch08-metric/00-section.tex,12,input-path,\input{parts/01-algebra/03-metric/01-metric-and-musical-isomorphisms},\input{chapters/ch08-metric/01-metric-and-musical-isomorphisms}
+M1-math-foundations/chapters/ch08-metric/00-section.tex,13,input-path,\input{parts/01-algebra/03-metric/02-quadratic-forms-signature},\input{chapters/ch08-metric/02-quadratic-forms-signature}
+M1-math-foundations/chapters/ch08-metric/00-section.tex,14,input-path,\input{parts/01-algebra/03-metric/exercises},\input{exercises/ch08-metric}
+M1-math-foundations/chapters/ch08-metric/00-section.tex,15,input-path,\input{parts/01-algebra/03-metric/keypoints},\input{chapters/ch08-metric/keypoints}
+M1-math-foundations/chapters/ch08-metric/01-metric-and-musical-isomorphisms.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch08-metric/02-quadratic-forms-signature.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/exercises/ch08-metric.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/ch08-metric/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,14,input-path,\input{parts/01-algebra/04-exterior-algebra/01-alternating-forms-wedge},\input{chapters/ch09-exterior-algebra/01-alternating-forms-wedge}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,15,input-path,\input{parts/01-algebra/04-exterior-algebra/02-wedge-properties},\input{chapters/ch09-exterior-algebra/02-wedge-properties}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,16,input-path,\input{parts/01-algebra/04-exterior-algebra/03-exterior-quotient},\input{chapters/ch09-exterior-algebra/03-exterior-quotient}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,17,input-path,\input{parts/01-algebra/04-exterior-algebra/04-blades},\input{chapters/ch09-exterior-algebra/04-blades}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,18,input-path,\input{parts/01-algebra/04-exterior-algebra/05-wedge-and-tensor-product},\input{chapters/ch09-exterior-algebra/05-wedge-and-tensor-product}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,19,input-path,\input{parts/01-algebra/04-exterior-algebra/06-interior-product},\input{chapters/ch09-exterior-algebra/06-interior-product}
+M1-math-foundations/chapters/ch09-exterior-algebra/00-section.tex,20,input-path,\input{parts/01-algebra/04-exterior-algebra/keypoints},\input{chapters/ch09-exterior-algebra/keypoints}
+M1-math-foundations/chapters/ch09-exterior-algebra/01-alternating-forms-wedge.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/02-wedge-properties.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/03-exterior-quotient.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/04-blades.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/04-blades.tex,19,input-path,\input{figures/part1/tikz-wedge},\input{figures/tikz-wedge}
+M1-math-foundations/chapters/ch09-exterior-algebra/05-wedge-and-tensor-product.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/06-interior-product.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch09-exterior-algebra/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch01-clifford-algebra/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch01-clifford-algebra/00-section.tex,11,input-path,\input{parts/01-algebra/05-clifford-algebra/01-definition-by-relations},\input{chapters/ch01-clifford-algebra/01-definition-by-relations}
+M2-math-advanced/chapters/ch01-clifford-algebra/00-section.tex,12,input-path,\input{parts/01-algebra/05-clifford-algebra/02-size-and-grades},\input{chapters/ch01-clifford-algebra/02-size-and-grades}
+M2-math-advanced/chapters/ch01-clifford-algebra/00-section.tex,13,input-path,\input{parts/01-algebra/05-clifford-algebra/03-examples},\input{chapters/ch01-clifford-algebra/03-examples}
+M2-math-advanced/chapters/ch01-clifford-algebra/00-section.tex,14,input-path,\input{parts/01-algebra/05-clifford-algebra/04-product-of-two-vectors},\input{chapters/ch01-clifford-algebra/04-product-of-two-vectors}
+M2-math-advanced/chapters/ch01-clifford-algebra/01-definition-by-relations.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch01-clifford-algebra/02-size-and-grades.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch01-clifford-algebra/03-examples.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch01-clifford-algebra/04-product-of-two-vectors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch02-multivector-operations/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch02-multivector-operations/00-section.tex,10,input-path,\input{parts/01-algebra/06-multivector-operations/01-involutions},\input{chapters/ch02-multivector-operations/01-involutions}
+M2-math-advanced/chapters/ch02-multivector-operations/00-section.tex,11,input-path,\input{parts/01-algebra/06-multivector-operations/02-inner-outer-contraction},\input{chapters/ch02-multivector-operations/02-inner-outer-contraction}
+M2-math-advanced/chapters/ch02-multivector-operations/01-involutions.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch02-multivector-operations/02-inner-outer-contraction.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch03-rotors/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch03-rotors/00-section.tex,6,input-path,\input{parts/01-algebra/07-rotors/01-reflections-and-rotors},\input{chapters/ch03-rotors/01-reflections-and-rotors}
+M2-math-advanced/chapters/ch03-rotors/01-reflections-and-rotors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch03-rotors/01-reflections-and-rotors.tex,35,input-path,\input{figures/part1/tikz-two-reflections},\input{figures/tikz-two-reflections}
+M2-math-advanced/chapters/ch04-duality/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch04-duality/00-section.tex,9,input-path,\input{parts/01-algebra/08-duality/01-pseudoscalar},\input{chapters/ch04-duality/01-pseudoscalar}
+M2-math-advanced/chapters/ch04-duality/00-section.tex,10,input-path,\input{parts/01-algebra/08-duality/02-dual},\input{chapters/ch04-duality/02-dual}
+M2-math-advanced/chapters/ch04-duality/00-section.tex,11,input-path,\input{parts/01-algebra/08-duality/03-cross-product},\input{chapters/ch04-duality/03-cross-product}
+M2-math-advanced/chapters/ch04-duality/00-section.tex,12,input-path,\input{parts/01-algebra/08-duality/04-hodge-star},\input{chapters/ch04-duality/04-hodge-star}
+M2-math-advanced/chapters/ch04-duality/01-pseudoscalar.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch04-duality/02-dual.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch04-duality/03-cross-product.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch04-duality/04-hodge-star.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch05-synthesis-1/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch05-synthesis-1/00-section.tex,13,input-path,\input{parts/01-algebra/09-synthesis-1/01-contraction-four-guises},\input{chapters/ch05-synthesis-1/01-contraction-four-guises}
+M2-math-advanced/chapters/ch05-synthesis-1/00-section.tex,14,input-path,\input{parts/01-algebra/09-synthesis-1/02-which-operations-need-a-metric},\input{chapters/ch05-synthesis-1/02-which-operations-need-a-metric}
+M2-math-advanced/chapters/ch05-synthesis-1/00-section.tex,15,input-path,\input{parts/01-algebra/09-synthesis-1/03-dictionary-of-conventions},\input{chapters/ch05-synthesis-1/03-dictionary-of-conventions}
+M2-math-advanced/chapters/ch05-synthesis-1/00-section.tex,16,input-path,\input{parts/01-algebra/09-synthesis-1/keypoints},\input{chapters/ch05-synthesis-1/keypoints}
+M2-math-advanced/chapters/ch05-synthesis-1/01-contraction-four-guises.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch05-synthesis-1/02-which-operations-need-a-metric.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch05-synthesis-1/03-dictionary-of-conventions.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch05-synthesis-1/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/00-part-manifolds.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/00-part-manifolds.tex,13,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/01-differentiable-manifolds/00-section},
+M1-math-foundations/chapters/00-part-manifolds.tex,14,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/02-tangent-cotangent/00-section},
+M1-math-foundations/chapters/00-part-manifolds.tex,15,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/03-tensor-fields-forms/00-section},
+M1-math-foundations/chapters/00-part-manifolds.tex,16,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/04-lie-derivative/00-section},
+M1-math-foundations/chapters/00-part-manifolds.tex,17,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/05-ga-calculus/00-section},
+M1-math-foundations/chapters/00-part-manifolds.tex,18,input-line-moved-to-main.tex,\input{parts/02-manifolds-and-forms/06-synthesis-2/00-section},
+M1-math-foundations/chapters/ch10-differentiable-manifolds/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch10-differentiable-manifolds/00-section.tex,6,input-path,\input{parts/02-manifolds-and-forms/01-differentiable-manifolds/01-charts-and-atlases},\input{chapters/ch10-differentiable-manifolds/01-charts-and-atlases}
+M1-math-foundations/chapters/ch10-differentiable-manifolds/00-section.tex,7,input-path,\input{parts/02-manifolds-and-forms/01-differentiable-manifolds/exercises},\input{exercises/ch10-differentiable-manifolds}
+M1-math-foundations/chapters/ch10-differentiable-manifolds/01-charts-and-atlases.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/exercises/ch10-differentiable-manifolds.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/ch11-tangent-cotangent/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch11-tangent-cotangent/00-section.tex,6,input-path,\input{parts/02-manifolds-and-forms/02-tangent-cotangent/01-tangent-vectors},\input{chapters/ch11-tangent-cotangent/01-tangent-vectors}
+M1-math-foundations/chapters/ch11-tangent-cotangent/00-section.tex,7,input-path,\input{parts/02-manifolds-and-forms/02-tangent-cotangent/02-changing-coordinates},\input{chapters/ch11-tangent-cotangent/02-changing-coordinates}
+M1-math-foundations/chapters/ch11-tangent-cotangent/00-section.tex,8,input-path,\input{parts/02-manifolds-and-forms/02-tangent-cotangent/03-the-trio},\input{chapters/ch11-tangent-cotangent/03-the-trio}
+M1-math-foundations/chapters/ch11-tangent-cotangent/00-section.tex,9,input-path,\input{parts/02-manifolds-and-forms/02-tangent-cotangent/04-pushforward-pullback},\input{chapters/ch11-tangent-cotangent/04-pushforward-pullback}
+M1-math-foundations/chapters/ch11-tangent-cotangent/01-tangent-vectors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch11-tangent-cotangent/02-changing-coordinates.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch11-tangent-cotangent/03-the-trio.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch11-tangent-cotangent/04-pushforward-pullback.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch12-tensor-fields-forms/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch12-tensor-fields-forms/00-section.tex,6,input-path,\input{parts/02-manifolds-and-forms/03-tensor-fields-forms/01-tensor-fields},\input{chapters/ch12-tensor-fields-forms/01-tensor-fields}
+M1-math-foundations/chapters/ch12-tensor-fields-forms/00-section.tex,7,input-path,\input{parts/02-manifolds-and-forms/03-tensor-fields-forms/02-one-forms},\input{chapters/ch12-tensor-fields-forms/02-one-forms}
+M1-math-foundations/chapters/ch12-tensor-fields-forms/00-section.tex,8,input-path,\input{parts/02-manifolds-and-forms/03-tensor-fields-forms/03-exterior-derivative},\input{chapters/ch12-tensor-fields-forms/03-exterior-derivative}
+M1-math-foundations/chapters/ch12-tensor-fields-forms/01-tensor-fields.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch12-tensor-fields-forms/02-one-forms.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch12-tensor-fields-forms/03-exterior-derivative.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,27,input-path,\input{parts/02-manifolds-and-forms/04-lie-derivative/01-flows},\input{chapters/ch07-lie-derivative/01-flows}
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,28,input-path,\input{parts/02-manifolds-and-forms/04-lie-derivative/02-definition-properties},\input{chapters/ch07-lie-derivative/02-definition-properties}
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,29,input-path,\input{parts/02-manifolds-and-forms/04-lie-derivative/03-cartan-formula},\input{chapters/ch07-lie-derivative/03-cartan-formula}
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,30,input-path,\input{parts/02-manifolds-and-forms/04-lie-derivative/04-operator-relations},\input{chapters/ch07-lie-derivative/04-operator-relations}
+M2-math-advanced/chapters/ch07-lie-derivative/00-section.tex,31,input-path,\input{parts/02-manifolds-and-forms/04-lie-derivative/keypoints},\input{chapters/ch07-lie-derivative/keypoints}
+M2-math-advanced/chapters/ch07-lie-derivative/01-flows.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/02-definition-properties.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/03-cartan-formula.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/04-operator-relations.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch07-lie-derivative/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch08-ga-calculus/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch08-ga-calculus/00-section.tex,15,input-path,\input{parts/02-manifolds-and-forms/05-ga-calculus/01-vector-derivative},\input{chapters/ch08-ga-calculus/01-vector-derivative}
+M2-math-advanced/chapters/ch08-ga-calculus/00-section.tex,16,input-path,\input{parts/02-manifolds-and-forms/05-ga-calculus/02-examples},\input{chapters/ch08-ga-calculus/02-examples}
+M2-math-advanced/chapters/ch08-ga-calculus/01-vector-derivative.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch08-ga-calculus/02-examples.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/00-section.tex,11,input-path,\input{parts/02-manifolds-and-forms/06-synthesis-2/01-dictionary-r3},\input{chapters/ch09-synthesis-2/01-dictionary-r3}
+M2-math-advanced/chapters/ch09-synthesis-2/00-section.tex,12,input-path,\input{parts/02-manifolds-and-forms/06-synthesis-2/02-one-reason-three-identities},\input{chapters/ch09-synthesis-2/02-one-reason-three-identities}
+M2-math-advanced/chapters/ch09-synthesis-2/00-section.tex,13,input-path,\input{parts/02-manifolds-and-forms/06-synthesis-2/03-maxwell-three-languages},\input{chapters/ch09-synthesis-2/03-maxwell-three-languages}
+M2-math-advanced/chapters/ch09-synthesis-2/00-section.tex,14,input-path,\input{parts/02-manifolds-and-forms/06-synthesis-2/keypoints},\input{chapters/ch09-synthesis-2/keypoints}
+M2-math-advanced/chapters/ch09-synthesis-2/01-dictionary-r3.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/02-one-reason-three-identities.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/03-maxwell-three-languages.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/00-part-integration.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M1-math-foundations/chapters/00-part-integration.tex,12,input-line-moved-to-main.tex,\input{parts/03-integration/01-integration-1-forms/00-section},
+M1-math-foundations/chapters/00-part-integration.tex,13,input-line-moved-to-main.tex,\input{parts/03-integration/02-integration-k-forms/00-section},
+M1-math-foundations/chapters/00-part-integration.tex,14,input-line-moved-to-main.tex,\input{parts/03-integration/03-stokes/00-section},
+M1-math-foundations/chapters/00-part-integration.tex,15,input-line-moved-to-main.tex,\input{parts/03-integration/04-gauss/00-section},
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,6,input-path,\input{parts/03-integration/01-integration-1-forms/01-definition},\input{chapters/ch13-integration-1-forms/01-definition}
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,7,input-path,\input{parts/03-integration/01-integration-1-forms/02-riemann-sums},\input{chapters/ch13-integration-1-forms/02-riemann-sums}
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,8,input-path,\input{parts/03-integration/01-integration-1-forms/03-linearity},\input{chapters/ch13-integration-1-forms/03-linearity}
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,9,input-path,\input{parts/03-integration/01-integration-1-forms/04-naturality},\input{chapters/ch13-integration-1-forms/04-naturality}
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,10,input-path,\input{parts/03-integration/01-integration-1-forms/05-exact-closed},\input{chapters/ch13-integration-1-forms/05-exact-closed}
+M1-math-foundations/chapters/ch13-integration-1-forms/00-section.tex,11,input-path,\input{parts/03-integration/01-integration-1-forms/06-circulation},\input{chapters/ch13-integration-1-forms/06-circulation}
+M1-math-foundations/chapters/ch13-integration-1-forms/01-definition.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/02-riemann-sums.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/03-linearity.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/04-naturality.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/05-exact-closed.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch13-integration-1-forms/06-circulation.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch14-integration-k-forms/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch14-integration-k-forms/00-section.tex,6,input-path,\input{parts/03-integration/02-integration-k-forms/01-full-contraction},\input{chapters/ch14-integration-k-forms/01-full-contraction}
+M1-math-foundations/chapters/ch14-integration-k-forms/00-section.tex,7,input-path,\input{parts/03-integration/02-integration-k-forms/02-flux},\input{chapters/ch14-integration-k-forms/02-flux}
+M1-math-foundations/chapters/ch14-integration-k-forms/01-full-contraction.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch14-integration-k-forms/02-flux.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch15-stokes/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch15-stokes/00-section.tex,6,input-path,\input{parts/03-integration/03-stokes/01-statement},\input{chapters/ch15-stokes/01-statement}
+M1-math-foundations/chapters/ch15-stokes/00-section.tex,7,input-path,\input{parts/03-integration/03-stokes/02-green-warm-up},\input{chapters/ch15-stokes/02-green-warm-up}
+M1-math-foundations/chapters/ch15-stokes/00-section.tex,8,input-path,\input{parts/03-integration/03-stokes/03-proof},\input{chapters/ch15-stokes/03-proof}
+M1-math-foundations/chapters/ch15-stokes/00-section.tex,9,input-path,\input{parts/03-integration/03-stokes/04-adjoint},\input{chapters/ch15-stokes/04-adjoint}
+M1-math-foundations/chapters/ch15-stokes/01-statement.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch15-stokes/02-green-warm-up.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch15-stokes/03-proof.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch15-stokes/03-proof.tex,32,input-path,\input{figures/part3/tikz-annulus},\input{figures/tikz-annulus}
+M1-math-foundations/chapters/ch15-stokes/04-adjoint.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,6,input-path,\input{parts/03-integration/04-gauss/01-divergence-volume-form},\input{chapters/ch16-gauss/01-divergence-volume-form}
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,7,input-path,\input{parts/03-integration/04-gauss/02-boundary-term},\input{chapters/ch16-gauss/02-boundary-term}
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,8,input-path,\input{parts/03-integration/04-gauss/03-statement-and-proof},\input{chapters/ch16-gauss/03-statement-and-proof}
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,10,input-line-removed (target now M2-math-advanced/chapters/ch09-synthesis-2/04-classical-corollaries.tex),\input{parts/03-integration/04-gauss/04-classical-corollaries},
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,11,input-path,\input{parts/03-integration/04-gauss/05-what-needs-what},\input{chapters/ch16-gauss/05-what-needs-what}
+M1-math-foundations/chapters/ch16-gauss/00-section.tex,12,input-path,\input{parts/03-integration/04-gauss/keypoints},\input{chapters/ch16-gauss/keypoints}
+M1-math-foundations/chapters/ch16-gauss/01-divergence-volume-form.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/02-boundary-term.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/03-statement-and-proof.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch09-synthesis-2/04-classical-corollaries.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/05-what-needs-what.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M1-math-foundations/chapters/ch16-gauss/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/00-part-geometry.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/00-part-geometry.tex,11,input-line-moved-to-main.tex,\input{parts/04-connections-curvature/01-connections/00-section},
+M2-math-advanced/chapters/00-part-geometry.tex,12,input-line-moved-to-main.tex,\input{parts/04-connections-curvature/02-levi-civita/00-section},
+M2-math-advanced/chapters/00-part-geometry.tex,13,input-line-moved-to-main.tex,\input{parts/04-connections-curvature/03-riemann-curvature/00-section},
+M2-math-advanced/chapters/00-part-geometry.tex,14,input-line-moved-to-main.tex,\input{parts/04-connections-curvature/04-geodesic-deviation/00-section},
+M2-math-advanced/chapters/00-part-geometry.tex,15,input-line-moved-to-main.tex,\input{parts/04-connections-curvature/05-synthesis-3/00-section},
+M2-math-advanced/chapters/ch10-connections/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch10-connections/00-section.tex,6,input-path,\input{parts/04-connections-curvature/01-connections/01-definition},\input{chapters/ch10-connections/01-definition}
+M2-math-advanced/chapters/ch10-connections/00-section.tex,7,input-path,\input{parts/04-connections-curvature/01-connections/02-covectors-and-tensors},\input{chapters/ch10-connections/02-covectors-and-tensors}
+M2-math-advanced/chapters/ch10-connections/00-section.tex,8,input-path,\input{parts/04-connections-curvature/01-connections/03-parallel-transport},\input{chapters/ch10-connections/03-parallel-transport}
+M2-math-advanced/chapters/ch10-connections/00-section.tex,9,input-path,\input{parts/04-connections-curvature/01-connections/04-geodesics},\input{chapters/ch10-connections/04-geodesics}
+M2-math-advanced/chapters/ch10-connections/00-section.tex,10,input-path,\input{parts/04-connections-curvature/01-connections/exercises},\input{exercises/ch10-connections}
+M2-math-advanced/chapters/ch10-connections/01-definition.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch10-connections/02-covectors-and-tensors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch10-connections/03-parallel-transport.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch10-connections/04-geodesics.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/exercises/ch10-connections.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/ch11-levi-civita/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch11-levi-civita/00-section.tex,6,input-path,\input{parts/04-connections-curvature/02-levi-civita/01-torsion-levi-civita},\input{chapters/ch11-levi-civita/01-torsion-levi-civita}
+M2-math-advanced/chapters/ch11-levi-civita/00-section.tex,7,input-path,\input{parts/04-connections-curvature/02-levi-civita/02-variational-principle},\input{chapters/ch11-levi-civita/02-variational-principle}
+M2-math-advanced/chapters/ch11-levi-civita/00-section.tex,8,input-path,\input{parts/04-connections-curvature/02-levi-civita/exercises},\input{exercises/ch11-levi-civita}
+M2-math-advanced/chapters/ch11-levi-civita/01-torsion-levi-civita.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch11-levi-civita/02-variational-principle.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/exercises/ch11-levi-civita.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,6,input-path,\input{parts/04-connections-curvature/03-riemann-curvature/01-riemann-tensor},\input{chapters/ch12-riemann-curvature/01-riemann-tensor}
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,7,input-path,\input{parts/04-connections-curvature/03-riemann-curvature/02-general-properties},\input{chapters/ch12-riemann-curvature/02-general-properties}
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,8,input-path,\input{parts/04-connections-curvature/03-riemann-curvature/03-ricci-scalar},\input{chapters/ch12-riemann-curvature/03-ricci-scalar}
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,9,input-path,\input{parts/04-connections-curvature/03-riemann-curvature/04-metric-case},\input{chapters/ch12-riemann-curvature/04-metric-case}
+M2-math-advanced/chapters/ch12-riemann-curvature/00-section.tex,10,input-path,\input{parts/04-connections-curvature/03-riemann-curvature/exercises},\input{exercises/ch12-riemann-curvature}
+M2-math-advanced/chapters/ch12-riemann-curvature/01-riemann-tensor.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch12-riemann-curvature/02-general-properties.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch12-riemann-curvature/03-ricci-scalar.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch12-riemann-curvature/04-metric-case.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/exercises/ch12-riemann-curvature.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/ch13-geodesic-deviation/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch13-geodesic-deviation/00-section.tex,6,input-path,\input{parts/04-connections-curvature/04-geodesic-deviation/01-deviation-equation},\input{chapters/ch13-geodesic-deviation/01-deviation-equation}
+M2-math-advanced/chapters/ch13-geodesic-deviation/00-section.tex,7,input-path,\input{parts/04-connections-curvature/04-geodesic-deviation/exercises},\input{exercises/ch13-geodesic-deviation}
+M2-math-advanced/chapters/ch13-geodesic-deviation/01-deviation-equation.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/exercises/ch13-geodesic-deviation.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/ch14-synthesis-3/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch14-synthesis-3/00-section.tex,12,input-path,\input{parts/04-connections-curvature/05-synthesis-3/01-three-derivatives},\input{chapters/ch14-synthesis-3/01-three-derivatives}
+M2-math-advanced/chapters/ch14-synthesis-3/00-section.tex,13,input-path,\input{parts/04-connections-curvature/05-synthesis-3/02-divergence-three-ways},\input{chapters/ch14-synthesis-3/02-divergence-three-ways}
+M2-math-advanced/chapters/ch14-synthesis-3/00-section.tex,14,input-path,\input{parts/04-connections-curvature/05-synthesis-3/03-curvature-vs-dd},\input{chapters/ch14-synthesis-3/03-curvature-vs-dd}
+M2-math-advanced/chapters/ch14-synthesis-3/00-section.tex,16,input-path,\input{parts/04-connections-curvature/05-synthesis-3/keypoints},\input{chapters/ch14-synthesis-3/keypoints}
+M2-math-advanced/chapters/ch14-synthesis-3/01-three-derivatives.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch14-synthesis-3/02-divergence-three-ways.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch14-synthesis-3/03-curvature-vs-dd.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch14-synthesis-3/keypoints.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM1-classical-mechanics-1/chapters/00-part-physics.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+CM1-classical-mechanics-1/chapters/00-part-physics.tex,7,input-line-moved-to-main.tex,\input{parts/05-physics/01-intrinsic-vs-metric/00-section},
+CM1-classical-mechanics-1/chapters/00-part-physics.tex,8,input-line-moved-to-main.tex,\input{parts/05-physics/02-bridge-to-gr/00-section},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,21,input-path,\input{parts/05-physics/01-intrinsic-vs-metric/01-work-and-energy},\input{chapters/ch03-intrinsic-vs-metric/01-work-and-energy}
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,22,input-line-removed (target now CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/02-energy-as-contraction.tex),\input{parts/05-physics/01-intrinsic-vs-metric/02-energy-as-contraction},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,24,input-line-removed (target now CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/03-noether-synthesis.tex),\input{parts/05-physics/01-intrinsic-vs-metric/03-noether-synthesis},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,25,input-line-removed (target now CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/04-hamiltonian-mechanics.tex),\input{parts/05-physics/01-intrinsic-vs-metric/04-hamiltonian-mechanics},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,26,input-line-removed (target now unsorted/thermodynamics/05-thermodynamics.tex),\input{parts/05-physics/01-intrinsic-vs-metric/05-thermodynamics},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,27,input-line-removed (target now GR-general-relativity/chapters/ch03-electromagnetism-forms/06-electromagnetism.tex),\input{parts/05-physics/01-intrinsic-vs-metric/06-electromagnetism},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,28,input-line-removed (target now F1-fluids-classical/chapters/ch05-circulation/07-fluids.tex),\input{parts/05-physics/01-intrinsic-vs-metric/07-fluids},
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,29,input-path,\input{parts/05-physics/01-intrinsic-vs-metric/08-pseudovectors},\input{chapters/ch03-intrinsic-vs-metric/08-pseudovectors}
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,30,input-path,\input{parts/05-physics/01-intrinsic-vs-metric/09-sources-of-confusion},\input{chapters/ch03-intrinsic-vs-metric/09-sources-of-confusion}
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/00-section.tex,31,input-path,\input{parts/05-physics/01-intrinsic-vs-metric/10-dictionary},\input{chapters/ch03-intrinsic-vs-metric/10-dictionary}
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/01-work-and-energy.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/02-energy-as-contraction.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/03-noether-synthesis.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM2-classical-mechanics-2/chapters/ch02-energy-noether-hamiltonian/04-hamiltonian-mechanics.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+unsorted/thermodynamics/05-thermodynamics.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../UNSORTED.tex
+unsorted/thermodynamics/05-thermodynamics.tex,11,input-path,\input{figures/part5/tikz-cycle},\input{thermodynamics/figures/tikz-cycle}
+GR-general-relativity/chapters/ch03-electromagnetism-forms/06-electromagnetism.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+F1-fluids-classical/chapters/ch05-circulation/07-fluids.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/08-pseudovectors.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/09-sources-of-confusion.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/10-dictionary.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+GR-general-relativity/chapters/ch04-bridge-to-gr/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+GR-general-relativity/chapters/ch04-bridge-to-gr/00-section.tex,10,input-path,\input{parts/05-physics/02-bridge-to-gr/01-gr-dictionary-einstein},\input{chapters/ch04-bridge-to-gr/01-gr-dictionary-einstein}
+GR-general-relativity/chapters/ch04-bridge-to-gr/01-gr-dictionary-einstein.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/00-part-complex.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/00-part-complex.tex,7,input-line-moved-to-main.tex,\input{parts/06-complex-analysis/01-residue-theorem/00-section},
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,10,input-path,\input{parts/06-complex-analysis/01-residue-theorem/01-complex-forms},\input{chapters/ch17-residue-theorem/01-complex-forms}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,11,input-path,\input{parts/06-complex-analysis/01-residue-theorem/02-cauchy},\input{chapters/ch17-residue-theorem/02-cauchy}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,12,input-path,\input{parts/06-complex-analysis/01-residue-theorem/03-residue-theorem},\input{chapters/ch17-residue-theorem/03-residue-theorem}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,13,input-path,\input{parts/06-complex-analysis/01-residue-theorem/04-cohomology},\input{chapters/ch17-residue-theorem/04-cohomology}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,14,input-path,\input{parts/06-complex-analysis/01-residue-theorem/05-cauchy-pompeiu},\input{chapters/ch17-residue-theorem/05-cauchy-pompeiu}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,15,input-path,\input{parts/06-complex-analysis/01-residue-theorem/06-argument-principle},\input{chapters/ch17-residue-theorem/06-argument-principle}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,16,input-path,\input{parts/06-complex-analysis/01-residue-theorem/07-current-picture},\input{chapters/ch17-residue-theorem/07-current-picture}
+M2-math-advanced/chapters/ch17-residue-theorem/00-section.tex,17,input-path,\input{parts/06-complex-analysis/01-residue-theorem/08-synthesis-4},\input{chapters/ch17-residue-theorem/08-synthesis-4}
+M2-math-advanced/chapters/ch17-residue-theorem/01-complex-forms.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/02-cauchy.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/03-residue-theorem.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/03-residue-theorem.tex,15,input-path,\input{figures/part6/tikz-residue},\input{figures/tikz-residue}
+M2-math-advanced/chapters/ch17-residue-theorem/04-cohomology.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/05-cauchy-pompeiu.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/06-argument-principle.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/07-current-picture.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch17-residue-theorem/08-synthesis-4.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/00-part-perspective.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
+M2-math-advanced/chapters/00-part-perspective.tex,7,input-line-moved-to-main.tex,\input{parts/07-perspective/01-current-state/00-section},
+M2-math-advanced/chapters/00-part-perspective.tex,8,input-line-moved-to-main.tex,\input{parts/07-perspective/02-master-summary/00-section},
+M2-math-advanced/chapters/ch19-current-state/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,6,input-path,\input{parts/07-perspective/02-master-summary/01-one-picture},\input{chapters/ch20-master-summary/01-one-picture}
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,7,input-path,\input{parts/07-perspective/02-master-summary/02-essence},\input{chapters/ch20-master-summary/02-essence}
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,8,input-path,\input{parts/07-perspective/02-master-summary/03-toolkit-metric-geometry},\input{chapters/ch20-master-summary/03-toolkit-metric-geometry}
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,9,input-path,\input{parts/07-perspective/02-master-summary/04-dictionary-algebras},\input{chapters/ch20-master-summary/04-dictionary-algebras}
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,10,input-path,\input{parts/07-perspective/02-master-summary/05-common-mistakes},\input{chapters/ch20-master-summary/05-common-mistakes}
+M2-math-advanced/chapters/ch20-master-summary/00-section.tex,11,input-path,\input{parts/07-perspective/02-master-summary/06-suggested-path},\input{chapters/ch20-master-summary/06-suggested-path}
+M2-math-advanced/chapters/ch20-master-summary/01-one-picture.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/01-one-picture.tex,5,input-path,\input{figures/part7/tikz-map},\input{figures/tikz-map}
+M2-math-advanced/chapters/ch20-master-summary/02-essence.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/03-toolkit-metric-geometry.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/04-dictionary-algebras.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/05-common-mistakes.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-master-summary/06-suggested-path.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+shared/preamble/colors.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/environments.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/layout.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/macros-algebra.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/macros-general.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/macros-geometry.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
+shared/preamble/packages.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex

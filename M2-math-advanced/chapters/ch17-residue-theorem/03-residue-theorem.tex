@@ -1,0 +1,45 @@
+% Section 27.3: The residue theorem | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: done | Original lines: 3779-3844
+%!TEX root = ../../main.tex
+\subsection{The residue theorem}\label{sec:residue}
+
+Let $f$ be holomorphic on an open set containing $\overline\Omega$ except at finitely many points $a_1,\dots,a_k\in\Omega$ where it has isolated singularities (poles or essential singularities). The \emph{residue} of $f$ at $a$ is the coefficient $c_{-1}$ of its Laurent expansion $f(z)=\sum_nc_n(z-a)^n$, equivalently
+\begin{equation}\label{eq:residue}
+\Res_af=\frac1{2\pi i}\oint_{|z-a|=\varepsilon}f\,\dd z\qquad(\text{small }\varepsilon>0,\ \text{counter-clockwise}).
+\end{equation}
+\emph{Why the two definitions agree (steps).} Parametrise the circle: $z=a+\varepsilon e^{it}$, $t\in[0,2\pi]$, so $\dd z=i\varepsilon e^{it}\,\dd t$. For an integer $n$:
+\[
+\oint(z-a)^n\,\dd z=\int_0^{2\pi}\varepsilon^ne^{int}\,i\varepsilon e^{it}\,\dd t=i\varepsilon^{n+1}\int_0^{2\pi}e^{i(n+1)t}\,\dd t=\begin{cases}2\pi i,&n=-1,\\0,&n\neq-1,\end{cases}
+\]
+because for $m=n+1\neq0$, $\int_0^{2\pi}e^{imt}\,\dd t=\bigl[e^{imt}/(im)\bigr]_0^{2\pi}=0$, while for $m=0$ the integrand is $1$. Integrating the Laurent series term by term (it converges uniformly on the circle) leaves only $c_{-1}\cdot2\pi i$.
+
+\input{figures/tikz-residue}
+
+\begin{theorem}[Residue theorem]\label{thm:residue}
+Under these assumptions,
+\[
+\oint_{\partial\Omega}f\,\dd z=2\pi i\sum_{j=1}^k\Res_{a_j}f .
+\]
+\end{theorem}
+\begin{proof}
+Remove from $\Omega$ small open discs $D_j=D(a_j,\varepsilon)$ and let $\Omega_\varepsilon=\Omega\setminus\bigcup_jD_j$, a manifold with boundary $\partial\Omega_\varepsilon=\partial\Omega-\sum_j\partial D_j$ (the circles are traversed clockwise: induced orientation, Figure~\ref{fig:residue}). On $\Omega_\varepsilon$ the form $f\,\dd z$ is smooth and closed, so Stokes' theorem \eqref{eq:stokes} gives
+\[
+0=\int_{\Omega_\varepsilon}\dd(f\,\dd z)=\oint_{\partial\Omega}f\,\dd z-\sum_j\oint_{\partial D_j^{\mathrm{ccw}}}f\,\dd z,
+\]
+and each small-circle integral is $2\pi i\Res_{a_j}f$ by \eqref{eq:residue}.
+\end{proof}
+
+\begin{example}[Two applications of the residue theorem]\label{ex:residues}
+(a) $\displaystyle\oint_{|z|=2}\frac{\dd z}{z(z-1)}$. Partial fractions: $\frac1{z(z-1)}=\frac1{z-1}-\frac1z$, so $\Res_1=+1$ and $\Res_0=-1$ (both poles lie inside $|z|<2$). The theorem gives $2\pi i(1-1)=0$.
+\emph{Check:} $\oint\frac{\dd z}{z-1}=2\pi i$ and $\oint\frac{\dd z}z=2\pi i$ by the circle computation above, and their difference is $0$.
+
+(b) $\displaystyle\oint_{|z|=1}\frac{e^z}{z^2}\,\dd z$. Expand $e^z=1+z+\frac{z^2}2+\cdots$, so $\frac{e^z}{z^2}=\frac1{z^2}+\frac1z+\frac12+\cdots$ and $c_{-1}=1$. The integral is $2\pi i\cdot1=2\pi i$. (Equivalently, $\Res_0=\frac{\dd}{\dd z}e^z\big|_0=1$, the formula for a double pole.)
+\end{example}
+
+\begin{keyidea}[why only $c_{-1}$ survives: exact versus closed]
+On $\C\setminus\{a\}$ the forms $(z-a)^n\dd z$ with $n\neq-1$ are \emph{exact}: $(z-a)^n\dd z=\dd\bigl(\frac{(z-a)^{n+1}}{n+1}\bigr)$, so they integrate to zero on any closed loop (Section~\ref{sec:expl-closed}). The only closed, non-exact one is
+\begin{equation}\label{eq:dzoverz}
+\frac{\dd z}{z-a}=\dd\ln|z-a|+i\,\dd\theta,
+\end{equation}
+whose imaginary part is precisely the angle form $\dd\theta$ of Example~\ref{ex:angle}, with $\oint\dd\theta=2\pi$; hence $\oint\frac{\dd z}{z-a}=i\cdot2\pi=2\pi i$. Derivation of the identity: write $z=re^{i\theta}$; then $\dd z=e^{i\theta}\dd r+ire^{i\theta}\dd\theta$ and $\frac{\dd z}z=\frac{\dd r}r+i\,\dd\theta=\dd\ln r+i\,\dd\theta$.
+In other words, the residue measures the component of $f\,\dd z$ along the one cohomology class which is not exact near $a$.
+\end{keyidea}

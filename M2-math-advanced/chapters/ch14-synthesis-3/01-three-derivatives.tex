@@ -1,0 +1,35 @@
+% Section 24.1: The three derivatives side by side | Part: 4 | Depends on: sec:lie, sec:lc, sec:curv, sec:gauss | Status: done | Original lines: 3329-3362
+%!TEX root = ../../main.tex
+\subsection{The three derivatives side by side}\label{sec:threederivs}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{2.3cm}p{3.5cm}p{3.7cm}p{4.4cm}@{}}
+\toprule
+ & $\dd$ & $\Lie_X$ & $\nabla_X$\\
+\midrule
+acts on & differential forms only & any tensor field & any tensor field\\
+extra data & none (smooth structure) & the vector field $X$ & a connection (Levi-Civita if a metric is given)\\
+linear in $X$ over functions? & --- & no: depends on $\partial X$ & yes: $\nabla_{fX}=f\nabla_X$\\
+second derivative & $\dd\dd=0$ & $[\Lie_X,\Lie_Y]=\Lie_{[X,Y]}$ & $[\nabla_X,\nabla_Y]-\nabla_{[X,Y]}=R(X,Y)$ \\
+compatible with $g$? & irrelevant & $\Lie_Xg=0$ iff $X$ Killing & $\nabla g=0$ for Levi-Civita\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For the Levi-Civita connection they are related by two short statements.
+
+\begin{proposition}\label{prop:threederivs}
+Let $\nabla$ be the Levi-Civita connection of $g$ (torsion-free, $\nabla g=0$). Then
+\begin{enumerate}[label=(\alph*)]
+\item for a $1$-form $\omega$: $\ (\dd\omega)(X,Y)=(\nabla_X\omega)(Y)-(\nabla_Y\omega)(X)$, i.e.\ $(\dd\omega)_{ij}=\nabla_i\omega_j-\nabla_j\omega_i=\partial_i\omega_j-\partial_j\omega_i$; the Christoffel symbols cancel;
+\item for the metric: $\ (\Lie_Xg)_{ij}=\nabla_iX_j+\nabla_jX_i$; in particular $X$ is Killing iff $\nabla_iX_j$ is antisymmetric.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(a) $(\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)$. Subtract the same expression with $X,Y$ exchanged and use $\nabla_XY-\nabla_YX=[X,Y]$ (torsion-free): the result is $X(\omega(Y))-Y(\omega(X))-\omega([X,Y])=\dd\omega(X,Y)$ by the invariant formula of Theorem~\ref{thm:dprops}.
+(b) $\Lie_Xg(Y,Z)=X(g(Y,Z))-g([X,Y],Z)-g(Y,[X,Z])$. By $\nabla g=0$, $X(g(Y,Z))=g(\nabla_XY,Z)+g(Y,\nabla_XZ)$, and $[X,Y]=\nabla_XY-\nabla_YX$; substituting, $\Lie_Xg(Y,Z)=g(\nabla_YX,Z)+g(Y,\nabla_ZX)$.
+\end{proof}
+
+So $\dd$ is precisely the part of $\nabla$ that does not see the connection: the antisymmetrisation of $\nabla\omega$ is independent of $\Gamma$.

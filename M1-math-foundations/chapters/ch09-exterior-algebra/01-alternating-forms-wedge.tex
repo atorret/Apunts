@@ -1,0 +1,82 @@
+% Section 4.1: Alternating forms and the wedge product | Part: 1 | Depends on: sec:tensors, sec:metric | Status: done | Original lines: 903-983
+%!TEX root = ../../main.tex
+\subsection{Alternating forms and the wedge product}\label{sec:altforms}
+
+\begin{definition}[Alternating forms]
+A \emph{$k$-form} on $V$ is a map $\alpha:V\times\cdots\times V\to\R$ ($k$ arguments) that is linear in each argument and
+\emph{alternating}: exchanging two arguments changes the sign,
+$\alpha(\dots,v,\dots,w,\dots)=-\alpha(\dots,w,\dots,v,\dots)$. In particular $\alpha$ vanishes if two arguments are equal,
+or more generally linearly dependent. The space of $k$-forms is denoted $\bigwedge^kV^*$ ($=\Alt^k(V;\R)$); $\bigwedge^0V^*=\R$ and
+$\bigwedge^1V^*=V^*$.
+\end{definition}
+
+\begin{definition}[Wedge product]
+For $\alpha\in\bigwedge^kV^*$ and $\beta\in\bigwedge^lV^*$,
+\begin{equation}\label{eq:wedge}
+(\alpha\wedge\beta)(v_1,\dots,v_{k+l})=\frac1{k!\,l!}\sum_{\sigma\in S_{k+l}}\sgn(\sigma)\;
+\alpha\bigl(v_{\sigma(1)},\dots,v_{\sigma(k)}\bigr)\,\beta\bigl(v_{\sigma(k+1)},\dots,v_{\sigma(k+l)}\bigr),
+\end{equation}
+where $S_{k+l}$ is the group of permutations of $k+l$ objects. The result is a $(k+l)$-form.
+\end{definition}
+
+\begin{specialcase}[$k=l=1$: the case that matters most]
+The sum has two terms, $\sigma=\id$ and the exchange of $1$ and $2$, and the prefactor is $1$:
+\begin{equation}\label{eq:wedge11}
+(\alpha\wedge\beta)(v,w)=\alpha(v)\beta(w)-\alpha(w)\beta(v).
+\end{equation}
+For $\alpha=\dd x$, $\beta=\dd y$ this is $(\dd x\wedge\dd y)(a,b)=a^xb^y-a^yb^x$, the determinant of the projections of
+$a,b$ onto the $xy$-plane.
+\end{specialcase}
+
+\begin{proposition}[Determinant formula]\label{prop:detformula}
+For $1$-forms $\alpha^1,\dots,\alpha^k$ and vectors $v_1,\dots,v_k$,
+\begin{equation}\label{eq:detformula}
+(\alpha^1\wedge\cdots\wedge\alpha^k)(v_1,\dots,v_k)=\det\bigl[\alpha^i(v_j)\bigr]_{i,j=1}^k .
+\end{equation}
+\end{proposition}
+\begin{proof}
+Apply \eqref{eq:wedge} repeatedly. The normalisation $1/(k!\,l!)$ exactly compensates the repetitions in the sum over
+permutations, so an iterated wedge of $1$-forms is the single sum $\sum_\sigma\sgn(\sigma)\alpha^1(v_{\sigma(1)})\cdots\alpha^k(v_{\sigma(k)})$,
+which is the Leibniz expansion of the determinant. (In detail: Identities~\ref{id:assoc} and~\ref{id:det} in the Glossary.)% REWRITTEN: glossary pointer
+\end{proof}
+
+\begin{intuition}[geometric meaning of the determinant formula]
+The matrix $[\alpha^i(v_j)]$ is the matrix of the vectors $v_j$ after they have been mapped by
+$A:V\to\R^k$, $A(v)=(\alpha^1(v),\dots,\alpha^k(v))$. So \eqref{eq:detformula} is the signed $k$-dimensional volume of the image
+of the parallelepiped $(v_1,\dots,v_k)$ under $A$. For $\dd x\wedge\dd y$ in $\R^3$: the signed area of the \emph{projection} of
+the parallelogram $(v,w)$ onto the $xy$-plane. (In the picture of Figure~\ref{fig:sheets}: the stacks of sheets of $\alpha$ and
+$\beta$ intersect in a honeycomb of tubes, and $(\alpha\wedge\beta)(v,w)$ counts the tubes pierced by the parallelogram.)
+The sign records the orientation; it is the reason why forms, and not arbitrary tensors, are the integrands of oriented surfaces
+(Section~\ref{sec:intk}).
+\end{intuition}
+
+\begin{example}[Projected areas are the components of the cross product]\label{ex:projareas}
+In $\R^3$ take $v=(1,0,2)$ and $w=(0,1,5)$. Evaluate the three coordinate $2$-forms with \eqref{eq:wedge11}:
+\begin{align*}
+(\dd y\wedge\dd z)(v,w)&=v^yw^z-v^zw^y=0\cdot5-2\cdot1=-2,\\
+(\dd z\wedge\dd x)(v,w)&=v^zw^x-v^xw^z=2\cdot0-1\cdot5=-5,\\
+(\dd x\wedge\dd y)(v,w)&=v^xw^y-v^yw^x=1\cdot1-0\cdot0=1.
+\end{align*}
+These are exactly the components of $v\times w=(-2,-5,1)$: the cross product lists the areas of the three projections of the
+parallelogram. Note that the third value ignores the $z$-components $2$ and $5$, as a projection must
+(Sections~\ref{sec:phys-cross}, \ref{sec:duality}).
+\end{example}
+
+\begin{proposition}[Basis and dimension]\label{prop:formbasis}
+For increasing multi-indices $I=(i_1<\cdots<i_k)$ put $\dd x^I=\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_k}$. Every $k$-form is uniquely
+\[
+\alpha=\sum_{i_1<\cdots<i_k}\alpha(\partial_{i_1},\dots,\partial_{i_k})\,\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_k},
+\]
+hence $\dim\bigwedge^kV^*=\binom nk$; in particular $\bigwedge^kV^*=0$ for $k>n$ and $\dim\bigwedge^nV^*=1$.
+\end{proposition}
+\begin{proof}
+By \eqref{eq:detformula}, $\dd x^I(\partial_{j_1},\dots,\partial_{j_k})=\det[\delta^{i_a}_{j_b}]$, which is $1$ if $J=I$ and $0$ for every
+other increasing $J$: the $\dd x^I$ are dual to the $\partial_J$. An alternating form is determined by its values on increasing
+tuples of basis vectors (alternation fixes the values on all other tuples, and tuples with a repeated vector give $0$), so the
+$\dd x^I$ span and are independent.
+\end{proof}
+
+\begin{specialcase}[$n=3$: dimensions $1,3,3,1$]
+Scalars, $1$-forms, $2$-forms (three components, like a vector) and $3$-forms (one component, like a scalar). This is the origin of
+the pattern gradient--curl--divergence of Sections~\ref{sec:stokes} and \ref{sec:synth2}.
+\end{specialcase}

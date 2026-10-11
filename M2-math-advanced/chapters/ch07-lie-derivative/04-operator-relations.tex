@@ -1,0 +1,27 @@
+% Section 13.4: Operator relations: $[\partial_i,x^j]$ and $\{\iota_i,\dd x^j\wedge\}$ | Part: 2 | Depends on: sec:fields, sec:interior | Status: done | Original lines: 2255-2280
+%!TEX root = ../../main.tex
+\subsection{Operator relations: $[\partial_i,x^j]$ and $\{\iota_i,\dd x^j\wedge\}$}\label{sec:operators}
+
+Let $x^j$ act on forms by multiplication, $\partial_i$ by differentiating the coefficients, $\epsilon^j=\dd x^j\wedge$ by wedging, and $\iota_i=\iota_{\partial_i}$ by contracting.
+
+\begin{proposition}\label{prop:operators}
+For every form $\alpha$ and function $f$:
+\begin{align}
+\partial_i(x^jf)-x^j\partial_if&=\delta^j_if &&\text{i.e. }[\partial_i,x^j]=\delta^j_i,\label{eq:E12}\\
+\iota_i(\dd x^j\wedge\alpha)+\dd x^j\wedge\iota_i\alpha&=\delta^j_i\alpha &&\text{i.e. }\{\iota_i,\dd x^j\wedge\}=\delta^j_i,\label{eq:E13}\\
+\dd(x^j\alpha)-x^j\dd\alpha&=\dd x^j\wedge\alpha &&\text{i.e. }[\dd,x^j]=\dd x^j\wedge,\label{eq:E14}\\
+\dd(\alpha_I\,\dd x^I)&=\partial_i\alpha_I\,\dd x^i\wedge\dd x^I &&\text{i.e. }\dd=\dd x^i\wedge\partial_i\text{ on coefficients,}\label{eq:E15}\\
+\Lie_{\partial_i}(\alpha_I\,\dd x^I)&=(\dd\iota_i+\iota_i\dd)(\alpha_I\dd x^I)=\partial_i\alpha_I\,\dd x^I.\label{eq:E16}
+\end{align}
+\end{proposition}
+\begin{proof}
+\eqref{eq:E12}: Leibniz rule, $\partial_i(x^jf)=\delta^j_if+x^j\partial_if$. \eqref{eq:E13}: the antiderivation rule \eqref{eq:antider} with the $1$-form $\dd x^j$ gives $\iota_i(\dd x^j\wedge\alpha)=(\iota_i\dd x^j)\alpha-\dd x^j\wedge\iota_i\alpha=\delta^j_i\alpha-\dd x^j\wedge\iota_i\alpha$. \eqref{eq:E14}: Leibniz rule \eqref{eq:dleibniz} with a $0$-form, $\dd(x^j\alpha)=\dd x^j\wedge\alpha+x^j\dd\alpha$. \eqref{eq:E15} is the definition of $\dd$ in coordinates. For \eqref{eq:E16}: $\Lie_{\partial_i}\dd x^j=\dd(\iota_i\dd x^j)+\iota_i\dd\dd x^j=\dd(\delta^j_i)+0=0$, and $\Lie_{\partial_i}$ is a derivation, so only the coefficient is differentiated.
+\end{proof}
+\numcheck Check of \eqref{eq:E13} in $\R^2$ with $\alpha=x\,\dd y$ and $i=j=x$: $\dd x\wedge\alpha=x\,\dd x\wedge\dd y$ and $\iota_{\partial_x}(x\,\dd x\wedge\dd y)=x\,\dd y$; $\iota_{\partial_x}\alpha=x\,\dd y(\partial_x)=0$. The sum is $x\,\dd y=\alpha$ \checkmark.
+Check of \eqref{eq:E16} with $\alpha=f\,\dd x\wedge\dd y$: $\dd\alpha=0$ (a $3$-form in the plane), so $\Lie_{\partial_x}\alpha=\dd(f\,\dd y)=f_x\,\dd x\wedge\dd y$ \checkmark.
+
+\begin{remark}[Heisenberg and the fermions]
+\eqref{eq:E12} and \eqref{eq:E13} are the same duality $\dd x^j(\partial_i)=\delta^j_i$ written for the even pair $(x^j,\partial_i)$ with a commutator and for the odd pair $(\dd x^j\wedge,\iota_i)$ with an anticommutator.
+The first is the Heisenberg relation of quantum mechanics ($p=-i\hbar\partial_x$, $[x,p]=i\hbar$); the second is the canonical anticommutation relation of fermions, and the exterior algebra $\bigwedge(V^*)$ is the corresponding Fock space.
+In both cases $\partial_x$ (resp.\ $\iota_{\partial_x}$) is the ``annihilation'' partner of $x$ (resp.\ $\dd x\wedge$).
+\end{remark}

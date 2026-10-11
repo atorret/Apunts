@@ -1,0 +1,30 @@
+% Section 17.1: 01-full-contraction | Part: 3 | Depends on: sec:int1, sec:ext | Status: done | Original lines: 2613-2635
+%!TEX root = ../../main.tex
+Let $\phi:U\subset\R^k\to M$ be a parametrised $k$-dimensional piece of $M$, and $\alpha$ a $k$-form. Then
+\begin{equation}\label{eq:intk}
+\int_\phi\alpha:=\int_U\phi\pb\alpha=\int_U\alpha_{\phi(u)}\bigl(\partial_1\phi,\dots,\partial_k\phi\bigr)\,\dd u^1\cdots\dd u^k,
+\end{equation}
+that is, evaluate $\alpha$ on the tangent $k$-frame of the parametrisation (a \emph{full contraction}) and integrate the resulting function with the Lebesgue measure. For $k=1$ this is \eqref{eq:lineint}.
+The same reasoning as in Proposition~\ref{prop:reparam} shows invariance under orientation-preserving reparametrisations (the Jacobian determinant appears through the multilinear \emph{alternating} character of $\alpha$), which is why the integrands of oriented $k$-dimensional objects must be alternating $k$-forms. On an oriented manifold one globalises with a partition of unity.
+% REWRITTEN: one-line definitions of the two terms used just above.
+(An \emph{orientation} of $M$ is a choice of atlas whose transition maps all have positive Jacobian determinant, equivalently a
+nowhere-vanishing top form up to positive multiples; a \emph{partition of unity} subordinate to an open cover $\{U_\alpha\}$ is a family of
+smooth functions $\rho_\alpha\ge0$ with $\operatorname{supp}\rho_\alpha\subset U_\alpha$, locally finite, and $\sum_\alpha\rho_\alpha=1$.
+Then $\int_M\alpha:=\sum_\alpha\int\rho_\alpha\alpha$, each term computed in one positively oriented chart by \eqref{eq:intk}.)
+
+\emph{Why a determinant appears.} For a $2$-form $\alpha=a\,\dd x\wedge\dd y$ and a parametrisation $\phi(u,v)=(x(u,v),y(u,v))$, the tangent frame is $\partial_u\phi=(x_u,y_u)$, $\partial_v\phi=(x_v,y_v)$, so
+\[
+\alpha(\partial_u\phi,\partial_v\phi)=a\,(x_uy_v-y_ux_v)=a\det D\phi,
+\]
+where $D\phi$ is the Jacobian matrix. Therefore \eqref{eq:intk} is the change-of-variables formula $\int_\phi a\,\dd x\wedge\dd y=\iint a(\phi(u,v))\det D\phi\,\dd u\,\dd v$ with the \emph{sign} of the Jacobian kept: orientation-preserving reparametrisations ($\det>0$) leave it unchanged and orientation-reversing ones flip its sign.
+
+\begin{example}[A surface integral, step by step]\label{ex:paraboloid}
+Integrate $\alpha=z\,\dd x\wedge\dd y$ over the paraboloid cap $\phi(u,v)=(u,v,u^2+v^2)$, $u^2+v^2\le1$.
+\begin{enumerate}
+\item Pull back the coordinate functions: $\phi\pb x=u$, $\phi\pb y=v$, $\phi\pb z=u^2+v^2$; since pull-back commutes with $\dd$ and $\wedge$, $\phi\pb\dd x=\dd u$ and $\phi\pb\dd y=\dd v$.
+\item Hence $\phi\pb\alpha=(u^2+v^2)\,\dd u\wedge\dd v$.
+\item Evaluate on the frame $(\partial_u,\partial_v)$: $(\dd u\wedge\dd v)(\partial_u,\partial_v)=1$, so $\int_\phi\alpha=\iint_{u^2+v^2\le1}(u^2+v^2)\,\dd u\,\dd v$.
+\item Polar coordinates (the factor $r$ is the determinant of Example~\ref{ex:polarwedge}): $\displaystyle\int_0^{2\pi}\!\!\int_0^1r^2\cdot r\,\dd r\,\dd\varphi=2\pi\cdot\tfrac14=\tfrac\pi2$.
+% REWRITTEN: polar angle written \varphi (docs/NOTATION.md).
+\end{enumerate}
+\end{example}

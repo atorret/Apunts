@@ -1,0 +1,25 @@
+% Section 27.6: The argument principle: counting zeros with a $1$-form | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: done | Original lines: 3874-3897
+%!TEX root = ../../main.tex
+\subsection{The argument principle: counting zeros with a $1$-form}\label{sec:argument}
+
+Let $f$ be meromorphic on a neighbourhood of the closure of $\Omega$, with no zeros or poles on $\partial\Omega$. Then $\frac{f'}f\dd z=\dd\log f=\dd\ln|f|+i\,\dd\arg f=f\pb\bigl(\frac{\dd z}z\bigr)$. The first term is exact, so the residue theorem becomes
+\begin{equation}\label{eq:argument}
+\frac1{2\pi i}\oint_{\partial\Omega}\frac{f'}f\,\dd z=\frac1{2\pi}\oint_{\partial\Omega}f\pb\dd\theta=N-P,
+\end{equation}
+where $N$ and $P$ are the numbers of zeros and poles in $\Omega$ counted with multiplicity: the winding number of the curve $f(\partial\Omega)$ around $0$.
+\emph{Steps.} (1) Locally $\log f=\ln|f|+i\arg f$, and $\dd\log f=\frac{\dd f}f=\frac{f'}f\dd z$; this is also the pull-back $f\pb(\dd z/z)$ because $f\pb\dd z=\dd f=f'\dd z$. (2) $\dd\ln|f|$ is exact, so its integral over a closed curve is $0$. (3) What remains is $i\oint\dd\arg f=2\pi i\cdot(\text{winding number of }f\circ\gamma\text{ around }0)$.
+(4) By the residue theorem, $\frac{f'}f$ has a simple pole with residue $+m$ at a zero of order $m$ and $-m$ at a pole of order $m$ (since $f=(z-a)^{\pm m}g$ gives $f'/f=\pm m/(z-a)+g'/g$).
+\numcheck $f(z)=z^2$ on $|z|=1$: $\frac{f'}f=\frac2z$, $\frac1{2\pi i}\oint\frac2z\,\dd z=2=N$ (a double zero at the origin), and $f(e^{it})=e^{2it}$ winds twice around $0$.
+This is the degree of the map $f|_{\partial\Omega}:\partial\Omega\to\C\setminus\{0\}$, computed by pulling back the angle form (Section~\ref{sec:stokes}), and it is the basis of Rouch\'e's theorem and of the fundamental theorem of algebra.
+
+\begin{example}[A real integral by residues, step by step]\label{ex:realint}
+To compute $I=\displaystyle\int_{-\infty}^\infty\frac{\dd x}{1+x^2}$, apply Theorem~\ref{thm:residue} to $f\,\dd z$ with $f=\dfrac1{1+z^2}$ on the upper half-disc $\Omega_R$ of radius $R>1$, whose boundary is the segment $[-R,R]$ followed by the semicircle $C_R$.
+\begin{enumerate}
+\item \emph{Poles.} $1+z^2=(z-i)(z+i)$; only $z=i$ lies inside $\Omega_R$.
+\item \emph{Residue.} $\Res_if=\lim_{z\to i}\frac{z-i}{(z-i)(z+i)}=\frac1{2i}$.
+\item \emph{Theorem.} $\int_{-R}^Rf(x)\,\dd x+\int_{C_R}f\,\dd z=2\pi i\cdot\frac1{2i}=\pi$. (On the real axis the pull-back of $f\,\dd z$ is $f(x)\,\dd x$, the contraction with the velocity $1$.)
+\item \emph{The arc vanishes.} On $|z|=R$, $|1+z^2|\ge R^2-1$, so $\bigl|\int_{C_R}f\,\dd z\bigr|\le\dfrac{\pi R}{R^2-1}\to0$ as $R\to\infty$ (length $\pi R$ times the bound on $|f|$).
+\item \emph{Limit.} Letting $R\to\infty$: $I=\pi$.
+\end{enumerate}
+\emph{Check:} $\int\frac{\dd x}{1+x^2}=\arctan x\big|_{-\infty}^\infty=\frac\pi2-(-\frac\pi2)=\pi$ \checkmark.
+\end{example}

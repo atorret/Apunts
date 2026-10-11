@@ -1,0 +1,81 @@
+% Section: Glossary, Part A: symbols | Part: backmatter | Depends on: all parts | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../main.tex
+\phantomsection\subsection*{Part A. Symbols}\addcontentsline{toc}{subsection}{Part A. Symbols}
+
+The column ``where'' gives the section in which the symbol is introduced. Conventions that differ between authors are collected
+in Section~\ref{sec:conventions}.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\par\medskip\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{8.8cm}>{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Where}\\
+\midrule
+\multicolumn{3}{@{}l}{\emph{Spaces and objects}}\\
+$V$, $n=\dim V$ & finite-dimensional real vector space & Sec.~\ref{sec:vs}\\
+$V^*$, $e^i$ & dual space; dual basis, $e^i(e_j)=\delta^i_j$ & Sec.~\ref{sec:dualspace}\\
+$\ip{\omega}{v}$, $\omega(v)$ & pairing (contraction) of a covector with a vector & Sec.~\ref{sec:contraction}\\
+$\TT{\ell}{k}(V)$ & tensors of type $(\ell,k)$: $k$ covariant, $\ell$ contravariant slots & Sec.~\ref{sec:tensortypes}\\
+$T(V)$ & tensor algebra & Sec.~\ref{sec:tensoralgebra}\\
+$\bigwedge V$, $\bigwedge^kV^*$ & exterior algebra; alternating $k$-forms & Sec.~\ref{sec:ext}\\
+$\Alt^k(V;\R)$, $\Alt$ & alternating $k$-linear maps; antisymmetrisation operator & Sec.~\ref{sec:altforms}\\
+$g$, $g_{ij}$, $g^{ij}$ & metric, its components and those of its inverse & Sec.~\ref{sec:metric}\\
+$Q$, $(p,q,r)$, $\sig$ & quadratic form $Q(v)=g(v,v)$; signature & Sec.~\ref{sec:quadform}\\
+$\Cl(V,Q)$, $\Cl(p,q)$, $\GA$ & Clifford (geometric) algebra & Sec.~\ref{sec:clifford}\\
+$\GA^k$, $\gr{A}{k}$ & $k$-vectors; grade-$k$ part of $A$ & Sec.~\ref{sec:ops}\\
+$\pss$ & unit pseudoscalar (oriented unit volume) & Sec.~\ref{sec:duality}\\
+$\rotor$ & rotor (even versor with $\rotor\rev\rotor=1$) & Sec.~\ref{sec:rotors}\\
+$\Pin$, $\Spin$ & groups of versors; even versors & Sec.~\ref{sec:rotors}\\
+$e^i_\sharp$ & reciprocal frame, $e^i_\sharp\cdot e_j=\delta^i_j$ & Rem.~\ref{rem:reciprocal}\\
+$M$, $T_pM$, $T^*_pM$ & manifold; tangent and cotangent spaces at $p$ & Sec.~\ref{sec:manifolds}, \ref{sec:tangent}\\
+$\Xfield(M)$, $\TF{\ell}{k}(M)$ & vector fields; tensor fields of type $(\ell,k)$ & Sec.~\ref{sec:fields}\\
+$\Omega^k(M)$ & differential $k$-forms & Sec.~\ref{sec:dform}\\
+$\vol$, $\vol_g$, $\mu$ & volume form ($\sqrt{|g|}\,\dd x^1\wedge\cdots\wedge\dd x^n$); a general volume form & Sec.~\ref{sec:divmu}\\
+$\partial M$, $j$ & boundary of $M$; inclusion $\partial M\hookrightarrow M$ & Sec.~\ref{sec:stokes}\\
+$\Gamma^k{}_{ij}$ & Christoffel symbols & Sec.~\ref{sec:conn}\\
+$\Tor$, $T^i{}_{jk}$ & torsion & Sec.~\ref{sec:lc}\\
+$R$, $R^l{}_{ijk}$, $\mathbb R_{ijkl}$ & Riemann tensor; all indices down & Sec.~\ref{sec:curv}\\
+$\Ric$, $s$, $K$ & Ricci tensor, scalar curvature, Gaussian curvature & Sec.~\ref{sec:curv}\\
+$G_{\mu\nu}$, $T_{\mu\nu}$ & Einstein tensor; stress-energy tensor & Sec.~\ref{sec:bridge}\\
+$H^k_{\mathrm{dR}}$ & de Rham cohomology & Sec.~\ref{sec:adjoint}\\
+$\Res_af$ & residue of $f$ at $a$ & Sec.~\ref{sec:residue}\\
+\bottomrule
+\end{tabular}
+\par\medskip\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{8.8cm}>{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Where}\\
+\midrule
+\multicolumn{3}{@{}l}{\emph{Algebraic operations}}\\
+$\otimes$ & tensor product & Sec.~\ref{sec:tensorproduct}\\
+$\wedge$ & wedge (exterior) product; on multivectors the top-grade part of $AB$ & Sec.~\ref{sec:altforms}, \ref{sec:ops}\\
+$\iota_v$ & interior product (insert $v$ in the first slot) & Sec.~\ref{sec:interior}\\
+$\lc$, $\rc$ & left and right contraction of multivectors & Sec.~\ref{sec:ops}\\
+$uv$ (juxtaposition) & geometric product & Sec.~\ref{sec:clifford}\\
+$\rev A$ & reverse of $A$ & Sec.~\ref{sec:ops}\\
+$\dual A$ & dual, $A\pss^{-1}$ & Sec.~\ref{sec:duality}\\
+$\hodge$ & Hodge star & Sec.~\ref{sec:duality}\\
+$\meet$ & meet (regressive product) & Sec.~\ref{sec:duality}\\
+$\times$ & cross product ($n=3$ only) & Sec.~\ref{sec:duality}\\
+$\flat$, $\sharp$ & lowering and raising an index with $g$ & Sec.~\ref{sec:metric}\\
+\bottomrule
+\end{tabular}
+\par\medskip\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{8.8cm}>{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Where}\\
+\midrule
+\multicolumn{3}{@{}l}{\emph{Derivatives and maps}}\\
+$x^i$, $\dd x^i$, $\partial_i$ & coordinate function, its differential, coordinate vector field & Sec.~\ref{sec:trio}\\
+$\dd$ & exterior derivative & Sec.~\ref{sec:dform}\\
+$\codiff$ & codifferential & Sec.~\ref{sec:ga-calculus}\\
+$T_p\Phi$, $\dd\phi_p$ & differential (push-forward) of a map & Sec.~\ref{sec:pushpull}\\
+$\phi\pb$ & pull-back by $\phi$ & Sec.~\ref{sec:pushpull}\\
+$\Lie_X$ & Lie derivative along $X$ & Sec.~\ref{sec:lie}\\
+$[X,Y]$ & Lie bracket of vector fields & Sec.~\ref{sec:lie}\\
+$\nabla$, $\nabla_X$, $\nabla_i$ & covariant derivative (connection) & Sec.~\ref{sec:conn}\\
+$D_t$ & covariant derivative along a curve & Sec.~\ref{sec:deviation}\\
+$\vd$ & vector derivative (Dirac operator), $e^i_\sharp\partial_i$ & Sec.~\ref{sec:ga-calculus}\\
+$\partial_z$, $\partial_{\bar z}$ & Wirtinger derivatives & Sec.~\ref{sec:complexforms}\\
+$\int_\gamma\omega$, $\oint$ & line integral; integral over a closed curve & Sec.~\ref{sec:int1}\\
+\bottomrule
+\end{tabular}
+\endgroup

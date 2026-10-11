@@ -1,0 +1,94 @@
+% Section: Glossary C.1: geometric product, contraction, duality | Part: backmatter | Depends on: sec:clifford, sec:ops, sec:duality | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../main.tex
+\subsubsection*{The geometric product, contractions and duality}
+
+\begin{identity}[fundamental identity; Proposition~\ref{prop:fund}]\label{id:fund}
+For vectors $u,v\in V$: $\quad uv+vu=2\,u\cdot v$.
+\end{identity}
+\begin{proof}
+\Step{1}{expand a square} By distributivity, $(u+v)^2=u^2+uv+vu+v^2$.
+\Step{2}{squares are scalars} By \eqref{eq:cliff}, $w^2=Q(w)$ for every vector, so $uv+vu=Q(u+v)-Q(u)-Q(v)$.
+\Step{3}{polarization} By \eqref{eq:polar} the right-hand side is $2g(u,v)=2\,u\cdot v$.
+\end{proof}
+
+\begin{identity}[product of two vectors; Proposition~\ref{prop:abdecomp}]\label{id:abdecomp}
+For $a,b\in V$: $\quad ab=a\cdot b+a\wedge b$, with $a\cdot b=\frac12(ab+ba)$ and $a\wedge b=\frac12(ab-ba)$.
+\end{identity}
+\begin{proof}
+Write $ab=\frac12(ab+ba)+\frac12(ab-ba)$. The symmetric part is $a\cdot b$ by Identity~\ref{id:fund}; the antisymmetric part
+is the antisymmetrisation of $a\otimes b$, \ie $a\wedge b$ (Corollary~\ref{cor:grades}).
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Proposition prop:contr(1) is only sketched in the text ("by induction").
+\begin{identity}[contraction of a vector with a bivector; Proposition~\ref{prop:contr}(1), $k=2$]\label{id:lcwedge}
+For vectors $a,b,c$: $\quad a\lc(b\wedge c)=(a\cdot b)\,c-(a\cdot c)\,b$.
+\end{identity}
+\begin{proof}
+\Step{1}{formula for the contraction} For a bivector $B$, \eqref{eq:aA} with $r=2$ gives $a\lc B=\frac12(aB-Ba)$.
+\Step{2}{move $a$ through a product of two vectors} Using $xa=-ax+2\,a\cdot x$ (Identity~\ref{id:fund}) twice,
+\[
+bca=b(-ac+2\,a\cdot c)=-bac+2(a\cdot c)b=abc-2(a\cdot b)c+2(a\cdot c)b,
+\]
+so $a(bc)-(bc)a=2(a\cdot b)c-2(a\cdot c)b$, and by exchanging $b,c$: $a(cb)-(cb)a=2(a\cdot c)b-2(a\cdot b)c$.
+\Step{3}{combine} With $b\wedge c=\frac12(bc-cb)$ (Identity~\ref{id:abdecomp}),
+\[
+a\lc(b\wedge c)=\tfrac14\bigl[(abc-bca)-(acb-cba)\bigr]=\tfrac14\bigl[4(a\cdot b)c-4(a\cdot c)b\bigr]=(a\cdot b)c-(a\cdot c)b .
+\]
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Proposition prop:contr(3) is only sketched in the text; Theorem thm:dual depends on it.
+\begin{identity}[contraction is associative with the wedge; Proposition~\ref{prop:contr}(3)]\label{id:contr3}
+For all multivectors $A,B,C$: $\quad A\lc(B\lc C)=(A\wedge B)\lc C$.
+\end{identity}
+\begin{proof}
+\Step{1}{reduction to basis blades} Both sides are linear in each of $A,B,C$. Fix an orthonormal basis and, for an increasing
+multi-index $J$, write $e_J=e_{j_1}e_{j_2}\cdots$; distinct orthogonal vectors anticommute (Identity~\ref{id:fund}), so $e_J$ is
+also their wedge, and the $e_J$ form a basis of $\GA(V)$. It suffices to take $A=e_I$, $B=e_J$, $C=e_K$.
+\Step{2}{products of basis blades} Moving factors past each other only produces signs, and each repeated index gives a factor
+$e_i^2=\varepsilon_i$. Hence $e_Ie_J=\pm\bigl(\textstyle\prod_{i\in I\cap J}\varepsilon_i\bigr)\,e_{I\triangle J}$: a multiple of a
+single blade of grade $|I\triangle J|=|I|+|J|-2|I\cap J|$.
+\Step{3}{the two products in these terms} By Definition~\ref{def:products}, $e_I\wedge e_J=\gr{e_Ie_J}{|I|+|J|}$, which by Step~2
+equals $e_Ie_J$ if $I\cap J=\emptyset$ and $0$ otherwise. Likewise $e_J\lc e_K=\gr{e_Je_K}{|K|-|J|}$ equals $e_Je_K$ if
+$J\subset K$ and $0$ otherwise (the grade $|J\triangle K|$ equals $|K|-|J|$ exactly when $J\subset K$).
+\Step{4}{left-hand side} $e_J\lc e_K$ is $e_Je_K$, a multiple of $e_{K\setminus J}$, if $J\subset K$. Then $e_I\lc(e_Je_K)$ is
+$e_Ie_Je_K$ if moreover $I\subset K\setminus J$, and $0$ otherwise. So the left-hand side is $e_Ie_Je_K$ if $I$ and $J$ are
+disjoint subsets of $K$, and $0$ otherwise.
+\Step{5}{right-hand side} If $I\cap J\neq\emptyset$, then $e_I\wedge e_J=0$. Otherwise $e_I\wedge e_J=e_Ie_J$, a multiple of
+$e_{I\cup J}$, and $(e_Ie_J)\lc e_K$ is $e_Ie_Je_K$ if $I\cup J\subset K$, and $0$ otherwise. This is the same condition and the
+same value as in Step~4.
+\end{proof}
+
+\begin{identity}[cross product; Proposition~\ref{prop:cross}]\label{id:cross}
+In $\GA(\R^3)$ with $\pss=e_1e_2e_3$: $\quad a\times b=(a\wedge b)\pss^{-1}=-\pss\,(a\wedge b)$.
+\end{identity}
+\begin{proof}
+\Step{1}{$\pss$ is central and $\pss^2=-1$} Moving $e_1$ through $e_2e_3$ costs two signs, so $e_1\pss=\pss e_1$, and likewise for
+$e_2,e_3$. Then $\pss^2=e_1e_2e_3e_1e_2e_3=e_1e_2e_1e_2e_3e_3=(e_1e_2)^2=-1$, so $\pss^{-1}=-\pss$.
+\Step{2}{basis check} Both sides are bilinear and antisymmetric, so it suffices to check $(a,b)=(e_1,e_2),(e_2,e_3),(e_3,e_1)$:
+$e_1e_2\pss^{-1}=-(e_1e_2)^2e_3=e_3$, $\ e_2e_3\pss^{-1}=-e_2e_3e_1e_2e_3=-e_2e_1e_2e_3e_3=e_1$,
+$\ e_3e_1\pss^{-1}=-e_3e_1e_1e_2e_3=-e_3e_2e_3=e_2$. These are $e_1\times e_2$, $e_2\times e_3$, $e_3\times e_1$.
+\end{proof}
+
+\begin{identity}[the dual turns wedges into contractions; Theorem~\ref{thm:dual}(3)]\label{id:dual}
+For a non-degenerate metric and all multivectors $A,B$: $\quad\dual{(A\wedge B)}=A\lc\dual B$.
+\end{identity}
+\begin{proof}
+\Step{1}{the dual is a contraction} For a basis blade $e_J$, $e_J\pss^{-1}$ is by Step~2 of Identity~\ref{id:contr3} a multiple of
+the single blade $e_{J^c}$ (complementary indices), of grade $n-|J|$; hence $e_J\pss^{-1}=\gr{e_J\pss^{-1}}{n-|J|}=e_J\lc\pss^{-1}$, and
+by linearity $\dual B=B\lc\pss^{-1}$ for every $B$.
+\Step{2}{apply Identity~\ref{id:contr3}} $A\lc\dual B=A\lc(B\lc\pss^{-1})=(A\wedge B)\lc\pss^{-1}=\dual{(A\wedge B)}$.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Theorem thm:hodgeGA states hodge-hodge=(-1)^{k(n-k)} without proof.
+\begin{identity}[$\hodge\hodge$ in the Euclidean case; Theorem~\ref{thm:hodgeGA}]\label{id:hodgehodge}
+On $k$-vectors (or $k$-forms) of an oriented Euclidean space of dimension $n$: $\quad\hodge\hodge=(-1)^{k(n-k)}$.
+\end{identity}
+\begin{proof}
+\Step{1}{reduce to a basis blade} By linearity take $A=e_J$ for a positively oriented orthonormal basis, $|J|=k$, so $\pss=e_1\cdots e_n$,
+$\rev{e_J}=e_J^{-1}$ and $\rev\pss\,\pss=e_n\cdots e_1e_1\cdots e_n=1$.
+\Step{2}{apply $\hodge A=\rev A\pss$ twice} $\hodge e_J=\rev{e_J}\pss$, and since reversion is an anti-automorphism,
+$\hodge\hodge e_J=\rev{(\rev{e_J}\pss)}\,\pss=\rev\pss\,e_J\,\pss$.
+\Step{3}{move $e_J$ through $\pss$} A basis vector $e_i$ anticommutes with the other $n-1$ factors of $\pss$ and commutes with itself,
+so $e_i\pss=(-1)^{n-1}\pss e_i$ and $e_J\pss=(-1)^{k(n-1)}\pss e_J$. Hence $\hodge\hodge e_J=(-1)^{k(n-1)}\rev\pss\pss\,e_J=(-1)^{k(n-1)}e_J$.
+\Step{4}{compare the signs} $k(n-1)-k(n-k)=k(k-1)$ is even, so $(-1)^{k(n-1)}=(-1)^{k(n-k)}$.
+\end{proof}

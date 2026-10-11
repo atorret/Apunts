@@ -1,0 +1,36 @@
+% Section 27.2: Cauchy's theorem and the Cauchy--Riemann equations as ``$\operatorname{div}=0$, $\operatorname{curl}=0$'' | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: done | Original lines: 3744-3778
+%!TEX root = ../../main.tex
+\subsection{Cauchy's theorem and the Cauchy--Riemann equations as ``$\operatorname{div}=0$, $\operatorname{curl}=0$''}\label{sec:cauchy}
+
+Let us compute $\dd(f\,\dd z)$ in three steps.
+\begin{enumerate}
+\item Leibniz rule and $\dd(\dd z)=0$: $\dd(f\,\dd z)=\dd f\wedge\dd z$.
+\item Insert $\dd f=\partial_zf\,\dd z+\partial_{\bar z}f\,\dd\bar z$ and use $\dd z\wedge\dd z=0$: $\dd f\wedge\dd z=\partial_{\bar z}f\,\dd\bar z\wedge\dd z$.
+\item Expand $\dd\bar z\wedge\dd z=(\dd x-i\,\dd y)\wedge(\dd x+i\,\dd y)=i\,\dd x\wedge\dd y-i\,\dd y\wedge\dd x=2i\,\dd x\wedge\dd y$.
+\end{enumerate}
+\begin{equation}\label{eq:dfdz}
+\dd(f\,\dd z)=\partial_{\bar z}f\,\dd\bar z\wedge\dd z=2i\,\partial_{\bar z}f\,\dd x\wedge\dd y .
+\end{equation}
+Hence $f$ is holomorphic if and only if the $1$-form $f\,\dd z$ is closed, and Stokes' theorem gives at once
+
+\begin{theorem}[Cauchy]\label{thm:cauchy}
+If $f$ is holomorphic on a neighbourhood of a compact region $\Omega\subset\C$ with piecewise smooth boundary, then
+$\displaystyle\oint_{\partial\Omega}f\,\dd z=\int_\Omega\dd(f\,\dd z)=0.$
+\end{theorem}
+
+\subhead{Real and imaginary parts: circulation and flux}
+Write $w=u-iv$ (the ``complex velocity'' of a planar vector field $\mathbf u=(u,v)$). Then
+\begin{equation}\label{eq:wdz}
+w\,\dd z=\underbrace{(u\,\dd x+v\,\dd y)}_{\mathbf u^\flat}+i\underbrace{(u\,\dd y-v\,\dd x)}_{\iota_{\mathbf u}(\dd x\wedge\dd y)=\hodge\mathbf u^\flat}.
+\end{equation}
+The real part is the covector $\mathbf u^\flat$ (its integral is the circulation $\Gamma$), and the imaginary part is the contraction $\iota_{\mathbf u}\vol$ (its integral is the flux $Q$ through the curve, cf.\ \eqref{eq:flux}). The split follows from $w\,\dd z=(u-iv)(\dd x+i\,\dd y)=u\,\dd x+iu\,\dd y-iv\,\dd x+v\,\dd y$ and from $\iota_{\mathbf u}(\dd x\wedge\dd y)=u\,\dd y-v\,\dd x$ (Example~\ref{ex:interiorplane}). Moreover, from \eqref{eq:dfdz}, in steps:
+\[
+\partial_{\bar z}w=\tfrac12(\partial_x+i\partial_y)(u-iv)=\tfrac12\bigl[(u_x+v_y)+i(u_y-v_x)\bigr]=\tfrac12\bigl(\operatorname{div}\mathbf u-i\operatorname{curl}\mathbf u\bigr)
+\]
+(with $\operatorname{curl}\mathbf u=\partial_xv-\partial_yu$), 
+so \emph{$w$ is holomorphic $\iff$ the flow is incompressible ($\operatorname{div}\mathbf u=0$) and irrotational ($\operatorname{curl}\mathbf u=0$).}
+Cauchy's theorem is then Green's theorem (Kelvin--Stokes in the plane) for the real part and the divergence theorem (Gauss) for the imaginary part, both applied at the same time.
+
+\begin{specialcase}[the Hodge star in dimension two]\label{sc:hodge2}
+In the language of Section~\ref{sec:classical}, in dimension two the Hodge star on $1$-forms satisfies $\hodge\dd z=-i\,\dd z$ and $\hodge\dd\bar z=i\,\dd\bar z$: $\dd z$ is an eigenform of $\hodge$, and since $\hodge$ on $1$-forms depends only on the conformal class of the metric, holomorphy is a conformally invariant notion (conformal maps preserve holomorphic functions). The eigenform property is checked in one line: $\hodge\dd x=\dd y$, $\hodge\dd y=-\dd x$, so $\hodge\dd z=\dd y-i\,\dd x=-i(\dd x+i\,\dd y)=-i\,\dd z$.
+\end{specialcase}

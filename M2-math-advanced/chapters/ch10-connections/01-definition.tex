@@ -1,0 +1,48 @@
+% Section 20.1: Definition | Part: 4 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2922-2968
+%!TEX root = ../../main.tex
+\subsection{Definition}
+\begin{intuition}[{derivative = ``compare with the parallel copy''}]
+We choose a rule that says what it means for a vector to be ``kept constant'' while we move along a curve: this is \textbf{parallel transport} $\Pi$. Then the derivative of a vector field $Y$ along $X$ is the limit of $\frac1\varepsilon\big(\Pi^{-1}(Y_{\phi_\varepsilon(p)})-Y_p\big)$: how much $Y$ differs from the parallel copy of itself. Infinitesimally, the same information is encoded algebraically by a \emph{connection} $\nabla$. This is the analogue of the relation between a vector field $X$ (infinitesimal) and its flow $\phi$ (finite).
+\end{intuition}
+\begin{formal}[{connection (affine connection)}]
+A \emph{connection} on $M$ is a map $\Xfield(M)\times\Xfield(M)\to\Xfield(M)$, $(X,Y)\mapsto\nabla_XY$ such that
+\begin{enumerate}[label=(\roman*),nosep]
+\item it is $\R$-bilinear;
+\item $\nabla_{fX}Y=f\,\nabla_XY$ for $f\in C^\infty(M)$ ($C^\infty$-linear in the direction $X$: only $X_p$ matters);
+\item $\nabla_X(fY)=X(f)\,Y+f\,\nabla_XY$ (Leibniz/product rule in $Y$).
+\end{enumerate}
+In a chart the \emph{Christoffel symbols} $\Gamma^k{}_{ij}(x)$ are defined by
+\[
+\nabla_{\partial_i}\partial_j=\Gamma^k{}_{ij}\,\partial_k ,
+\]
+and then for $X=X^i\partial_i$, $Y=Y^j\partial_j$:
+\begin{equation}\label{eq:covdev}
+\nabla_XY=X^i\Big(\frac{\partial Y^k}{\partial x^i}+\Gamma^k{}_{ij}Y^j\Big)\partial_k .
+\end{equation}
+Given $\Gamma^k{}_{ij}$ in one chart, $\nabla$ is completely determined there. Conversely any choice of smooth functions $\Gamma^k{}_{ij}$ defines a connection on the chart domain.
+\end{formal}
+\begin{intuition}[{Christoffel symbols = correction terms}]
+$\partial_iY^k$ is the change of the \emph{components} of $Y$; $\Gamma^k{}_{ij}Y^j$ is the correction due to the fact that the \emph{basis vectors} themselves change from point to point (if you walk along a circle, the basis $\partial_r,\partial_\varphi$ rotates). Even a constant vector field $Y=\mathrm{const}$ in the plane has $\partial_iY^k\neq0$ in polar coordinates; the $\Gamma$ term compensates exactly.
+\end{intuition}
+
+\begin{formal}[{$\Gamma$ is not a tensor}]
+Under a coordinate change $x\mapsto\tilde x$,
+\begin{equation}\label{eq:christtransf}
+\tilde\Gamma^{\tilde k}{}_{\tilde i\tilde j}=\frac{\partial x^i}{\partial\tilde x^{\tilde i}}\frac{\partial x^j}{\partial\tilde x^{\tilde j}}\,\Gamma^k{}_{ij}\,\frac{\partial\tilde x^{\tilde k}}{\partial x^k}\;+\;\frac{\partial^2x^k}{\partial\tilde x^{\tilde i}\partial\tilde x^{\tilde j}}\frac{\partial\tilde x^{\tilde k}}{\partial x^k}.
+\end{equation}
+The first term is the tensor rule \eqref{eq:tensortransf}; the second is the extra term that spoils tensoriality. (Consequence: $\Gamma$ can vanish in one chart and not in another, as below.) The two connections $\nabla^0,\nabla^1$ differ by a genuine tensor, so connections form an affine space. (Derivation of \eqref{eq:christtransf}: Identity~\ref{id:gammatrans} in the Glossary.)% REWRITTEN: glossary pointer
+\end{formal}
+
+\begin{example}[{Christoffel symbols of the Euclidean connection in polar coordinates}]
+Let $\nabla^0$ be the connection with $\Gamma=0$ in Cartesian coordinates $(x,y)$ (\ie $\nabla^0_X\partial_x=\nabla^0_X\partial_y=0$). In the formula \eqref{eq:christtransf} only the second term survives:
+$\tilde\Gamma^{\tilde k}{}_{\tilde i\tilde j}=\frac{\partial^2x^l}{\partial\tilde x^{\tilde i}\partial\tilde x^{\tilde j}}\frac{\partial\tilde x^{\tilde k}}{\partial x^l}$, with $x=r\cos\varphi$, $y=r\sin\varphi$, $\partial_xr=\cos\varphi$, $\partial_yr=\sin\varphi$, $\partial_x\varphi=-\sin\varphi/r$, $\partial_y\varphi=\cos\varphi/r$:
+\begin{align*}
+\Gamma^r{}_{\varphi\varphi}&=(-r\cos\varphi)(\cos\varphi)+(-r\sin\varphi)(\sin\varphi)=-r,\\
+\Gamma^\varphi{}_{r\varphi}=\Gamma^\varphi{}_{\varphi r}&=(-\sin\varphi)\Big(\tfrac{-\sin\varphi}{r}\Big)+(\cos\varphi)\Big(\tfrac{\cos\varphi}{r}\Big)=\tfrac1r,
+\end{align*}
+and all the others vanish ($\Gamma^r{}_{rr}=\Gamma^r{}_{r\varphi}=\Gamma^\varphi{}_{rr}=\Gamma^\varphi{}_{\varphi\varphi}=0$). \checkmark\ Interpretation: $\nabla_{\partial_\varphi}\partial_\varphi=-r\,\partial_r$ (the basis vector $\partial_\varphi$ turns inwards as you go around) and $\nabla_{\partial_r}\partial_\varphi=\frac1r\partial_\varphi$ ($\partial_\varphi$ grows linearly with $r$).
+\end{example}
+
+\begin{example}[{a connection is extra structure: the ``cylindrical'' connection}]
+On $\R^2\setminus\{0\}$ define $\nabla^1$ by declaring $\Gamma=0$ in the \emph{polar} chart, \ie $\nabla^1_{\partial_a}\partial_b=0$ for $a,b\in\{r,\varphi\}$. This is a perfectly good connection, but \textbf{different} from $\nabla^0$ (since $\Gamma^r{}_{\varphi\varphi}=-r\neq0$ for $\nabla^0$). Differences: $\nabla^1$ keeps $\partial_r,\partial_\varphi$ ``constant'' (so arrows rotate with the polar frame) while $\nabla^0$ keeps $\partial_x,\partial_y$ constant. Their geodesics differ: for $\nabla^1$ geodesics satisfy $\ddot r=\ddot\varphi=0$ (spirals $r=r_0+at$, $\varphi=\varphi_0+bt$), for $\nabla^0$ they are straight lines.
+\end{example}

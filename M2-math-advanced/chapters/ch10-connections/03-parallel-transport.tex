@@ -1,0 +1,21 @@
+% Section 20.3: Parallel transport | Part: 4 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2998-3020
+%!TEX root = ../../main.tex
+\subsection{Parallel transport}
+\begin{formal}[{parallel transport along a curve}]
+For a smooth curve $\gamma(t)$ and a vector field $Y$ along $\gamma$ (a smooth assignment $t\mapsto Y_{\gamma(t)}\in T_{\gamma(t)}M$), define $\nabla_{\dot\gamma}Y:=\nabla_{\hat X}\hat Y$ for any extensions $\hat X,\hat Y$ of $\dot\gamma, Y$ to fields on $M$; the result does not depend on the extensions. In coordinates $\gamma=(x^i(t))$:
+\[
+(\nabla_{\dot\gamma}Y)^k=\frac{\dd Y^k}{\dd t}+\Gamma^k{}_{ij}(\gamma(t))\,\dot x^i\,Y^j .
+\]
+\textbf{Theorem.} Given $v_0\in T_{\gamma(t_0)}M$ there is a unique field $Y$ along $\gamma$ with $Y_{\gamma(t_0)}=v_0$ and $\nabla_{\dot\gamma}Y=0$. (In coordinates this is the linear ODE
+\begin{equation}\label{eq:ptode}
+\frac{\dd Y^k}{\dd t}+\Gamma^k{}_{ij}(\gamma(t))\,\dot x^i\,Y^j=0,
+\end{equation}
+so existence and uniqueness follow from ODE theory; a general curve is split into finitely many chart pieces.) The \emph{parallel transport} is the linear isomorphism $\Pi^\gamma_{\gamma(t_0),\gamma(t_1)}:T_{\gamma(t_0)}M\to T_{\gamma(t_1)}M$, $v_0\mapsto Y_{\gamma(t_1)}$.
+\end{formal}
+\begin{intuition}[{carrying an arrow without turning it}]
+Like carrying a spear while walking and trying not to rotate it ``relative to the ground''. On a curved surface this is ambiguous globally, but infinitesimally it is perfectly well defined by \eqref{eq:ptode}. In a flat space with $\nabla^0$ and Cartesian coordinates ($\Gamma=0$) parallel transport leaves components unchanged ($\Pi(v_0)=v_0$ via $T_p\R^m\cong\R^m$).
+\end{intuition}
+
+% REORDERED (F7): the example "parallel transport on the sphere" moved to Section sec:lc (ex:spheretransport), after the sphere's Christoffel symbols are computed.
+On a curved surface the result of parallel transport depends on the path; the sphere is worked out in Example~\ref{ex:spheretransport}
+of Section~\ref{sec:lc}, once its Christoffel symbols are available.

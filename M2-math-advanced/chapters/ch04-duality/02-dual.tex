@@ -1,0 +1,43 @@
+% Section 8.2: The dual | Part: 1 | Depends on: sec:ext, sec:ops | Status: done | Original lines: 1555-1596
+%!TEX root = ../../main.tex
+\subsection{The dual}
+
+\begin{definition}[Dual and undual]\label{def:dual}
+The \emph{dual} of a multivector $A$ is
+\[
+ \dual A:=A\,\pss^{-1}\;=\;A\lc\pss^{-1},
+\]
+and the \emph{undual} is $A\mapsto A\pss$. (The two operations differ from each other only by the scalar factor $\pss^{2}$: $A\pss=\pss^2\,\dual A$.)
+\end{definition}
+
+\begin{theorem}[Properties of the dual]\label{thm:dual}
+\begin{enumerate}
+  \item $A\mapsto\dual A$ is a linear isomorphism $\GA^k(V)\to\GA^{n-k}(V)$, and $\dual{(\dual A)}=\pss^{-2}A=\pm A$.
+  \item (\emph{Orthogonal complement}) If $A$ is a $k$-blade representing the subspace $U\subset V$, then $\dual A$ is an $(n-k)$-blade representing the orthogonal complement $U^\perp$ and $\norm{\dual A}=\norm A$ (Euclidean case).
+  \item (\emph{Wedge $\leftrightarrow$ contraction}) For all multivectors $A,B$,
+  \begin{equation}\label{eq:dualduality}
+   \dual{(A\wedge B)}=A\lc\dual B,\qquad \dual{(A\lc B)}=A\wedge\dual B .
+  \end{equation}
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1) follows from Proposition~\ref{prop:pss}(3) and invertibility of $\pss$.
+(2) Choose an orthonormal basis adapted to $U$ so that (after scaling) $A=e_1\cdots e_k$. Then $\pss^{-1}=e_n^{-1}\cdots e_{k+1}^{-1}\,e_k^{-1}\cdots e_1^{-1}$ and, since the $(n-k)$-blade $e_n^{-1}\cdots e_{k+1}^{-1}$ is built from vectors orthogonal to $e_1,\dots,e_k$, it commutes with $A$ up to $(-1)^{k(n-k)}$. Hence $A\pss^{-1}=(-1)^{k(n-k)}e_n^{-1}\cdots e_{k+1}^{-1}$, a blade spanning $U^\perp$.
+(3) For homogeneous $B$ we have $B\lc\pss^{-1}=B\pss^{-1}$ (the product has the single grade $n-\deg B$). Proposition~\ref{prop:contr}(3) gives
+$A\lc(B\pss^{-1})=A\lc(B\lc\pss^{-1})=(A\wedge B)\lc\pss^{-1}=\dual{(A\wedge B)}$, the first identity. For the second, apply the first to $A$ and $B'=B\pss$ (so $\dual{B'}=B$): $A\lc B=\dual{(A\wedge B\pss)}$; then $\dual{(A\lc B)}=(A\wedge B\pss)\pss^{-2}=A\wedge(B\pss^{-1})=A\wedge\dual B$, using that $\pss^{2}$ is a scalar.
+\end{proof}
+
+\begin{corollary}[Meet and the regressive product]\label{cor:meet}
+Define the \emph{meet} (regressive product)
+\[
+ A\meet B:=(\dual B\wedge\dual A)\,\pss=\dual B\lc A .
+\]
+If $A,B$ are blades whose subspaces $U_A,U_B$ have $U_A+U_B=V$, then $A\meet B$ is (a multiple of) the blade of $U_A\cap U_B$.
+\end{corollary}
+\begin{proof}
+$U_A^\perp$ and $U_B^\perp$ span $(U_A\cap U_B)^\perp$ when $U_A+U_B=V$, so $\dual B\wedge\dual A$ represents $(U_A\cap U_B)^\perp$ by Theorem~\ref{thm:dual}(2), and undualizing gives $U_A\cap U_B$. The equality of the two expressions follows from \eqref{eq:dualduality}: $(\dual B\wedge\dual A)\pss=\pss^2\,\dual{(\dual B\wedge\dual A)}=\pss^2\,\dual B\lc\dual{(\dual A)}=\dual B\lc A$.
+\end{proof}
+
+\begin{example}[Meet of two planes in $\R^3$]
+$A=e_1e_2$ and $B=e_2e_3$ (the $xy$- and $yz$-planes). With $\pss=e_1e_2e_3$, $\pss^{-1}=-\pss$ one finds $\dual A=e_3$, $\dual B=e_1$, and $A\meet B=\dual B\lc A=e_1\lc(e_1e_2)=e_2$: the $y$-axis, the line of intersection.
+\end{example}

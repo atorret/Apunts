@@ -1,0 +1,17 @@
+% Section 24.3: Curvature versus $\dd\dd=0$ | Part: 4 | Depends on: sec:lie, sec:lc, sec:curv, sec:gauss | Status: done | Original lines: 3391-3403
+%!TEX root = ../../main.tex
+\subsection{Curvature versus $\dd\dd=0$}\label{sec:curvdd}
+
+\begin{synthesis}[the same ``loop per unit area'' principle, one level up]
+For a $1$-form $\omega$, Section~\ref{sec:circulation} showed that $\dd\omega(u,v)\,\varepsilon\delta$ is the \emph{circulation} $\oint\omega$ around the small parallelogram spanned by $\varepsilon u,\delta v$: it measures how far the sheets of $\omega$ fail to close up.
+For a connection, the curvature $R(u,v)w\,\varepsilon\delta$ is the \emph{rotation} of $w$ after parallel transport around the same parallelogram (Section~\ref{sec:curv}): it measures how far parallel transport fails to be path independent.
+In both cases a loop integral per unit area is a second derivative, with the \emph{antisymmetrisation} of mixed derivatives as its algebraic form. The difference is exactly this: partial derivatives commute, $\partial_i\partial_j-\partial_j\partial_i=0$, hence $\dd\dd=0$ (Example~\ref{ex:onefunction}); covariant derivatives do not,
+\[
+[\nabla_i,\nabla_j]V^k=R^k{}_{lij}V^l .
+\]
+% AUTHOR-NOTE: index order. With R(\partial_i,\partial_j)\partial_k=R^l{}_{ijk}\partial_l (Section sec:curv) and zero torsion,
+% [\nabla_i,\nabla_j]V^k=R^k{}_{ijl}V^l; the formula above is in Carroll's placement R^\rho{}_{\sigma\mu\nu} (pitfall in sec:curv).
+% Left as in the original.
+The local counterparts of the two vanishings are also parallel: $\dd\omega=0\Rightarrow\omega=\dd f$ locally (Poincar\'e lemma), and $R=0\Rightarrow$ locally there are coordinates with $g_{ij}$ constant.
+On a sphere $R\neq0$: transporting a vector around the octant triangle of Example~\ref{ex:spheretransport} turns it by $\pi/2$, the analogue of the angle form being closed but not exact (Example~\ref{ex:angle}) -- except that here the obstruction is local, not topological.
+\end{synthesis}

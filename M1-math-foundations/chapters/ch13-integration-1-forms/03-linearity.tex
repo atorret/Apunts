@@ -1,0 +1,19 @@
+% Section 16.3: The role of linearity | Part: 3 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2505-2522
+%!TEX root = ../../main.tex
+\subsection{The role of linearity}\label{sec:linearity}
+
+\begin{proposition}[Reparametrisation and orientation]\label{prop:reparam}
+Let $\tau:[c,d]\to[a,b]$ be a $C^1$ diffeomorphism. If $\tau'>0$ then $\int_{\gamma\circ\tau}\omega=\int_\gamma\omega$; if $\tau'<0$ then $\int_{\gamma\circ\tau}\omega=-\int_\gamma\omega$.
+\end{proposition}
+\begin{proof}
+\Step{1}{velocity of the new curve} By the chain rule, $\frac{\dd}{\dd s}(\gamma\circ\tau)(s)=\tau'(s)\,\dot\gamma(\tau(s))$.
+\Step{2}{pull the scalar out} Because $\omega_p$ is linear, $\langle\omega,\tau'\dot\gamma\rangle=\tau'\langle\omega,\dot\gamma\rangle$. Hence $\int_{\gamma\circ\tau}\omega=\int_c^d\langle\omega_{\gamma(\tau(s))},\dot\gamma(\tau(s))\rangle\tau'(s)\,\dd s$.
+\Step{3}{substitute} $t=\tau(s)$, $\dd t=\tau'(s)\,\dd s$. The integral becomes $\int_{\tau(c)}^{\tau(d)}\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle\,\dd t$.
+\Step{4}{limits} If $\tau'>0$, then $\tau(c)=a$ and $\tau(d)=b$, so we obtain $\int_\gamma\omega$. If $\tau'<0$, then $\tau(c)=b$ and $\tau(d)=a$; exchanging the limits gives $-\int_\gamma\omega$.
+(Example~\ref{ex:lineint} is a numerical instance with $\tau(s)=s^2$ and with $\tau(t)=1-t$.)
+\end{proof}
+
+\begin{keyidea}
+Linearity of the contraction in the velocity is exactly what makes line integrals independent of the parametrisation. Replacing $\omega(\dot\gamma)$ by a non-linear function of the velocity -- \eg the speed $|\dot\gamma|$ -- gives arc length,
+which is also reparametrisation-invariant but not sign-reversing under change of orientation, and needs a metric. $1$-forms are the integrands of \emph{oriented} curves.
+\end{keyidea}

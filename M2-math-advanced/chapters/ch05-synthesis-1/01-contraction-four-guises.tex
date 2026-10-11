@@ -1,0 +1,56 @@
+% Section 9.1: Contraction in four guises | Part: 1 | Depends on: sec:vectors to sec:duality | Status: done | Original lines: 1668-1722
+%!TEX root = ../../main.tex
+\subsection{Contraction in four guises}\label{sec:contr4}
+
+The word ``contraction'' has been used four times; they are one idea at four levels of structure.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{3.4cm}p{3.5cm}p{4.2cm}p{2.2cm}@{}}
+\toprule
+\textbf{Guise} & \textbf{Acts on} & \textbf{Formula} & \textbf{Metric?}\\
+\midrule
+Evaluation $\langle\omega,v\rangle$ & $V^*\times V\to\R$ & $\omega_iv^i$ & no\\
+Tensor contraction & $T^{\ell}_{k}\to T^{\ell-1}_{k-1}$ & trace $A^i{}_i$; $f_iv^i$; Ricci $R^i{}_{ijk}$ & no\\
+Interior product $\iota_v$ & $k$-forms $\to(k-1)$-forms & $(\iota_v\alpha)(w_\bullet)=\alpha(v,w_\bullet)$ & no\\
+Left contraction $a\lc A$ & $k$-vectors $\to(k-1)$-vectors & $a\lc(b\wedge c)=(a\!\cdot\! b)c-(a\!\cdot\! c)b$ & yes ($\cdot$ is $g$)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first three need only $V$ and $V^*$. The fourth acts on vectors and needs a metric, but it is the \emph{same} operation as the third once a
+metric is available to translate between $V$ and $V^*$:
+
+\begin{proposition}[left contraction $=$ interior product under $\flat$]\label{prop:lcisiota}
+Extend $\flat:V\to V^*$ to an algebra homomorphism of exterior algebras, $(v_1\wedge\cdots\wedge v_k)^\flat=v_1^\flat\wedge\cdots\wedge v_k^\flat$. Then for every $a\in V$
+and every multivector $A$,
+\[
+(a\lc A)^\flat=\iota_a\bigl(A^\flat\bigr).
+\]
+\end{proposition}
+\begin{proof}
+Both sides are antiderivations in $A$ of degree $-1$ (for $a\lc$, see the properties in Section~\ref{sec:ops}; for $\iota_a$, \eqref{eq:antider}). On a vector $b$ they agree:
+$(a\lc b)^\flat=(a\cdot b)=g(a,b)=b^\flat(a)=\iota_a b^\flat$. Since multivectors are sums of wedges of vectors, an induction on the grade using the antiderivation rule shows that they agree everywhere.
+\end{proof}
+
+\begin{example}[the three-vector check]\label{ex:lcvsiota}
+Take $a,b,c\in\R^3$ with the Euclidean metric. Then $(a\lc(b\wedge c))^\flat=\bigl((a\!\cdot\!b)c-(a\!\cdot\!c)b\bigr)^\flat=(a\!\cdot\!b)c^\flat-(a\!\cdot\!c)b^\flat$, and
+$\iota_a(b^\flat\wedge c^\flat)=b^\flat(a)\,c^\flat-c^\flat(a)\,b^\flat$ by \eqref{eq:wedge11}; the two agree because $b^\flat(a)=a\cdot b$. In coordinates this is exactly
+the planar computation of Example~\ref{ex:interiorplane}: $\iota_v(\dd x\wedge\dd y)=v^x\dd y-v^y\dd x$.
+\end{example}
+
+\begin{synthesis}[the same identities, three notations]
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\small
+\begin{tabular}{@{}p{3.6cm}p{4.0cm}p{4.0cm}@{}}
+\toprule
+\textbf{Fact} & \textbf{Forms} & \textbf{Multivectors}\\
+\midrule
+antiderivation & $\iota_v(\alpha\wedge\beta)=\iota_v\alpha\wedge\beta+(-1)^k\alpha\wedge\iota_v\beta$ & $a\lc(A_k\wedge B)=(a\lc A_k)\wedge B+(-1)^kA_k\wedge(a\lc B)$\\
+nilpotent & $\iota_v\iota_v=0$ & $a\lc(a\lc A)=(a\wedge a)\lc A=0$\\
+wedge is not metric & $\alpha\wedge\beta$ & $A\wedge B$ (grade part of $AB$, but defined without $g$)\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{synthesis}

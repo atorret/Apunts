@@ -1,0 +1,20 @@
+% Section 28: The current state of the subject | Part: 7 | Depends on: all previous parts | Status: done | Original lines: 3956-3974
+%!TEX root = ../../main.tex
+% =====================================================================
+\section{The current state of the subject}\label{sec:current}
+% =====================================================================
+
+The statements above are the standard, textbook (``smooth'') form of the theorems (Spivak, Lee, Bott--Tu \cite{Spivak,Lee,BottTu}). Active and established developments extend them in several directions.
+
+\begin{enumerate}
+\item \textbf{Conceptual unification.} Since the early twentieth century (Poincar\'e, Cartan, de Rham) the gradient theorem, Green, Kelvin--Stokes and Gauss are viewed as one theorem, \eqref{eq:stokes}, equivalent to the duality \eqref{eq:adjoint}. The 19th-century formulations (Gauss, Green, Ostrogradsky, Kelvin, Stokes) are recovered by the dictionary $\flat,\sharp,\hodge$ (Section~\ref{sec:classical}); the geometric-algebra formulation of the same dictionary is Section~\ref{sec:synth2}.
+\item \textbf{Rough domains and non-smooth data.} Stokes holds for manifolds with corners and piecewise smooth chains, and for Lipschitz domains (with the normal defined almost everywhere and traces of Sobolev fields). The De Giorgi--Federer divergence theorem holds for sets $E$ of finite perimeter:
+\[
+\int_E\operatorname{div}X\,\dd x=\int_{\partial^*E}X\cdot\nu_E\,\dd\mathcal H^{n-1},
+\]
+where $\partial^*E$ is the reduced boundary and $\nu_E$ the measure-theoretic outer normal; no topological regularity of $\partial E$ is required \cite{EvansGariepy}.
+\item \textbf{Geometric measure theory: Stokes as a definition.} In the theory of currents (de Rham, Federer--Fleming) a $k$-current is a continuous linear functional $T$ on compactly supported $k$-forms, and the boundary is defined by $(\partial T)(\alpha)=T(\dd\alpha)$, \ie Stokes' formula \eqref{eq:adjoint} becomes an axiom \cite{Federer}. Whitney's flat chains and Harrison's chainlets \cite{Harrison} give Stokes' theorem for very irregular (even fractal) domains.
+\item \textbf{Discrete and numerical versions.} On a simplicial or cell complex, Stokes' theorem holds exactly: the coboundary operator is the transpose of the boundary matrix. This is the foundation of discrete exterior calculus and finite element exterior calculus (Arnold--Falk--Winther \cite{AFW}), and of structure-preserving discretisations of Maxwell's equations and fluid dynamics that conserve fluxes to machine precision.
+\item \textbf{Cohomological and topological consequences.} Stokes' theorem underlies de Rham's theorem, Poincar\'e duality ($\int_M\alpha\wedge\beta$ pairs $H^k$ with $H^{n-k}$ on compact oriented $M$), degree theory and characteristic classes (via Chern--Weil theory), and the integral laws of electromagnetism and conservation laws in continuum mechanics and general relativity.
+\item \textbf{Geometric algebra and Clifford analysis.} The vector derivative $\vd$ and its monogenic functions (Section~\ref{sec:synth4}) generalise holomorphic function theory to every dimension; the Clifford algebras of Section~\ref{sec:clifford} underlie spin geometry and the Dirac operator, and the geometric-calculus form of Stokes' theorem is the subject of Hestenes--Sobczyk \cite{HS}; for spin geometry see \cite{LM}.
+\end{enumerate}

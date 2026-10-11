@@ -1,0 +1,21 @@
+% Section 27.1: Complex-valued $1$-forms and the contraction | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: done | Original lines: 3724-3743
+%!TEX root = ../../main.tex
+\subsection{Complex-valued $1$-forms and the contraction}\label{sec:complexforms}
+
+Identify $\C=\R^2$ with $z=x+iy$. The form $\dd z=\dd x+i\,\dd y$ is a complex-valued $1$-form (a $\C$-valued covector at each point), and its contraction with a tangent vector $v=(v^x,v^y)\simeq v^x+iv^y$ is simply $\dd z(v)=v$. For a function $f:U\subset\C\to\C$ the form $f\,\dd z$ contracts with a velocity as $\langle f\,\dd z,\dot\gamma(t)\rangle=f(\gamma(t))\dot\gamma(t)$,
+\begin{equation}\label{eq:cint}
+\int_\gamma f\,\dd z=\int_a^bf(\gamma(t))\,\dot\gamma(t)\,\dd t,
+\end{equation}
+which is Definition~\eqref{eq:lineint} extended $\C$-linearly. For every smooth $f$ one has $\dd f=\partial_zf\,\dd z+\partial_{\bar z}f\,\dd\bar z$, and
+\begin{equation}\label{eq:holo}
+f\text{ holomorphic}\iff\partial_{\bar z}f=0\iff\dd f=f'(z)\,\dd z\iff\dd f_p:\R^2\to\C\text{ is }\C\text{-linear}.
+\end{equation}
+The Cauchy--Riemann equations are thus the statement that the covector $\dd f$ is complex-linear: $\dd f(iv)=i\,\dd f(v)$.
+
+\emph{Steps behind these statements.} With $\partial_z=\frac12(\partial_x-i\partial_y)$ and $\partial_{\bar z}=\frac12(\partial_x+i\partial_y)$:
+\begin{align*}
+\partial_zf\,\dd z+\partial_{\bar z}f\,\dd\bar z&=\tfrac12(f_x-if_y)(\dd x+i\,\dd y)+\tfrac12(f_x+if_y)(\dd x-i\,\dd y)\\
+&=\tfrac12\bigl(f_x\dd x+if_x\dd y-if_y\dd x+f_y\dd y\bigr)+\tfrac12\bigl(f_x\dd x-if_x\dd y+if_y\dd x+f_y\dd y\bigr)\\
+&=f_x\dd x+f_y\dd y=\dd f.
+\end{align*}
+Writing $f=u+iv$, the condition $\partial_{\bar z}f=0$ means $f_x+if_y=(u_x-v_y)+i(v_x+u_y)=0$, \ie the usual Cauchy--Riemann equations $u_x=v_y$, $u_y=-v_x$. Finally $\dd f=f'\dd z$ means $\partial_{\bar z}f=0$ and $\partial_zf=f'$.
