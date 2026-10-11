@@ -1,4 +1,4 @@
-% Section 25.2: Energy as a contraction: Legendre transform, Noether, relativity | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: todo | Original lines: 3507-3520
+% Section 25.2: Energy as a contraction: Legendre transform, Noether, relativity | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3507-3520
 %!TEX root = ../../../main.tex
 \subsection{Energy as a contraction: Legendre transform, Noether, relativity}\label{sec:phys-energy}
 
@@ -7,7 +7,7 @@
 $E=\langle p,v\rangle-L=\frac{\partial L}{\partial v^i}v^i-L$. For $L=\frac12g(v,v)-V$: $p=g(v,\cdot)$, so $\langle p,v\rangle=g(v,v)$ and $E=g(v,v)-\frac12g(v,v)+V=\frac12g(v,v)+V$.
 \item \emph{Noether.} If the flow of a vector field $\xi$ leaves $L$ invariant, then $J_\xi=p(\xi)=p_i\xi^i$ is conserved. The simplest case is a cyclic coordinate: choose coordinates so that $\xi=\partial_{q^k}$; invariance means $\partial L/\partial q^k=0$, and Lagrange's equation becomes
 $\frac{\dd}{\dd t}\frac{\partial L}{\partial\dot q^k}=\frac{\partial L}{\partial q^k}=0\Rightarrow p_k=p(\partial_{q^k})=\mathrm{const}$.
-For $\xi=\partial_x$ one gets the linear momentum $p_x$. For $\xi=\partial_\theta$ in $L=\frac12m(\dot r^2+r^2\dot\theta^2)-V(r)$ one gets $p_\theta=mr^2\dot\theta$, the angular momentum. Time translation gives the energy. Conserved quantities are contractions of the momentum covector with symmetry vector fields. (For the geometric meaning, see Section~\ref{sec:noethersynth}.)
+For $\xi=\partial_x$ one gets the linear momentum $p_x$. For $\xi=\partial_\theta$ in $L=\frac12m(\dot r^2+r^2\dot\theta^2)-V(r)$ one gets $p_\theta=mr^2\dot\theta$, the angular momentum. Time translation gives the energy. Conserved quantities are contractions of the momentum covector with symmetry vector fields. (The geometric meaning is the subject of Section~\ref{sec:noethersynth}, next.)
 \item \emph{Relativity.} Take signature $(-+++)$, $c=1$, and let $p=m\,g(U,\cdot)$ be the $4$-momentum of a particle with $4$-velocity $U$. The energy is not a property of $p$ alone but of $p$ and an observer with $4$-velocity $u$:
 $E_{\mathrm{obs}}=-\langle p,u\rangle=-p_\mu u^\mu$.
 \numcheck Take an observer at rest, $u=\partial_t$, and a particle with $U=\gamma(\partial_t+v^i\partial_i)$, $\gamma=(1-|v|^2)^{-1/2}$. Then $p_t=m\,g_{tt}U^t=-m\gamma$, so $E_{\mathrm{obs}}=-p(u)=-p_t=m\gamma$ as expected. The invariant mass: $g^{-1}(p,p)=-E^2+|\mathbf p|^2=-m^2\gamma^2+m^2\gamma^2|v|^2=-m^2\gamma^2(1-|v|^2)=-m^2$.

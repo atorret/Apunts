@@ -1,4 +1,4 @@
-% Section 25.6: Electromagnetism: which fields are $1$-forms, $2$-forms, $3$-forms? | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: todo | Original lines: 3559-3608
+% Section 25.6: Electromagnetism: which fields are $1$-forms, $2$-forms, $3$-forms? | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3559-3608
 %!TEX root = ../../../main.tex
 \subsection{Electromagnetism: which fields are $1$-forms, $2$-forms, $3$-forms?}\label{sec:phys-em}
 
@@ -20,7 +20,7 @@ $A$ (potential) & $1$-form & $\oint_\gamma A$ (holonomy / phase)\\
 \bottomrule
 \end{tabular}
 \end{center}
-($D$, $H$, $\rho$, $j$ are in fact \emph{twisted} forms: they also need an outer orientation, see Hehl--Obukhov or Burke.) The integral laws are then metric-free, being pure applications of Stokes' theorem:
+($D$, $H$, $\rho$, $j$ are in fact \emph{twisted} forms: they also need an outer orientation, see Hehl--Obukhov \cite{HehlObukhov} or Burke \cite{Burke}.) The integral laws are then metric-free, being pure applications of Stokes' theorem:
 \begin{alignat*}{2}
 \oint_{\partial S}E&=-\frac{\dd}{\dd t}\int_SB&&\iff\dd E+\partial_tB=0\quad\text{(Faraday),}\\
 \int_{\partial\Omega}B&=0&&\iff\dd B=0\quad\text{(no monopoles),}\\
@@ -47,5 +47,5 @@ The power is $F(v)=qE(v)-qB(v,v)=qE(v)$, because $B$ is alternating ($B(v,v)=0$)
 
 \begin{example}[Amp\`ere's law and potentials: the angle form again]\label{ex:ampere}
 Outside a wire carrying current $I$, the field has magnitude $I/(2\pi r)$ and points along $\hat\theta$, so, as a covector, $H=\frac I{2\pi r}e^\theta=\frac I{2\pi r}r\,\dd\theta=\frac I{2\pi}\dd\theta$ (using $e^\theta=r\,\dd\theta$). This is closed but not exact: $\oint H=I\neq0$, and there is no single-valued scalar potential even though $\dd H=0$.
-The Aharonov--Bohm effect is the same phenomenon in quantum mechanics: the phase $\frac q\hbar\oint A$ along a loop around a solenoid is non-zero although $B=\dd A=0$ at every point of the loop. In the physical setup Stokes holds: $\oint A=\int_SB=\Phi$, the flux through the solenoid, because every surface $S$ bounded by the loop must cross the solenoid, where $B\neq0$. In the idealised thin-solenoid model the solenoid is removed from space; then $A$ is closed but not exact on the remaining region, exactly like $\frac I{2\pi}\dd\theta$ above, and no surface inside that region is bounded by the loop.
+The Aharonov--Bohm effect \cite{AharonovBohm} is the same phenomenon in quantum mechanics: the phase $\frac q\hbar\oint A$ along a loop around a solenoid is non-zero although $B=\dd A=0$ at every point of the loop. In the physical setup Stokes holds: $\oint A=\int_SB=\Phi$, the flux through the solenoid, because every surface $S$ bounded by the loop must cross the solenoid, where $B\neq0$. In the idealised thin-solenoid model the solenoid is removed from space; then $A$ is closed but not exact on the remaining region, exactly like $\frac I{2\pi}\dd\theta$ above, and no surface inside that region is bounded by the loop.
 \end{example}

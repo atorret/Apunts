@@ -1,4 +1,4 @@
-% Section 26.1: 01-gr-dictionary-einstein | Part: 5 | Depends on: sec:phys, part:geometry | Status: todo | Original lines: 3671-3710
+% Section 26.1: 01-gr-dictionary-einstein | Part: 5 | Depends on: sec:phys, part:geometry | Status: done | Original lines: 3671-3710
 %!TEX root = ../../../main.tex
 
 \begin{center}
@@ -16,14 +16,15 @@ Ricci tensor, scalar curvature & curvature produced by matter (Einstein equation
 \end{tabular}
 \end{center}
 
-\begin{formal}[{Einstein's equations (preview)}]
+\begin{formal}[{Einstein's equations (preview, see \cite{Carroll,MTW})}]
 Define the \emph{Einstein tensor} $G_{\mu\nu}=\Ric_{\mu\nu}-\tfrac12\,s\,g_{\mu\nu}$. The \emph{contracted second Bianchi identity} says $\nabla^\mu G_{\mu\nu}=0$ identically. Einstein's field equations (units $c=1$) are
 \[
 G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G\,T_{\mu\nu},
 \]
 where $T_{\mu\nu}$ is the symmetric stress-energy tensor of matter, which satisfies $\nabla^\mu T_{\mu\nu}=0$ (local energy-momentum conservation); the identity above guarantees compatibility. In vacuum with $\Lambda=0$: taking the trace in 4 dimensions gives $s-2s=0\Rightarrow s=0$, hence $\Ric_{\mu\nu}=0$. The Schwarzschild metric
 \[
-\begin{aligned}\dd s^2={}&-\Big(1-\tfrac{2GM}{r}\Big)\dd t^2+\Big(1-\tfrac{2GM}{r}\Big)^{-1}\dd r^2\\&+r^2(\dd\theta^2+\sin^2\theta\,\dd\phi^2)\end{aligned}
+\begin{aligned}\dd s^2={}&-\Big(1-\tfrac{2GM}{r}\Big)\dd t^2+\Big(1-\tfrac{2GM}{r}\Big)^{-1}\dd r^2\\&+r^2(\dd\theta^2+\sin^2\theta\,\dd\varphi^2)\end{aligned}
+% REWRITTEN: sphere azimuth written \varphi (docs/NOTATION.md).
 \]
 is such a Ricci-flat (but \emph{not} Riemann-flat) solution.
 \end{formal}
@@ -33,6 +34,7 @@ is such a Ricci-flat (but \emph{not} Riemann-flat) solution.
 
 
 \begin{synthesis}[energy, momentum and Killing fields on one page]
-In the table above, the Killing-field row (``symmetry $\Rightarrow$ conserved energy, momentum, angular momentum'') for $\xi=\partial_t$ gives $E=-p(\xi)$, which is exactly the statement of Section~\ref{sec:phys-energy} that the energy of a particle measured by an observer $u$ is $-p(u)$: the Killing field is the observer who measures the conserved energy.
+% REWRITTEN (F8): the first sentence is shortened to a pointer; the full comparison is the keyidea of Section sec:noethersynth.
+The Killing-field row of the table is the ``one conservation law, three names'' of Section~\ref{sec:noethersynth}: for $\xi=\partial_t$, $E=-p(\xi)$ is the observer energy $-p(u)$ of Section~\ref{sec:phys-energy}, the Killing field being the observer who measures the conserved energy.
 The signature convention is the mostly-plus one of Section~\ref{sec:metric}. The equation $G_{\mu\nu}=8\pi T_{\mu\nu}$ is, like the equation $\dd\hodge F=J$ of electromagnetism, an equation in which a metric-dependent operator ($\hodge$, resp.\ the Einstein tensor built from $R$) is equated to a source built from matter fields.
 \end{synthesis}

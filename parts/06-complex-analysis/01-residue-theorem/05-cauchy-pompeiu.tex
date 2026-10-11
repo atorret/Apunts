@@ -1,4 +1,4 @@
-% Section 27.5: Beyond holomorphic functions: Cauchy--Pompeiu and the Coulomb law in 2D | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: todo | Original lines: 3855-3873
+% Section 27.5: Beyond holomorphic functions: Cauchy--Pompeiu and the Coulomb law in 2D | Part: 6 | Depends on: sec:stokes, sec:ga-calculus | Status: done | Original lines: 3855-3873
 %!TEX root = ../../../main.tex
 \subsection{Beyond holomorphic functions: Cauchy--Pompeiu and the Coulomb law in 2D}\label{sec:pompeiu}
 
@@ -13,7 +13,7 @@ If $f$ is merely smooth, Stokes still applies. Let us derive the Cauchy--Pompeiu
 f(z_0)=\frac1{2\pi i}\oint_{\partial\Omega}\frac{f(z)}{z-z_0}\,\dd z-\frac1\pi\iint_\Omega\frac{\partial_{\bar z}f}{z-z_0}\,\dd A .
 \end{equation}
 \end{enumerate}
-For holomorphic $f$ the area term vanishes and we recover Cauchy's integral formula. In the language of distributions the same computation says $\partial_{\bar z}\bigl(\frac1{\pi z}\bigr)=\delta_0$, \ie $1/(\pi z)$ is the fundamental solution of $\partial_{\bar z}$, in perfect analogy with the Gauss law in the plane (Section~\ref{sec:phys-em}): a point charge $Q$ (or a point vortex with circulation $\Gamma$ and source $Q$) is a simple pole of the complex field $w$ whose residue encodes the charge: $\Res_0w=\frac{\Gamma+iQ}{2\pi i}$, \ie $2\pi i\Res_0w=\Gamma+iQ$,
+For holomorphic $f$ the area term vanishes and we recover Cauchy's integral formula (for \eqref{eq:pompeiu} and $\bar\partial$ see \cite{Hormander}). In the language of distributions the same computation says $\partial_{\bar z}\bigl(\frac1{\pi z}\bigr)=\delta_0$, \ie $1/(\pi z)$ is the fundamental solution of $\partial_{\bar z}$, in perfect analogy with the Gauss law in the plane (Section~\ref{sec:phys-em}): a point charge $Q$ (or a point vortex with circulation $\Gamma$ and source $Q$) is a simple pole of the complex field $w$ whose residue encodes the charge: $\Res_0w=\frac{\Gamma+iQ}{2\pi i}$, \ie $2\pi i\Res_0w=\Gamma+iQ$,
 \[
 w(z)=\frac{\Gamma+iQ}{2\pi i}\,\frac1z\quad\Longrightarrow\quad\oint w\,\dd z=\Gamma+iQ .
 \]
