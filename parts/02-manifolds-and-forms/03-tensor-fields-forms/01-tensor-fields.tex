@@ -1,4 +1,4 @@
-% Section 12.1: Tensor fields and the metric field | Part: 2 | Depends on: sec:tangent, sec:ext | Status: todo | Original lines: 2016-2050
+% Section 12.1: Tensor fields and the metric field | Part: 2 | Depends on: sec:tangent, sec:ext | Status: done | Original lines: 2016-2050
 %!TEX root = ../../../main.tex
 \subsection{Tensor fields and the metric field}\label{sec:tensorfields}
 \begin{formal}[{tensor fields}]
@@ -12,16 +12,17 @@ and it is called \emph{smooth} if all component functions are $C^\infty$ for eve
 Examples: a velocity field of a fluid (vector field), the electromagnetic potential $A_\mu$ (covector field), the stress-energy tensor $T_{\mu\nu}$, the metric $g_{\mu\nu}(x)$. In GR the unknown of the theory is the metric field: ten functions $g_{\mu\nu}(x)$ (symmetric $4\times4$) of the 4 coordinates.
 \end{intuition}
 
+% REWRITTEN: sphere azimuth phi -> varphi (docs/NOTATION.md)
 \begin{example}[{area form of the sphere (lecture notes I4)}]\label{ex:sphereareaform}
-Define $\alpha_p(v_1,v_2)=\frac1r\,(v_1\times v_2)\cdot p$ on tangent vectors $v_i\perp p$. In spherical coordinates, using the vectors above, $\alpha(\partial_\theta,\partial_\theta)=0$ and
+Define $\alpha_p(v_1,v_2)=\frac1r\,(v_1\times v_2)\cdot p$ on tangent vectors $v_i\perp p$. In spherical coordinates, using the vectors $v_\theta,v_\varphi$ of the induced-metric example in Section~\ref{sec:pushpull}, $\alpha(\partial_\theta,\partial_\theta)=0$ and
 \[
-\tilde\alpha(\partial_\theta,\partial_\phi)=\tfrac1r(v_\theta\times v_\phi)\cdot p=r^2\sin\theta,
+\tilde\alpha(\partial_\theta,\partial_\varphi)=\tfrac1r(v_\theta\times v_\varphi)\cdot p=r^2\sin\theta,
 \]
-and antisymmetry gives $\tilde\alpha(\partial_\phi,\partial_\theta)=-r^2\sin\theta$, $\tilde\alpha(\partial_\phi,\partial_\phi)=0$. Therefore
+and antisymmetry gives $\tilde\alpha(\partial_\varphi,\partial_\theta)=-r^2\sin\theta$, $\tilde\alpha(\partial_\varphi,\partial_\varphi)=0$. Therefore
 \[
-\tilde\alpha=r^2\sin\theta\,\big(\dd\theta\otimes\dd\phi-\dd\phi\otimes\dd\theta\big)=r^2\sin\theta\ \dd\theta\wedge\dd\phi,
+\tilde\alpha=r^2\sin\theta\,\big(\dd\theta\otimes\dd\varphi-\dd\varphi\otimes\dd\theta\big)=r^2\sin\theta\ \dd\theta\wedge\dd\varphi,
 \]
-and the total area is $\int_0^{2\pi}\!\!\int_0^\pi r^2\sin\theta\,\dd\theta\,\dd\phi=4\pi r^2$. \checkmark
+and the total area is $\int_0^{2\pi}\!\!\int_0^\pi r^2\sin\theta\,\dd\theta\,\dd\varphi=4\pi r^2$. \checkmark
 \end{example}
 
 \begin{example}[{components of a vector field, hand-checked}]

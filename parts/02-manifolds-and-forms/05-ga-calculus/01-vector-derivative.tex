@@ -1,4 +1,4 @@
-% Section 14.1: 01-vector-derivative | Part: 2 | Depends on: sec:fields, sec:duality | Status: todo | Original lines: 2301-2335
+% Section 14.1: 01-vector-derivative | Part: 2 | Depends on: sec:fields, sec:duality | Status: done | Original lines: 2301-2335
 %!TEX root = ../../../main.tex
 \begin{definition}[Vector derivative]
 The \emph{vector derivative} (Dirac operator) is $\vd=e^i\partial_i$. Its action on a multivector field $F$ is its geometric product with $F$:
@@ -9,6 +9,9 @@ The \emph{vector derivative} (Dirac operator) is $\vd=e^i\partial_i$. Its action
 
 For a $k$-vector field $F$, $\vd\wedge F$ has grade $k+1$ (``curl-like'') and $\vd\lc F$ has grade $k-1$ (``divergence-like''); this is formula \eqref{eq:aA} with the vector $a$ replaced by the operator $\vd$.
 
+% AUTHOR-NOTE: in (2) the sign of the codifferential and the "standard formula" delta=-sum iota_{e_i} partial_i are
+% convention dependent and not proved here; the Lorentzian case (hodge-hodge sign in R^{1,3}, used for Maxwell) is not
+% addressed (docs/AUTHOR_NOTES.md #5, #13).
 \begin{theorem}[$\dd$ is $\vd\wedge$]\label{thm:dGA}
 Under the identification above:
 \begin{enumerate}

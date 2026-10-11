@@ -1,4 +1,4 @@
-% Section 10.1: 01-charts-and-atlases | Part: 2 | Depends on: part:algebra | Status: todo | Original lines: 1805-1849
+% Section 10.1: 01-charts-and-atlases | Part: 2 | Depends on: part:algebra | Status: done | Original lines: 1805-1849
 %!TEX root = ../../../main.tex
 \begin{intuition}[{a space that looks flat up close}]
 A \emph{manifold} $M$ is a set that, near each point, looks exactly like $\R^m$, even though globally it may be curved, closed, or have holes: a circle looks like a line locally; a sphere or a torus looks like a plane locally; the Earth looks flat to an ant. A manifold is a ``space without measures'': it knows \emph{which} points are near each other and what it means for a function or a curve to be smooth, but it has no notion of distance or angle yet (that is the role of the metric, later). In GR, \textbf{spacetime is a 4-dimensional manifold} whose points are events.
@@ -21,13 +21,14 @@ $\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_\alpha\cap U_\beta)\to\v
 A map $\Phi:M\to N$ between manifolds is \emph{smooth} if its coordinate representation $\psi\circ\Phi\circ\varphi^{-1}$ is $C^\infty$ for all charts. A \emph{diffeomorphism} is a smooth bijection with smooth inverse (then $\dim M=\dim N$). $C^\infty(M)$ is the set of smooth real functions on $M$.
 \end{formal}
 
+% REWRITTEN: the angle is written theta (phi is reserved for maps; the charts keep their names varphi_alpha; docs/NOTATION.md)
 \begin{example}[{the circle needs two charts}]
-$S^1=\{(x,y):x^2+y^2=1\}$. The angle $\phi$ is a good coordinate except at one point, where it jumps. Take
+$S^1=\{(x,y):x^2+y^2=1\}$. The angle $\theta$ is a good coordinate except at one point, where it jumps. Take
 \[
-U_1=S^1\setminus\{(-1,0)\},\ \ \varphi_1=\phi\in(-\pi,\pi),\qquad
-U_2=S^1\setminus\{(1,0)\},\ \ \varphi_2=\phi\in(0,2\pi).
+U_1=S^1\setminus\{(-1,0)\},\ \ \varphi_1=\theta\in(-\pi,\pi),\qquad
+U_2=S^1\setminus\{(1,0)\},\ \ \varphi_2=\theta\in(0,2\pi).
 \]
-On the overlap (the circle minus two points) the transition map is $\varphi_2\circ\varphi_1^{-1}(\phi)=\phi$ for $\phi\in(0,\pi)$ and $=\phi+2\pi$ for $\phi\in(-\pi,0)$: a translation, hence smooth. (The notes use the arcs $(-\tfrac34\pi,\tfrac34\pi)$ and $(\tfrac14\pi,\tfrac74\pi)$, same idea.) One chart is impossible: $S^1$ is compact while an open subset of $\R$ is not (a bijective continuous map would have to preserve this).
+On the overlap (the circle minus two points) the transition map is $\varphi_2\circ\varphi_1^{-1}(\theta)=\theta$ for $\theta\in(0,\pi)$ and $=\theta+2\pi$ for $\theta\in(-\pi,0)$: a translation, hence smooth. (The notes use the arcs $(-\tfrac34\pi,\tfrac34\pi)$ and $(\tfrac14\pi,\tfrac74\pi)$, same idea.) One chart is impossible: $S^1$ is compact while an open subset of $\R$ is not (a bijective continuous map would have to preserve this).
 \end{example}
 
 \begin{example}[{the 2-sphere: stereographic projection}]
@@ -37,7 +38,7 @@ Project from the north pole $N=(0,0,1)$ and from the south pole $S=(0,0,-1)$:
 \varphi_S(x,y,z)=\Big(\tfrac{x}{1+z},\tfrac{y}{1+z}\Big)=:u'.
 \]
 Since $x^2+y^2=1-z^2$, one finds $|u|^2=\frac{1+z}{1-z}$ and $u'=u\cdot\frac{1-z}{1+z}=\dfrac{u}{|u|^2}$.
-The transition map $u\mapsto u/|u|^2$ is smooth on $\R^2\setminus\{0\}$. So two charts suffice. The notes use two charts of spherical coordinates $(\theta,\phi)$ with different angular domains to the same effect.
+The transition map $u\mapsto u/|u|^2$ is smooth on $\R^2\setminus\{0\}$. So two charts suffice. The notes use two charts of spherical coordinates $(\theta,\varphi)$ with different angular domains to the same effect.
 \end{example}
 
 \begin{pitfall}[{non-examples}]

@@ -1,10 +1,12 @@
-% Section 12.3: The exterior derivative | Part: 2 | Depends on: sec:tangent, sec:ext | Status: todo | Original lines: 2056-2145
+% Section 12.3: The exterior derivative | Part: 2 | Depends on: sec:tangent, sec:ext | Status: done | Original lines: 2056-2145
 %!TEX root = ../../../main.tex
 \subsection{The exterior derivative}\label{sec:dform}
-Let $M$ be a smooth $n$-manifold (for concreteness, an open subset of $\R^n$ with coordinates $x^1,\dots,x^n$). At $p\in M$ the tangent space $T_pM$ has the basis $\partial_i=\partial/\partial x^i$ and the cotangent space $T_p^*M=(T_pM)^*$ has the dual basis $\dd x^i$.
+% REWRITTEN: the repeated introduction of T_pM, \partial_i and dx^i is replaced by a pointer to Section sec:tangentvectors.
+Let $M$ be a smooth $n$-manifold (for concreteness, an open subset of $\R^n$ with coordinates $x^1,\dots,x^n$), with the coordinate bases
+$\partial_i$ of $T_pM$ and $\dd x^i$ of $T_p^*M$ of Section~\ref{sec:tangentvectors}.
 
 \begin{definition}[Differential form]
-A \emph{differential $k$-form} is a smooth assignment $p\mapsto\omega_p\in\bigwedge^kT_p^*M\cong\Alt^k(T_pM;\R)$, i.e.\ at each point an alternating $k$-linear function on tangent vectors (see the Remark in \S\ref{sec:ext}). In coordinates
+A \emph{differential $k$-form} is a smooth assignment $p\mapsto\omega_p\in\bigwedge^kT_p^*M\cong\Alt^k(T_pM;\R)$, i.e.\ at each point an alternating $k$-linear function on tangent vectors (Remark~\ref{rem:twomodels}). In coordinates
 \[
  \omega=\sum_{i_1<\cdots<i_k}\omega_{i_1\cdots i_k}(x)\,\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_k}=\sum_I\omega_I\,\dd x^I,
 \]
@@ -24,16 +26,21 @@ In coordinates:
 \end{equation}
 \end{definition}
 
+% REWRITTEN (F4): the Lie bracket used in (3) is defined inline (it is studied in Section sec:lie); (4) is marked as a
+% preview of Theorem thm:stokes; pull-back written \phi\pb instead of \phi^{*}.
+% AUTHOR-NOTE: (2), (3) and (5) are stated without proof. Glossary Part C proves (2) and (3) for 1-forms; (5) (Poincare
+% lemma) is left to the references (docs/AUTHOR_NOTES.md #7).
 \begin{theorem}[Fundamental properties]\label{thm:dprops}
 \begin{enumerate}
   \item $\dd^2=0$.
-  \item $\dd$ commutes with pullbacks: $\phi^*(\dd\omega)=\dd(\phi^*\omega)$ for every smooth map $\phi$. In particular formula \eqref{eq:dcoord} is independent of coordinates.
-  \item (\emph{Invariant formula}) For vector fields $X_0,\dots,X_k$:
+  \item $\dd$ commutes with pullbacks: $\phi\pb(\dd\omega)=\dd(\phi\pb\omega)$ for every smooth map $\phi$. In particular formula \eqref{eq:dcoord} is independent of coordinates.
+  \item (\emph{Invariant formula}) For vector fields $X_0,\dots,X_k$, where $[X,Y]$ denotes the \emph{Lie bracket}, the vector field
+  $[X,Y]f=X(Yf)-Y(Xf)$ (Section~\ref{sec:lie}):
   \begin{multline*}
   \dd\omega(X_0,\dots,X_k)=\sum_i(-1)^iX_i\bigl(\omega(\dots,\widehat{X_i},\dots)\bigr)\\
   +\sum_{i<j}(-1)^{i+j}\omega([X_i,X_j],\dots,\widehat{X_i},\dots,\widehat{X_j},\dots).
   \end{multline*}
-  \item (\emph{Stokes' theorem}) If $M$ is an oriented compact $n$-manifold with boundary and $\omega\in\Omega^{n-1}(M)$, then $\displaystyle\int_M\dd\omega=\int_{\partial M}\omega$.
+  \item (\emph{Stokes' theorem}, preview of Theorem~\ref{thm:stokes}, where orientation, boundary and the integral of a form are defined) If $M$ is an oriented compact $n$-manifold with boundary and $\omega\in\Omega^{n-1}(M)$, then $\displaystyle\int_M\dd\omega=\int_{\partial M}\omega$.
   \item (\emph{Poincar\'e lemma}) On a contractible (e.g.\ star-shaped) domain, every closed form ($\dd\omega=0$) of degree $\ge1$ is exact ($\omega=\dd\eta$).
 \end{enumerate}
 \end{theorem}
@@ -59,6 +66,27 @@ The coefficient $\partial_k\partial_j\omega_I$ is symmetric in $(j,k)$ (equality
 Thus $\dd^2=0$ contains the identities $\vd\times\vd f=0$ and $\vd\cdot(\vd\times\mathbf v)=0$, and Stokes' theorem contains the gradient theorem, the Kelvin--Stokes theorem and the divergence theorem.
 \end{example}
 
+% REORDERED (F5): the step-by-step verification of curl and divergence was in Section sec:classical (original L2798-2812);
+% it uses only d, wedge and eq:iotavol, and is needed by Synthesis II. The integral theorems (iii), (iv) stay in sec:classical.
+\subhead{Curl and divergence as $\dd$, step by step}
+In $\R^3$ with the Euclidean metric and volume form $\vol=\dd x\wedge\dd y\wedge\dd z$, lowering an index changes nothing numerically: a vector field $F$ gives $F^\flat=F_x\dd x+F_y\dd y+F_z\dd z$. Recall \eqref{eq:iotavol}: $\iota_G\vol=G_x\,\dd y\wedge\dd z+G_y\,\dd z\wedge\dd x+G_z\,\dd x\wedge\dd y$.
+
+\emph{(i) Curl.} Compute $\dd F^\flat$ term by term, using $\dd x\wedge\dd x=0$:
+\begin{align*}
+\dd(F_x\dd x)&=\partial_yF_x\,\dd y\wedge\dd x+\partial_zF_x\,\dd z\wedge\dd x=-\partial_yF_x\,\dd x\wedge\dd y+\partial_zF_x\,\dd z\wedge\dd x,\\
+\dd(F_y\dd y)&=\partial_xF_y\,\dd x\wedge\dd y+\partial_zF_y\,\dd z\wedge\dd y=\partial_xF_y\,\dd x\wedge\dd y-\partial_zF_y\,\dd y\wedge\dd z,\\
+\dd(F_z\dd z)&=\partial_xF_z\,\dd x\wedge\dd z+\partial_yF_z\,\dd y\wedge\dd z=-\partial_xF_z\,\dd z\wedge\dd x+\partial_yF_z\,\dd y\wedge\dd z.
+\end{align*}
+Adding and collecting the three basis $2$-forms:
+\[
+\dd F^\flat=(\partial_yF_z-\partial_zF_y)\,\dd y\wedge\dd z+(\partial_zF_x-\partial_xF_z)\,\dd z\wedge\dd x+(\partial_xF_y-\partial_yF_x)\,\dd x\wedge\dd y=\iota_{\operatorname{curl}F}\vol,
+\]
+since the three coefficients are exactly the components of $\operatorname{curl}F$. Because $\hodge\hodge=1$ in $\R^3$ and $\hodge(\dd y\wedge\dd z)=\dd x$, etc.\ (Section~\ref{sec:duality}), this is the same as $\operatorname{curl}F=(\hodge\,\dd F^\flat)^\sharp$.
+
+\emph{(ii) Divergence.} $\iota_F\vol=F_x\dd y\wedge\dd z+F_y\dd z\wedge\dd x+F_z\dd x\wedge\dd y$. Differentiating, only the derivative with respect to the variable missing from each $2$-form survives:
+$\dd(F_x\dd y\wedge\dd z)=\partial_xF_x\,\dd x\wedge\dd y\wedge\dd z$, $\dd(F_y\dd z\wedge\dd x)=\partial_yF_y\,\dd y\wedge\dd z\wedge\dd x$, $\dd(F_z\dd x\wedge\dd y)=\partial_zF_z\,\dd z\wedge\dd x\wedge\dd y$,
+and the three $3$-forms equal $\dd x\wedge\dd y\wedge\dd z$ (cyclic permutations of three $1$-forms are even). So $\dd(\iota_F\vol)=(\operatorname{div}F)\,\vol$.
+
 \begin{intuition}
 \begin{itemize}
   \item A $1$-form is a field of ``measuring devices'' for line segments: integrate it along a path to get a number (work, circulation). A $2$-form measures oriented \emph{areas} (flux), a $3$-form measures volumes. This is exactly the dual (``measuring'') side of the arrows/areas picture of \S\ref{sec:ext}.
@@ -79,7 +107,8 @@ Let $f(x,y)=x^2y$ on $\R^2$. Then
 &=2x\,\dd y\wedge\dd x+2x\,\dd x\wedge\dd y\\
 &=-2x\,\dd x\wedge\dd y+2x\,\dd x\wedge\dd y=0 &&\text{(antisymmetry).}
 \end{align*}
-The last line is $\dd\dd=0$: it holds because $\partial_x\partial_yf=\partial_y\partial_xf$ is symmetric while $\dd x\wedge\dd y$ is antisymmetric (Section~\ref{sec:expl-closed}).
+The last line is $\dd\dd=0$: it holds because $\partial_x\partial_yf=\partial_y\partial_xf$ is symmetric while $\dd x\wedge\dd y$ is antisymmetric (Theorem~\ref{thm:dprops}(1)).
+% REWRITTEN: cited thm:dprops (backward) instead of sec:expl-closed (forward)
 \end{example}
 
 \begin{keyidea}[$\dd$ needs no metric and no connection]

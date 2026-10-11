@@ -1,6 +1,11 @@
-% Section 15.1: The dictionary in $\R^3$ | Part: 2 | Depends on: sec:fields, sec:lie, sec:ga-calculus | Status: todo | Original lines: 2375-2415
+% Section 15.1: The dictionary in $\R^3$ | Part: 2 | Depends on: sec:fields, sec:lie, sec:ga-calculus | Status: done | Original lines: 2375-2415
 %!TEX root = ../../../main.tex
 \subsection{The dictionary in $\R^3$}
+
+% REWRITTEN: definitions of vol and of the flux 2-form added (both are used in the table before Part III).
+In the table, $\vol=\dd x\wedge\dd y\wedge\dd z$ is the \emph{volume form} of $\R^3$ (it gives volume $1$ to the unit cube), and the
+\emph{flux $2$-form} of a vector field $F$ is $\iota_F\vol$, computed in \eqref{eq:iotavol}; Section~\ref{sec:flux} explains why its
+integral over a surface is the flux of $F$. The Hodge star on forms is the one of Section~\ref{sec:duality}.
 
 \begin{table}[ht]
 \centering
@@ -32,7 +37,8 @@ For a vector field $F=F^ie_i$ on $\R^3$ (identified with $F^\flat=F_i\,\dd x^i$)
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-(i) By Theorem~\ref{thm:hodgeGA}, $\hodge F=\rev F\pss=F\pss$ for a vector; $e_1\pss=e_2e_3$, $e_2\pss=e_3e_1$, $e_3\pss=e_1e_2$ (e.g.\ $e_2e_1e_2e_3=-e_1e_2e_2e_3=-e_1e_3=e_3e_1$). Compare with the formula for $\iota_F\vol$ of Section~\ref{sec:intk}. (ii) $\vd\wedge F=\sum_{i<j}(\partial_iF_j-\partial_jF_i)\,e_ie_j=(\partial_2F_3-\partial_3F_2)e_2e_3+(\partial_3F_1-\partial_1F_3)e_3e_1+(\partial_1F_2-\partial_2F_1)e_1e_2$, which is $\pss\operatorname{curl}F$ by the same table of $e_i\pss$; the forms side is the computation of $\dd F^\flat$ in Section~\ref{sec:stokes}. (iii) Expanding, $\vd\wedge(F^1e_2e_3+F^2e_3e_1+F^3e_1e_2)=(\partial_1F^1+\partial_2F^2+\partial_3F^3)e_1e_2e_3$, since $e_1\wedge e_2e_3=e_2\wedge e_3e_1=e_3\wedge e_1e_2=\pss$.
+(i) By Theorem~\ref{thm:hodgeGA}, $\hodge F=\rev F\pss=F\pss$ for a vector; $e_1\pss=e_2e_3$, $e_2\pss=e_3e_1$, $e_3\pss=e_1e_2$ (e.g.\ $e_2e_1e_2e_3=-e_1e_2e_2e_3=-e_1e_3=e_3e_1$). Compare with the formula \eqref{eq:iotavol} for $\iota_F\vol$ of Section~\ref{sec:interior}. (ii) $\vd\wedge F=\sum_{i<j}(\partial_iF_j-\partial_jF_i)\,e_ie_j=(\partial_2F_3-\partial_3F_2)e_2e_3+(\partial_3F_1-\partial_1F_3)e_3e_1+(\partial_1F_2-\partial_2F_1)e_1e_2$, which is $\pss\operatorname{curl}F$ by the same table of $e_i\pss$; the forms side is the computation of $\dd F^\flat$ in Section~\ref{sec:dform}.
+% REWRITTEN (F5): both references now point backward (sec:interior, sec:dform) instead of forward (sec:intk, sec:stokes). (iii) Expanding, $\vd\wedge(F^1e_2e_3+F^2e_3e_1+F^3e_1e_2)=(\partial_1F^1+\partial_2F^2+\partial_3F^3)e_1e_2e_3$, since $e_1\wedge e_2e_3=e_2\wedge e_3e_1=e_3\wedge e_1e_2=\pss$.
 \end{proof}
 
 \begin{example}[all three languages on one field]\label{ex:threelang}

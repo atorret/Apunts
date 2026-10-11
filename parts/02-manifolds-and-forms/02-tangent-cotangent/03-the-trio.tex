@@ -1,4 +1,4 @@
-% Section 11.3: The trio $x$, $\dd x$, $\partial/\partial x$ | Part: 2 | Depends on: sec:manifolds, sec:vectors, sec:ext | Status: todo | Original lines: 1905-1968
+% Section 11.3: The trio $x$, $\dd x$, $\partial/\partial x$ | Part: 2 | Depends on: sec:manifolds, sec:vectors, sec:ext | Status: done | Original lines: 1905-1968
 %!TEX root = ../../../main.tex
 \subsection{The trio $x$, $\dd x$, $\partial/\partial x$}\label{sec:trio}
 
@@ -61,5 +61,7 @@ This is the same ``$\lambda$ versus $1/\lambda$'' phenomenon as in the rule of t
 In dimension one, $T^*_pM$ is one-dimensional, so any two covectors are proportional and $\dd f=f'(x)\,\dd x$ makes $f'=\dd f/\dd x$ a genuine quotient of two $1$-forms.
 In dimension $\ge2$, $\dd f=f_x\dd x+f_y\dd y$ cannot be divided by $\dd x$; the symbol $\partial f/\partial x$ stands for $\dd f(\partial_x)$ and depends on the chart (Example~\ref{ex:sameXdiffdx}).
 Similarly, the ``$\dd x\,\dd y$'' in $\iint f\,\dd x\,\dd y$ is the Lebesgue measure $|\dd x\wedge\dd y|$, which forgets orientation, whereas $\int f\,\dd x\wedge\dd y$ keeps the sign of the Jacobian (Section~\ref{sec:intk}).
-The fundamental theorem of calculus in this language is $\int_a^bf'(x)\,\dd x=\int_{[a,b]}\dd f=f(b)-f(a)$, equation~\eqref{eq:ftc}.
+The fundamental theorem of calculus in this language is $\int_a^bf'(x)\,\dd x=\int_{[a,b]}\dd f=f(b)-f(a)$; it is proved in this form, for any curve, as
+equation~\eqref{eq:ftc} in Section~\ref{sec:expl-closed}.
+% REWRITTEN: forward reference to eq:ftc reworded as an explicit preview
 \end{specialcase}
