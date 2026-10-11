@@ -1,4 +1,4 @@
-% Section 16.5: Exact and closed $1$-forms: the first Stokes theorem | Part: 3 | Depends on: sec:fields, sec:tangent | Status: todo | Original lines: 2538-2576
+% Section 16.5: Exact and closed $1$-forms: the first Stokes theorem | Part: 3 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2538-2576
 %!TEX root = ../../../main.tex
 \subsection{Exact and closed $1$-forms: the first Stokes theorem}\label{sec:expl-closed}
 
@@ -35,6 +35,6 @@ On $M=\R^2\setminus\{0\}$ let $\omega=\dfrac{-y\,\dd x+x\,\dd y}{x^2+y^2}=P\,\dd
 \item[Step 1: $\omega$ is closed.] With $r^2=x^2+y^2$: $Q_x=\dfrac{r^2-x\cdot2x}{r^4}=\dfrac{y^2-x^2}{r^4}$, $P_y=-\dfrac{r^2-y\cdot2y}{r^4}=\dfrac{y^2-x^2}{r^4}$, so $\dd\omega=(Q_x-P_y)\,\dd x\wedge\dd y=0$.
 \item[Step 2: why it is called ``the angle''.] With $\theta=\arctan(y/x)$, $\partial_x\theta=\dfrac{-y/x^2}{1+y^2/x^2}=\dfrac{-y}{x^2+y^2}$ and $\partial_y\theta=\dfrac{1/x}{1+y^2/x^2}=\dfrac x{x^2+y^2}$, so $\dd\theta=\omega$ locally. (The function $\theta$ is multivalued around the origin.)
 \item[Step 3: integrate on the unit circle] $\gamma(t)=(\cos t,\sin t)$, $0\le t\le2\pi$: velocity $\dot\gamma=(-\sin t,\cos t)$; on the circle $r=1$, $\omega_x=P=-\sin t$, $\omega_y=Q=\cos t$; contraction $\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle=(-\sin t)(-\sin t)+(\cos t)(\cos t)=1$; integral $\oint_\gamma\omega=\int_0^{2\pi}1\,\dd t=2\pi$.
-\item[Step 4: conclusion.] If $\omega=\dd f$ with $f$ single-valued on $M$, then \eqref{eq:ftc} would give $\oint_\gamma\omega=f(\gamma(2\pi))-f(\gamma(0))=0$, contradicting Step 3. Hence $\omega$ is closed but not exact on $M$: there is no global angle function. The number $\frac1{2\pi}\oint\omega$ is the \emph{winding number}, and $H^1_{\mathrm{dR}}(\R^2\setminus\{0\})\cong\R$.
+\item[Step 4: conclusion.] If $\omega=\dd f$ with $f$ single-valued on $M$, then \eqref{eq:ftc} would give $\oint_\gamma\omega=f(\gamma(2\pi))-f(\gamma(0))=0$, contradicting Step 3. Hence $\omega$ is closed but not exact on $M$: there is no global angle function. The number $\frac1{2\pi}\oint\omega$ is the \emph{winding number}, and $H^1_{\mathrm{dR}}(\R^2\setminus\{0\})\cong\R$ \cite{BottTu}.
 \end{description}
 \end{example}
