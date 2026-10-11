@@ -1,4 +1,4 @@
-% Section 20.3: Parallel transport | Part: 4 | Depends on: sec:fields, sec:tangent | Status: todo | Original lines: 2998-3020
+% Section 20.3: Parallel transport | Part: 4 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2998-3020
 %!TEX root = ../../../main.tex
 \subsection{Parallel transport}
 \begin{formal}[{parallel transport along a curve}]
@@ -16,9 +16,6 @@ so existence and uniqueness follow from ODE theory; a general curve is split int
 Like carrying a spear while walking and trying not to rotate it ``relative to the ground''. On a curved surface this is ambiguous globally, but infinitesimally it is perfectly well defined by \eqref{eq:ptode}. In a flat space with $\nabla^0$ and Cartesian coordinates ($\Gamma=0$) parallel transport leaves components unchanged ($\Pi(v_0)=v_0$ via $T_p\R^m\cong\R^m$).
 \end{intuition}
 
-\begin{example}[{parallel transport on the sphere: path-dependence}]
-For the unit sphere (metric $\dd\theta^2+\sin^2\theta\,\dd\phi^2$; Christoffel symbols computed in Section~\ref{sec:lc}): $\Gamma^\theta{}_{\phi\phi}=-\sin\theta\cos\theta$, $\Gamma^\phi{}_{\theta\phi}=\cot\theta$. 
-\emph{Along the equator} $\theta=\pi/2$, $\dot\theta=0$, $\dot\phi=1$: both symbols vanish at $\theta=\pi/2$, so \eqref{eq:ptode} gives $\dot Y^\theta=\dot Y^\phi=0$: the components $(Y^\theta,Y^\phi)$ stay constant.
-\emph{Along a meridian} ($\phi=\mathrm{const}$, $\dot\theta=1$): $\dot Y^\theta=0$ and $\dot Y^\phi+\cot\theta\,Y^\phi=0$, so $Y^\theta$ is constant, $Y^\phi\propto 1/\sin\theta$ (hence its length $\sin\theta\,|Y^\phi|$ is constant).
-\emph{A triangle.} Go from the north pole down the meridian $\phi=0$ to the equator, along the equator to $\phi=\pi/2$, and back up to the pole. Start at the pole with a vector pointing along the first meridian's direction ``away from the pole'' ($\theta$-direction at $\phi=0$). Transported down the first meridian it remains tangent to it; along the equator it stays pointing towards the south (constant $Y^\theta$), perpendicular to the path; going back up the second meridian it remains the same way, now pointing \emph{along} the second meridian, away from the pole. At the end the vector has rotated by $\pi/2$ with respect to the initial one. The rotation angle equals the enclosed area times the curvature ($K=1$): the octant has area $4\pi/8=\pi/2$. \textbf{Parallel transport depends on the path precisely because the space is curved} (Section~\ref{sec:curv}).
-\end{example}
+% REORDERED (F7): the example "parallel transport on the sphere" moved to Section sec:lc (ex:spheretransport), after the sphere's Christoffel symbols are computed.
+On a curved surface the result of parallel transport depends on the path; the sphere is worked out in Example~\ref{ex:spheretransport}
+of Section~\ref{sec:lc}, once its Christoffel symbols are available.

@@ -1,4 +1,4 @@
-% Section 23.1: 01-deviation-equation | Part: 4 | Depends on: sec:lc, sec:curv | Status: todo | Original lines: 3284-3310
+% Section 23.1: 01-deviation-equation | Part: 4 | Depends on: sec:lc, sec:curv | Status: done | Original lines: 3284-3310
 %!TEX root = ../../../main.tex
 \begin{intuition}[{tidal forces}]
 Two nearby freely falling particles (two geodesics) do not stay at a fixed separation if the space is curved: on the sphere two meridians that start parallel at the equator meet at the poles; in the Earth's gravity two stones dropped side by side approach each other as they fall towards the centre; the Moon stretches the oceans. The relative acceleration of nearby geodesics is the physical, measurable face of curvature.
@@ -9,11 +9,12 @@ Let $\gamma_s(t)$ be a family of geodesics (for each $s$, $t\mapsto\gamma_s(t)$ 
 \[
 \boxed{\ D_tD_t\,\xi=R(\dot\gamma_0,\xi)\,\dot\gamma_0\ }
 \]
-\emph{Proof} ($\nabla$ torsion-free). Write $T=\partial_t\gamma$, $S=\partial_s\gamma$ for the two ``velocity'' fields of the family $\gamma(t,s)$. Coordinate fields commute, $[T,S]=0$, and $\nabla_TT=0$ (each curve is a geodesic). Since the torsion vanishes, $\nabla_TS=\nabla_ST+[T,S]=\nabla_ST$. Then, using the identity $\nabla_T\nabla_SV-\nabla_S\nabla_TV=R(T,S)V$ for fields along a two-parameter family (this is the ``curvature = non-commuting derivatives'' statement, cf.\ Lee Prop.~7.5),
+\emph{Proof} ($\nabla$ torsion-free). Write $T=\partial_t\gamma$, $S=\partial_s\gamma$ for the two ``velocity'' fields of the family $\gamma(t,s)$. Coordinate fields commute, $[T,S]=0$, and $\nabla_TT=0$ (each curve is a geodesic). Since the torsion vanishes, $\nabla_TS=\nabla_ST+[T,S]=\nabla_ST$. Then, using the identity $\nabla_T\nabla_SV-\nabla_S\nabla_TV=R(T,S)V$ for fields along a two-parameter family (this is the ``curvature = non-commuting derivatives'' statement of Section~\ref{sec:curv}, cf.\ \cite[Prop.~7.5]{Lee}),
 \[
 D_tD_t\xi=\nabla_T\nabla_TS=\nabla_T\nabla_ST=\nabla_S\underbrace{\nabla_TT}_{=0}+R(T,S)T=R(\dot\gamma_0,\xi)\dot\gamma_0\qquad(s=0).
 \]
-(The lecture notes prove the same statement in a chart by extending $\dot\gamma_0,\xi$ to vector fields on $U\times[t_0,t_1]$ with the connection extended trivially in the $t$-direction.)
+% REWRITTEN: "The lecture notes prove" -> "One can also prove".
+(One can also prove the same statement in a chart by extending $\dot\gamma_0,\xi$ to vector fields on $U\times[t_0,t_1]$ with the connection extended trivially in the $t$-direction.)
 \end{formal}
 \begin{intuition}[{curvature = tidal tensor}]
 In coordinates $\frac{D^2\xi^i}{\dd t^2}=R^i{}_{abc}\ \dot\gamma^a\xi^b\dot\gamma^c$: the matrix $\xi\mapsto R(\dot\gamma,\xi)\dot\gamma$ is the \textbf{tidal operator}. In the Newtonian limit with potential $\Phi$ it becomes $\ddot\xi^i=-\partial_i\partial_j\Phi\,\xi^j$ (the \emph{Newtonian tidal tensor}). Hence ``gravity'' $=$ geodesic deviation; the force on a single particle is not observable (equivalence principle), the relative force is.

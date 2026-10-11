@@ -1,5 +1,6 @@
-% Section 22.3: Ricci tensor and scalar curvature | Part: 4 | Depends on: sec:conn, sec:lc | Status: todo | Original lines: 3208-3231
+% Section 22.3: Ricci tensor and scalar curvature | Part: 4 | Depends on: sec:conn, sec:lc | Status: done | Original lines: 3208-3231
 %!TEX root = ../../../main.tex
+% REWRITTEN: sphere azimuth written \varphi instead of \phi (docs/NOTATION.md).
 \subsection{Ricci tensor and scalar curvature}
 \begin{formal}[{contractions of the curvature}]
 The \emph{Ricci tensor} is the contraction of the contravariant index with the first covariant one, $\Ric=c(R)\in\TF{0}{2}(M)$:
@@ -17,9 +18,9 @@ $R$ has too many components to be pictured; Ricci averages it over directions. R
 \end{intuition}
 
 \begin{example}[{Ricci of the unit sphere}]
-$R_{\phi\phi}=R^i{}_{i\phi\phi}=R^\theta{}_{\theta\phi\phi}+R^\phi{}_{\phi\phi\phi}=\sin^2\theta$ and $R_{\theta\theta}=R^\phi{}_{\phi\theta\theta}$. Compute the latter: $R^\phi{}_{\phi\theta\theta}=\partial_\phi\Gamma^\phi{}_{\theta\theta}-\partial_\theta\Gamma^\phi{}_{\phi\theta}+\Gamma^s{}_{\theta\theta}\Gamma^\phi{}_{\phi s}-\Gamma^s{}_{\phi\theta}\Gamma^\phi{}_{\theta s}=-\partial_\theta\cot\theta-\cot^2\theta=\csc^2\theta-\cot^2\theta=1$. Thus
+$R_{\varphi\varphi}=R^i{}_{i\varphi\varphi}=R^\theta{}_{\theta\varphi\varphi}+R^\varphi{}_{\varphi\varphi\varphi}=\sin^2\theta$ and $R_{\theta\theta}=R^\varphi{}_{\varphi\theta\theta}$. Compute the latter: $R^\varphi{}_{\varphi\theta\theta}=\partial_\varphi\Gamma^\varphi{}_{\theta\theta}-\partial_\theta\Gamma^\varphi{}_{\varphi\theta}+\Gamma^s{}_{\theta\theta}\Gamma^\varphi{}_{\varphi s}-\Gamma^s{}_{\varphi\theta}\Gamma^\varphi{}_{\theta s}=-\partial_\theta\cot\theta-\cot^2\theta=\csc^2\theta-\cot^2\theta=1$. Thus
 \[
-\Ric=\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi=g,\qquad s=g^{\theta\theta}\Ric_{\theta\theta}+g^{\phi\phi}\Ric_{\phi\phi}=1+1=2 .
+\Ric=\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\varphi\otimes\dd\varphi=g,\qquad s=g^{\theta\theta}\Ric_{\theta\theta}+g^{\varphi\varphi}\Ric_{\varphi\varphi}=1+1=2 .
 \]
-For the sphere of radius $a$, with its metric $g=a^2(\dd\theta^2+\sin^2\theta\,\dd\phi^2)$: $\Ric=g/a^2$ (in 2D always $\Ric=\tfrac s2\,g$) and $s=2/a^2=2K$. (The components $R_{ij}$ do not depend on $a$, but $g$ and $g^{-1}$ do.)
+For the sphere of radius $a$, with its metric $g=a^2(\dd\theta^2+\sin^2\theta\,\dd\varphi^2)$: $\Ric=g/a^2$ (in 2D always $\Ric=\tfrac s2\,g$) and $s=2/a^2=2K$. (The components $R_{ij}$ do not depend on $a$, but $g$ and $g^{-1}$ do.)
 \end{example}

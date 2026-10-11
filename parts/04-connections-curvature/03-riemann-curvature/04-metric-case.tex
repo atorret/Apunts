@@ -1,4 +1,4 @@
-% Section 22.4: The metric case: the Riemann tensor with all indices down | Part: 4 | Depends on: sec:conn, sec:lc | Status: todo | Original lines: 3232-3268
+% Section 22.4: The metric case: the Riemann tensor with all indices down | Part: 4 | Depends on: sec:conn, sec:lc | Status: done | Original lines: 3232-3268
 %!TEX root = ../../../main.tex
 \subsection{The metric case: the Riemann tensor with all indices down}
 \begin{formal}[{properties for $\nabla^{LC}$}]
@@ -26,6 +26,11 @@ $N$ & 0 & 1 & 6 & 20\\ \bottomrule
 $m=2$: $N=1$, so $\mathbb R$ is determined by the scalar curvature $s$ (the Gaussian curvature $K=s/2$). $m=3$: $N=6$, and $\mathbb R$ is determined by $\Ric$. $m>3$: $\mathbb R$ contains more information than $\Ric$ and $s$ (the Weyl tensor); in $m=4$, 10 components of Weyl $+$ 10 of Ricci $=20$.
 \end{formal}
 
+% REWRITTEN: pull-back written \pb (docs/NOTATION.md).
+% AUTHOR-NOTE: sign/index order in the normal-coordinate expansion. With R(X,Y)Z=K(g(Y,Z)X-g(X,Z)Y) and
+% \mathbb R_{ijkl}=g(R(\partial_i,\partial_j)\partial_k,\partial_l), the unit sphere gives -\tfrac13\mathbb R_{ikjl}x^kx^l
+% = +\tfrac13(|x|^2\delta_{ij}-x_ix_j), i.e. lengths would grow; the standard expansion has the opposite sign,
+% g_{ij}=\delta_{ij}-\tfrac13\mathbb R_{iklj}x^kx^l (equivalently +\tfrac13\mathbb R_{ikjl}). Formula left as in the original.
 \begin{formal}[{curvature as a local invariant; normal coordinates}]
 If $\varphi:M\to\tilde M$ is a local isometry ($\varphi\pb\tilde g=g$) then $\varphi\pb\tilde{\mathbb R}=\mathbb R$: curvature is a \emph{local invariant} of the metric. Every point $p$ admits \emph{normal coordinates} $(x^i)$ in which
 \[

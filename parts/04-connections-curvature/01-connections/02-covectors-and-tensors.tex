@@ -1,4 +1,4 @@
-% Section 20.2: Covariant derivative of covectors and general tensors | Part: 4 | Depends on: sec:fields, sec:tangent | Status: todo | Original lines: 2969-2997
+% Section 20.2: Covariant derivative of covectors and general tensors | Part: 4 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2969-2997
 %!TEX root = ../../../main.tex
 \subsection{Covariant derivative of covectors and general tensors}
 \begin{formal}[{extension to all tensors}]
@@ -21,7 +21,7 @@ Rule of thumb: every upper index gets a $+\Gamma$ term and every lower index a $
 Since $\omega(Y)$ must obey the ordinary product rule for a scalar, $\nabla$ on covectors \emph{must} compensate the connection acting on vectors; this forces the minus sign.
 \end{intuition}
 
-\begin{example}[{divergence in polar coordinates}]
+\begin{example}[{divergence in polar coordinates}]\label{ex:polardivconn}
 For a vector field $V$, $\mathrm{div}\,V:=\nabla_iV^i=\partial_iV^i+\Gamma^i{}_{ij}V^j$. With the polar $\Gamma$: $\Gamma^i{}_{ir}=\Gamma^r{}_{rr}+\Gamma^\varphi{}_{\varphi r}=\frac1r$ and $\Gamma^i{}_{i\varphi}=0$, therefore
 \[
 \mathrm{div}\,V=\partial_rV^r+\partial_\varphi V^\varphi+\frac{V^r}{r}=\frac1r\partial_r(rV^r)+\partial_\varphi V^\varphi ,

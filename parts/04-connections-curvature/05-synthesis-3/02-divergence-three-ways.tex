@@ -1,4 +1,4 @@
-% Section 24.2: Divergence three ways | Part: 4 | Depends on: sec:lie, sec:lc, sec:curv, sec:gauss | Status: todo | Original lines: 3363-3390
+% Section 24.2: Divergence three ways | Part: 4 | Depends on: sec:lie, sec:lc, sec:curv, sec:gauss | Status: done | Original lines: 3363-3390
 %!TEX root = ../../../main.tex
 \subsection{Divergence three ways}\label{sec:divthree}
 
@@ -25,5 +25,6 @@ From the formula \eqref{eq:christmetric}, $\Gamma^i_{ij}=\frac12g^{il}(\partial_
 \end{proof}
 
 \begin{example}[Polar coordinates: the extra term is $\Gamma$]\label{ex:polardiv}
-With $g=\mathrm{diag}(1,r^2)$, $\sqrt{|g|}=r$ and $\Gamma^i_{ir}=\Gamma^\theta_{\theta r}=1/r$ (the Christoffel symbols of Section~\ref{sec:lc}). Then $\nabla_iV^i=\partial_rV^r+\partial_\theta V^\theta+V^r/r=\frac1r\partial_r(rV^r)+\partial_\theta V^\theta$: the naive $\partial_iV^i$ misses the term $V^r/r$, and the volume-form definition $\frac1{\sqrt g}\partial_i(\sqrt gV^i)$ produces it automatically. For the position field $V=r\partial_r$: $\operatorname{div}V=\frac1r\partial_r(r^2)=2$, the dimension of the plane, as in Example~\ref{ex:ball} (where the answer in $\R^3$ is $3$).
+% REWRITTEN: the trace computation is the one of Example ex:polardivconn (Section sec:conn); polar angle written \varphi.
+With $g=\mathrm{diag}(1,r^2)$, $\sqrt{|g|}=r$ and $\Gamma^i_{ir}=\Gamma^\varphi_{\varphi r}=1/r$, Example~\ref{ex:polardivconn} gave $\nabla_iV^i=\frac1r\partial_r(rV^r)+\partial_\varphi V^\varphi$: the naive $\partial_iV^i$ misses the term $V^r/r$, and the volume-form definition $\frac1{\sqrt g}\partial_i(\sqrt gV^i)$ produces it automatically. For the position field $V=r\partial_r$: $\operatorname{div}V=\frac1r\partial_r(r^2)=2$, the dimension of the plane, as in Example~\ref{ex:ball} (where the answer in $\R^3$ is $3$).
 \end{example}
