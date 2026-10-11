@@ -1,0 +1,52 @@
+% Section 25.1: Work and energy: a scalar product, or an intrinsic value of a $1$-form? | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3456-3506
+%!TEX root = ../../../main.tex
+\subsection{Work and energy: a scalar product, or an intrinsic value of a $1$-form?}\label{sec:phys-work}
+
+\textbf{Short answer.} Work is the integral of a $1$-form,
+\begin{equation}\label{eq:work}
+W=\int_\gamma F,\qquad P=F(v)=F_iv^i\quad(\text{power}),
+\end{equation}
+and it does not depend on any metric. The scalar product $\mathbf F\cdot\dd\mathbf r$ is just the way of computing $F(\dd\mathbf r)$ when the force is handed to us as a vector $F^i$: in Cartesian components it is the Euclidean pairing $\delta_{ij}F^i\dd r^j$, a computational device.
+The metric that physics does fix is the kinetic (inertia) metric $g=m\,g_{\mathrm{Eucl}}$, but it acts on velocities and accelerations ($p=g(v,\cdot)$, $g(a,\cdot)=F$, see \eqref{eq:newton}), not on the components of a force vector. What \emph{does} depend on a metric are the kinetic energy and the conversion ``force vector $\leftrightarrow$ force covector''. Details:
+
+\textbf{(a) Why force is a covector.} Force is defined operationally by the work it does on a (virtual) displacement: $\delta W=F_i\delta q^i$ (principle of virtual work). Let us see why the $F_i$ are then components of a covector. Change coordinates $q^j=q^j(q'^1,\dots,q'^n)$.
+\Step{1}{displacements transform like vectors} $\delta q^j=\frac{\partial q^j}{\partial q'^i}\delta q'^i$.
+\Step{2}{the work is a physical number, so it cannot depend on the coordinates} $F_j\delta q^j=F_j\frac{\partial q^j}{\partial q'^i}\delta q'^i\overset!=F'_i\delta q'^i$.
+\Step{3}{conclusion} since this holds for every $\delta q'^i$, $F'_i=\frac{\partial q^j}{\partial q'^i}F_j$: the components of $F$ transform with the transpose of the matrix that transforms vector components, which is the definition of a covector. The generalised forces $Q_i$ of Lagrangian mechanics are exactly these components.
+
+\begin{example}[The same vector, two metrics]\label{ex:twometrics}
+Suppose a force is given as a vector $F^i=(1,0)$ in the plane and we move along the $x$-axis from $x=0$ to $x=1$. With $g=\dd x^2+\dd y^2$, $W=\int g_{ij}F^i\dot\gamma^j\,\dd t=1$; with $g'=4\dd x^2+\dd y^2$ one would get $4$.
+Likewise, for $V=x+y$ we find $\nabla_gV=(1,1)$ but $\nabla_{g'}V=(\frac14,1)$: the direction of steepest ascent depends on the metric. In contrast, $\dd V=\dd x+\dd y$ and $\int_\gamma\dd V=V(1,0)-V(0,0)=1$ do not.
+So the components of a force \emph{vector} are not a physical datum by themselves: the physical datum is the covector $F$ (what a work-meter measures), and the vector is $F^\sharp=g^{-1}F$ for whichever metric one decides to use.
+\end{example}
+
+\textbf{(b) Which metric is physical: inertia.} For a particle of mass $m$ the kinetic metric is $g=m\,g_{\mathrm{Eucl}}$; for a system with generalised coordinates $q^i$, $g=g_{ij}(q)\,\dd q^i\dd q^j$ is the mass matrix (\eg $g=m(\dd r^2+r^2\dd\theta^2)$ in polar coordinates). Then
+\begin{equation}\label{eq:newton}
+p=g(v,\cdot),\qquad T=\tfrac12g(v,v)=\tfrac12p(v),\qquad g(a,\cdot)=F\quad\text{(Newton, Cartesian coordinates).}
+\end{equation}
+Mass is the map from vectors (acceleration) to covectors (force). In general coordinates Newton's law is Lagrange's equation $\frac{\dd}{\dd t}\frac{\partial T}{\partial\dot q^i}-\frac{\partial T}{\partial q^i}=F_i$.
+
+\numcheck In Cartesian coordinates $T=\frac12m(\dot x^2+\dot y^2+\dot z^2)$, so $\partial T/\partial\dot x=m\dot x=p_x=g(v,\cdot)_x$ with $g=m\delta_{ij}$.
+
+\emph{Derivation of the kinetic metric in polar coordinates.} From $x=r\cos\theta$, $y=r\sin\theta$: $\dot x=\dot r\cos\theta-r\dot\theta\sin\theta$, $\dot y=\dot r\sin\theta+r\dot\theta\cos\theta$, hence $\dot x^2+\dot y^2=\dot r^2+r^2\dot\theta^2$ (the cross terms $\pm2r\dot r\dot\theta\sin\theta\cos\theta$ cancel and $\sin^2+\cos^2=1$), so $T=\frac12m(\dot r^2+r^2\dot\theta^2)$, \ie $g=m(\dd r^2+r^2\dd\theta^2)$. For the angular coordinate $\partial T/\partial\dot\theta=mr^2\dot\theta$ and $\partial T/\partial\theta=0$, so Lagrange's equation reads $\frac{\dd}{\dd t}(mr^2\dot\theta)=F_\theta$: the rate of change of angular momentum equals the torque $F_\theta$.
+(The same computation, read as a geodesic problem, is Example~\ref{ex:polarfree}.)
+
+\textbf{(c) Work--energy theorem: consistency.} Along a motion satisfying \eqref{eq:newton} (Cartesian coordinates, $g$ constant):
+\begin{align*}
+\frac{\dd T}{\dd t}=\frac{\dd}{\dd t}\Bigl(\tfrac12g(v,v)\Bigr)&=\tfrac12g(a,v)+\tfrac12g(v,a) &&\text{(product rule)}\\
+&=g(a,v) &&\text{(symmetry of $g$)}\\
+&=F(v) &&\text{(Newton: $g(a,\cdot)=F$).}
+\end{align*}
+Integrating in time from $t_0$ to $t_1$ and using $\int F(v)\,\dd t=\int_\gamma F$ (definition \eqref{eq:lineint}), we get
+\[
+\underbrace{\int_\gamma F}_{\text{intrinsic}}=\underbrace{T(\text{end})-T(\text{start})}_{\text{uses }g}.
+\]
+The metric appears on the right only because it is also the metric that defines inertia: no ambiguity is left.
+
+\textbf{(d) Conservative forces.} $F=-\dd V$ is a statement about a $1$-form being exact; it uses no metric, and $V$ is an intrinsic function (up to a constant). The vector $\nabla V=g^{-1}\dd V$ does need the metric (Example~\ref{ex:twometrics}).
+
+\textbf{(e) Polar coordinates and the ``torque'' component.} Let $F=F_x\dd x+F_y\dd y$ and use $x=r\cos\theta$, $y=r\sin\theta$: with $\dd x=\cos\theta\,\dd r-r\sin\theta\,\dd\theta$, $\dd y=\sin\theta\,\dd r+r\cos\theta\,\dd\theta$,
+\[
+F=\underbrace{(F_x\cos\theta+F_y\sin\theta)}_{F_r}\dd r+\underbrace{r\,(-F_x\sin\theta+F_y\cos\theta)}_{F_\theta}\dd\theta .
+\]
+The coefficient $F_r$ is the radial component of the force; $F_\theta=r\times(\text{tangential component})$ has dimensions of torque, not force, because $\dd\theta$ is dimensionless. In the orthonormal coframe $e^r=\dd r$, $e^\theta=r\,\dd\theta$ the component is $\hat F_\theta=F_\theta/r$, which is a force. Both describe the same covector, and $W=\int F_r\dd r+F_\theta\dd\theta$ either way.

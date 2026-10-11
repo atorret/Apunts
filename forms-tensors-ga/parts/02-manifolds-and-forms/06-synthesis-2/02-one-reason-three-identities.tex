@@ -1,0 +1,8 @@
+% Section 15.2: One reason for three identities | Part: 2 | Depends on: sec:fields, sec:lie, sec:ga-calculus | Status: done | Original lines: 2416-2422
+%!TEX root = ../../../main.tex
+\subsection{One reason for three identities}
+
+\begin{synthesis}[$\dd\dd=0$, ``curl grad $=0$'' and ``div curl $=0$'']
+In forms, $\dd\dd=0$ because mixed partial derivatives commute while $\dd x^j\wedge\dd x^i$ is antisymmetric (Example~\ref{ex:onefunction}). In geometric algebra, $\vd\wedge\vd\wedge A=0$ for the same reason: $\vd\wedge\vd=e^i_\sharp\wedge e^j_\sharp\,\partial_i\partial_j=0$.
+Translated back to vector calculus, the $\dd\dd$ on $0$-forms is $\operatorname{curl}\operatorname{grad}=0$ and on $1$-forms is $\operatorname{div}\operatorname{curl}=0$ (use $\dd\dd=0$ together with the dictionary above). All three are one fact: \emph{the second derivative of a smooth function is symmetric}. The same fact is what fails for covariant derivatives, whose antisymmetrised second derivative is the curvature (Section~\ref{sec:synth3}).
+\end{synthesis}

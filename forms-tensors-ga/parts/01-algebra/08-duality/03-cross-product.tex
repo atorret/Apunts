@@ -1,0 +1,24 @@
+% Section 8.3: The cross product, rotation axes, and complex numbers | Part: 1 | Depends on: sec:ext, sec:ops | Status: done | Original lines: 1597-1618
+%!TEX root = ../../../main.tex
+\subsection{The cross product, rotation axes, and complex numbers}
+
+\begin{proposition}[Cross product]\label{prop:cross}
+In $\GA(\R^3)$ with $\pss=e_1e_2e_3$ (so $\pss^2=-1$, $\pss$ central),
+\[
+ a\times b=\dual{(a\wedge b)}=(a\wedge b)\pss^{-1}=-\pss\,(a\wedge b),\qquad\text{equivalently}\qquad a\wedge b=\pss\,(a\times b).
+\]
+\end{proposition}
+\begin{proof}
+By bilinearity check on the basis: $e_1e_2\pss^{-1}=-e_1e_2e_1e_2e_3=e_3=e_1\times e_2$, and cyclically for $e_2e_3,e_3e_1$.
+\end{proof}
+
+Hence \emph{the cross product is the dual of the wedge}. It exists only in $n=3$ because that is when the dual of a bivector ($n-2$) is a vector ($1$). It is also why $a\times b$ is a ``pseudovector'': it changes sign under an orientation reversal, because the dual depends on $\pss$.
+
+% REWRITTEN: rotor R -> \rotor (docs/NOTATION.md)
+\begin{example}[Rotation about an axis]
+The plane perpendicular to a unit vector $m\in\R^3$, oriented by the right-hand rule, is $B=\pss m$ (e.g.\ $\pss e_3=e_1e_2$). Theorem~\ref{thm:rotor} gives the rotation by $\varphi$ about the axis $m$:
+\[
+ \rotor=\exp\!\bigl(-\tfrac\varphi2\,\pss m\bigr)=\cos\tfrac\varphi2-\pss m\,\sin\tfrac\varphi2,\qquad x\mapsto \rotor x\rev \rotor  .
+\]
+In $2$D, $\pss=e_1e_2$ acts as the imaginary unit and the dual of a vector is that vector turned by a quarter turn.
+\end{example}

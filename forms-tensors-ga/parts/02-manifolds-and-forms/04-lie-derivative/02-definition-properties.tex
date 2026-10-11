@@ -1,0 +1,49 @@
+% Section 13.2: Definition and properties | Part: 2 | Depends on: sec:fields, sec:interior | Status: done | Original lines: 2181-2229
+%!TEX root = ../../../main.tex
+\subsection{Definition and properties}
+% REWRITTEN: pull-back written \phi_\varepsilon\pb instead of \phi_\varepsilon^{*} (docs/NOTATION.md)
+\begin{formal}[{Lie derivative}]
+For $\tau\in\TF{\ell}{k}(M)$ and $X\in\Xfield(M)$ with flow $\phi_\varepsilon$,
+\[
+(\Lie_X\tau)_p=\frac{\dd}{\dd\varepsilon}\Big|_{\varepsilon=0}(\phi_\varepsilon\pb\tau)_p=\lim_{\varepsilon\to0}\frac{(\phi_\varepsilon\pb\tau)_p-\tau_p}{\varepsilon}\ \in\TT{\ell}{k}(T_pM),
+\]
+\ie $(\phi_\varepsilon\pb\tau)_p=\tau_p+\varepsilon(\Lie_X\tau)_p+O(\varepsilon^2)$. Properties:
+\begin{itemize}[nosep]
+\item $\Lie_Xf=X(f)$ for functions.
+\item (Leibniz) $\Lie_X(\tau_1\otimes\tau_2)=\Lie_X\tau_1\otimes\tau_2+\tau_1\otimes\Lie_X\tau_2$; it ``differentiates every slot'': $\Lie_X(\tau(v_1,\dots))=(\Lie_X\tau)(v_1,\dots)+\tau(\Lie_Xv_1,\dots)+\dots$
+\item For vector fields, $\Lie_XY=[X,Y]=X\circ Y-Y\circ X$ (the \emph{Lie bracket}), \ie $[X,Y]f=X(Yf)-Y(Xf)$.
+\item $\Lie_X(\dd f)=\dd(\Lie_Xf)$.
+\item In coordinates $X=X^j\partial_j$:\ $\Lie_X\partial_i=-\partial_iX^j\,\partial_j$,\quad $\Lie_X\dd x^i=\partial_jX^i\,\dd x^j$, and for a metric
+\begin{equation}\label{eq:liemetric}
+(\Lie_Xg)_{ab}=X^k\partial_kg_{ab}+g_{kb}\,\partial_aX^k+g_{ak}\,\partial_bX^k .
+\end{equation}
+\end{itemize}
+\end{formal}
+
+\begin{intuition}[{``how does $\tau$ change when I drag it with the flow, compared with the original?''}]
+You push $\tau$ along the flow of $X$ for a tiny time (like a sheet of rubber being dragged by the water) and compare with what $\tau$ actually is there. $\Lie_X\tau=0$ means $\tau$ is \textbf{invariant} under the flow: it is a symmetry. The bracket $[X,Y]$ measures the failure of the flows of $X$ and $Y$ to commute: go $\varepsilon$ along $X$, then $\varepsilon$ along $Y$, then back along $X$ and $Y$: you end up displaced by $\varepsilon^2[X,Y]$ (a rectangle that does not close).
+\end{intuition}
+
+\begin{pitfall}[{$\Lie_X$ is \emph{not} a connection}]
+$\Lie_{fX}Y=f\,\Lie_XY-Y(f)\,X\neq f\,\Lie_XY$. The Lie derivative needs the flow of $X$ near the point (the derivatives of $X$ appear in it, \eg $\partial_aX^k$ in \eqref{eq:liemetric}), not just the value $X_p$. A covariant derivative, in contrast, is $C^\infty(M)$-linear in $X$.
+\end{pitfall}
+
+\begin{example}[{a Lie bracket}]
+On $\R^2$ take $X=\partial_x$, $Y=x\,\partial_y$. For any $f$: $[X,Y]f=\partial_x(x\,\partial_yf)-x\,\partial_y\partial_xf=\partial_yf$, so $[\partial_x,x\partial_y]=\partial_y\neq0$: moving first in $x$ and then in $y$ is not the same as in the opposite order because the $y$-speed depends on $x$.
+\end{example}
+
+\begin{formal}[{invariant tensors and Killing fields}]
+$\tau$ is \emph{invariant under $X$} if $\Lie_X\tau=0$, equivalently $\phi_t\pb\tau=\tau$ for all $t$. If a metric satisfies $\Lie_Xg=0$, then $X$ is called an \emph{infinitesimal isometry} or \textbf{Killing vector field}; its flow consists of (local) isometries.
+\end{formal}
+
+\begin{example}[{Killing field and conformal Killing field of the plane in polar coordinates}]
+With $g=\mathrm{diag}(1,r^2)$ in polar coordinates and formula \eqref{eq:liemetric}:
+\begin{itemize}[nosep]
+\item $X=\partial_\varphi$ (rotations, $X^r=0$, $X^\varphi=1$): all $\partial_aX^k=0$ and $X^k\partial_kg_{ab}=\partial_\varphi g_{ab}=0$, hence $\Lie_Xg=0$: \textbf{Killing}. (Its flow is the rotation $\phi_\varepsilon(r,\varphi)=(r,\varphi+\varepsilon)$, which clearly preserves lengths.)
+\item $X=r\,\partial_r$ (dilations $\phi_\varepsilon(x)=e^\varepsilon x$): $(\Lie_Xg)_{rr}=r\partial_r(1)+2g_{rr}\partial_rX^r=2$, $(\Lie_Xg)_{\varphi\varphi}=r\partial_r(r^2)=2r^2$, so $\Lie_Xg=2g$: not Killing but \emph{conformal} (lengths are rescaled by $e^{2\varepsilon}$: $\phi_\varepsilon\pb g=e^{2\varepsilon}g$). \checkmark
+\end{itemize}
+\end{example}
+
+\begin{intuition}[{why Killing fields matter in GR}]
+Symmetries of spacetime give conserved quantities: a time-translation Killing field gives energy conservation, a rotation Killing field gives angular momentum (Section~\ref{sec:lc}). In the Schwarzschild solution $\partial_t$ and $\partial_\varphi$ are Killing.
+\end{intuition}

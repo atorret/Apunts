@@ -1,0 +1,34 @@
+% Section 2.1: Multilinear maps | Part: 1 | Depends on: sec:vectors | Status: done | Original lines: 511-545
+%!TEX root = ../../../main.tex
+\subsection{Multilinear maps}\label{sec:multilinear}
+% REWRITTEN: merged the two definitions of a multilinear map (original L513 formal box and L527 definition).
+% The general (vector-valued) definition is the authority; the formal box keeps the scalar-valued case
+% written out slot by slot; the examples are collected in the example below.
+\begin{definition}[Multilinear map]
+Let $V_1,\dots,V_k,U$ be vector spaces. A map $\beta:V_1\times\cdots\times V_k\to U$ is
+\emph{multilinear} if it is linear in each argument when the others are held fixed.
+For $k=2$ we say \emph{bilinear}. If all $V_i=V$ and
+$\beta(\dots,v_i,\dots,v_j,\dots)=-\beta(\dots,v_j,\dots,v_i,\dots)$ for all $i\neq j$,
+$\beta$ is \emph{alternating}; we write $\Alt^k(V;U)$ for the space of such maps.
+\end{definition}
+
+\begin{formal}[{scalar-valued multilinear maps}]
+Most multilinear maps in this document take values in $U=\R$. Written out, $f:V_1\times\dots\times V_k\to\R$ is multilinear if, in each slot,
+\[
+f(v_1,\dots,u+t\tilde u,\dots,v_k)=f(v_1,\dots,u,\dots,v_k)+t\,f(v_1,\dots,\tilde u,\dots,v_k).
+\]
+For $k=1$ this is just a linear form, an element of $V^*$.
+\end{formal}
+
+\begin{intuition}[{linear in every slot = ``a machine with several input slots''}]
+A multilinear map is a machine with $k$ input hoppers. You may feed any vector in each hopper; the output is a number that depends linearly on what is in each hopper \emph{separately}. Multilinear maps are exactly the maps that are completely determined by their values on basis vectors.
+\end{intuition}
+
+\begin{example}
+The determinant $\det:(\K^n)^n\to\K$ (as a function of the $n$ columns) is multilinear and alternating.
+The dot product $\R^n\times\R^n\to\R$ is bilinear (and symmetric).
+\end{example}
+
+The crucial remark is that a bilinear map is \emph{not} a linear map on $V\times W$:
+$\beta(2u,2w)=4\beta(u,w)$, whereas a linear map would give $2\beta(u,w)$. The tensor product
+will fix exactly this defect.

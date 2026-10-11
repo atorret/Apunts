@@ -1,0 +1,44 @@
+% Section 22.4: The metric case: the Riemann tensor with all indices down | Part: 4 | Depends on: sec:conn, sec:lc | Status: done | Original lines: 3232-3268
+%!TEX root = ../../../main.tex
+\subsection{The metric case: the Riemann tensor with all indices down}
+\begin{formal}[{properties for $\nabla^{LC}$}]
+For a metric $g$ with $\nabla=\nabla^{LC}$ define the totally covariant tensor $\mathbb R\in\TF{0}{4}(M)$,
+\[
+\mathbb R(X,Y,Z,W)=g\big(R(X,Y)Z,W\big),\qquad \mathbb R_{ijkl}=g_{lm}R^m{}_{ijk}.
+\]
+Besides the general properties,
+\begin{enumerate}[nosep,label=(\alph*)]
+\item $\mathbb R(X_1,X_2,X_3,X_4)=-\mathbb R(X_1,X_2,X_4,X_3)$ (antisymmetry in the last pair);
+\item $\mathbb R(X_1,X_2,X_3,X_4)=\mathbb R(X_3,X_4,X_1,X_2)$ (pair symmetry);
+\item (\textbf{second Bianchi identity}) \[\nabla_{X_5}\mathbb R(X_1,X_2,X_3,X_4)+\nabla_{X_3}\mathbb R(X_1,X_2,X_4,X_5)+\nabla_{X_4}\mathbb R(X_1,X_2,X_5,X_3)=0.\]
+\end{enumerate}
+(a) and (b) are proved in Identity~\ref{id:riemannsym} of the Glossary; for (c) see \cite{Lee}.% REWRITTEN: glossary pointer
+\end{formal}
+
+\begin{formal}[{how many independent components?}]
+The symmetries and the first Bianchi identity leave $N=\frac1{12}m^2(m^2-1)$ independent components:
+\begin{center}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+$m$ & 1 & 2 & 3 & 4\\ \midrule
+$N$ & 0 & 1 & 6 & 20\\ \bottomrule
+\end{tabular}
+\end{center}
+$m=2$: $N=1$, so $\mathbb R$ is determined by the scalar curvature $s$ (the Gaussian curvature $K=s/2$). $m=3$: $N=6$, and $\mathbb R$ is determined by $\Ric$. $m>3$: $\mathbb R$ contains more information than $\Ric$ and $s$ (the Weyl tensor); in $m=4$, 10 components of Weyl $+$ 10 of Ricci $=20$.
+\end{formal}
+
+% REWRITTEN: pull-back written \pb (docs/NOTATION.md).
+% AUTHOR-NOTE: sign/index order in the normal-coordinate expansion. With R(X,Y)Z=K(g(Y,Z)X-g(X,Z)Y) and
+% \mathbb R_{ijkl}=g(R(\partial_i,\partial_j)\partial_k,\partial_l), the unit sphere gives -\tfrac13\mathbb R_{ikjl}x^kx^l
+% = +\tfrac13(|x|^2\delta_{ij}-x_ix_j), i.e. lengths would grow; the standard expansion has the opposite sign,
+% g_{ij}=\delta_{ij}-\tfrac13\mathbb R_{iklj}x^kx^l (equivalently +\tfrac13\mathbb R_{ikjl}). Formula left as in the original.
+\begin{formal}[{curvature as a local invariant; normal coordinates}]
+If $\varphi:M\to\tilde M$ is a local isometry ($\varphi\pb\tilde g=g$) then $\varphi\pb\tilde{\mathbb R}=\mathbb R$: curvature is a \emph{local invariant} of the metric. Every point $p$ admits \emph{normal coordinates} $(x^i)$ in which
+\[
+g_{ij}(x)=\delta_{ij}-\tfrac13\,\mathbb R_{ikjl}(p)\,x^kx^l+O(|x|^3)
+\]
+(and $\eta_{ij}$ instead of $\delta_{ij}$ in the Lorentzian case); in particular $\Gamma(p)=0$. Conversely $\mathbb R\equiv0$ iff $g$ is locally equivalent to the flat metric.
+\end{formal}
+\begin{intuition}[{the equivalence principle in mathematical form}]
+At any point you can choose coordinates (a freely falling lab) in which the metric looks like Minkowski up to \emph{second-order} corrections, and these corrections are the curvature. You can erase gravity at a point (first-order effects: $\Gamma=0$) but not the tidal effects (second-order: $R$). A small lab sees curvature only through tides.
+\end{intuition}

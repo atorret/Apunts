@@ -1,0 +1,30 @@
+% Section 20.2: Covariant derivative of covectors and general tensors | Part: 4 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2969-2997
+%!TEX root = ../../../main.tex
+\subsection{Covariant derivative of covectors and general tensors}
+\begin{formal}[{extension to all tensors}]
+There is a unique extension of $\nabla_X$ to $\TF{\ell}{k}(M)$ (still of the same type) such that
+\begin{itemize}[nosep]
+\item $\nabla_Xf=X(f)$ for functions;
+\item $\nabla_X(\tau_1\otimes\tau_2)=\nabla_X\tau_1\otimes\tau_2+\tau_1\otimes\nabla_X\tau_2$;
+\item it commutes with contractions, equivalently
+$\nabla_X\big(\tau(v_1,\dots,v_k,\alpha_1,\dots,\alpha_\ell)\big)=(\nabla_X\tau)(\dots)+\sum_i\tau(\dots,\nabla_Xv_i,\dots)+\sum_j\tau(\dots,\nabla_X\alpha_j,\dots)$.
+\end{itemize}
+For a 1-form $(\nabla_X\omega)(Y)=X(\omega(Y))-\omega(\nabla_XY)$. In coordinates (\emph{semicolon / index notation}, with the derivative index first):
+\begin{align*}
+\nabla_iV^k&=\partial_iV^k+\Gamma^k{}_{ij}V^j,\\
+\nabla_i\omega_j&=\partial_i\omega_j-\Gamma^k{}_{ij}\omega_k,\\
+\nabla_r T^{a}{}_{b}&=\partial_rT^a{}_b+\Gamma^a{}_{rs}T^s{}_b-\Gamma^s{}_{rb}T^a{}_s .
+\end{align*}
+Rule of thumb: every upper index gets a $+\Gamma$ term and every lower index a $-\Gamma$ term. The result $\nabla\tau$ is a tensor of type $(\ell,k+1)$ with components $\tau^{\dots}{}_{\dots;r}=\nabla_r\tau^{\dots}{}_{\dots}$ even though $\partial_r\tau$ and $\Gamma$ are not tensors separately: the non-tensorial parts cancel.
+\end{formal}
+\begin{intuition}[{covectors are the ``dual'' behaviour}]
+Since $\omega(Y)$ must obey the ordinary product rule for a scalar, $\nabla$ on covectors \emph{must} compensate the connection acting on vectors; this forces the minus sign.
+\end{intuition}
+
+\begin{example}[{divergence in polar coordinates}]\label{ex:polardivconn}
+For a vector field $V$, $\mathrm{div}\,V:=\nabla_iV^i=\partial_iV^i+\Gamma^i{}_{ij}V^j$. With the polar $\Gamma$: $\Gamma^i{}_{ir}=\Gamma^r{}_{rr}+\Gamma^\varphi{}_{\varphi r}=\frac1r$ and $\Gamma^i{}_{i\varphi}=0$, therefore
+\[
+\mathrm{div}\,V=\partial_rV^r+\partial_\varphi V^\varphi+\frac{V^r}{r}=\frac1r\partial_r(rV^r)+\partial_\varphi V^\varphi ,
+\]
+the familiar formula (with $V^\varphi$ the component on $\partial_\varphi$). No ad-hoc ``scale factors'' were needed: they are all contained in $\Gamma$.
+\end{example}

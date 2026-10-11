@@ -1,0 +1,11 @@
+frontmatter/title.tex
+frontmatter/abstract.tex
+frontmatter/reading-guide.tex
+parts/01-algebra/00-part.tex
+parts/02-manifolds-and-forms/00-part.tex
+parts/03-integration/00-part.tex
+parts/04-connections-curvature/00-part.tex
+parts/05-physics/00-part.tex
+parts/06-complex-analysis/00-part.tex
+parts/07-perspective/00-part.tex
+backmatter/references.tex

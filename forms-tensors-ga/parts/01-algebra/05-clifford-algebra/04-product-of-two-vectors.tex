@@ -1,0 +1,29 @@
+% Section 5.4: The geometric product of two vectors | Part: 1 | Depends on: sec:metric, sec:ext | Status: done | Original lines: 1358-1388
+%!TEX root = ../../../main.tex
+\subsection{The geometric product of two vectors}
+
+\begin{proposition}\label{prop:abdecomp}
+For $a,b\in V$,
+\begin{equation}\label{eq:abdecomp}
+ ab=a\cdot b+a\wedge b,\qquad a\cdot b=\tfrac12(ab+ba),\quad a\wedge b=\tfrac12(ab-ba).
+\end{equation}
+The wedge here coincides with the exterior product under the identification of Corollary~\ref{cor:grades}.
+\end{proposition}
+\begin{proof}
+Write $ab=\tfrac12(ab+ba)+\tfrac12(ab-ba)$. The first term is $a\cdot b$ by Proposition~\ref{prop:fund}; the second is the antisymmetrization of Corollary~\ref{cor:grades} for $k=2$.
+\end{proof}
+
+Every nonzero vector $a$ with $a^2\neq0$ is \emph{invertible}: $a^{-1}=a/a^2$. Consequently equations such as $ax=b$ can be solved by \emph{division}: $x=a^{-1}b$. (Neither the dot product nor the cross product allows this.)
+
+\begin{intuition}
+Decompose $b=b_\parallel+b_\perp$ with $b_\parallel=(a\cdot b)\,a^{-1}$ the part along $a$ and $b_\perp$ the part orthogonal to $a$.
+Then $ab_\parallel=a\cdot b$ is a scalar (a vector times a parallel vector is a pure number: it is the \emph{projection} information) while
+$ab_\perp=a\wedge b$ is a pure bivector (a vector times a perpendicular vector is an oriented area: it is the \emph{rejection} information).
+So the geometric product $ab$ is a single object that remembers \emph{how parallel} and \emph{how perpendicular} two vectors are.
+In the Euclidean case
+\[
+ ab=|a||b|\bigl(\cos\theta+\hat B\sin\theta\bigr),\qquad \hat B=\frac{a\wedge b}{|a\wedge b|},\quad \hat B^2=-1,
+\]
+which is the exact analogue of $e^{i\theta}=\cos\theta+i\sin\theta$ with the imaginary unit replaced by the \emph{plane} spanned by $a,b$.
+In the plane, $i\equiv e_1e_2$ and $i^2=-1$ appear \emph{naturally}, not as an ad-hoc construction, and in any dimension every oriented plane carries its own ``imaginary unit''.
+\end{intuition}

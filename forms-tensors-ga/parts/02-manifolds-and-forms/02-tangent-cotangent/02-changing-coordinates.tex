@@ -1,0 +1,33 @@
+% Section 11.2: Changing coordinates | Part: 2 | Depends on: sec:manifolds, sec:vectors, sec:ext | Status: done | Original lines: 1884-1904
+%!TEX root = ../../../main.tex
+\subsection{Changing coordinates}\label{sec:changecoords}
+If $\tilde x^i=\tilde x^i(x)$ is another coordinate system, the chain rule gives
+\begin{equation}\label{eq:basistransf}
+\frac{\partial}{\partial\tilde x^i}=\frac{\partial x^j}{\partial\tilde x^i}\frac{\partial}{\partial x^j},\qquad
+\dd\tilde x^i=\frac{\partial\tilde x^i}{\partial x^j}\dd x^j,
+\end{equation}
+so the Jacobian matrix plays the role of $A$ from Section~\ref{sec:vs}, with $A^j{}_i=\partial x^j/\partial\tilde x^i$. Components of a tensor field transform with the rule \eqref{eq:tensortransf}, \eg for a vector $\tilde v^i=\frac{\partial\tilde x^i}{\partial x^j}v^j$, for a covector $\tilde f_i=\frac{\partial x^j}{\partial\tilde x^i}f_j$.
+
+\begin{example}[{Polar basis}]\label{ex:polarbasis}
+On $\R^2$ with $x=r\cos\varphi$, $y=r\sin\varphi$:
+\begin{align*}
+\partial_r&=\frac{\partial x}{\partial r}\partial_x+\frac{\partial y}{\partial r}\partial_y=\cos\varphi\,\partial_x+\sin\varphi\,\partial_y,\\
+\partial_\varphi&=-r\sin\varphi\,\partial_x+r\cos\varphi\,\partial_y,\\
+\dd x&=\cos\varphi\,\dd r-r\sin\varphi\,\dd\varphi,\qquad \dd y=\sin\varphi\,\dd r+r\cos\varphi\,\dd\varphi .
+\end{align*}
+$\partial_r$ is the unit radial vector, whereas $\partial_\varphi$ has Euclidean length $r$. For the curve $\gamma(t)=(\cos t,\sin t)$, i.e. $r=1,\varphi=t$, the velocity is $\dot\gamma=\partial_\varphi$, which is $-\sin t\,\partial_x+\cos t\,\partial_y$. \checkmark
+\end{example}
+
+% REORDERED (F3): moved from Section sec:wedgeprops (original L1024-1034), where dx, dy in polar coordinates were
+% not yet available. Polar angle renamed theta -> varphi (docs/NOTATION.md); forward clause to ex:paraboloid dropped
+% (ex:paraboloid refers back here).
+\begin{example}[Polar coordinates: the factor $r$ is a determinant]\label{ex:polarwedge}
+From $x=r\cos\varphi$, $y=r\sin\varphi$: $\dd x=\cos\varphi\,\dd r-r\sin\varphi\,\dd\varphi$ and
+$\dd y=\sin\varphi\,\dd r+r\cos\varphi\,\dd\varphi$ (Example~\ref{ex:polarbasis}). Using $\dd r\wedge\dd r=\dd\varphi\wedge\dd\varphi=0$ and
+$\dd\varphi\wedge\dd r=-\dd r\wedge\dd\varphi$:
+\begin{align*}
+\dd x\wedge\dd y&=\cos\varphi\,(r\cos\varphi)\,\dd r\wedge\dd\varphi+(-r\sin\varphi)(\sin\varphi)\,\dd\varphi\wedge\dd r\\
+&=r\cos^2\varphi\,\dd r\wedge\dd\varphi+r\sin^2\varphi\,\dd r\wedge\dd\varphi=r\,\dd r\wedge\dd\varphi .
+\end{align*}
+This is property (d) of Proposition~\ref{prop:wedgeprops} with $A=\begin{pmatrix}\cos\varphi&-r\sin\varphi\\ \sin\varphi&r\cos\varphi\end{pmatrix}$, $\det A=r$.
+\end{example}

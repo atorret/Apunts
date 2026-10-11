@@ -1,0 +1,18 @@
+% Section 15.3: Maxwell's equations in three languages | Part: 2 | Depends on: sec:fields, sec:lie, sec:ga-calculus | Status: done | Original lines: 2423-2439
+%!TEX root = ../../../main.tex
+\subsection{Maxwell's equations in three languages}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{3.5cm}p{5.0cm}p{5.6cm}@{}}
+\toprule
+\textbf{Language} & \textbf{Equations} & \textbf{Needs a metric?}\\
+\midrule
+Vector calculus & $\operatorname{curl}E=-\partial_tB$, $\operatorname{div}B=0$, $\operatorname{div}D=\rho$, $\operatorname{curl}H=j+\partial_tD$ & curl and div do\\
+Forms (Section~\ref{sec:phys-em}) & $\dd F=0$, $\ \dd\hodge F=J$ & only $\hodge$ (and only its conformal class)\\
+Geometric algebra (spacetime algebra) & $\vd F=J$ with $F=E+\pss B$ & the geometric product does; both equations are one\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first form equation $\dd F=0$ (the homogeneous equations) is metric-free and is the ``wedge half'' $\vd\wedge F=0$; the second ($\dd\hodge F=J$) is the ``contraction half'' $\vd\lc F=J$, equivalent by duality (Section~\ref{sec:duality}). The sign conventions differ with the signature convention (Section~\ref{sec:conventions}).

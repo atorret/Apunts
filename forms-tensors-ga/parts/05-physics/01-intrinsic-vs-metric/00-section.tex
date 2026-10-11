@@ -1,0 +1,31 @@
+% Section 25: Intrinsic quantities and metric-dependent quantities in physics | Part: 5 | Depends on: part:manifolds, part:integration, sec:lc | Status: done | Original lines: 3437-3455
+%!TEX root = ../../../main.tex
+% =====================================================================
+\section{Intrinsic quantities and metric-dependent quantities in physics}\label{sec:phys}
+% =====================================================================
+
+Physics texts write $\mathbf F\cdot\dd\mathbf r$, $\frac12m\,\mathbf v\cdot\mathbf v$, $\nabla V$, $\mathbf E\cdot\mathbf n\,\dd A$, with a dot product always in sight. This gives the impression that the scalar product is the
+basic operation of mechanics and electromagnetism and, therefore, that every quantity depends on the metric. This section checks that impression quantity by quantity. It turns out that the dot product is usually a \emph{calculation device}, and that
+the metric, when it really is needed, is a \emph{physical object} (inertia, the vacuum, the observer) and not a convention.
+
+\begin{keyidea}[Rule of thumb]
+Ask how a quantity is \emph{measured}.
+\begin{itemize}
+\item ``How much per unit displacement along a path'' (work, circulation, e.m.f.) $\Rightarrow$ a \textbf{$1$-form}.
+\item ``How much crosses a surface'' (flux, current) $\Rightarrow$ a \textbf{$2$-form} (an $(n{-}1)$-form).
+\item ``How much is contained in a volume'' (mass, charge) $\Rightarrow$ an \textbf{$n$-form}.
+\item Something that moves or is displaced (velocity, displacement) $\Rightarrow$ a \textbf{vector}.
+\end{itemize}
+A metric is needed only to convert one kind of object into another. A quick test: relabel the points by $x'=\lambda x$. Components of vectors (velocity $\dot x$) are multiplied by $\lambda$, components of covectors ($\partial V/\partial x$, $F_x$) by $1/\lambda$, and the contraction $\omega(v)$ does not change.
+\end{keyidea}
+\input{parts/05-physics/01-intrinsic-vs-metric/01-work-and-energy}
+\input{parts/05-physics/01-intrinsic-vs-metric/02-energy-as-contraction}
+% REORDERED (F8): moved here from Synthesis III, since it builds on sec:phys-energy.
+\input{parts/05-physics/01-intrinsic-vs-metric/03-noether-synthesis}
+\input{parts/05-physics/01-intrinsic-vs-metric/04-hamiltonian-mechanics}
+\input{parts/05-physics/01-intrinsic-vs-metric/05-thermodynamics}
+\input{parts/05-physics/01-intrinsic-vs-metric/06-electromagnetism}
+\input{parts/05-physics/01-intrinsic-vs-metric/07-fluids}
+\input{parts/05-physics/01-intrinsic-vs-metric/08-pseudovectors}
+\input{parts/05-physics/01-intrinsic-vs-metric/09-sources-of-confusion}
+\input{parts/05-physics/01-intrinsic-vs-metric/10-dictionary}

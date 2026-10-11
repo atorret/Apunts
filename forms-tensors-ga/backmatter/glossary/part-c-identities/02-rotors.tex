@@ -1,0 +1,44 @@
+% Section: Glossary C.2: reflections and rotors | Part: backmatter | Depends on: sec:rotors | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../../../main.tex
+\subsubsection*{Reflections and rotors}
+
+\begin{identity}[reflection; Theorem~\ref{thm:refl}]\label{id:refl}
+For an invertible vector $n$ ($n^2\neq0$, so $n^{-1}=n/n^2$), $x\mapsto-nxn^{-1}$ fixes the hyperplane $n^\perp$ pointwise and
+sends $n$ to $-n$: it is the reflection across $n^\perp$.
+\end{identity}
+\begin{proof}
+\Step{1}{split $x$} $x=x_\parallel+x_\perp$ with $x_\parallel=(x\cdot n)\,n^{-1}$ and $x_\perp=x-x_\parallel$, so $x_\perp\cdot n=0$.
+\Step{2}{commutation rules} $x_\parallel$ is a multiple of $n$, so $nx_\parallel=x_\parallel n$; and $nx_\perp=-x_\perp n$ by Identity~\ref{id:fund}.
+\Step{3}{conclude} $-nxn^{-1}=-x_\parallel nn^{-1}+x_\perp nn^{-1}=-x_\parallel+x_\perp$.
+\end{proof}
+
+\begin{identity}[a rotor rotates; Theorem~\ref{thm:rotor}]\label{id:rotor}
+Let $B=e_1e_2$ for orthonormal $e_1,e_2$ in a Euclidean space (so $B^2=-1$) and $\rotor=e^{-\varphi B/2}=\cos\frac\varphi2-B\sin\frac\varphi2$.
+Then $x\mapsto\rotor x\rev\rotor$ rotates the plane of $B$ by $\varphi$ (from $e_1$ towards $e_2$) and fixes its orthogonal complement.
+\end{identity}
+\begin{proof}
+\Step{1}{the exponential} Since $B^2=-1$, the power series of $e^{\theta B}$ splits into even and odd powers: $e^{\theta B}=\cos\theta+B\sin\theta$.
+Also $\rev B=e_2e_1=-B$, so $\rev\rotor=e^{\varphi B/2}$ and $\rotor\rev\rotor=1$.
+\Step{2}{vectors in the plane anticommute with $B$} $e_1B=e_1e_1e_2=-e_1e_2e_1=-Be_1$, and similarly for $e_2$. Hence for $x_\parallel$ in the
+plane $x_\parallel B^m=(-B)^mx_\parallel$ for every $m$, and $\rotor x_\parallel=x_\parallel e^{\varphi B/2}$.
+So $\rotor x_\parallel\rev\rotor=x_\parallel e^{\varphi B}=x_\parallel(\cos\varphi+B\sin\varphi)$.
+\Step{3}{evaluate} $e_1(\cos\varphi+e_1e_2\sin\varphi)=\cos\varphi\,e_1+\sin\varphi\,e_2$ and
+$e_2(\cos\varphi+e_1e_2\sin\varphi)=\cos\varphi\,e_2-\sin\varphi\,e_1$: the rotation by $\varphi$.
+\Step{4}{the orthogonal complement} A vector $x_\perp$ orthogonal to $e_1,e_2$ anticommutes with both, hence commutes with $B$ and with $\rotor$:
+$\rotor x_\perp\rev\rotor=x_\perp\rotor\rev\rotor=x_\perp$.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: the text states "a rotation is two reflections" (intuition after thm:rotor) without proof.
+\begin{identity}[two reflections make a rotation by twice the angle]\label{id:tworefl}
+Let $a,b$ be unit vectors of a Euclidean space, not parallel, with $a\cdot b=\cos\theta$, $0<\theta<\pi$, and let $B$ be the unit
+bivector with $a\wedge b=B\sin\theta$. The reflection across $a^\perp$ followed by the reflection across $b^\perp$ is
+$x\mapsto(ba)\,x\,(ba)^{-1}$, the rotation by $2\theta$ in the plane of $B$.
+\end{identity}
+\begin{proof}
+\Step{1}{compose} By Identity~\ref{id:refl}, $x\mapsto-b(-axa^{-1})b^{-1}=(ba)x(a^{-1}b^{-1})=(ba)x(ba)^{-1}$.
+\Step{2}{the product of the mirrors} By Identity~\ref{id:abdecomp}, $ba=b\cdot a+b\wedge a=\cos\theta-B\sin\theta=e^{-\theta B}$
+(Step~1 of Identity~\ref{id:rotor}; $B^2=-1$ because $B$ is a unit Euclidean bivector).
+\Step{3}{recognise the rotor} $a^2=b^2=1$ gives $(ba)^{-1}=ab=\rev{(ba)}$, so the map is $x\mapsto\rotor x\rev\rotor$ with
+$\rotor=e^{-\theta B}=e^{-(2\theta)B/2}$. Choosing $e_1=a$ and $e_2$ in the plane with $B=e_1e_2$, Identity~\ref{id:rotor} gives the
+rotation by $2\theta$.
+\end{proof}

@@ -1,0 +1,32 @@
+% Section 18.3: The proof of Theorem~\ref{thm:stokes}, step by step | Part: 3 | Depends on: sec:intk, sec:fields | Status: done | Original lines: 2705-2754
+%!TEX root = ../../../main.tex
+\subsection{The proof of Theorem~\ref{thm:stokes}, step by step}\label{sec:stokesproof}
+
+\Step{0}{reduction to a chart} Take a partition of unity $\{\rho_\alpha\}$ subordinate to a cover by oriented charts and write $\omega=\sum_\alpha\rho_\alpha\omega$. Both sides of \eqref{eq:stokes} are linear in $\omega$ and invariant under orientation-preserving diffeomorphisms (naturality \eqref{eq:natural}, extended to $k$-forms), so it suffices to prove it for forms supported in one chart, \ie on $\R^n$ or on the half-space $\mathbb H^n=\{x^n\ge0\}$. For $\R^n$ there is no boundary and the claim is $\int\dd\omega=0$. This follows from the computation below, where now every term $i=1,\dots,n$ vanishes: each integral $\int_{-\infty}^\infty\partial_i\omega_i\,\dd x^i$ is zero because $\omega_i$ has compact support.
+
+\Step{1}{write $\omega$} Any $(n-1)$-form on $\mathbb H^n$ is $\omega=\sum_{i=1}^n\omega_i\,\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n$ (the hat means ``omit''), with $\omega_i$ smooth of compact support.
+
+\Step{2}{compute $\dd\omega$}
+\[
+\dd\Bigl(\omega_i\,\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n\Bigr)=\sum_j\partial_j\omega_i\,\dd x^j\wedge\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots\wedge\dd x^n .
+\]
+If $j\ne i$ the factor $\dd x^j$ already appears in the product, so the term vanishes ($\dd x^j\wedge\dd x^j=0$). For $j=i$, moving $\dd x^i$ past the $i-1$ factors $\dd x^1,\dots,\dd x^{i-1}$ gives the sign $(-1)^{i-1}$. Hence $\dd\omega=\sum_i(-1)^{i-1}\partial_i\omega_i\,\dd x^1\wedge\cdots\wedge\dd x^n$.
+
+\Step{3}{integrate over $\mathbb H^n$; Fubini and the fundamental theorem of calculus}
+\begin{itemize}
+\item For $i<n$, integrate first in $x^i\in\R$: $\int_{-\infty}^{\infty}\partial_i\omega_i\,\dd x^i=\omega_i\big|_{-\infty}^{+\infty}=0$ because $\omega_i$ has compact support. These terms contribute $0$.
+\item For $i=n$, integrate in $x^n\in[0,\infty)$: $\int_0^\infty\partial_n\omega_n\,\dd x^n=0-\omega_n(x',0)=-\omega_n(x',0)$, where $x'=(x^1,\dots,x^{n-1})$.
+\end{itemize}
+Therefore, with the sign $(-1)^{n-1}$ of the $i=n$ term, $\int_{\mathbb H^n}\dd\omega=(-1)^{n-1}\cdot(-1)\int_{\R^{n-1}}\omega_n(x',0)\,\dd x'=(-1)^n\int_{\R^{n-1}}\omega_n(x',0)\,\dd x'$.
+
+\Step{4}{the boundary side} On $\partial\mathbb H^n=\{x^n=0\}$ we have $\dd x^n\mapsto0$ under pull-back, so every term of $\omega$ containing $\dd x^n$ (all $i\neq n$) vanishes, and $j\pb\omega=\omega_n(x',0)\,\dd x^1\wedge\cdots\wedge\dd x^{n-1}$.
+
+\Step{5}{orientation of $\partial\mathbb H^n$} The outward normal is $-\partial_n$. A basis $(w_1,\dots,w_{n-1})$ of $T\partial\mathbb H^n$ is positive iff $(-\partial_n,w_1,\dots,w_{n-1})$ is positive in $\R^n$. For the standard basis $w_j=\partial_j$ we get
+$\det(-e_n,e_1,\dots,e_{n-1})=-\det(e_n,e_1,\dots,e_{n-1})=-(-1)^{n-1}=(-1)^n$, because moving $e_n$ from the first to the last position is a cyclic permutation of $n$ vectors, of sign $(-1)^{n-1}$. So the induced orientation on $\partial\mathbb H^n\cong\R^{n-1}$ is $(-1)^n$ times the standard one, and $\int_{\partial\mathbb H^n}j\pb\omega=(-1)^n\int_{\R^{n-1}}\omega_n(x',0)\,\dd x'$, which equals the result of Step 3. \hfill$\blacksquare$
+
+\begin{specialcase}[sanity checks of the sign: $n=1$ and $n=2$]
+$n=1$: $\mathbb H^1=[0,\infty)$, the boundary is the point $0$ with sign $(-1)^1=-1$, and indeed $\int_0^\infty f'\,\dd x=-f(0)$.
+$n=2$: the sign is $+1$, the upper half-plane is traversed in the $+x$ direction (region on the left), consistent with the counter-clockwise convention of Green's theorem.
+\end{specialcase}
+
+\input{figures/part3/tikz-annulus}

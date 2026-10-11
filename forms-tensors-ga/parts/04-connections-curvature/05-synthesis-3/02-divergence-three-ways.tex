@@ -1,0 +1,30 @@
+% Section 24.2: Divergence three ways | Part: 4 | Depends on: sec:lie, sec:lc, sec:curv, sec:gauss | Status: done | Original lines: 3363-3390
+%!TEX root = ../../../main.tex
+\subsection{Divergence three ways}\label{sec:divthree}
+
+Divergence has appeared in four guises:
+\begin{center}
+\small
+\begin{tabular}{@{}p{4.1cm}p{5.4cm}p{4.6cm}@{}}
+\toprule
+\textbf{Definition} & \textbf{Formula} & \textbf{Needs}\\
+\midrule
+rate of change of volume & $\Lie_X\mu=(\operatorname{div}_\mu X)\mu$, $\ \dd(\iota_X\mu)=\operatorname{div}_\mu X\,\mu$ & a volume form $\mu$\\
+coordinates & $\frac1{\sqrt{|g|}}\partial_i(\sqrt{|g|}X^i)$ & chart, $g$\\
+trace of the covariant derivative & $\nabla_iX^i=\partial_iX^i+\Gamma^i_{ij}X^j$ & Levi-Civita connection\\
+geometric algebra & $\vd\lc X=\vd\cdot X$ & $Q$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proposition}\label{prop:divagree}
+For the Levi-Civita connection, $\Gamma^i_{ij}=\partial_j\ln\sqrt{|g|}$, hence $\nabla_iX^i=\dfrac1{\sqrt{|g|}}\,\partial_i\bigl(\sqrt{|g|}\,X^i\bigr)=\operatorname{div}_{\vol_g}X$.
+\end{proposition}
+\begin{proof}
+From the formula \eqref{eq:christmetric}, $\Gamma^i_{ij}=\frac12g^{il}(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij})$. The first and third terms cancel (rename $i\leftrightarrow l$ in the third and use the symmetry of $g$), leaving $\frac12g^{il}\partial_jg_{il}=\partial_j\ln\sqrt{|g|}$ by Jacobi's formula $\partial_j\ln|\det g|=g^{il}\partial_jg_{il}$. Then $\nabla_iX^i=\partial_iX^i+X^j\partial_j\ln\sqrt{|g|}=\frac1{\sqrt{|g|}}\partial_i(\sqrt{|g|}X^i)$.
+\end{proof}
+
+\begin{example}[Polar coordinates: the extra term is $\Gamma$]\label{ex:polardiv}
+% REWRITTEN: the trace computation is the one of Example ex:polardivconn (Section sec:conn); polar angle written \varphi.
+With $g=\mathrm{diag}(1,r^2)$, $\sqrt{|g|}=r$ and $\Gamma^i_{ir}=\Gamma^\varphi_{\varphi r}=1/r$, Example~\ref{ex:polardivconn} gave $\nabla_iV^i=\frac1r\partial_r(rV^r)+\partial_\varphi V^\varphi$: the naive $\partial_iV^i$ misses the term $V^r/r$, and the volume-form definition $\frac1{\sqrt g}\partial_i(\sqrt gV^i)$ produces it automatically. For the position field $V=r\partial_r$: $\operatorname{div}V=\frac1r\partial_r(r^2)=2$, the dimension of the plane, as in Example~\ref{ex:ball} (where the answer in $\R^3$ is $3$).
+\end{example}

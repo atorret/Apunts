@@ -1,0 +1,39 @@
+% Section 19.4: Classical corollaries | Part: 3 | Depends on: sec:stokes, sec:interior, sec:metric | Status: done | Original lines: 2769-2819
+%!TEX root = ../../../main.tex
+\subsection{Classical corollaries}\label{sec:classical}
+
+Let $\R^3$ carry its Euclidean metric $g$, orientation and volume form $\vol=\dd x\wedge\dd y\wedge\dd z$. With the musical isomorphisms $\flat,\sharp$ and the Hodge star $\hodge$ one has the dictionary (the one of Section~\ref{sec:synth2}, written with $\hodge$)
+\[
+\operatorname{grad}f=(\dd f)^\sharp,\qquad
+\operatorname{curl}F=\bigl(\hodge\,\dd F^\flat\bigr)^\sharp,\qquad
+\operatorname{div}F=\hodge\,\dd\hodge F^\flat,\qquad
+\iota_F\vol=\hodge F^\flat .
+\]
+Applying Theorem~\ref{thm:stokes} to forms of degree $0,1,2$ yields:
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}p{2.5cm}p{4.5cm}p{7.0cm}@{}}
+\toprule
+\textbf{Form of Stokes} & \textbf{Differential forms} & \textbf{Classical statement}\\
+\midrule
+$n=1$ & $\int_a^b\dd f=f(b)-f(a)$ & fundamental theorem of calculus / gradient theorem\\
+$n=2$ (planar $D$) & $\int_D\dd\omega=\oint_{\partial D}\omega$ & Green: $\oint P\,\dd x+Q\,\dd y=\iint(Q_x-P_y)\,\dd A$\\
+$n=2$ (surface $S\subset\R^3$) & $\int_S\dd F^\flat=\oint_{\partial S}F^\flat$ & Kelvin--Stokes: $\oint F\cdot\dd r=\iint(\operatorname{curl}F)\cdot n\,\dd A$\\
+$n=3$ & $\int_\Omega\dd(\iota_F\vol)=\int_{\partial\Omega}\iota_F\vol$ & Gauss: $\iiint\operatorname{div}F\,\dd V=\iint_{\partial\Omega}F\cdot n\,\dd A$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subhead{Verification of the dictionary, step by step}
+% REORDERED (F5): steps (i) curl and (ii) divergence moved to Section sec:dform; only the integral statements remain here.
+\emph{(i) Curl} and \emph{(ii) divergence} were verified in Section~\ref{sec:dform}: $\dd F^\flat=\iota_{\operatorname{curl}F}\vol$ and
+$\dd(\iota_F\vol)=(\operatorname{div}F)\,\vol$.
+
+% REWRITTEN (F6): "Lemma lem:fluxbdry below" -> backward reference (this subsection now follows Section sec:gauss).
+\emph{(iii) Kelvin--Stokes.} For an oriented surface $S\subset\R^3$ with unit normal $n$ the restriction satisfies $\iota_G\vol|_S=\langle G,n\rangle\,\dd A$ (same computation as in Lemma~\ref{lem:fluxbdry}, with $e_1=n$ and $e_2,e_3$ tangent to $S$). Then
+\[
+\oint_{\partial S}F\cdot\dd r=\oint_{\partial S}F^\flat\overset{\text{Stokes}}=\int_S\dd F^\flat=\int_S\iota_{\operatorname{curl}F}\vol=\iint_S\langle\operatorname{curl}F,n\rangle\,\dd A .
+\]
+\emph{(iv) Gauss.} $\displaystyle\int_\Omega(\operatorname{div}F)\,\dd V\overset{\text{(ii)}}=\int_\Omega\dd(\iota_F\vol)\overset{\text{Stokes}}=\int_{\partial\Omega}\iota_F\vol=\iint_{\partial\Omega}\langle F,n\rangle\,\dd A$, again by the restriction formula.

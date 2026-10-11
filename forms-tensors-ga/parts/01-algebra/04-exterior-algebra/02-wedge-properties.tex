@@ -1,0 +1,56 @@
+% Section 4.2: Properties of the wedge product | Part: 1 | Depends on: sec:tensors, sec:metric | Status: done | Original lines: 984-1041
+%!TEX root = ../../../main.tex
+\subsection{Properties of the wedge product}\label{sec:wedgeprops}
+
+% REWRITTEN (F1): items (a)-(d) unchanged. The former item (e) (pull-back of a wedge) is now stated and proved
+% in Section sec:pushpull, where the pull-back is defined; the antiderivation rule for iota_v (eq:antider) is
+% stated and proved in Section sec:interior. The Leibniz rule for d (eq:dleibniz) stays here as a preview.
+\begin{proposition}\label{prop:wedgeprops}
+Let $\alpha\in\bigwedge^k$, $\beta\in\bigwedge^l$, $\gamma\in\bigwedge^m$ and $f$ a function (a $0$-form).
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Bilinear and associative:} $(\alpha\wedge\beta)\wedge\gamma=\alpha\wedge(\beta\wedge\gamma)$, and $f\wedge\alpha=f\alpha$ (the wedge with a $0$-form is ordinary multiplication).
+\item \emph{Graded commutative:} $\alpha\wedge\beta=(-1)^{kl}\beta\wedge\alpha$. In particular $\alpha\wedge\alpha=0$ if $k$ is odd (\eg $\dd x\wedge\dd x=0$), and even-degree forms commute with everything.
+\item \emph{Non-vanishing criterion:} for $1$-forms, $\alpha^1\wedge\cdots\wedge\alpha^k\neq0$ if and only if $\alpha^1,\dots,\alpha^k$ are linearly independent.
+\item \emph{Change of basis $=$ determinant:} if $\beta^i=A^i{}_j\alpha^j$ ($i,j=1,\dots,n$), then $\beta^1\wedge\cdots\wedge\beta^n=\det(A)\,\alpha^1\wedge\cdots\wedge\alpha^n$.
+\end{enumerate}
+\end{proposition}
+% REWRITTEN: pointer to the full proof of (a) added in the Glossary.
+(A complete proof of (a), by counting permutations in \eqref{eq:wedge}, is Identity~\ref{id:assoc} in the Glossary.)
+
+\emph{Two further rules (previews).} The wedge product is also compatible with the operations on forms introduced later:
+it is natural under pull-back, $\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta$ (Section~\ref{sec:pushpull}); the interior
+product $\iota_v$ is an antiderivation, \eqref{eq:antider} (Section~\ref{sec:interior}); and so is the exterior derivative of
+Definition~\ref{def:d},
+\begin{equation}\label{eq:dleibniz}
+\dd(\alpha\wedge\beta)=\dd\alpha\wedge\beta+(-1)^k\alpha\wedge\dd\beta,\qquad \dd\dd=0,
+\end{equation}
+which is the Leibniz rule for $\dd$ (\eg $\dd(f\alpha)=\dd f\wedge\alpha+f\,\dd\alpha$), together with $\dd\dd=0$ proved in
+Section~\ref{sec:dform}.
+
+\begin{proof}[Proofs, step by step]
+\emph{(b) Graded commutativity.} \Step{1}{$k=l=1$} immediate from \eqref{eq:wedge11}:
+$(\beta\wedge\alpha)(v,w)=\beta(v)\alpha(w)-\beta(w)\alpha(v)=-(\alpha\wedge\beta)(v,w)$.
+\Step{2}{general case} write $(\beta\wedge\alpha)(v_1,\dots,v_{k+l})$ with \eqref{eq:wedge}; the $\beta$-factor eats the first $l$
+arguments of $\sigma$ and the $\alpha$-factor the last $k$. Re-label the sum by composing $\sigma$ with the permutation $\tau$ that
+moves the last $k$ slots in front of the first $l$ slots; then the factors appear in the order of $\alpha\wedge\beta$, and
+$\sgn(\sigma\tau)=\sgn(\sigma)\sgn(\tau)$. \Step{3}{sign} $\tau$ is a product of $kl$ transpositions (each of the $k$ slots jumps
+over each of the $l$ slots), so $\sgn\tau=(-1)^{kl}$.
+
+\emph{(c) Criterion.} If the $\alpha^i$ are independent, the map $A(v)=(\alpha^i(v))$ is onto $\R^k$, so there exist $v_j$ with
+$\alpha^i(v_j)=\delta^i_j$ and \eqref{eq:detformula} gives $1\neq0$. If they are dependent, the rows of $[\alpha^i(v_j)]$ are dependent
+for every choice of $v_j$, and the determinant is $0$.
+
+\emph{(d) Determinant.} By \eqref{eq:detformula}, $(\beta^1\wedge\cdots\wedge\beta^n)(v_1,\dots,v_n)=\det[\beta^i(v_j)]=\det\bigl(A[\alpha^i(v_j)]\bigr)=\det A\cdot\det[\alpha^i(v_j)]$.
+
+\emph{(a)} follows from \eqref{eq:wedge} by a count of permutations (see also the tensor description in
+Section~\ref{sec:wedgetensor}).
+\end{proof}
+
+% REORDERED (F3): Example ex:polarwedge (polar coordinates, original L1024-1034) moved to Section sec:changecoords,
+% where dx, dy in polar coordinates are derived. Example ex:wedge2 remains the Part I illustration of (d).
+
+\begin{example}[Wedge of two $1$-forms]\label{ex:wedge2}
+Let $\alpha=2\,\dd x+\dd y$ and $\beta=\dd x-3\,\dd y$. Then $\alpha\wedge\beta=2\cdot(-3)\,\dd x\wedge\dd y+1\cdot1\,\dd y\wedge\dd x
+=(-6-1)\,\dd x\wedge\dd y$, which is $\det\begin{pmatrix}2&1\\1&-3\end{pmatrix}=-7$ times $\dd x\wedge\dd y$, as in (d). Check with
+\eqref{eq:wedge11} on $(e_1,e_2)$: $\alpha(e_1)\beta(e_2)-\alpha(e_2)\beta(e_1)=2\cdot(-3)-1\cdot1=-7$.
+\end{example}

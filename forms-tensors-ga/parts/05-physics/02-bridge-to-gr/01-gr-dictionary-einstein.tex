@@ -1,0 +1,40 @@
+% Section 26.1: 01-gr-dictionary-einstein | Part: 5 | Depends on: sec:phys, part:geometry | Status: done | Original lines: 3671-3710
+%!TEX root = ../../../main.tex
+
+\begin{center}
+\begin{tabular}{@{}p{4.1cm}p{5.1cm}p{5.2cm}@{}}
+\toprule
+\textbf{Mathematics} & \textbf{Physics} & \textbf{Where in this text}\\ \midrule
+4-manifold $M$ & set of all events (spacetime) & Sec.~\ref{sec:manifolds}\\
+Lorentzian metric $g_{\mu\nu}$, $\sig=(3,1)$ & gravitational field; proper time $\dd\tau^2=-g_{\mu\nu}\dd x^\mu\dd x^\nu$; light cones & Sec.~\ref{sec:metric},~\ref{sec:fields}\\
+Timelike / null geodesic of $\nabla^{LC}$ & free fall of a massive particle / light ray & Sec.~\ref{sec:lc}\\
+Killing vector field $\xi$ & symmetry $\Rightarrow$ conserved energy, momentum, angular momentum & Sec.~\ref{sec:lie},~\ref{sec:lc}\\
+Christoffel symbols $\Gamma^\mu{}_{\nu\rho}$ & ``gravitational force'' seen by coordinates (can be removed locally) & Sec.~\ref{sec:conn}\\
+Normal coordinates & local inertial frame (equivalence principle) & Sec.~\ref{sec:curv}\\
+Riemann tensor $R^\mu{}_{\nu\rho\sigma}$ & tidal forces; $\ddot\xi=R(\dot\gamma,\xi)\dot\gamma$ & Sec.~\ref{sec:deviation}\\
+Ricci tensor, scalar curvature & curvature produced by matter (Einstein equations) & Sec.~\ref{sec:curv}\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{formal}[{Einstein's equations (preview, see \cite{Carroll,MTW})}]
+Define the \emph{Einstein tensor} $G_{\mu\nu}=\Ric_{\mu\nu}-\tfrac12\,s\,g_{\mu\nu}$. The \emph{contracted second Bianchi identity} says $\nabla^\mu G_{\mu\nu}=0$ identically. Einstein's field equations (units $c=1$) are
+\[
+G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G\,T_{\mu\nu},
+\]
+where $T_{\mu\nu}$ is the symmetric stress-energy tensor of matter, which satisfies $\nabla^\mu T_{\mu\nu}=0$ (local energy-momentum conservation); the identity above guarantees compatibility. In vacuum with $\Lambda=0$: taking the trace in 4 dimensions gives $s-2s=0\Rightarrow s=0$, hence $\Ric_{\mu\nu}=0$. The Schwarzschild metric
+\[
+\begin{aligned}\dd s^2={}&-\Big(1-\tfrac{2GM}{r}\Big)\dd t^2+\Big(1-\tfrac{2GM}{r}\Big)^{-1}\dd r^2\\&+r^2(\dd\theta^2+\sin^2\theta\,\dd\varphi^2)\end{aligned}
+% REWRITTEN: sphere azimuth written \varphi (docs/NOTATION.md).
+\]
+is such a Ricci-flat (but \emph{not} Riemann-flat) solution.
+\end{formal}
+\begin{intuition}[{the whole theory in one slogan}]
+\emph{Matter tells spacetime how to curve (Einstein equations: $G\sim T$); spacetime tells matter how to move (geodesic equation).} Everything you have just learned is the vocabulary needed to write and understand this sentence. The remaining chapters of the course (special relativity review, principles of GR, Einstein equations and their consequences) use exactly these objects.
+\end{intuition}
+
+
+\begin{synthesis}[energy, momentum and Killing fields on one page]
+% REWRITTEN (F8): the first sentence is shortened to a pointer; the full comparison is the keyidea of Section sec:noethersynth.
+The Killing-field row of the table is the ``one conservation law, three names'' of Section~\ref{sec:noethersynth}: for $\xi=\partial_t$, $E=-p(\xi)$ is the observer energy $-p(u)$ of Section~\ref{sec:phys-energy}, the Killing field being the observer who measures the conserved energy.
+The signature convention is the mostly-plus one of Section~\ref{sec:metric}. The equation $G_{\mu\nu}=8\pi T_{\mu\nu}$ is, like the equation $\dd\hodge F=J$ of electromagnetism, an equation in which a metric-dependent operator ($\hodge$, resp.\ the Einstein tensor built from $R$) is equated to a source built from matter fields.
+\end{synthesis}

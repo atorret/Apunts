@@ -1,0 +1,18 @@
+build/
+*.aux
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+__pycache__/
+# legacy PDF is a build product too, but kept as the reference
+!legacy/original.pdf
+legacy/*.aux
+legacy/*.log
+legacy/*.toc
+legacy/*.out

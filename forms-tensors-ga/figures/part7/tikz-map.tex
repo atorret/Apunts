@@ -1,0 +1,30 @@
+% Figure | used in parts/07-perspective/02-master-summary/01-one-picture.tex
+%!TEX root = ../../main.tex
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,node distance=0.9cm and 1.3cm,
+   box/.style={draw=navy,fill=kiback,rounded corners=2pt,align=center,inner sep=4pt,font=\small,minimum width=3.3cm},
+   syn/.style={draw=synthfr,fill=synthbg,rounded corners=2pt,align=center,inner sep=4pt,font=\small,minimum width=3.3cm}]
+  \node[box] (vv) {$V,\ V^*$\\ contraction};
+  \node[box,right=of vv] (tt) {$T(V)$\\ tensors, $\otimes$};
+  \node[box,below left=1.0cm and 0.2cm of tt] (ext) {$\bigwedge V^*$\\ forms, $\wedge$, $\iota_v$};
+  \node[box,below right=1.0cm and 0.2cm of tt] (cl) {$\Cl(V,Q)$\\ geometric product};
+  \node[box,below=1.0cm of ext] (dd) {$\dd,\ \Lie_X$\\ manifolds, Cartan};
+  \node[box,below=1.0cm of cl] (met) {metric $g\Rightarrow\nabla^{LC}$\\ geodesics, $R$};
+  \node[syn,below=1.0cm of dd] (stk) {Stokes\\ $\int_M\dd\omega=\int_{\partial M}\omega$};
+  \node[syn,below=1.0cm of met] (gr) {General relativity\\ $G=8\pi T$};
+  \node[box,below=1.0cm of stk,xshift=2.3cm] (phys) {physics, complex\\ analysis, residues};
+  \draw[->] (vv)--(tt);
+  \draw[->] (tt)--node[left,font=\scriptsize]{$v\otimes v=0$}(ext);
+  \draw[->] (tt)--node[right,font=\scriptsize]{$v\otimes v=Q(v)$}(cl);
+  \draw[->] (ext)--(dd);
+  \draw[->] (cl)--node[right,font=\scriptsize]{$\vd=\dd-\codiff$}(met);
+  \draw[<->,dashed] (ext)--node[above,font=\scriptsize]{$\hodge\leftrightarrow$ dual}(cl);
+  \draw[->] (dd)--(stk);
+  \draw[->] (met)--(gr);
+  \draw[->] (stk)--(phys);
+  \draw[<->,dashed] (dd)--node[above,font=\scriptsize]{$\dd\dd=0$ vs.\ $R$}(met);
+\end{tikzpicture}
+\caption{The logical structure of the document. Solid arrows: ``is used to build''; dashed: the comparisons made in the synthesis sections.}
+\label{fig:map}
+\end{figure}

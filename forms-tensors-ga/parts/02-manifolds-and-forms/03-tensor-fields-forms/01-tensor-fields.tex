@@ -1,0 +1,34 @@
+% Section 12.1: Tensor fields and the metric field | Part: 2 | Depends on: sec:tangent, sec:ext | Status: done | Original lines: 2016-2050
+%!TEX root = ../../../main.tex
+\subsection{Tensor fields and the metric field}\label{sec:tensorfields}
+\begin{formal}[{tensor fields}]
+A \emph{tensor field} of type $(\ell,k)$ on $M$ assigns to each $p\in M$ a tensor $\tau_p\in\TT{\ell}{k}(T_pM)$. In a chart it is written
+\[
+\tau=\tau^{i_1\dots i_\ell}{}_{j_1\dots j_k}(x)\,\dd x^{j_1}\otimes\dots\otimes\dd x^{j_k}\otimes\partial_{i_1}\otimes\dots\otimes\partial_{i_\ell},
+\]
+and it is called \emph{smooth} if all component functions are $C^\infty$ for every chart. The set of smooth fields is $\TF{\ell}{k}(M)$. All the algebraic operations (sum, $\otimes$, contraction, raising/lowering indices) are done pointwise. A \emph{Riemannian/Lorentzian metric} on $M$ is a smooth $g\in\TF{0}{2}(M)$ that is a metric of the corresponding signature at every point. Under a coordinate change the components obey the rule \eqref{eq:tensortransf} with $A=\partial x/\partial\tilde x$ evaluated at each point.
+\end{formal}
+\begin{intuition}[{a field = a tensor at every point, varying smoothly}]
+Examples: a velocity field of a fluid (vector field), the electromagnetic potential $A_\mu$ (covector field), the stress-energy tensor $T_{\mu\nu}$, the metric $g_{\mu\nu}(x)$. In GR the unknown of the theory is the metric field: ten functions $g_{\mu\nu}(x)$ (symmetric $4\times4$) of the 4 coordinates.
+\end{intuition}
+
+% REWRITTEN: sphere azimuth phi -> varphi (docs/NOTATION.md)
+\begin{example}[{area form of the sphere (lecture notes I4)}]\label{ex:sphereareaform}
+Define $\alpha_p(v_1,v_2)=\frac1r\,(v_1\times v_2)\cdot p$ on tangent vectors $v_i\perp p$. In spherical coordinates, using the vectors $v_\theta,v_\varphi$ of the induced-metric example in Section~\ref{sec:pushpull}, $\alpha(\partial_\theta,\partial_\theta)=0$ and
+\[
+\tilde\alpha(\partial_\theta,\partial_\varphi)=\tfrac1r(v_\theta\times v_\varphi)\cdot p=r^2\sin\theta,
+\]
+and antisymmetry gives $\tilde\alpha(\partial_\varphi,\partial_\theta)=-r^2\sin\theta$, $\tilde\alpha(\partial_\varphi,\partial_\varphi)=0$. Therefore
+\[
+\tilde\alpha=r^2\sin\theta\,\big(\dd\theta\otimes\dd\varphi-\dd\varphi\otimes\dd\theta\big)=r^2\sin\theta\ \dd\theta\wedge\dd\varphi,
+\]
+and the total area is $\int_0^{2\pi}\!\!\int_0^\pi r^2\sin\theta\,\dd\theta\,\dd\varphi=4\pi r^2$. \checkmark
+\end{example}
+
+\begin{example}[{components of a vector field, hand-checked}]
+On $\R^2$ the rotation field $X=-y\,\partial_x+x\,\partial_y$ has components $(X^x,X^y)=(-y,x)$. In polar coordinates $\tilde X^i=\frac{\partial\tilde x^i}{\partial x^j}X^j$:
+\[
+X^r=\tfrac{x}{r}(-y)+\tfrac{y}{r}(x)=0,\qquad X^\varphi=-\tfrac{y}{r^2}(-y)+\tfrac{x}{r^2}x=1,
+\]
+so $X=\partial_\varphi$. A complicated field in Cartesian coordinates becomes the simplest possible one in adapted coordinates.
+\end{example}

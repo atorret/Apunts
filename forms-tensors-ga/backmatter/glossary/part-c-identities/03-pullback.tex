@@ -1,0 +1,64 @@
+% Section: Glossary C.3: pull-back | Part: backmatter | Depends on: sec:pushpull, sec:dform, sec:int1 | Status: done | Original lines: none (added by rewriter)
+%!TEX root = ../../../main.tex
+\subsubsection*{Pull-back}
+
+Here $\phi:M\to N$ and $\psi:N\to P$ are smooth maps, and the pull-back of forms is defined by \eqref{eq:pullback}.
+
+% PROOF ADDED BY REWRITER
+\begin{identity}[pull-back of functions and differentials]\label{id:pbfun}
+$\phi\pb(f\alpha)=(f\circ\phi)\,\phi\pb\alpha$ and $\phi\pb(\dd f)=\dd(f\circ\phi)$.
+\end{identity}
+\begin{proof}
+\Step{1}{functions factor out} $(\phi\pb(f\alpha))_p(v_1,\dots)=f(\phi(p))\,\alpha_{\phi(p)}(\dd\phi_pv_1,\dots)=(f\circ\phi)(p)\,(\phi\pb\alpha)_p(v_1,\dots)$.
+\Step{2}{differentials} For $v\in T_pM$, $(\phi\pb\dd f)_p(v)=\dd f_{\phi(p)}(\dd\phi_pv)=(\dd\phi_pv)(f)$, and by the definition of the
+push-forward, $(\dd\phi_pv)(f)=v(f\circ\phi)=\dd(f\circ\phi)_p(v)$.
+\end{proof}
+
+% PROOF ADDED BY REWRITER (the text gives a one-line argument in Section sec:pushpull)
+\begin{identity}[pull-back respects the wedge]\label{id:pbwedge}
+$\phi\pb(\alpha\wedge\beta)=\phi\pb\alpha\wedge\phi\pb\beta$.
+\end{identity}
+\begin{proof}
+\Step{1}{evaluate the left side} For $\alpha\in\Omega^k$, $\beta\in\Omega^l$ and $v_1,\dots,v_{k+l}\in T_pM$, put $w_i=\dd\phi_pv_i$. Then
+$\phi\pb(\alpha\wedge\beta)(v_1,\dots)=(\alpha\wedge\beta)(w_1,\dots,w_{k+l})$, which by \eqref{eq:wedge} is
+\[
+\frac1{k!\,l!}\sum_\sigma\sgn(\sigma)\,\alpha(w_{\sigma(1)},\dots)\,\beta(w_{\sigma(k+1)},\dots).
+\]
+\Step{2}{evaluate the right side} By \eqref{eq:wedge} for $\phi\pb\alpha,\phi\pb\beta$, the right side is the same sum with
+$(\phi\pb\alpha)(v_{\sigma(1)},\dots)=\alpha(w_{\sigma(1)},\dots)$ and $(\phi\pb\beta)(v_{\sigma(k+1)},\dots)=\beta(w_{\sigma(k+1)},\dots)$.
+The two sums agree term by term.
+\end{proof}
+
+% PROOF ADDED BY REWRITER (stated in Section sec:pushpull)
+\begin{identity}[pull-back of a composition]\label{id:pbcomp}
+$(\psi\circ\phi)\pb=\phi\pb\circ\psi\pb$.
+\end{identity}
+\begin{proof}
+\Step{1}{chain rule for push-forwards} For a function $f$ on $P$ and $v\in T_pM$,
+$\dd(\psi\circ\phi)_p(v)(f)=v(f\circ\psi\circ\phi)=(\dd\phi_pv)(f\circ\psi)=\dd\psi_{\phi(p)}(\dd\phi_pv)(f)$.
+\Step{2}{forms} Hence $((\psi\circ\phi)\pb\omega)(v_1,\dots)=\omega(\dd\psi\,\dd\phi\,v_1,\dots)=(\psi\pb\omega)(\dd\phi\,v_1,\dots)=(\phi\pb\psi\pb\omega)(v_1,\dots)$.
+\end{proof}
+
+% PROOF ADDED BY REWRITER: Theorem thm:dprops(2) is stated without proof.
+\begin{identity}[pull-back commutes with $\dd$; Theorem~\ref{thm:dprops}(2)]\label{id:pbd}
+For every form $\omega$ on $N$: $\quad\phi\pb(\dd\omega)=\dd(\phi\pb\omega)$.
+\end{identity}
+\begin{proof}
+\Step{1}{locality} Both sides at $p$ depend only on $\omega$ near $\phi(p)$, so we may use coordinates $y^1,\dots,y^m$ on $N$ and write
+$\omega=\sum_I\omega_I\,\dd y^{i_1}\wedge\cdots\wedge\dd y^{i_k}$.
+\Step{2}{the left side} By the Leibniz rule and $\dd\dd y^i=0$, $\dd\omega=\sum_I\dd\omega_I\wedge\dd y^{i_1}\wedge\cdots\wedge\dd y^{i_k}$
+(this is \eqref{eq:dcoord}). By Identities~\ref{id:pbwedge} and~\ref{id:pbfun},
+$\phi\pb\dd\omega=\sum_I\dd(\omega_I\circ\phi)\wedge\dd(y^{i_1}\circ\phi)\wedge\cdots\wedge\dd(y^{i_k}\circ\phi)$.
+\Step{3}{the right side} By the same identities $\phi\pb\omega=\sum_I(\omega_I\circ\phi)\,\dd(y^{i_1}\circ\phi)\wedge\cdots\wedge\dd(y^{i_k}\circ\phi)$.
+Apply $\dd$ with the Leibniz rule: every factor $\dd(y^{i}\circ\phi)$ is closed ($\dd\dd=0$), so only $\dd(\omega_I\circ\phi)$ survives,
+giving the expression of Step~2.
+\end{proof}
+
+\begin{identity}[naturality of the line integral; \eqref{eq:natural}]\label{id:natural}
+For a curve $\gamma$ in $M$ and a $1$-form $\omega$ on $N$: $\quad\int_{\phi\circ\gamma}\omega=\int_\gamma\phi\pb\omega$.
+\end{identity}
+\begin{proof}
+By the definition of the line integral, $\int_\gamma\omega=\int_{[a,b]}\gamma\pb\omega$. Then
+$\int_{\phi\circ\gamma}\omega=\int_{[a,b]}(\phi\circ\gamma)\pb\omega=\int_{[a,b]}\gamma\pb(\phi\pb\omega)=\int_\gamma\phi\pb\omega$
+by Identity~\ref{id:pbcomp}. (The text gives the same proof with the chain rule written out.)
+\end{proof}

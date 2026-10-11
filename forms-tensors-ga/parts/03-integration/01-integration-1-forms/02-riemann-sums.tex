@@ -1,0 +1,11 @@
+% Section 16.2: Why a covector? Riemann sums and infinitesimal displacements | Part: 3 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2495-2504
+%!TEX root = ../../../main.tex
+\subsection{Why a covector? Riemann sums and infinitesimal displacements}\label{sec:riemannsums}
+
+Partition $[a,b]$ by $t_0<\cdots<t_N$ and put $\Delta\gamma_j=\gamma(t_{j+1})-\gamma(t_j)$ (in a chart). Then
+\[
+\int_\gamma\omega=\lim_{\max|\Delta t_j|\to0}\sum_j\bigl\langle\omega_{\gamma(t_j)},\Delta\gamma_j\bigr\rangle .
+\]
+Why does the sum converge to \eqref{eq:lineint}? On a short interval $\Delta\gamma_j=\dot\gamma(t_j)\Delta t_j+o(\Delta t_j)$ (definition of the derivative). By linearity of the contraction,
+$\langle\omega_{\gamma(t_j)},\Delta\gamma_j\rangle=\langle\omega_{\gamma(t_j)},\dot\gamma(t_j)\rangle\Delta t_j+o(\Delta t_j)$, so the sum is, up to a vanishing error, a Riemann sum of the function $t\mapsto\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle$.
+The picture is Figure~\ref{fig:sheets}: each small displacement $\Delta\gamma_j$ pierces a certain number of ``sheets'' of $\omega_{\gamma(t_j)}$, and the line integral counts the total number of sheets crossed along the path. A $1$-form is therefore precisely the object which assigns a number to every infinitesimal oriented displacement, linearly. This also explains why $\int_\gamma\omega$ needs no metric: no length or angle is used, only the pairing \eqref{eq:pairing}.

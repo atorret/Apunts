@@ -1,0 +1,47 @@
+% Preamble: page layout, lists, headings, header/footer, TOC, PDF metadata | Original lines: 27-34, 58-91, 202
+%!TEX root = ../main.tex
+\setlist{itemsep=2pt,topsep=4pt}
+\setlist[itemize]{leftmargin=1.6em}
+\setlist[enumerate]{leftmargin=1.8em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\arraystretch}{1.25}
+\emergencystretch=2em
+\allowdisplaybreaks[1]
+
+% =====================================================================
+%  Headings, header/footer, table of contents
+% =====================================================================
+\titleformat{\part}[block]{\Large\bfseries\color{navy}}{Part \thepart}{0.8em}{}[{\color{navy}\titlerule}]
+\titlespacing*{\part}{0pt}{3.2ex plus 1ex}{2ex}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.9em}{}
+\titlespacing*{\section}{0pt}{3.0ex plus 1ex minus .2ex}{1.4ex plus .2ex}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.8em}{}
+\titlespacing*{\subsection}{0pt}{2.4ex plus .6ex minus .2ex}{1ex plus .2ex}
+\titleformat{\subsubsection}{\normalsize\bfseries\itshape}{\thesubsubsection}{0.8em}{}
+\newcommand{\subhead}[1]{\par\medskip\noindent{\bfseries #1}\par\nobreak\smallskip}
+
+\newcommand{\runningtitle}{From Vectors to Stokes to Spacetime: Forms, Tensors and Geometric Algebra}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\itshape\small\runningtitle}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\setcounter{tocdepth}{2}
+\renewcommand{\cftpartfont}{\bfseries\color{navy}}
+\renewcommand{\cftpartpagefont}{\bfseries\color{navy}}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}}
+\renewcommand{\cftsecdotsep}{\cftnodots}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftbeforesecskip}{0.5ex}
+\setlength{\cftbeforepartskip}{1.4ex}
+\setlength{\cftsecnumwidth}{2.0em}
+\setlength{\cftsubsecindent}{2.0em}
+\setlength{\cftsubsecnumwidth}{2.6em}
+
+\hypersetup{pdftitle={From Vectors to Stokes to Spacetime: Forms, Tensors and Geometric Algebra},pdfauthor={}}

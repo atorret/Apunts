@@ -1,0 +1,45 @@
+% Section 8.4: Relation to the Hodge star and to the dual space | Part: 1 | Depends on: sec:ext, sec:ops | Status: done | Original lines: 1619-1656
+%!TEX root = ../../../main.tex
+\subsection{Relation to the Hodge star and to the dual space}
+
+Let $V$ be Euclidean and oriented, with the inner product on $\bigwedge^kV$ for which $\{e_I\}$ is orthonormal; in terms of the geometric product, $\langle A,B\rangle=\gr{\rev AB}{0}$.
+
+\begin{definition}[Hodge star]
+The \emph{Hodge star} $\hodge:\bigwedge^kV\to\bigwedge^{n-k}V$ is defined by
+\[
+ \alpha\wedge\hodge\beta=\langle\alpha,\beta\rangle\,\pss\qquad\text{for all }\alpha,\beta\in\textstyle\bigwedge^kV .
+\]
+\end{definition}
+
+\begin{theorem}\label{thm:hodgeGA}
+For a $k$-vector $A$ in the Euclidean case,
+\[
+ \hodge A=\rev A\,\pss=(-1)^{k(k-1)/2+n(n-1)/2}\,\dual A .
+\]
+So the Hodge star and the geometric-algebra dual agree up to a grade-dependent sign. Moreover $\hodge\hodge=(-1)^{k(n-k)}$ on $k$-vectors.
+\end{theorem}
+\begin{proof}
+For an orthonormal basis blade $e_J$ ($|J|=k$) we have $\rev{e_J}=e_J^{-1}$. Then $e_J\wedge(\rev{e_J}\pss)=e_J\,e_J^{-1}\pss=\pss$, since the product of $e_J$ with the complementary blade $e_J^{-1}\pss$ (built from the other basis vectors) is a wedge; and $e_{J'}\wedge(\rev{e_J}\pss)=0$ for $J'\neq J$ because the indices overlap. This is precisely the defining property of $\hodge e_J$. The sign relation follows from $\rev A=(-1)^{k(k-1)/2}A$ and $\pss^{-1}=(-1)^{n(n-1)/2}\pss$.
+The relation $\hodge\hodge=(-1)^{k(n-k)}$ is proved in Identity~\ref{id:hodgehodge} of the Glossary.% REWRITTEN: glossary pointer
+\end{proof}
+
+\begin{remark}[The ``other'' dual]
+The word \emph{dual} has two meanings that are connected here. The \emph{dual space} $V^*$ is intrinsically defined, whereas $V\cong V^*$ needs the metric ($\flat$). Intrinsically, the wedge pairing $\bigwedge^kV\times\bigwedge^{n-k}V\to\bigwedge^nV\cong\K$ is perfect, so $\bigwedge^{n-k}V\cong(\bigwedge^kV)^*$ once a basis (orientation and volume) $\pss$ of $\bigwedge^nV$ is chosen. Combined with the metric identification $(\bigwedge^kV)^*\cong\bigwedge^kV$, this is exactly the map $A\mapsto\dual A$ (or $\hodge A$). The pseudoscalar $\pss$ packages \emph{both} the orientation and the metric volume.
+\end{remark}
+
+\begin{intuition}
+\begin{itemize}
+  \item \textbf{Dual = orthogonal complement.} Every subspace has a perpendicular partner: a plane in $3$D has a normal line, a line has a normal plane. The dual swaps a $k$-dimensional oriented subspace with its $(n-k)$-dimensional partner (and keeps the magnitude).
+  Describing a plane \emph{by its normal} or \emph{by its tangent bivector} are two views of the same object; the dual converts between them (for example $e_1\wedge e_2\leftrightarrow e_3$ in $\R^3$).
+  \item \textbf{Wedge $\leftrightarrow$ meet.} The wedge joins subspaces (spans). In the dual picture it becomes a contraction/meet (intersections). The identity $\dual{(A\wedge B)}=A\lc\dual B$ says that ``the complement of a span is what is left perpendicular to both''. Intersections of planes, lines and so on, without coordinates.
+  \item \textbf{The pseudoscalar is the orientation of space.} Multiplying by $\pss^{-1}$ is a ``quarter-turn of the whole space'': in 2D it is multiplication by $\pm i$; in 3D it turns planes into axes. Reversing the orientation flips the sign of the dual; this is why the cross product is a \emph{pseudo}vector and the magnetic field $B$ is better treated as a \emph{bivector}.
+\end{itemize}
+\end{intuition}
+
+% REWRITTEN: bridge sentence added; the Hodge star on forms is used in Sections sec:synth2, sec:gauss and Part V.
+\emph{The Hodge star on forms.} The definition above makes sense for any oriented space with an inner product, so it applies
+verbatim to $V^*$ with the inner product induced by the metric ($g^{ij}$, Section~\ref{sec:metric}): for $k$-forms,
+$\alpha\wedge\hodge\beta=\langle\alpha,\beta\rangle\,\vol$, where $\vol=e^1\wedge\cdots\wedge e^n$ for a positively oriented orthonormal
+basis. Under the identification $e^i\leftrightarrow e_i$ of an orthonormal basis, $\hodge$ on forms is the $\hodge$ on multivectors
+of Theorem~\ref{thm:hodgeGA}; on a manifold it acts pointwise on $\bigwedge^kT_p^*M$. In $\R^3$, for example, $\hodge\dd x=\dd y\wedge\dd z$,
+$\hodge\dd y=\dd z\wedge\dd x$, $\hodge\dd z=\dd x\wedge\dd y$ and $\hodge1=\dd x\wedge\dd y\wedge\dd z$.

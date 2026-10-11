@@ -1,0 +1,22 @@
+% Section 29.4: The dictionary of the algebras | Part: 7 | Depends on: all previous parts | Status: done | Original lines: 4061-4083
+%!TEX root = ../../../main.tex
+% REWRITTEN: source label removed from the heading; rotor written \rotor as in Part I.
+\subsection{The dictionary of the algebras}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{p{4.6cm}p{5.6cm}p{4.6cm}}
+\hline
+\textbf{Concept} & \textbf{Formal definition} & \textbf{Picture}\\\hline
+Tensor product $V\otimes W$ & universal bilinear map; basis $e_i\otimes f_j$ & table of numbers $v^iw^j$\\
+Tensor algebra $T(V)$ & free associative algebra on $V$ & words in the alphabet $V$\\
+Exterior algebra $\bigwedge V$ & $T(V)/\langle v\otimes v\rangle$ & oriented lengths, areas, volumes\\
+Geometric algebra $\Cl(V,Q)$ & $T(V)/\langle v\otimes v-Q(v)\rangle$ & lengths, angles, areas, rotations in one product\\
+Geometric product & $uv=u\cdot v+u\wedge v$ & parallel part + perpendicular part\\
+Contraction $A\lc B$ & $\gr{AB}{s-r}$ & part of $B$ perpendicular to $A$\\
+Rotor $e^{-\varphi B/2}$ & even versor, $\rotor\rev\rotor=1$ & two reflections = rotation in plane $B$\\
+Dual $\dual A=A\pss^{-1}$ & $\GA^k\to\GA^{n-k}$, $\ (A\wedge B)^*=A\lc B^*$ & orthogonal complement; wedge $\leftrightarrow$ meet\\
+Hodge star $\hodge$ & $\alpha\wedge\hodge\beta=\langle\alpha,\beta\rangle\pss$ & dual up to a sign $(\rev A\pss)$\\
+Exterior derivative $\dd$ & $\dd\leftrightarrow\vd\wedge$; $\dd^2=0$ & curl-like part of $\vd$; Stokes\\
+Vector derivative $\vd$ & $\vd=\dd-\codiff$, $\ \vd^2=-\Delta_H$ & grad, div, curl in one operator\\\hline
+\end{tabular}
+\end{center}

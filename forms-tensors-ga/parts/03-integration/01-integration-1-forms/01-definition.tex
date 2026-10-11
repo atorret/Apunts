@@ -1,0 +1,31 @@
+% Section 16.1: Definition: integration is contraction with the velocity | Part: 3 | Depends on: sec:fields, sec:tangent | Status: done | Original lines: 2463-2494
+%!TEX root = ../../../main.tex
+\subsection{Definition: integration is contraction with the velocity}\label{sec:int1def}
+
+Let $\gamma:[a,b]\to M$ be a piecewise $C^1$ curve, with velocity $\dot\gamma(t)\in T_{\gamma(t)}M$.
+
+\begin{definition}[Line integral]
+The integral of a $1$-form $\omega$ along $\gamma$ is
+\begin{equation}\label{eq:lineint}
+\int_\gamma\omega:=\int_a^b\bigl\langle\omega_{\gamma(t)},\dot\gamma(t)\bigr\rangle\,\dd t=\int_a^b\omega_i(\gamma(t))\,\dot\gamma^i(t)\,\dd t .
+\end{equation}
+Equivalently, $\int_\gamma\omega=\int_{[a,b]}\gamma\pb\omega$, where the pull-back $\gamma\pb\omega=\omega(\dot\gamma)\,\dd t$ is a $1$-form on the interval.
+\end{definition}
+
+So the integrand is nothing but the contraction of the covector with the velocity vector, followed by an ordinary Riemann integral over the parameter.
+% REORDERED: the general definition eq:pullback moved to Section sec:pushpull (merged with the GR definition there).
+Recall from Section~\ref{sec:pushpull} that the pull-back $\phi\pb\omega$ of a form by a smooth map $\phi$ is defined by contraction with pushed-forward vectors, \eqref{eq:pullback}.
+\emph{Why $\gamma\pb\omega=\omega(\dot\gamma)\,\dd t$ (steps).} Use the coordinates $\gamma^i(t)=x^i(\gamma(t))$. (1) The pull-back of the coordinate function $x^i$ is $x^i\circ\gamma=\gamma^i$, so $\gamma\pb\dd x^i=\dd(\gamma^i)=\dot\gamma^i\dd t$ (pull-back commutes with $\dd$).
+(2) Pull-back is linear and multiplies the coefficient functions by composition: $\gamma\pb(\omega_i\dd x^i)=\omega_i(\gamma(t))\dot\gamma^i(t)\,\dd t$. (3) This is $\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle\dd t$, as claimed.
+
+\begin{example}[A line integral, step by step]\label{ex:lineint}
+Compute $\int_\gamma\omega$ for $\omega=x\,\dd y$ and the parabola $\gamma(t)=(t,t^2)$, $0\le t\le1$.
+\begin{enumerate}
+\item Velocity: $\dot\gamma(t)=(1,2t)$.
+\item Coefficients of $\omega$ on the curve: $\omega=\omega_x\dd x+\omega_y\dd y$ with $\omega_x=0$, $\omega_y=x$; on $\gamma$, $\omega_y=t$.
+\item Contraction: $\langle\omega_{\gamma(t)},\dot\gamma(t)\rangle=0\cdot1+t\cdot2t=2t^2$.
+\item Integral: $\int_0^12t^2\,\dd t=\frac23$.
+\end{enumerate}
+\emph{Check with another parametrisation of the same curve:} $\tilde\gamma(s)=(s^2,s^4)$, $0\le s\le1$. Then $\dot{\tilde\gamma}=(2s,4s^3)$, $\omega_y=s^2$, contraction $=s^2\cdot4s^3=4s^5$, and $\int_0^14s^5\,\dd s=\frac23$: the same.
+\emph{Reversed curve:} $\hat\gamma(t)=(1-t,(1-t)^2)$ gives $\dot{\hat\gamma}=(-1,-2(1-t))$, contraction $=-2(1-t)^2$ and the integral is $-\frac23$: the sign flips (Proposition~\ref{prop:reparam}).
+\end{example}
