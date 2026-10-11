@@ -259,12 +259,70 @@ def forward_block(s, ids, order):
     return out
 
 
+def dependency_mermaid():
+    """Reading-order diagram for the ten documents.
+
+    Arrows are a layout of DOC_EDGES that mermaid can draw without a knot of
+    crossings. Every other edge is named inside the later document, and a few
+    of those are also invisible links (~~~) so dagre keeps the rows honest.
+    """
+    short = {
+        "M1": "Foundations", "M2": "Advanced math",
+        "CM1": "Mechanics I", "CM2": "Mechanics II", "CM3": "Elasticity",
+        "F1": "Classical flows", "F2": "Complex flows",
+        "QM": "Quantum mechanics", "QFT": "Field theory", "GR": "Relativity",
+    }
+    # Declaration order is the left-to-right order within each row.
+    nodes = ["M1", "M2", "CM1", "CM2", "CM3", "F1", "GR", "QM", "QFT", "F2"]
+    drawn = [
+        ("M1", "M2"), ("M1", "CM1"), ("M2", "GR"),
+        ("CM1", "CM2"), ("CM1", "CM3"), ("CM1", "F1"),
+        ("CM2", "QM"), ("QM", "QFT"), ("GR", "QFT"), ("F1", "F2"),
+    ]
+    pins = [("M2", "CM2"), ("CM2", "GR")]
+    groups = [
+        ("math", "fill:#e7f0fa,stroke:#2f5f93,color:#142033", ["M1", "M2"]),
+        ("mech", "fill:#e6f5ec,stroke:#2c7a4b,color:#142033", ["CM1", "CM2", "CM3"]),
+        ("fluid", "fill:#e5f4f7,stroke:#1d6d86,color:#142033", ["F1", "F2"]),
+        ("quant", "fill:#f3eef8,stroke:#694a96,color:#142033", ["QM", "QFT"]),
+        ("grav", "fill:#fbf1e4,stroke:#9a641c,color:#142033", ["GR"]),
+    ]
+    drawn_set = set(drawn)
+    requires = defaultdict(list)
+    for src, dst in DOC_EDGES:
+        if (src, dst) not in drawn_set:
+            requires[dst].append(src)
+    covered = drawn_set | {(src, dst) for dst, srcs in requires.items() for src in srcs}
+    if set(nodes) != set(CONTENT_DOCS) or covered != set(DOC_EDGES) or not set(pins) <= covered - drawn_set:
+        raise SystemExit("dependency diagram is out of date with DOC_EDGES")
+    lines = [
+        "```mermaid",
+        '%%{init: {"flowchart": {"curve": "bumpY", "nodeSpacing": 26, "rankSpacing": 36, "padding": 6, "htmlLabels": true}}}%%',
+        "flowchart TB",
+    ]
+    for code in nodes:
+        parts = [f"<b>{code}</b>", short[code]]
+        if requires[code]:
+            parts.append("requires " + ", ".join(requires[code]))
+        lines.append(f'  {code}["{"<br/>".join(parts)}"]')
+    lines.append("")
+    lines += [f"  {src} --> {dst}" for src, dst in drawn]
+    lines.append("")
+    lines += [f"  {src} ~~~ {dst}" for src, dst in pins]
+    lines.append("")
+    for name, style, members in groups:
+        lines.append(f"  classDef {name} {style}")
+    for name, _style, members in groups:
+        lines.append(f"  class {','.join(members)} {name}")
+    lines.append("```")
+    return lines
+
+
 def gen_roadmap(s, ids, order, rows):
     status, content, mean = status_block(s, ids, rows)
     with open(os.path.join(ROOT, "tools", "ROADMAP.template.md"), encoding="utf-8") as fh:
         tpl = fh.read()
-    mer = ["```mermaid", "flowchart LR"] + [f"  {a} --> {b}" for a, b in DOC_EDGES] + \
-          ['  GLOSSARY -.-|"referenced by all"| M1', "```"]
+    mer = dependency_mermaid()
     todo_counts = "\n".join(
         f"- **{code}**: " + ", ".join(f"`{x['status']}` {x['title']}" for x in rows[code] if not x["present"])
         for code in CONTENT_DOCS)

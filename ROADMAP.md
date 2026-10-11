@@ -73,29 +73,48 @@ Rules that hold from now on:
 ## Document dependencies
 
 ```mermaid
-flowchart LR
+%%{init: {"flowchart": {"curve": "bumpY", "nodeSpacing": 26, "rankSpacing": 36, "padding": 6, "htmlLabels": true}}}%%
+flowchart TB
+  M1["<b>M1</b><br/>Foundations"]
+  M2["<b>M2</b><br/>Advanced math"]
+  CM1["<b>CM1</b><br/>Mechanics I"]
+  CM2["<b>CM2</b><br/>Mechanics II<br/>requires M2"]
+  CM3["<b>CM3</b><br/>Elasticity<br/>requires M2"]
+  F1["<b>F1</b><br/>Classical flows"]
+  GR["<b>GR</b><br/>Relativity<br/>requires CM2"]
+  QM["<b>QM</b><br/>Quantum mechanics<br/>requires M1"]
+  QFT["<b>QFT</b><br/>Field theory<br/>requires M2"]
+  F2["<b>F2</b><br/>Complex flows<br/>requires CM3, GR, QM"]
+
   M1 --> M2
   M1 --> CM1
+  M2 --> GR
   CM1 --> CM2
-  M2 --> CM2
   CM1 --> CM3
-  M2 --> CM3
   CM1 --> F1
-  F1 --> F2
-  CM3 --> F2
-  M1 --> QM
   CM2 --> QM
   QM --> QFT
-  M2 --> QFT
-  M2 --> GR
-  CM2 --> GR
-  GR --> F2
-  QM --> F2
   GR --> QFT
-  GLOSSARY -.-|"referenced by all"| M1
+  F1 --> F2
+
+  M2 ~~~ CM2
+  CM2 ~~~ GR
+
+  classDef math fill:#e7f0fa,stroke:#2f5f93,color:#142033
+  classDef mech fill:#e6f5ec,stroke:#2c7a4b,color:#142033
+  classDef fluid fill:#e5f4f7,stroke:#1d6d86,color:#142033
+  classDef quant fill:#f3eef8,stroke:#694a96,color:#142033
+  classDef grav fill:#fbf1e4,stroke:#9a641c,color:#142033
+  class M1,M2 math
+  class CM1,CM2,CM3 mech
+  class F1,F2 fluid
+  class QM,QFT quant
+  class GR grav
 ```
 
-GLOSSARY is a cross-cutting reference document and is not part of the reading order. Build order (used by
+An arrow points to the document read next. A box that names other codes requires those documents as well.
+Color marks the subject: mathematics, classical mechanics, fluids, relativity, quantum theory. GLOSSARY is a
+cross-cutting reference document and is not part of the reading order. Build order (used by
 `tools/build_all.ps1`): M1, M2, CM1, CM2, CM3, F1, GR, QM, F2, QFT, GLOSSARY, unsorted.
 
 ## Status

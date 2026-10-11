@@ -74,7 +74,9 @@ Rules that hold from now on:
 
 {{GRAPH}}
 
-GLOSSARY is a cross-cutting reference document and is not part of the reading order. Build order (used by
+An arrow points to the document read next. A box that names other codes requires those documents as well.
+Color marks the subject: mathematics, classical mechanics, fluids, relativity, quantum theory. GLOSSARY is a
+cross-cutting reference document and is not part of the reading order. Build order (used by
 `tools/build_all.ps1`): M1, M2, CM1, CM2, CM3, F1, GR, QM, F2, QFT, GLOSSARY, unsorted.
 
 ## Status
