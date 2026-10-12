@@ -29,6 +29,9 @@
 \externaldocument[][nocite]{../GLOSSARY/build/GLOSSARY}[../../GLOSSARY/build/GLOSSARY.pdf]
 \externaldocument[][nocite]{../unsorted/build/UNSORTED}[../../unsorted/build/UNSORTED.pdf]
 
+\externaldocument[][nocite]{../M0-math-basics/build/M0}[../../M0-math-basics/build/M0.pdf]
+\externaldocument[][nocite]{../EM-electrodynamics/build/EM}[../../EM-electrodynamics/build/EM.pdf]
+\externaldocument[][nocite]{../TH-thermo-statmech/build/TH}[../../TH-thermo-statmech/build/TH.pdf]
 \begin{document}
 
 \doctitle{M2}{Mathematics II: Advanced}{undergraduate}{graduate (tensors, geometric algebra, differential geometry, groups)}
@@ -36,8 +39,6 @@
 \vspace{0.8em}
 \tableofcontents
 \clearpage
-
-\todopart{M2/part-I}
 \chapterprereqs{sec:tensors,sec:metric,sec:ext}
 \input{chapters/ch01-clifford-algebra/00-section}
 \chapterprereqs{sec:ext,sec:clifford}
@@ -48,10 +49,7 @@
 \input{chapters/ch04-duality/00-section}
 \chapterprereqs{sec:vectors,sec:metric,sec:ext,sec:gauss,sec:ops,sec:duality}
 \input{chapters/ch05-synthesis-1/00-section}
-\missingchapter{M2/ch06}{Groups: symmetry, finite groups and representations}{\ref{sec:metric}~(\nameref{sec:metric}); \ref{sec:rotors}~(\nameref{sec:rotors})}
-\todopart{M2/part-II}
-\chapterprereqs{sec:ext,sec:fields,sec:gauss}
-\input{chapters/ch07-lie-derivative/00-section}
+\missingchapter{M2/ch06}{Groups: symmetry, finite groups and representations}{TODO(M1/ch03); TODO(M2/ch03)}
 \chapterprereqs{sec:fields,sec:ops,sec:duality,sec:synth1}
 \input{chapters/ch08-ga-calculus/00-section}
 \chapterprereqs{part:algebra,sec:metric,sec:ext,sec:fields,sec:intk,sec:stokes,sec:gauss,sec:duality,sec:synth1,sec:lie,sec:ga-calculus}
@@ -68,20 +66,19 @@
 \input{chapters/ch13-geodesic-deviation/00-section}
 \chapterprereqs{sec:fields,sec:int1,sec:gauss,sec:lie,sec:conn,sec:lc,sec:curv}
 \input{chapters/ch14-synthesis-3/00-section}
-\missingchapter{M2/ch15}{Lie groups and Lie algebras}{TODO(M2/ch06); \ref{sec:lie}~(\nameref{sec:lie})}
-\missingchapter{M2/ch16}{Fibre bundles, gauge connections and spinors}{\ref{sec:conn}~(\nameref{sec:conn}); TODO(M2/ch15)}
+\missingchapter{M2/ch15}{Lie groups and Lie algebras}{TODO(M1/ch08); TODO(M2/ch06)}
+\missingchapter{M2/ch16}{Fibre bundles, gauge connections and spinors}{TODO(M2/ch10); TODO(M2/ch15)}
 \input{chapters/00-part-complex}
 \chapterprereqs{sec:ext,sec:int1,sec:intk,sec:stokes,sec:clifford,sec:duality,sec:ga-calculus,sec:synth2}
 \input{chapters/ch17-residue-theorem/00-section}
-\missingchapter{M2/ch18}{Hilbert spaces, distributions and spectral theory}{TODO(M1/ch17); \ref{sec:complex}~(\nameref{sec:complex})}
-\missingchapter{M2/ch19}{Stochastic processes and statistical methods}{TODO(M1/ch20); TODO(M2/ch18)}
+\missingchapter{M2/ch18}{Hilbert spaces, distributions and spectral theory}{TODO(M0/ch06); TODO(M2/ch17)}
+\missingchapter{M2/ch19}{Stochastic processes and statistical methods}{TODO(M0/ch10); TODO(M2/ch18)}
 \input{chapters/00-part-perspective}
 \chapterprereqs{sec:stokes,sec:clifford,sec:synth2,sec:complex}
 \input{chapters/ch20-current-state/00-section}
 \chapterprereqs{part:algebra,part:manifolds,sec:tangent,sec:synth1,sec:ga-calculus,sec:synth2,part:geometry}
 \input{chapters/ch21-master-summary/00-section}
-\missingchapter{M2/ch22}{Topology: homotopy, homology and de Rham cohomology}{\ref{sec:fields}~(\nameref{sec:fields}); \ref{sec:stokes}~(\nameref{sec:stokes}); TODO(M2/ch06)}
-
+\missingchapter{M2/ch22}{Topology: homotopy, homology and de Rham cohomology}{TODO(M1/ch07); TODO(M1/ch11); TODO(M2/ch06)}
 \globalbibliography
 
 \end{document}

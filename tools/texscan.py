@@ -3,7 +3,7 @@ import os
 import re
 from dataclasses import dataclass, field
 
-from structure_config import FOLDER, BODY, MAINFILE
+from books import CONTENT_DOCS, FOLDER, MAINFILE
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {"build", "sources", "notes", "legacy", "legacy-build", "project-docs"}
@@ -135,7 +135,7 @@ def scan(include_mains=False):
         parts = drel.split("/")
         if doc == "GLOSSARY":
             return "glossary"
-        if doc == "Unsorted":
+        if doc == "unsorted":
             return parts[0] if len(parts) > 1 else drel
         if parts[0] == "chapters":
             return parts[1] if len(parts) > 2 else parts[1][:-4]
@@ -151,25 +151,41 @@ def scan(include_mains=False):
 
 
 def reading_order():
-    """(doc, chapter key) -> global index in reading order, plus chapter ids."""
+    """(doc, chapter key) -> index in each main.tex, plus chapter ids.
+
+    The order is the order printed in the PDF, not a second copy of the syllabus.
+    """
     order, ids = {}, {}
     i = 0
-    for doc, items in BODY.items():
-        for it in items:
-            kind = it[0]
-            if kind == "part":
-                key = (doc, it[1].split("/")[-1])
-                ids[key] = f"{doc}/{key[1]}"
-            elif kind in ("chapter", "wrapped"):
-                key = (doc, it[2])
-                ids[key] = f"{doc}/{it[1]}"
-            elif kind == "todo":
-                key = (doc, "TODO-" + it[1])
-                ids[key] = f"{doc}/{it[1]}"
-            else:
-                continue
-            order[key] = i
-            i += 1
+    for doc in CONTENT_DOCS:
+        path = os.path.join(ROOT, FOLDER[doc], MAINFILE[doc])
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as fh:
+            for raw in fh:
+                line = strip_comment(raw)
+                included = re.search(r"\\input\{chapters/([^}]+)\}", line)
+                if included:
+                    target = included.group(1)
+                    if target.endswith(".tex"):
+                        target = target[:-4]
+                    key = (doc, target.split("/")[0])
+                    if key in order:
+                        continue
+                    number = re.match(r"ch(\d+)", key[1])
+                    ids[key] = f"{doc}/ch{int(number.group(1)):02d}" if number else f"{doc}/{key[1]}"
+                    order[key] = i
+                    i += 1
+                    continue
+                missing = re.search(r"\\missingchapter\{([^}]+)\}", line)
+                if missing:
+                    cid = missing.group(1).strip()
+                    key = (doc, "TODO-" + cid.split("/")[-1])
+                    if key in order:
+                        continue
+                    ids[key] = cid
+                    order[key] = i
+                    i += 1
     return order, ids
 
 

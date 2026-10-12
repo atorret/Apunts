@@ -29,6 +29,9 @@
 \externaldocument[][nocite]{../GLOSSARY/build/GLOSSARY}[../../GLOSSARY/build/GLOSSARY.pdf]
 \externaldocument[][nocite]{../unsorted/build/UNSORTED}[../../unsorted/build/UNSORTED.pdf]
 
+\externaldocument[][nocite]{../M0-math-basics/build/M0}[../../M0-math-basics/build/M0.pdf]
+\externaldocument[][nocite]{../EM-electrodynamics/build/EM}[../../EM-electrodynamics/build/EM.pdf]
+\externaldocument[][nocite]{../TH-thermo-statmech/build/TH}[../../TH-thermo-statmech/build/TH.pdf]
 \begin{document}
 
 \doctitle{M1}{Mathematics I: Foundations}{basics}{undergraduate}
@@ -36,44 +39,33 @@
 \vspace{0.8em}
 \tableofcontents
 \clearpage
-
-\missingchapter{M1/ch01}{Numbers, complex numbers, sets and functions}{none}
-\missingchapter{M1/ch02}{Calculus of one variable}{TODO(M1/ch01)}
-\missingchapter{M1/ch03}{Linear algebra: matrices, determinants, eigenvalues}{TODO(M1/ch01)}
-\missingchapter{M1/ch04}{Multivariable and vector calculus in three dimensions: gradient, divergence, curl, line and surface integrals, and the classical theorems of Green, Stokes and Gauss}{TODO(M1/ch02); TODO(M1/ch03)}
-\missingchapter{M1/ch05}{Ordinary differential equations}{TODO(M1/ch02); TODO(M1/ch03)}
 \input{chapters/00-part-algebra}
 \chapterprereqs{}
-\input{chapters/ch06-vectors-covectors/00-section}
+\input{chapters/ch01-vectors-covectors/00-section}
 \chapterprereqs{part:algebra,sec:vectors}
-\input{chapters/ch07-tensors/00-section}
+\input{chapters/ch02-tensors/00-section}
 \chapterprereqs{sec:vectors,sec:tensors}
-\input{chapters/ch08-metric/00-section}
+\input{chapters/ch03-metric/00-section}
 \chapterprereqs{sec:vectors,sec:tensors,sec:metric}
-\input{chapters/ch09-exterior-algebra/00-section}
+\input{chapters/ch04-exterior-algebra/00-section}
 \input{chapters/00-part-manifolds}
 \chapterprereqs{part:algebra}
-\input{chapters/ch10-differentiable-manifolds/00-section}
+\input{chapters/ch05-differentiable-manifolds/00-section}
 \chapterprereqs{sec:vectors,sec:tensors,sec:metric,sec:ext,sec:manifolds}
-\input{chapters/ch11-tangent-cotangent/00-section}
+\input{chapters/ch06-tangent-cotangent/00-section}
 \chapterprereqs{sec:vectors,sec:tensors,sec:ext,sec:tangent}
-\input{chapters/ch12-tensor-fields-forms/00-section}
+\input{chapters/ch07-tensor-fields-forms/00-section}
+\chapterprereqs{sec:ext,sec:fields,sec:gauss}
+\input{chapters/ch08-lie-derivative/00-section}
 \input{chapters/00-part-integration}
 \chapterprereqs{sec:vectors,sec:tangent,sec:fields}
-\input{chapters/ch13-integration-1-forms/00-section}
+\input{chapters/ch09-integration-1-forms/00-section}
 \chapterprereqs{sec:ext,sec:tangent,sec:int1}
-\input{chapters/ch14-integration-k-forms/00-section}
+\input{chapters/ch10-integration-k-forms/00-section}
 \chapterprereqs{sec:manifolds,sec:fields,sec:int1,sec:intk}
-\input{chapters/ch15-stokes/00-section}
+\input{chapters/ch11-stokes/00-section}
 \chapterprereqs{sec:metric,sec:ext,sec:fields,sec:intk,sec:stokes}
-\input{chapters/ch16-gauss/00-section}
-\missingchapter{M1/ch17}{Fourier series, Fourier and Laplace transforms}{TODO(M1/ch04); TODO(M1/ch05)}
-\missingchapter{M1/ch18}{Partial differential equations of physics: separation of variables, special functions and Green's functions}{TODO(M1/ch04); TODO(M1/ch05); TODO(M1/ch17)}
-\missingchapter{M1/ch19}{Calculus of variations}{TODO(M1/ch04); TODO(M1/ch05)}
-\missingchapter{M1/ch20}{Probability, statistics and random processes}{TODO(M1/ch02); TODO(M1/ch04)}
-\missingchapter{M1/ch21}{Numerical methods: quadrature, ODE solvers, linear systems and finite differences}{TODO(M1/ch03); TODO(M1/ch05); TODO(M1/ch18)}
-\missingchapter{M1/ch22}{Complex analysis: analytic functions, Cauchy's theorem, Laurent series, residues and conformal maps}{TODO(M1/ch01); TODO(M1/ch04)}
-
+\input{chapters/ch12-gauss/00-section}
 \globalbibliography
 
 \end{document}

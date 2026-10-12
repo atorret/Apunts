@@ -29,6 +29,9 @@
 \externaldocument[][nocite]{../GLOSSARY/build/GLOSSARY}[../../GLOSSARY/build/GLOSSARY.pdf]
 \externaldocument[][nocite]{../unsorted/build/UNSORTED}[../../unsorted/build/UNSORTED.pdf]
 
+\externaldocument[][nocite]{../M0-math-basics/build/M0}[../../M0-math-basics/build/M0.pdf]
+\externaldocument[][nocite]{../EM-electrodynamics/build/EM}[../../EM-electrodynamics/build/EM.pdf]
+\externaldocument[][nocite]{../TH-thermo-statmech/build/TH}[../../TH-thermo-statmech/build/TH.pdf]
 \begin{document}
 
 \doctitle{GR}{General Relativity}{zero}{postdoc}
@@ -36,24 +39,24 @@
 \vspace{0.8em}
 \tableofcontents
 \clearpage
-
-\missingchapter{GR/ch01}{Special relativity}{TODO(CM1/ch02); \ref{sec:metric}~(\nameref{sec:metric})}
-\missingchapter{GR/ch02}{Minkowski spacetime and tensors on spacetime}{TODO(GR/ch01); \ref{sec:fields}~(\nameref{sec:fields})}
-\chapterprereqs{part:manifolds,part:integration,sec:synth2,sec:lc}
-\todoheading{GR/ch03}
+\input{chapters/ch03-electromagnetism-forms/00-section}
 \input{chapters/ch03-electromagnetism-forms/06-electromagnetism}
+\chapterprereqs{part:manifolds,part:integration,sec:synth2,sec:lc}
 \chapterprereqs{part:algebra,sec:metric,sec:manifolds,sec:fields,sec:lie,part:geometry,sec:conn,sec:lc,sec:curv,sec:deviation,sec:phys,sec:phys-energy}
 \input{chapters/ch04-bridge-to-gr/00-section}
-\missingchapter{GR/ch05}{The Einstein field equations}{\ref{sec:bridge}~(\nameref{sec:bridge}); \ref{sec:curv}~(\nameref{sec:curv})}
+\missingchapter{GR/ch05}{The Einstein field equations}{TODO(EM/ch03); TODO(GR/ch04); TODO(M2/ch12)}
 \missingchapter{GR/ch06}{The Schwarzschild solution and classical tests}{TODO(GR/ch05)}
 \missingchapter{GR/ch07}{Black holes: horizons, charged and rotating solutions}{TODO(GR/ch06)}
 \missingchapter{GR/ch08}{Gravitational waves}{TODO(GR/ch05)}
 \missingchapter{GR/ch09}{Cosmology}{TODO(GR/ch05)}
-\missingchapter{GR/ch10}{Hamiltonian (ADM) formulation and numerical relativity}{TODO(GR/ch05); TODO(CM2/ch03); TODO(M3/ch06)}
+\missingchapter{GR/ch10}{Hamiltonian (ADM) formulation and numerical relativity}{TODO(CM2/ch03); TODO(GR/ch05); TODO(M3/ch06)}
 \missingchapter{GR/ch11}{Tetrads, spinors and gauge-theory gravity in geometric algebra}{TODO(GR/ch05); TODO(M2/ch16)}
 \missingchapter{GR/ch12}{Causal structure and singularity theorems}{TODO(GR/ch07); TODO(M2/ch22)}
-\missingchapter{GR/ch13}{Black hole thermodynamics and Hawking radiation}{TODO(GR/ch07); TODO(QFT/ch12)}
-
+\missingchapter{GR/ch13}{Black hole mechanics and thermodynamics (classical)}{TODO(GR/ch07); TODO(TH/ch01)}
+\missingchapter{GR/ch14}{Relativistic stars and accretion}{TODO(GR/ch06); TODO(TH/ch01)}
+\missingchapter{GR/ch15}{Black hole perturbations and quasinormal modes}{TODO(GR/ch07); TODO(GR/ch08); TODO(M3/ch03)}
+\missingchapter{GR/ch16}{Post-Newtonian theory and gravitational-wave source modelling}{TODO(GR/ch08)}
+\missingchapter{GR/ch17}{Cosmological perturbation theory and inflation}{TODO(GR/ch09)}
 \globalbibliography
 
 \end{document}

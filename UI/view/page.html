@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library</title>
+<style>
+{{STYLE}}</style>
+</head>
+<body>
+<header>
+  <div class="card-head">
+    <div class="card-title">
+      <h1>Library</h1>
+      <div class="info-wrap">
+        <button type="button" class="info-btn" aria-label="About the library" aria-describedby="library-about">i</button>
+        <p id="library-about" class="info-tip" role="tooltip">Editorial status is saved from the library view or the records table. Import a book organization file, or a chapter-changes file that names the new, edited, and deleted books and chapters. Either import rewrites the editorial organization.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="library" aria-selected="true">Library</button>
+    <button type="button" role="tab" data-tab="records" aria-selected="false">Records</button>
+    <button type="button" role="tab" data-tab="files" aria-selected="false">Export / Import</button>
+  </nav>
+</header>
+<main>
+  <div id="panel-library" class="panel active">
+    <div class="legend" id="legend"></div>
+    <div class="pictures">
+      <section class="card" id="library-card">
+        <div class="card-head">
+          <div class="card-title">
+            <h2>Library</h2>
+            <div class="info-wrap">
+              <button type="button" class="info-btn" aria-label="About the library map" aria-describedby="library-map-about">i</button>
+              <p id="library-map-about" class="info-tip" role="tooltip">Books follow series order, left to right, three to a row. Click a book. Hard prerequisites are outlined. Prerequisites of those are blue. Optional ones are dashed.</p>
+            </div>
+          </div>
+        </div>
+        <div id="library"></div>
+      </section>
+      <section class="card" id="reading-card">
+        <div class="card-head">
+          <div class="card-title">
+            <h2>Reading order</h2>
+            <div class="info-wrap">
+              <button type="button" class="info-btn" aria-label="About reading order" aria-describedby="reading-about">i</button>
+              <p id="reading-about" class="info-tip" role="tooltip">Click a book. Boxes run left to right. Each box lists the chapters that book has to supply. “All chapters” means the whole book.</p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button type="button" id="box-mode" aria-pressed="false">Compress boxes</button>
+            <button type="button" id="reading-wide" aria-pressed="false" aria-label="Fill window" title="Fill window"></button>
+          </div>
+        </div>
+        <div id="chain"></div>
+        <div class="zoom-controls">
+          <button type="button" id="zoom-out" class="icon-btn" aria-label="Zoom out" title="Zoom out">−</button>
+          <button type="button" id="zoom-in" class="icon-btn" aria-label="Zoom in" title="Zoom in">+</button>
+        </div>
+      </section>
+    </div>
+    <section class="card" id="detail">
+      <div class="card-head">
+        <div class="card-title">
+          <h2>Selection</h2>
+          <div class="info-wrap">
+            <button type="button" class="info-btn" aria-label="About selection" aria-describedby="detail-about">i</button>
+            <p id="detail-about" class="info-tip" role="tooltip">Click a book or a chapter. Book status and target level apply to every chapter. A chapter row changes only that chapter.</p>
+          </div>
+        </div>
+      </div>
+      <div id="detail-body"></div>
+    </section>
+  </div>
+  <div id="panel-records" class="panel">
+    <section class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <h2>Records</h2>
+          <div class="info-wrap">
+            <button type="button" class="info-btn" aria-label="About records" aria-describedby="records-about">i</button>
+            <p id="records-about" class="info-tip" role="tooltip">Every book, part, chapter, concept, and roadmap is listed. Change presence, status, or level on a book or chapter to save. Editing a book applies the same values to every chapter in that book (book level is the target level). Retired chapters have no workflow status.</p>
+          </div>
+        </div>
+      </div>
+      <p class="note" id="record-count"></p>
+      <form class="filters" method="get" action="/">
+        <input type="hidden" name="tab" value="records">
+        <label>Book <select name="book" id="f-book"><option value="">All</option></select></label>
+        <label>Presence <select name="presence" id="f-presence">
+          <option value="">All</option>
+          <option>absent</option><option>present</option><option>retired</option>
+        </select></label>
+        <label>Status <select name="status" id="f-status"><option value="">All</option></select></label>
+        <label>Level <select name="level" id="f-level"><option value="">All</option></select></label>
+        <label>Text <input name="q" id="f-q" type="search"></label>
+        <button type="submit">Filter</button>
+      </form>
+      <div class="records-table-wrap">
+        <table>
+          <thead><tr><th>Kind</th><th>Id</th><th>Title</th><th>Presence</th><th>Status</th><th>Level</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div id="record-forms"></div>
+    </section>
+  </div>
+  <div id="panel-files" class="panel">
+    <p id="notice" class="notice hidden"></p>
+    <div class="files">
+      <section class="card" id="export-card">
+        <div class="card-head">
+          <div class="card-title">
+            <h2>Export</h2>
+            <div class="info-wrap">
+              <button type="button" class="info-btn" aria-label="About export" aria-describedby="export-about">i</button>
+              <p id="export-about" class="info-tip" role="tooltip">Download overwrites the file of the same name in the project. Editorial organization is the current syllabus. Internal references are written to INTERNAL_REFERENCES.md. Reading order is written to READING_ORDER.md and lists which books must be finished first. External sources are written to EXTERNAL_SOURCES.md. A book organization file is written into that book's folder and includes its sources, which books must be finished first, and what each chapter must teach. All books overwrites the organization file in every book folder.</p>
+            </div>
+          </div>
+        </div>
+        <form class="filters" id="export-form" method="get" action="/export">
+          <label>Document
+            <select name="doc" id="export-kind">
+              <option value="editorial-organization" title="The current syllabus: books, chapters, sources, and which books must be finished first. Written to EDITORIAL_ORGANIZATION.md. This reading is not imported. Edit sources and finish-first lists in a book organization file, or name them in an editorial organization change file.">Editorial organization</option>
+              <option value="internal-references" title="Where each document points at another in the LaTeX. Scan LaTeX to replace the stored scan, then download to write INTERNAL_REFERENCES.md.">Internal references</option>
+              <option value="external-sources" title="The registered source files for the books. Written to EXTERNAL_SOURCES.md. Edit a source in a book organization file, then import that file.">External sources</option>
+              <option value="reading-order" title="The left-to-right picture of which books must be finished first. Written to READING_ORDER.md. The plan in ROADMAP.md is left as it is.">Reading order</option>
+              <option value="book" title="One book's chapters, what each must teach, its sources, and which books must be finished first. Written into that book's folder. All books overwrites the organization file in every book folder.">Book organization</option>
+            </select>
+          </label>
+          <label id="export-book-label" class="hidden">Book <select name="book" id="export-book"></select></label>
+        </form>
+        <div class="file-actions">
+          <button type="submit" form="export-form" id="export-download">Download</button>
+          <form id="scan-form" class="hidden" method="post" action="/scan-xrefs">
+            <button type="submit">Scan LaTeX</button>
+          </form>
+        </div>
+      </section>
+      <section class="card" id="import-card">
+        <div class="card-head">
+          <div class="card-title">
+            <h2>Import</h2>
+            <div class="info-wrap">
+              <button type="button" class="info-btn" aria-label="About import" aria-describedby="import-about">i</button>
+              <p id="import-about" class="info-tip" role="tooltip">Import a book organization file, or a chapter-changes file that names the new, edited, and deleted books and chapters. Either import rewrites the editorial organization.</p>
+            </div>
+          </div>
+        </div>
+        <form class="filters" id="import-form" method="post" action="/import" enctype="multipart/form-data">
+          <label>Rewrite
+            <select name="mode" id="import-mode">
+              <option value="book" title="Import reads the organization file in the chosen book's folder, or every book folder. That includes sources and which books must be finished first.">Book organization</option>
+              <option value="chapter" title="Download template overwrites chapter-changes.md. List the new, edited, and deleted books and chapters, then choose that file. Finish first on a book replaces that book's dependencies. Empty tables mean no change of that kind.">Editorial organization</option>
+            </select>
+          </label>
+          <label id="import-book-label">Book <select name="book" id="import-book"></select></label>
+          <a id="import-template" class="as-button hidden" href="/export?doc=chapter-changes">Download template</a>
+          <label id="import-file-label"><span id="import-file-caption">Document</span>
+            <input id="import-file" type="file" name="file" required>
+          </label>
+        </form>
+        <p class="note hidden" id="import-name"></p>
+        <div class="file-actions">
+          <button type="submit" form="import-form" id="import-submit">Import</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<script id="payload" type="application/json">{{DATA}}</script>
+<script>
+{{SCRIPT}}</script>
+</body>
+</html>

@@ -9,12 +9,12 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from structure_config import ancestors
+from books import ancestors
 import texscan
 
 
 def direction(src, tgt, order):
-    if tgt[0] in ("GLOSSARY", "Unsorted") or src[0] in ("GLOSSARY", "Unsorted"):
+    if tgt[0] in ("GLOSSARY", "unsorted") or src[0] in ("GLOSSARY", "unsorted"):
         return "reference"
     if src[0] == tgt[0]:
         return "back" if order.get(tgt, 1e9) < order.get(src, 1e9) else "forward"

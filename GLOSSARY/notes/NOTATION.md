@@ -33,7 +33,7 @@ Conventions used throughout, and the overloaded symbols that remain (each is dis
 ## Angles
 
 - `\phi` (and `\Phi`, `\psi`) is reserved for maps, flows and charts.
-- Plane polar coordinates are `(r,\varphi)` in Parts I–IV (converted with `tools/replace_phi.py`; files marked `% REWRITTEN`).
+- Plane polar coordinates are `(r,\varphi)` in Parts I–IV (converted with `tools/legacy/replace_phi.py`; files marked `% REWRITTEN`).
 - Part V keeps `(r,\theta)` for plane polar coordinates (mechanics conventions); not converted.
 - The sphere uses `(\theta,\varphi)` (polar, azimuth) everywhere, including the Schwarzschild metric in the GR bridge.
 - In the glossary, `\theta` is also the angle between two mirrors (`id:tworefl`) and `\varphi` a rotation angle (`id:rotor`).

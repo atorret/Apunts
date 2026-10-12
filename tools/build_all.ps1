@@ -1,10 +1,10 @@
-# Build all eleven documents, GLOSSARY and the unsorted holder in dependency order.
+# Build every document, GLOSSARY and the unsorted holder in dependency order.
 # Repeats full passes until no log reports changed labels, undefined or multiply
-# defined references (at most 5 passes), then runs the cross-reference checks.
+# defined references (at most 5 passes), then runs the internal-reference checks.
 param([int]$MaxPasses = 5, [switch]$NoCheck)
 
 $root = Split-Path -Parent $PSScriptRoot
-$order = python -c "import sys; sys.path.insert(0, r'$PSScriptRoot'); from structure_config import BUILD_ORDER, FOLDER, JOB; print('\n'.join(f'{FOLDER[c]}|{JOB[c]}' for c in BUILD_ORDER))"
+$order = python -c "import sys; sys.path.insert(0, r'$PSScriptRoot'); from books import BUILD_ORDER, FOLDER, JOB; print('\n'.join(f'{FOLDER[c]}|{JOB[c]}' for c in BUILD_ORDER))"
 $pattern = 'Label\(s\) may have changed|There were undefined references|multiply defined|Reference .* undefined|^No file .*\.aux|has been referenced but does not exist'
 
 for ($pass = 1; $pass -le $MaxPasses; $pass++) {

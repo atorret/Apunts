@@ -24,9 +24,14 @@ ROOT = texscan.ROOT
 BASELINE = sys.argv[1] if len(sys.argv) > 1 else "1dde429"
 MASK = [re.compile(r"^\s*\\input\{[^}]*\}\s*(%.*)?$"),
         re.compile(r"^%!TEX root = "),
-        re.compile(r"^\\usepackage\{xr-hyper\}")]
+        re.compile(r"^\\usepackage\{xr-hyper\}"),
+        re.compile(r"^\\externaldocument\b"),
+        re.compile(r"^\\missingchapter\b"),
+        re.compile(r"^\\chapterprereqs\b")]
 CONFIG = {".gitignore", ".cursor/rules/latex-project.mdc"}
-ALLOWED_EDITS = re.compile(r"^(tex-root-path|input-path|input-line-moved-to-main\.tex|input-line-removed \(target now .+\))$")
+ALLOWED_EDITS = re.compile(
+    r"^(tex-root-path|input-path|input-line-moved-to-main\.tex|"
+    r"input-line-removed \(target now .+\)|externaldocument)$")
 
 
 def git_bytes(*args):

@@ -1,0 +1,52 @@
+% EM Electrodynamics and Special Relativity | root file | build: latexmk (see latexmkrc), output build/EM.pdf
+% Generated from library.sqlite by python UI.py layout.
+\def\thisdoc{EM}
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../shared/preamble/packages}
+\input{../shared/preamble/colors}
+\input{../shared/preamble/layout}
+\input{../shared/preamble/environments}
+\input{../shared/preamble/macros-general}
+\input{../shared/preamble/macros-geometry}
+\input{../shared/preamble/macros-algebra}
+\input{../shared/preamble/macros-structure}
+
+\renewcommand{\runningtitle}{EM Electrodynamics and Special Relativity}
+\hypersetup{pdftitle={EM Electrodynamics and Special Relativity}}
+
+\externaldocument[][nocite]{../M0-math-basics/build/M0}[../../M0-math-basics/build/M0.pdf]
+\externaldocument[][nocite]{../M1-math-foundations/build/M1}[../../M1-math-foundations/build/M1.pdf]
+\externaldocument[][nocite]{../M2-math-advanced/build/M2}[../../M2-math-advanced/build/M2.pdf]
+\externaldocument[][nocite]{../M3-math-differential-equations/build/M3}[../../M3-math-differential-equations/build/M3.pdf]
+\externaldocument[][nocite]{../CM1-classical-mechanics-1/build/CM1}[../../CM1-classical-mechanics-1/build/CM1.pdf]
+\externaldocument[][nocite]{../CM2-classical-mechanics-2/build/CM2}[../../CM2-classical-mechanics-2/build/CM2.pdf]
+\externaldocument[][nocite]{../CM3-elasticity/build/CM3}[../../CM3-elasticity/build/CM3.pdf]
+\externaldocument[][nocite]{../TH-thermo-statmech/build/TH}[../../TH-thermo-statmech/build/TH.pdf]
+\externaldocument[][nocite]{../F1-fluids-classical/build/F1}[../../F1-fluids-classical/build/F1.pdf]
+\externaldocument[][nocite]{../F2-fluids-complex-extreme/build/F2}[../../F2-fluids-complex-extreme/build/F2.pdf]
+\externaldocument[][nocite]{../QM-quantum-mechanics/build/QM}[../../QM-quantum-mechanics/build/QM.pdf]
+\externaldocument[][nocite]{../QFT-quantum-field-theory/build/QFT}[../../QFT-quantum-field-theory/build/QFT.pdf]
+\externaldocument[][nocite]{../GR-general-relativity/build/GR}[../../GR-general-relativity/build/GR.pdf]
+\externaldocument[][nocite]{../GLOSSARY/build/GLOSSARY}[../../GLOSSARY/build/GLOSSARY.pdf]
+\externaldocument[][nocite]{../unsorted/build/UNSORTED}[../../unsorted/build/UNSORTED.pdf]
+
+\begin{document}
+
+\doctitle{EM}{Electrodynamics and Special Relativity}{undergraduate}{graduate}
+
+\vspace{0.8em}
+\tableofcontents
+\clearpage
+\missingchapter{EM/ch01}{Electrostatics, magnetostatics and Maxwell's equations}{TODO(CM1/ch02); TODO(M0/ch04)}
+\missingchapter{EM/ch02}{Special relativity}{TODO(CM1/ch02); TODO(M1/ch03)}
+\missingchapter{EM/ch03}{Minkowski spacetime and tensors on spacetime}{TODO(EM/ch02); TODO(M1/ch02)}
+\missingchapter{EM/ch04}{Electromagnetic waves and radiation}{TODO(EM/ch01); TODO(M0/ch06); TODO(M0/ch08)}
+\missingchapter{EM/ch05}{Covariant electrodynamics and the field Lagrangian}{TODO(EM/ch03); TODO(EM/ch04); TODO(M0/ch09)}
+\missingchapter{EM/ch06}{Electromagnetism in matter: dielectrics, conductors and dispersion}{TODO(EM/ch04)}
+\missingchapter{EM/ch07}{Radiation from moving charges and radiation reaction}{TODO(EM/ch05)}
+
+\globalbibliography
+
+\end{document}
