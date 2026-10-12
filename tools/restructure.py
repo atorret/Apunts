@@ -1,4 +1,4 @@
-"""Ten-document restructure: migration map, moves, scaffolding.
+"""Eleven-document restructure: migration map, moves, scaffolding.
 
   python tools/restructure.py map       write tools/migration_map.csv from the old tree
   python tools/restructure.py migrate   git mv every mapped file, rewrite \\input / %!TEX root paths

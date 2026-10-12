@@ -1,12 +1,12 @@
 ---
-description: Conventions for the ten-document LaTeX notes (M1, M2, CM1-CM3, F1, F2, QM, QFT, GR) plus GLOSSARY
+description: Conventions for the eleven-document LaTeX notes (M1-M3, CM1-CM3, F1, F2, QM, QFT, GR) plus GLOSSARY
 globs: "**/*.tex"
 alwaysApply: false
 ---
 
 # LaTeX project conventions
 
-- Ten documents, one folder each (`M1-math-foundations/` ... `GR-general-relativity/`), plus the reference
+- Eleven documents, one folder each (`M1-math-foundations/` ... `GR-general-relativity/`), plus the reference
   document `GLOSSARY/` and the holder `unsorted/UNSORTED.tex`. Each has `main.tex` (or `UNSORTED.tex`) and
   `latexmkrc`; output is `build/<CODE>.pdf`. Build everything with `tools/build_all.ps1`.
 - Document folder layout: `chapters/chNN-slug/` (`00-section.tex` = heading + intro + `\input` list),

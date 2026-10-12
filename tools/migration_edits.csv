@@ -321,21 +321,21 @@ M2-math-advanced/chapters/ch17-residue-theorem/08-synthesis-4.tex,2,tex-root-pat
 M2-math-advanced/chapters/00-part-perspective.tex,2,tex-root-path,%!TEX root = ../../main.tex,%!TEX root = ../main.tex
 M2-math-advanced/chapters/00-part-perspective.tex,7,input-line-moved-to-main.tex,\input{parts/07-perspective/01-current-state/00-section},
 M2-math-advanced/chapters/00-part-perspective.tex,8,input-line-moved-to-main.tex,\input{parts/07-perspective/02-master-summary/00-section},
-M2-math-advanced/chapters/ch19-current-state/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,6,input-path,\input{parts/07-perspective/02-master-summary/01-one-picture},\input{chapters/ch20-master-summary/01-one-picture}
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,7,input-path,\input{parts/07-perspective/02-master-summary/02-essence},\input{chapters/ch20-master-summary/02-essence}
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,8,input-path,\input{parts/07-perspective/02-master-summary/03-toolkit-metric-geometry},\input{chapters/ch20-master-summary/03-toolkit-metric-geometry}
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,9,input-path,\input{parts/07-perspective/02-master-summary/04-dictionary-algebras},\input{chapters/ch20-master-summary/04-dictionary-algebras}
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,10,input-path,\input{parts/07-perspective/02-master-summary/05-common-mistakes},\input{chapters/ch20-master-summary/05-common-mistakes}
-M2-math-advanced/chapters/ch20-master-summary/00-section.tex,11,input-path,\input{parts/07-perspective/02-master-summary/06-suggested-path},\input{chapters/ch20-master-summary/06-suggested-path}
-M2-math-advanced/chapters/ch20-master-summary/01-one-picture.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/01-one-picture.tex,5,input-path,\input{figures/part7/tikz-map},\input{figures/tikz-map}
-M2-math-advanced/chapters/ch20-master-summary/02-essence.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/03-toolkit-metric-geometry.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/04-dictionary-algebras.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/05-common-mistakes.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
-M2-math-advanced/chapters/ch20-master-summary/06-suggested-path.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch20-current-state/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,6,input-path,\input{parts/07-perspective/02-master-summary/01-one-picture},\input{chapters/ch21-master-summary/01-one-picture}
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,7,input-path,\input{parts/07-perspective/02-master-summary/02-essence},\input{chapters/ch21-master-summary/02-essence}
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,8,input-path,\input{parts/07-perspective/02-master-summary/03-toolkit-metric-geometry},\input{chapters/ch21-master-summary/03-toolkit-metric-geometry}
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,9,input-path,\input{parts/07-perspective/02-master-summary/04-dictionary-algebras},\input{chapters/ch21-master-summary/04-dictionary-algebras}
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,10,input-path,\input{parts/07-perspective/02-master-summary/05-common-mistakes},\input{chapters/ch21-master-summary/05-common-mistakes}
+M2-math-advanced/chapters/ch21-master-summary/00-section.tex,11,input-path,\input{parts/07-perspective/02-master-summary/06-suggested-path},\input{chapters/ch21-master-summary/06-suggested-path}
+M2-math-advanced/chapters/ch21-master-summary/01-one-picture.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/01-one-picture.tex,5,input-path,\input{figures/part7/tikz-map},\input{figures/tikz-map}
+M2-math-advanced/chapters/ch21-master-summary/02-essence.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/03-toolkit-metric-geometry.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/04-dictionary-algebras.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/05-common-mistakes.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
+M2-math-advanced/chapters/ch21-master-summary/06-suggested-path.tex,2,tex-root-path,%!TEX root = ../../../main.tex,%!TEX root = ../../main.tex
 shared/preamble/colors.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
 shared/preamble/environments.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex
 shared/preamble/layout.tex,2,tex-root-path,%!TEX root = ../main.tex,%!TEX root = ../../M1-math-foundations/main.tex

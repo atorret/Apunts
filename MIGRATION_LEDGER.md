@@ -251,14 +251,14 @@ Totals: 228 files (203 tracked by git, 25 untracked build outputs), 344 line edi
 | `forms-tensors-ga/parts/06-complex-analysis/01-residue-theorem/07-current-picture.tex` | `M2-math-advanced/chapters/ch17-residue-theorem/07-current-picture.tex` | M2 | ch17-residue-theorem | chapter | tracked | 324 | 1 |  |
 | `forms-tensors-ga/parts/06-complex-analysis/01-residue-theorem/08-synthesis-4.tex` | `M2-math-advanced/chapters/ch17-residue-theorem/08-synthesis-4.tex` | M2 | ch17-residue-theorem | chapter | tracked | 344 | 1 |  |
 | `forms-tensors-ga/parts/07-perspective/00-part.tex` | `M2-math-advanced/chapters/00-part-perspective.tex` | M2 | 00-part-perspective | part-hub | tracked | 41 | 1 | 2 |
-| `forms-tensors-ga/parts/07-perspective/01-current-state/00-section.tex` | `M2-math-advanced/chapters/ch19-current-state/00-section.tex` | M2 | ch19-current-state | chapter | tracked | 402 | 1 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/00-section.tex` | `M2-math-advanced/chapters/ch20-master-summary/00-section.tex` | M2 | ch20-master-summary | chapter | tracked | 37 | 7 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/01-one-picture.tex` | `M2-math-advanced/chapters/ch20-master-summary/01-one-picture.tex` | M2 | ch20-master-summary | chapter | tracked | 28 | 2 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/02-essence.tex` | `M2-math-advanced/chapters/ch20-master-summary/02-essence.tex` | M2 | ch20-master-summary | chapter | tracked | 264 | 1 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/03-toolkit-metric-geometry.tex` | `M2-math-advanced/chapters/ch20-master-summary/03-toolkit-metric-geometry.tex` | M2 | ch20-master-summary | chapter | tracked | 231 | 1 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/04-dictionary-algebras.tex` | `M2-math-advanced/chapters/ch20-master-summary/04-dictionary-algebras.tex` | M2 | ch20-master-summary | chapter | tracked | 212 | 1 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/05-common-mistakes.tex` | `M2-math-advanced/chapters/ch20-master-summary/05-common-mistakes.tex` | M2 | ch20-master-summary | chapter | tracked | 215 | 1 |  |
-| `forms-tensors-ga/parts/07-perspective/02-master-summary/06-suggested-path.tex` | `M2-math-advanced/chapters/ch20-master-summary/06-suggested-path.tex` | M2 | ch20-master-summary | chapter | tracked | 112 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/01-current-state/00-section.tex` | `M2-math-advanced/chapters/ch20-current-state/00-section.tex` | M2 | ch20-current-state | chapter | tracked | 402 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/00-section.tex` | `M2-math-advanced/chapters/ch21-master-summary/00-section.tex` | M2 | ch21-master-summary | chapter | tracked | 37 | 7 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/01-one-picture.tex` | `M2-math-advanced/chapters/ch21-master-summary/01-one-picture.tex` | M2 | ch21-master-summary | chapter | tracked | 28 | 2 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/02-essence.tex` | `M2-math-advanced/chapters/ch21-master-summary/02-essence.tex` | M2 | ch21-master-summary | chapter | tracked | 264 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/03-toolkit-metric-geometry.tex` | `M2-math-advanced/chapters/ch21-master-summary/03-toolkit-metric-geometry.tex` | M2 | ch21-master-summary | chapter | tracked | 231 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/04-dictionary-algebras.tex` | `M2-math-advanced/chapters/ch21-master-summary/04-dictionary-algebras.tex` | M2 | ch21-master-summary | chapter | tracked | 212 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/05-common-mistakes.tex` | `M2-math-advanced/chapters/ch21-master-summary/05-common-mistakes.tex` | M2 | ch21-master-summary | chapter | tracked | 215 | 1 |  |
+| `forms-tensors-ga/parts/07-perspective/02-master-summary/06-suggested-path.tex` | `M2-math-advanced/chapters/ch21-master-summary/06-suggested-path.tex` | M2 | ch21-master-summary | chapter | tracked | 112 | 1 |  |
 | `forms-tensors-ga/preamble/colors.tex` | `shared/preamble/colors.tex` | infra |  | infra | tracked | 37 | 1 |  |
 | `forms-tensors-ga/preamble/environments.tex` | `shared/preamble/environments.tex` | infra |  | infra | tracked | 250 | 1 |  |
 | `forms-tensors-ga/preamble/layout.tex` | `shared/preamble/layout.tex` | infra |  | infra | tracked | 104 | 1 |  |

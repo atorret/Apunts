@@ -372,4 +372,4 @@ Target level completed by: **GR/ch13 Black hole thermodynamics and Hawking radia
 
 Not a levelled course: it is consulted alongside every path above, not read as one. It owns all symbols (Part A), terms (Part B), identities with proofs (Part C) and the single bibliography. Folder: [GLOSSARY/](GLOSSARY/).
 
-Entries currently cover M1 and M2 topics only. Missing blocks: `TODO(GLOSSARY/CM1)`, `TODO(GLOSSARY/CM2)`, `TODO(GLOSSARY/CM3)`, `TODO(GLOSSARY/F1)`, `TODO(GLOSSARY/F2)`, `TODO(GLOSSARY/QM)`, `TODO(GLOSSARY/QFT)`, `TODO(GLOSSARY/GR)`.
+Entries currently cover M1 and M2 topics only. Missing blocks: `TODO(GLOSSARY/M3)`, `TODO(GLOSSARY/CM1)`, `TODO(GLOSSARY/CM2)`, `TODO(GLOSSARY/CM3)`, `TODO(GLOSSARY/F1)`, `TODO(GLOSSARY/F2)`, `TODO(GLOSSARY/QM)`, `TODO(GLOSSARY/QFT)`, `TODO(GLOSSARY/GR)`.

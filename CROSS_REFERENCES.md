@@ -16,6 +16,7 @@ A reference is **back** when its target is read earlier: an earlier chapter of t
 |---|---|
 | M1 (`M1-math-foundations/build/M1.pdf`) | clean |
 | M2 (`M2-math-advanced/build/M2.pdf`) | clean |
+| M3 (`M3-math-differential-equations/build/M3.pdf`) | clean |
 | CM1 (`CM1-classical-mechanics-1/build/CM1.pdf`) | clean |
 | CM2 (`CM2-classical-mechanics-2/build/CM2.pdf`) | clean |
 | CM3 (`CM3-elasticity/build/CM3.pdf`) | clean |
@@ -29,20 +30,21 @@ A reference is **back** when its target is read earlier: an earlier chapter of t
 
 ## References between documents (rows: from, columns: to)
 
-| from \ to | M1 | M2 | CM1 | CM2 | CM3 | F1 | F2 | QM | QFT | GR | GLOSSARY | Unsorted |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **M1** |  | 22 | 3 |  |  |  |  |  |  | 2 | 8 | 1 |
-| **M2** | 58 |  | 2 | 1 |  | 1 |  |  |  | 2 | 6 |  |
-| **CM1** | 2 | 1 |  | 1 |  |  |  |  |  |  |  |  |
-| **CM2** |  | 5 |  |  |  |  |  |  |  |  |  |  |
-| **CM3** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **F1** | 1 | 1 |  |  |  |  |  |  |  |  |  |  |
-| **F2** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **QM** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **QFT** |  |  |  |  |  |  |  |  |  |  |  |  |
-| **GR** | 5 | 9 |  | 3 |  |  |  |  |  |  |  |  |
-| **GLOSSARY** | 112 | 108 | 1 | 1 |  |  |  |  |  | 4 |  |  |
-| **Unsorted** | 4 | 7 | 1 |  |  |  |  |  |  | 1 | 1 |  |
+| from \ to | M1 | M2 | M3 | CM1 | CM2 | CM3 | F1 | F2 | QM | QFT | GR | GLOSSARY | Unsorted |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **M1** |  | 22 |  | 3 |  |  |  |  |  |  | 2 | 8 | 1 |
+| **M2** | 58 |  |  | 2 | 1 |  | 1 |  |  |  | 2 | 6 |  |
+| **M3** |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **CM1** | 2 | 1 |  |  | 1 |  |  |  |  |  |  |  |  |
+| **CM2** |  | 5 |  |  |  |  |  |  |  |  |  |  |  |
+| **CM3** |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **F1** | 1 | 1 |  |  |  |  |  |  |  |  |  |  |  |
+| **F2** |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **QM** |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **QFT** |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **GR** | 5 | 9 |  |  | 3 |  |  |  |  |  |  |  |  |
+| **GLOSSARY** | 112 | 108 |  | 1 | 1 |  |  |  |  |  | 4 |  |  |
+| **Unsorted** | 4 | 7 |  | 1 |  |  |  |  |  |  | 1 | 1 |  |
 
 Totals: 374 references across documents; back 83, forward 36, reference 255.
 
@@ -148,12 +150,12 @@ Totals: 374 references across documents; back 83, forward 36, reference 255.
 | `M2-math-advanced/chapters/ch17-residue-theorem/03-residue-theorem.tex:43` | `\ref` | `ex:angle` | M1/ch13 | back |
 | `M2-math-advanced/chapters/ch17-residue-theorem/04-cohomology.tex:7` | `\ref` | `ex:angle` | M1/ch13 | back |
 | `M2-math-advanced/chapters/ch17-residue-theorem/06-argument-principle.tex:13` | `\ref` | `sec:stokes` | M1/ch15 | back |
-| `M2-math-advanced/chapters/ch19-current-state/00-section.tex:10` | `\eqref` | `eq:stokes` | M1/ch15 | back |
-| `M2-math-advanced/chapters/ch19-current-state/00-section.tex:10` | `\eqref` | `eq:adjoint` | M1/ch15 | back |
-| `M2-math-advanced/chapters/ch19-current-state/00-section.tex:16` | `\eqref` | `eq:adjoint` | M1/ch15 | back |
-| `M2-math-advanced/chapters/ch20-master-summary/05-common-mistakes.tex:11` | `\ref` | `sec:trio` | M1/ch11 | back |
-| `M2-math-advanced/chapters/ch20-master-summary/06-suggested-path.tex:6` | `\ref` | `part:manifolds` | M1/00-part-manifolds | back |
-| `M2-math-advanced/chapters/ch20-master-summary/06-suggested-path.tex:8` | `\ref` | `part:algebra` | M1/00-part-algebra | back |
+| `M2-math-advanced/chapters/ch20-current-state/00-section.tex:10` | `\eqref` | `eq:stokes` | M1/ch15 | back |
+| `M2-math-advanced/chapters/ch20-current-state/00-section.tex:10` | `\eqref` | `eq:adjoint` | M1/ch15 | back |
+| `M2-math-advanced/chapters/ch20-current-state/00-section.tex:16` | `\eqref` | `eq:adjoint` | M1/ch15 | back |
+| `M2-math-advanced/chapters/ch21-master-summary/05-common-mistakes.tex:11` | `\ref` | `sec:trio` | M1/ch11 | back |
+| `M2-math-advanced/chapters/ch21-master-summary/06-suggested-path.tex:6` | `\ref` | `part:manifolds` | M1/00-part-manifolds | back |
+| `M2-math-advanced/chapters/ch21-master-summary/06-suggested-path.tex:8` | `\ref` | `part:algebra` | M1/00-part-algebra | back |
 | `M2-math-advanced/figures/tikz-residue.tex:23` | `\ref` | `fig:annulus` | M1/ch15 | back |
 | `CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/01-work-and-energy.tex:40` | `\eqref` | `eq:lineint` | M1/ch13 | back |
 | `CM1-classical-mechanics-1/chapters/ch03-intrinsic-vs-metric/09-sources-of-confusion.tex:9` | `\ref` | `rem:whatneeds` | M1/ch16 | back |
@@ -437,5 +439,5 @@ Totals: 374 references across documents; back 83, forward 36, reference 255.
 | `unsorted/frontmatter/reading-guide.tex:78` | `\ref` | `sec:phys` | CM1/ch03 | reference |
 | `unsorted/frontmatter/reading-guide.tex:78` | `\ref` | `sec:bridge` | GR/ch04 | reference |
 | `unsorted/frontmatter/reading-guide.tex:79` | `\ref` | `sec:complex` | M2/ch17 | reference |
-| `unsorted/frontmatter/reading-guide.tex:80` | `\ref` | `sec:current` | M2/ch19 | reference |
-| `unsorted/frontmatter/reading-guide.tex:80` | `\ref` | `sec:summary` | M2/ch20 | reference |
+| `unsorted/frontmatter/reading-guide.tex:80` | `\ref` | `sec:current` | M2/ch20 | reference |
+| `unsorted/frontmatter/reading-guide.tex:80` | `\ref` | `sec:summary` | M2/ch21 | reference |

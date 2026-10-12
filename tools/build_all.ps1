@@ -1,4 +1,4 @@
-# Build all ten documents, GLOSSARY and the unsorted holder in dependency order.
+# Build all eleven documents, GLOSSARY and the unsorted holder in dependency order.
 # Repeats full passes until no log reports changed labels, undefined or multiply
 # defined references (at most 5 passes), then runs the cross-reference checks.
 param([int]$MaxPasses = 5, [switch]$NoCheck)
